@@ -10,7 +10,7 @@ import User from '../api/user/user.model';
 Thing.find({}).remove()
   .then(() => {
     Thing.create({
-      name: 'Development Fools',
+      name: 'Development Tools for Fools',
       info: 'Integration with popular tools such as Webpack, Gulp, Babel, TypeScript, Karma, '
             + 'Mocha, ESLint, Node Inspector, Livereload, Protractor, Pug, '
             + 'Stylus, Sass, and Less.',
@@ -46,7 +46,8 @@ User.find({}).remove()
       provider: 'local',
       name: 'Test User',
       email: 'test@example.com',
-      password: 'test'
+      password: 'test',
+      characters: []
     }, {
       provider: 'local',
       role: 'admin',
