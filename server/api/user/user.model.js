@@ -21,9 +21,7 @@ var UserSchema = new Schema({
   },
   provider: String,
   salt: String,
-  characters: [{
-    type: Schema.Types.ObjectId
-  }]
+  characters: [Schema.Types.ObjectId]
 });
 
 /**
