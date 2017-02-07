@@ -9,27 +9,27 @@ var CharacterSchema = new mongoose.Schema({
     gender: String,
     height: Number,
     weight: Number,
+    size: String,
     languages: String,
     backStory: String
   },
   race: {
-    primary: String,
-    secondary: String
+    main: String,
+    subrace: String
   },
   class: {
     main: String,
-    path: String
+    archetype: String
   },
   general: {
     level: Number,
     experience: Number,
     alignment: String,
-    baseMove: Number,
-    actualMove: Number,
+    movement: Number,
   },
   background: {
-    main: String,
-    moment: Number,
+    main: String, //main background type, ex. Folkhero, Hermit, Acolyte, etc.
+    special: Number, //most backgrounds have an extra category, ex. Hermit type has Life of Seclusion. This is where those will go.
     trait: Number,
     ideal: Number,
     bond: Number,
@@ -50,9 +50,11 @@ var CharacterSchema = new mongoose.Schema({
     specialAttacks: String,
     specialDefense: String
   },
-  equipment: String,
+  equipment: [{}],
   money: {
+    platinum: Number,
     gold: Number,
+    electrum: Number,
     silver: Number,
     copper: Number
   },
@@ -65,13 +67,14 @@ var CharacterSchema = new mongoose.Schema({
     cha: Number
   },
   skills: {
-    prof: String,
+    prof: String, //what skills a character is proficient at
     passive: {
       insight: Number,
       perception: Number
     },
-    profBonus: Number
+    profBonus: Number //this number is generated according to class and level. Does it need to be stored here?
   }
+
 });
 
 export default mongoose.model('Character', CharacterSchema);
