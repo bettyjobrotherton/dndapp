@@ -48,7 +48,7 @@ User.find({}).remove()
       name: 'Test User',
       email: 'test@example.com',
       password: 'test',
-      characters: []
+      characters: ['589b4c693029af035896997b']
     }, {
       provider: 'local',
       role: 'admin',
