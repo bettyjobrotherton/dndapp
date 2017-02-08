@@ -6,6 +6,7 @@
 'use strict';
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
+import Character from '../api/character/character.model';
 
 Thing.find({}).remove()
   .then(() => {
@@ -59,3 +60,92 @@ User.find({}).remove()
       console.log('finished populating users');
     });
   });
+
+  Character.find({}).remove()
+    .then(() => {
+      Character.create({
+        bio: {
+          name: 'Neysa Greycastle',
+          age: 25,
+          gender: 'Female',
+          height: {
+            feet: 5,
+            inches: 8
+          },
+          weight: 118,
+          size: 'Medium',
+          languages: [{'Common'}, {'Dwarvish'}, {'Halfing'}, {'Elvish'}],
+          backStory: 'Neysa is a priestess of the goddess Mishakal. She is not from the city.'
+        },
+        race: {
+          main: 'Human',
+          subrace: 'Chondathan',
+        },
+        class: {
+          main: 'Cleric',
+          archetype: 'Life Domain'
+        },
+        general: {
+          level: 3,
+          experience: 900,
+          alignment: 'Lawful Good',
+          diety: 'Mishakal'
+          movement: 30
+        },
+        background: {
+          main: 'Acolyte',
+          special: 0,
+          trait: 4,
+          ideal: 2,
+          bond: 4,
+          flaw: 6
+        },
+        combat: {
+          armor: 'scale mail',
+          weapons: [{'light crossbow'}, {'dagger'}],
+          ammunition: {
+            arrows: 0,
+            bolts: 30,
+            bullets: 0,
+            needles: 0
+          },
+          armorClass: 14,
+          hitPoints: 25,
+          hitDie: '3d8',
+          specialAttacks: 'none',
+          specialDefense: 'none',
+        },
+        equipment: [{'backpack'}, {'waterskin'}, {'vestments'}, {'block of incense'}, {'holy amulet'}, {'blanket'}, {'candles'}, {'tinderbox'}, {'alms box'}, {'clenser'}, {'meal rations'}, {'prayer book'}],
+        money:{
+          platinum: 0,
+          gold: 15,
+          electrum: 0,
+          silver: 0,
+          copper: 0
+        },
+        abilityScores: {
+          str: 14,
+          dex: 11,
+          con: 15,
+          int: 11,
+          wis: 16,
+          cha: 11
+        },
+        skills: {
+          prof: [{'insight'}, {'medicine'}, {'persuasion'}, {'religion'}],
+          passive: {
+            insight: 15,
+            perception: 13
+          },
+          profBonus: 2
+        },
+        spells: {
+          lvl0: [{'light'}, {'sacred flame'}, {'thaumaturgy'}],
+          lvl1: [{'bless'}, {'cure wounds'}, {'healing word'}, {'detect magic'}, {'create or destroy water'}, {'purify food and drink'}, {'shield of faith'}, {'guiding bolt'}],
+          lvl2: [{'lesser restoration'}, {'prayer of healing'}]
+        }
+      })
+      .then(() => {
+        console.log('finished populating characters');
+      });
+    });

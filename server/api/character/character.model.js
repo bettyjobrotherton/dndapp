@@ -7,10 +7,13 @@ var CharacterSchema = new mongoose.Schema({
     name: String,
     age: Number,
     gender: String,
-    height: Number,
+    height: {
+      feet: Number,
+      inches: Number
+    },
     weight: Number,
     size: String,
-    languages: String,
+    languages: [{}],
     backStory: String
   },
   race: {
@@ -25,6 +28,7 @@ var CharacterSchema = new mongoose.Schema({
     level: Number,
     experience: Number,
     alignment: String,
+    diety: String,
     movement: Number,
   },
   background: {
@@ -37,7 +41,7 @@ var CharacterSchema = new mongoose.Schema({
   },
   combat: {
     armor: String,
-    weapons: String,
+    weapons: [{}],
     ammunition: {
       arrows: Number,
       bolts: Number,
@@ -67,14 +71,25 @@ var CharacterSchema = new mongoose.Schema({
     cha: Number
   },
   skills: {
-    prof: String, //what skills a character is proficient at
+    prof: [{}], //what skills a character is proficient at
     passive: {
       insight: Number,
       perception: Number
     },
     profBonus: Number //this number is generated according to class and level. Does it need to be stored here?
+  },
+  spells: {
+    lvl0: [{}],
+    lvl1: [{}],
+    lvl2: [{}],
+    lvl3: [{}],
+    lvl4: [{}],
+    lvl5: [{}],
+    lvl6: [{}],
+    lvl7: [{}],
+    lvl8: [{}],
+    lvl9: [{}]
   }
-
 });
 
 export default mongoose.model('Character', CharacterSchema);
