@@ -7,12 +7,19 @@ var CharacterSchema = new mongoose.Schema({
     name: String,
     age: Number,
     gender: String,
-    height: {
-      feet: Number,
-      inches: Number
+    appearance: {
+      height: {
+        feet: Number,
+        inches: Number
+      },
+      weight: Number,
+      size: String,
+      hair: String,
+      eyes: String,
+      skin: String,
+      descr: String, //miscellaneous description
+      image: String
     },
-    weight: Number,
-    size: String,
     languages: [{}],
     backStory: String
   },
@@ -79,6 +86,9 @@ var CharacterSchema = new mongoose.Schema({
     profBonus: Number //this number is generated according to class and level. Does it need to be stored here?
   },
   spells: {
+    ability: String,
+    saveDc: Number,
+    attackBonus: Number,
     lvl0: [{}],
     lvl1: [{}],
     lvl2: [{}],

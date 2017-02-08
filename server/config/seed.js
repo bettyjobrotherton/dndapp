@@ -68,12 +68,18 @@ User.find({}).remove()
           name: 'Neysa Greycastle',
           age: 25,
           gender: 'Female',
-          height: {
-            feet: 5,
-            inches: 8
+          appearance: {
+            height: {
+              feet: 5,
+              inches: 8
+            },
+            weight: 118,
+            size: 'Medium',
+            hair: 'brown',
+            eyes: 'green',
+            skin: 'tawny',
+            descr: 'Her hair goes to her mid-back and is always up in a braid.'
           },
-          weight: 118,
-          size: 'Medium',
           languages: ['Common', 'Dwarvish', 'Halfing', 'Elvish'],
           backStory: 'Neysa is a priestess of the goddess Mishakal. She is not from the city.'
         },
@@ -132,7 +138,7 @@ User.find({}).remove()
           cha: 11
         },
         skills: {
-          prof: ['insight', 'medicine', 'persuasion', 'religion'],
+          prof: ['Insight', 'Medicine', 'Persuasion', 'Religion'],
           passive: {
             insight: 15,
             perception: 13
@@ -140,9 +146,12 @@ User.find({}).remove()
           profBonus: 2
         },
         spells: {
-          lvl0: ['light', 'sacred flame', 'thaumaturgy'],
-          lvl1: ['bless', 'cure wounds', 'healing word', 'detect magic', 'create or destroy water', 'purify food and drink', 'shield of faith', 'guiding bolt'],
-          lvl2: ['lesser restoration', 'prayer of healing']
+          ability: 'WIS',
+          saveDc: 13,
+          attackBonus: 5,
+          lvl0: ['Light', 'Sacred Flame', 'Thaumaturgy'],
+          lvl1: ['Bless', 'Cure Wounds', 'Healing Word', 'Detect Magic', 'Create or Destroy Water', 'Purify Food and Drink', 'Shield of Faith', 'Guiding Bolt'],
+          lvl2: ['Lesser Restoration', 'Prayer of Healing']
         }
       })
       .then(() => {
