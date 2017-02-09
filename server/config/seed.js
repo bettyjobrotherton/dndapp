@@ -41,7 +41,7 @@ Thing.find({}).remove()
     });
   });
 
-User.find({}).remove()
+User.find({})
   .then(() => {
     User.create({
       provider: 'local',
@@ -64,6 +64,7 @@ User.find({}).remove()
   Character.find({}).remove()
     .then(() => {
       Character.create({
+        creator: '589c93dde3a03b2ac8548fc0',
         bio: {
           name: 'Neysa Greycastle',
           age: 25,

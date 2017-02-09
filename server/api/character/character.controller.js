@@ -80,7 +80,8 @@ export function show(req, res) {
 
 // Creates a new Character in the DB
 export function create(req, res) {
-  return Character.create(req.body)
+  const newCharacter = Object.assign({}, req.body, {creator: req.user._id}); //add current user to new character
+  return Character.create(newCharacter)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
