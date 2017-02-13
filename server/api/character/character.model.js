@@ -1,8 +1,9 @@
 'use strict';
 
-import mongoose from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 
 var CharacterSchema = new mongoose.Schema({
+  creator: Schema.Types.ObjectId,
   bio: {
     name: String,
     age: Number,
