@@ -8,6 +8,28 @@
  * App-wide Styles
  */
 
+@color-primary: #3891A6;
+@color-secondary: #4C5B5C;
+@color-warning: #FDE74C;
+@color-danger: #DB5461;
+
+.btn-primary {
+  background: @color-primary;
+  border-color: @color-primary;
+  transition: all .25s ease;
+  &:hover {
+    background: lighten(@color-primary, 10%);
+    border-color: lighten(@color-primary, 10%);
+  }
+}
+
+input.form-control {
+  border-bottom: solid black;
+  border-width: 0 0 1px 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
