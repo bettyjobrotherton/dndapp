@@ -5,6 +5,7 @@ export default function routes($stateProvider) {
 
   $stateProvider.state('usermain', {
       url: '/usermain',
-      template: '<usermain></usermain>'
+      template: '<usermain></usermain>',
+      controller: 'UserMainController'
     });
 }
