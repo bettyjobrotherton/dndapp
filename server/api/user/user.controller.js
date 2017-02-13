@@ -23,7 +23,7 @@ function handleError(res, statusCode) {
  * restriction: 'admin'
  */
 export function index(req, res) {
-  return User.find({}, '-salt -password').exec()
+  return User.find({}, '-salt -password').populate('characters', '').exec()
     .then(users => {
       res.status(200).json(users);
     })
@@ -53,7 +53,7 @@ export function create(req, res) {
 export function show(req, res, next) {
   var userId = req.params.id;
 
-  return User.findById(userId).exec()
+  return User.findById(userId).populate('characters', '').exec()
     .then(user => {
       if(!user) {
         return res.status(404).end();
