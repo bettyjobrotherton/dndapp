@@ -21,7 +21,7 @@ var UserSchema = new Schema({
   },
   provider: String,
   salt: String,
-  characters: [Schema.Types.ObjectId]
+  characters: [{ type: Schema.Types.ObjectId, ref: "Character" }]
 });
 
 /**
@@ -34,7 +34,8 @@ UserSchema
   .get(function() {
     return {
       name: this.name,
-      role: this.role
+      role: this.role,
+      characters: this.characters
     };
   });
 
