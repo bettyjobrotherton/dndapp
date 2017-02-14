@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-sm-12">
       <h1>Login</h1>
-      <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@example.com</code> / <code>test</code></p>
-      <p>Admin account is <code>admin@example.com</code> / <code>admin</code></p>
+      <!-- <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@example.com</code> / <code>test</code></p>
+      <p>Admin account is <code>admin@example.com</code> / <code>admin</code></p> -->
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
@@ -31,8 +31,8 @@
           <p class="help-block">{{ vm.errors.login }}</p>
         </div>
 
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+        <div class='buttonContainer'>
+          <button class="btn btn-inverse btn-lg btn-login btn-primary" type="submit">
             Login
           </button>
           <a class="btn btn-default btn-lg btn-register" ui-sref="signup">
