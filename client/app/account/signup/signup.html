@@ -63,16 +63,23 @@
             Passwords must match.
           </p>
         </div>
-
-        <div>
-          <button class="btn btn-inverse btn-lg btn-register" type="submit">
+        <div class="form-group" ng-class="{ 'has-success': form.ageVerification.$valid && vm.submitted,
+                                            'has-error': form.ageVerification.$invalid && vm.submitted }">
+          <div class="checkbox">
+            <label class=""><input type="checkbox" id="ageVerification" ng-model="vm.user.ageVerification" name="ageVerification" required /> I am older than 13.</label>
+            <p class="help-block" ng-show="form.ageVerification.$error.required && vm.submitted">
+              You must be older than 13 years of age.
+            </p>
+          </div>
+        </div>
+        <div class='buttonContainer'>
+          <button class="btn btn-inverse btn-lg btn-primary btn-register" type="submit">
             Sign up
           </button>
           <a class="btn btn-default btn-lg btn-login" ui-sref="login">
             Login
           </a>
         </div>
-
       </form>
     </div>
   </div>
