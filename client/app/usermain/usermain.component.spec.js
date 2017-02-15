@@ -1,5 +1,8 @@
 'use strict';
 
+import usermain from './usermain.component';
+import { UsermainComponent } from './usermain.component';
+
 describe('Component: UsermainComponent', function() {
   // load the controller's module
   beforeEach(module('dndappApp.usermain'));

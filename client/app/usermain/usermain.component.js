@@ -7,9 +7,25 @@ import routes from './usermain.routes';
 
 export class UsermainComponent {
   /*@ngInject*/
-  constructor() {
-    this.message = 'Hello';
+  constructor(Auth, $http) {
+    'ngInject';
+
+    // var scope = this;
+    // scope.currentUser;
+    //
+    // Auth.getCurrentUser().then(function(res){
+    //   // console.log(res);
+    //   scope.currentUser = res;
+    //   // console.log(scope.currentUser);
+    // });
+    this.getCurrentUser = Auth.getCurrentUserSync;
+    this.$http = $http;
   }
+
+ $onInit(){
+
+ }
+
 }
 
 export default angular.module('dndappApp.usermain', [uiRouter])
