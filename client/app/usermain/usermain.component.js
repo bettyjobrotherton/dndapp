@@ -23,7 +23,7 @@ export class UsermainComponent {
   }
 
  $onInit(){
-
+   console.log(this.getCurrentUser());
  }
 
 }
