@@ -5,11 +5,7 @@
     <p class="lead"></p>
   </div>
 <div class='nav'>
-  
-
 </div>
-
-
 </header>
 
 <!-- icon -->
@@ -19,7 +15,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6 nav-box" ng-repeat="thing in $ctrl.awesomeThings">
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6 nav-box" id='characterList' ng-repeat="thing in $ctrl.awesomeThings">
         <li>
           <a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a>
             <button class="btn btn-lg btn-primary editBtn" type="edit">
