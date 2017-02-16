@@ -1,14 +1,22 @@
+
+@background-color: #F2CD82;
+@color-secondary: #575A61;
+
 .thing-form {
   margin: 20px 0;
 }
 
+
 #banner {
   border-bottom: none;
   margin-top: -20px;
+  padding: 10px 15px;
+  background-color: @background-color;
 }
 
 #banner h1 {
-  font-size: 60px;
+  margin-top: 10px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: -1px;
 }
@@ -22,6 +30,30 @@
   background: #4393B9;
 }
 
+.nav-box {
+  margin: 12px 0px;
+  border:1px;
+  padding-right: 0px;
+}
+
+.nav li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border: 1px grey;
+}
+
 .navbar-text {
   margin-left: 15px;
+  color: @color-secondary;
+}
+
+.editBtn {
+  padding: 0px 16px;
+}
+
+.createBtn{
+  width: 100%;
+  margin: 0px;
 }
