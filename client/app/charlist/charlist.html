@@ -1,1 +1,17 @@
-<div>Hello, Moto!</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs">
+      <p>Create a new character</p>
+      <!-- <h3>Hello {{ charCtrl.getCurrentUser().characters }}</h3> -->
+
+    </div>
+  </div>
+  <div ng-repeat="character in charCtrl.getCurrentUser().characters">
+    <div class="row">
+      <div class="col-xs">
+        <p>asd</p>
+        {{ character.bio.name }}
+      </div>
+    </div>
+  </div>
+</div>
