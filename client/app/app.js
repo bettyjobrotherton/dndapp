@@ -25,11 +25,12 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import UsermainComponent from './usermain/usermain.component';
+import CharListComponent from './charlist/charlist.component';
 
 import './app.less';
 
 angular.module('dndappApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, navbar, footer, main, constants, UsermainComponent, util
+  account, admin, navbar, footer, main, constants, UsermainComponent, util, CharListComponent
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
