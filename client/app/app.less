@@ -88,7 +88,7 @@ input.form-control {
   background: @color-primary;
   border-color: @color-primary;
   transition: all .25s ease;
-  &:hover {
+  &:hover, &:focus, &:active, &:active:focus {
     background: lighten(@color-primary, 10%);
     border-color: lighten(@color-primary, 10%);
   }
