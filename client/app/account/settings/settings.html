@@ -9,22 +9,25 @@
         <div class="form-group">
           <label>Username</label>
           <!-- current username here -->
-          <button class="btn btn-lg btn-primary editBtn" type="edit">
-            Edit
-          </button>
+          <p> John Doe{{ $ctrl.getCurrentUser().name }}
+            <button class="btn btn-lg btn-primary editBtn" type="edit">
+              Edit
+            </button>
+          </p>
         </div>
 
         <div class="form-group">
           <label>Email</label>
           <!-- current username here -->
-          <button class="btn btn-lg btn-primary editBtn" type="edit">
-            Edit
-          </button>
+          <p> John@Doe.com{{ $ctrl.getCurrentUser().email }}
+            <button class="btn btn-lg btn-primary editBtn" type="edit">
+              Edit
+            </button>
+          </p>
         </div>
 
         <div class="form-group">
           <label>Current Password</label>
-
           <input type="password" name="password" class="form-control" ng-model="vm.user.oldPassword"
                  mongoose-error/>
           <p class="help-block" ng-show="form.password.$error.mongoose">

@@ -5,28 +5,18 @@
     <p class="lead"></p>
   </div>
 <div class='nav'>
-
 </div>
 </header>
 
-<!-- icon -->
-<!-- name -->
-<!-- button -->
+<p id='hook'>The last character sheet you will ever need.
+   Sign up or login to begin creating you characters.
+   V1.0 </p>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6 nav-box" id='characterList' ng-repeat="thing in $ctrl.awesomeThings">
-        <li>
-          <a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a>
-            <button class="btn btn-lg btn-primary editBtn" type="edit">
-              Edit
-            </button>
-        </li>
-      </ul>
-      <button class="btn btn-lg btn-primary createBtn" type="new character">
-        Create
-      </button>
-    </div>
-  </div>
+<div class="buttonContainer">
+  <button class="btn btn-lg btn-primary signupBtn" type="signup" ui-sref="signup">
+    Sign Up
+  </button>
+  <button class="btn btn-lg btn-primary loginBtn" type="login" ui-sref="login">
+    Login
+  </button>
 </div>
