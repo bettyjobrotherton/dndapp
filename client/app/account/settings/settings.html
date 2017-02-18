@@ -9,21 +9,31 @@
         <div class="form-group">
           <label>Username</label>
           <!-- current username here -->
-          <p> John Doe{{ $ctrl.getCurrentUser().name }}
-            <button class="btn btn-lg btn-primary editBtn" type="edit">
+          <div class="editContainer">
+            <p ng-show='true'> John Doe{{ $ctrl.getCurrentUser().name }}</p>
+            <input type="username" placeholder="" class="form-control" ng-hide='true'/>
+            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show=true>
               Edit
             </button>
-          </p>
+            <button class="btn btn-lg btn-primary editBtn" type="Save" ng-hide=true>
+              Save
+            </button>
+          </div>
         </div>
 
         <div class="form-group">
           <label>Email</label>
           <!-- current username here -->
-          <p> John@Doe.com{{ $ctrl.getCurrentUser().email }}
-            <button class="btn btn-lg btn-primary editBtn" type="edit">
+          <div class="editContainer">
+            <p ng-show='false'> John@Doe.com{{ $ctrl.getCurrentUser().email }}</p>
+            <input type="email" placeholder="" class="form-control" ng-hide='false'/>
+            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show='false'>
               Edit
             </button>
-          </p>
+            <button class="btn btn-lg btn-primary editBtn" type="Save" ng-hide='false'>
+              Save
+            </button>
+          </div>
         </div>
 
         <div class="form-group">
@@ -58,12 +68,12 @@
              ng-show="form.confirmPassword.$error.match && vm.submitted">
             Passwords must match.
           </p>
-
         </div>
-
         <p class="help-block"> {{ vm.message }} </p>
 
-        <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        <div class='buttonContainer'>
+          <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+        </div>
       </form>
     </div>
   </div>

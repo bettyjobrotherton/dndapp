@@ -1,10 +1,10 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs">
-      <p>Create a new character</p>
+      <p>Create a new character</p> -->
       <!-- <h3>Hello {{ charCtrl.getCurrentUser().characters }}</h3> -->
 
-    </div>
+    <!-- </div>
   </div>
   <div ng-repeat="character in charCtrl.getCurrentUser().characters">
     <div class="row">
@@ -12,6 +12,25 @@
         <p>asd</p>
         {{ character.bio.name }}
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6 nav-box" ng-repeat="character in charCtrl.getCurrentUser().characters">
+        <li>
+          <a href="#">{{character.bio.name}}</a>
+            <button class="btn btn-lg btn-primary editBtn" type="edit">
+              Edit
+            </button>
+        </li>
+      </ul>
+      <button class="btn btn-lg btn-primary createBtn" ui-sref="generator" type="new character">
+        Create
+      </button>
     </div>
   </div>
 </div>
