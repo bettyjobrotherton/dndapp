@@ -1,8 +1,10 @@
 <header class="hero-unit" id="banner">
   <div class="container">
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+
+    <img src="assets/images/dragons-head-310697_640.png" alt="Dragon Image">
     <h1>New App</h1>
     <p class="lead"></p>
+
   </div>
 <div class='nav'>
 </div>
@@ -12,6 +14,7 @@
    Sign up or login to begin creating you characters.
    V1.0 </p>
 
+<!-- BJs Changes -->
 <div class="buttonContainer">
   <button class="btn btn-lg btn-primary signupBtn" type="signup" ui-sref="signup">
     Sign Up
@@ -19,4 +22,23 @@
   <button class="btn btn-lg btn-primary loginBtn" type="login" ui-sref="login">
     Login
   </button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6 nav-box" ng-repeat="thing in $ctrl.awesomeThings">
+        <li>
+          <a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a>
+            <button class="btn btn-lg btn-primary editBtn" type="edit">
+              Edit
+            </button>
+        </li>
+
+      </ul>
+    </div>
+    <button class="btn btn-lg btn-primary createBtn" type="new character">
+      Create
+    </button>
+  </div>
 </div>

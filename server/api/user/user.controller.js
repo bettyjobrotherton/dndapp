@@ -58,7 +58,7 @@ export function show(req, res, next) {
       if(!user) {
         return res.status(404).end();
       }
-      res.json(user.profile);
+      return res.json(user.profile);
     })
     .catch(err => next(err));
 }
@@ -104,12 +104,12 @@ export function changePassword(req, res) {
 export function me(req, res, next) {
   var userId = req.user._id;
 
-  return User.findOne({ _id: userId }, '-salt -password').exec()
+  return User.findOne({ _id: userId }, '-salt -password').populate('characters', '').exec()
     .then(user => { // don't ever give out the password or salt
       if(!user) {
         return res.status(401).end();
       }
-      res.json(user);
+      return res.json(user);
     })
     .catch(err => next(err));
 }
