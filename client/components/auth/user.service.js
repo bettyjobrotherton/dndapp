@@ -12,6 +12,12 @@ export function UserResource($resource) {
         controller: 'password'
       }
     },
+    changeUsername: {
+      method: 'PUT',
+      params: {
+        controller: 'username'
+      }
+    },
     get: {
       method: 'GET',
       params: {
