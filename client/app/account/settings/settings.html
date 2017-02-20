@@ -10,12 +10,12 @@
           <label>Username</label>
           <!-- current username here -->
           <div class="editContainer">
-            <p ng-show='true'> John Doe{{ $ctrl.getCurrentUser().name }}</p>
-            <input type="username" placeholder="" class="form-control" ng-hide='true'/>
-            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show=true>
+            <p ng-hide='vm.editUsername'>{{ vm.username }}</p>
+            <input type="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername' required/>
+            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-click="vm.editUsername = true;" ng-show='!vm.editUsername'>
               Edit
             </button>
-            <button class="btn btn-lg btn-primary editBtn" type="Save" ng-hide=true>
+            <button class="btn btn-lg btn-primary editBtn" type="Save" ng-click="vm.changeUsername(form)" ng-show="vm.editUsername">
               Save
             </button>
           </div>

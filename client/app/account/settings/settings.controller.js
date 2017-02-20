@@ -16,7 +16,31 @@ export default class SettingsController {
   /*@ngInject*/
   constructor(Auth) {
     this.Auth = Auth;
+    this.editUsername = false;
+    this.getCurrentUser = Auth.getCurrentUserSync;
   }
+
+  $onInit() {
+      this.getCurrentUser().$promise.then(data => {
+        this.username = data.name;
+        console.log(data);
+      });
+  }
+
+  changeUsername(form) {
+    this.submitted = true;
+    console.log(form);
+    //if(form.$valid) {
+      this.Auth.changeUsername(this.username)
+        .then(() => {
+          this.message = 'Username successfully changed.';
+        })
+        .catch(() => {
+          this.message = 'Username failed to change.';
+        });
+    //}
+  }
+
 
   changePassword(form) {
     this.submitted = true;
