@@ -5,13 +5,13 @@
     </div>
     <div class="col-sm-12">
       <form class="form" name="form" ng-submit="vm.changePassword(form)" novalidate>
-
+        <p ng-show="vm.message" class="help-block alert alert-danger">{{ vm.message }}</p>
         <div class="form-group">
           <label>Username</label>
           <!-- current username here -->
           <div class="editContainer">
             <p ng-hide='vm.editUsername'>{{ vm.username }}</p>
-            <input type="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername' required/>
+            <input type="username" name="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername' required/>
             <button class="btn btn-lg btn-primary editBtn" type="edit" ng-click="vm.editUsername = true;" ng-show='!vm.editUsername'>
               Edit
             </button>
@@ -26,7 +26,7 @@
           <!-- current username here -->
           <div class="editContainer">
             <p ng-show='false'> John@Doe.com{{ $ctrl.getCurrentUser().email }}</p>
-            <input type="email" placeholder="" class="form-control" ng-hide='false'/>
+            <input type="email" name="email" placeholder="" class="form-control" ng-hide='false'/>
             <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show='false'>
               Edit
             </button>
@@ -69,8 +69,6 @@
             Passwords must match.
           </p>
         </div>
-        <p class="help-block"> {{ vm.message }} </p>
-
         <div class='buttonContainer'>
           <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
         </div>

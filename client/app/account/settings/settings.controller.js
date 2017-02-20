@@ -30,7 +30,7 @@ export default class SettingsController {
   changeUsername(form) {
     this.submitted = true;
     console.log(form);
-    //if(form.$valid) {
+    if(form.username.$valid) {
       this.Auth.changeUsername(this.username)
         .then(() => {
           this.message = 'Username successfully changed.';
@@ -38,7 +38,9 @@ export default class SettingsController {
         .catch(() => {
           this.message = 'Username failed to change.';
         });
-    //}
+    } else {
+      this.message = 'Username failed to change.';
+    }
   }
 
 

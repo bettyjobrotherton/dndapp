@@ -110,8 +110,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
     /**
      * Change username
      *
-     * @param  {String}   oldPassword
-     * @param  {String}   newPassword
+     * @param  {String}   newUsername
      * @param  {Function} callback    - function(error, user)
      * @return {Promise}
      */
