@@ -14,7 +14,12 @@
 @color-paragraph: #4C5B5C;
 @color-title: #FFF9F0;
 @background-color1: #F2CD82;
-@background-hover: #F5DAA4;
+@background-hover: #f9cd74;
+// @navbar-button: {
+//   width: 100%;
+//   color: #fff;
+//   background-color: #f9cd74;
+// };
 
 .navbar-toggle{
   border:none;
@@ -26,9 +31,25 @@
   background-color: @background-color1;
 }
 
+#currentUser{
+  float: left;
+}
+
+
 .navbar-default .navbar-toggle .icon-bar{
       background-color: #AF2316;
 }
+
+.navbar-default .navbar-nav .active a  {
+  width: 100%;
+  color: #fff;
+  background-color: #f9cd74;
+    &:hover, &:focus {
+      width: 100%;
+      color: #fff;
+      background-color: #f9cd74;
+    }
+  }
 
 .navbar-default .navbar-toggle:hover {
   background-color: @background-hover;
@@ -39,11 +60,11 @@
 }
 
 .navbar-default .navbar-brand{
-  color: #FFF9F0;
+  color: @color-title;
 }
 
 .navbar-default .navbar-nav li a{
-  color: #FFF9F0;
+  color: @color-title;
 }
 
 
@@ -80,11 +101,16 @@ input.form-control {
   justify-content: center;
 }
 
+.editContainer {
+  display: flex;
+  justify-content: space-between;;
+}
+
 .btn-primary {
   background: @color-primary;
   border-color: @color-primary;
   transition: all .25s ease;
-  &:hover {
+  &:hover, &:focus, &:active, &:active:focus {
     background: lighten(@color-primary, 10%);
     border-color: lighten(@color-primary, 10%);
   }
@@ -107,6 +133,7 @@ input.form-control {
 /* inject:less */
 @import 'admin/admin';
 @import 'charlist/charlist';
+@import 'main/generator/generator';
 @import 'main/main';
 @import 'usermain/usermain';
 @import '../components/footer/footer';
