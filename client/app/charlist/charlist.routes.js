@@ -7,4 +7,8 @@ export default function routes($stateProvider){
     url: '/charlist',
     template: '<charlist></charlist>'
   })
+  .state('charprofile', {
+    url: '/charprofile',
+    template: '<charprofile></charprofile>'
+  });
 }
