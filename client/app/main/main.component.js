@@ -10,6 +10,8 @@ export class MainController {
   }
 }
 
+MainController.$inject = ['$http'];
+
 export default angular.module('dndappApp.main', [uiRouter])
   .config(routing)
   .component('main', {
