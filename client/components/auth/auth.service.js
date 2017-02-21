@@ -107,7 +107,25 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
       })
         .$promise;
     },
-
+    /**
+     * Change username
+     *
+     * @param  {String}   newUsername
+     * @param  {Function} callback    - function(error, user)
+     * @return {Promise}
+     */
+    changeUsername(newUsername, callback) {
+      return User.changeUsername({
+        id: currentUser._id
+      }, {
+        newUsername
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      })
+        .$promise;
+    },
     /**
      * Gets all available info on a user
      *

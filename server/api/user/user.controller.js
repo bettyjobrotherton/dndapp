@@ -98,6 +98,25 @@ export function changePassword(req, res) {
     });
 }
 
+
+/**
+ * Change a users name.
+ */
+export function changeUsername(req, res) {
+  var userId = req.user._id;
+  var newUsername = String(req.body.newUsername);
+
+  return User.findById(userId).exec()
+    .then(user => {
+      user.name = newUsername;
+      return user.save()
+        .then(() => {
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+    });
+}
+
 /**
  * Get my info
  */
