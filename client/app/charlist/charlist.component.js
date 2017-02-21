@@ -26,9 +26,9 @@ export class CharListComponent {
   }
 
   goToCharProfile(data){
-    this.profile = data;
+    this.selectChar = data;
     this.$state.go('charprofile');
-    console.log(this.profile);
+    console.log(this.selectChar.bio.name);
   }
 
 
