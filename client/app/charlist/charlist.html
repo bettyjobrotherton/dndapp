@@ -1,8 +1,8 @@
-<!-- <div class="container">
+<div class="container">
   <div class="row">
 
     <div class="col-xs-12 top-of-page">
-      <button>Create a new character</button>
+      <button class="btn btn-lg btn-primary createBtn" ui-sref="generator" type="new character">Create a new character</button>
     </div>
 
   </div>
@@ -11,18 +11,18 @@
     <div class="row">
       <div ng-click="charCtrl.goToCharProfile(character)">
       <div class="col-xs-6">
-        {{ character.bio.name }}
+        {{ character.bio.name }} - Lvl. {{ character.general.level }}
       </div>
       <div class="col-xs-6">
-        <p>{{ character.general.level }} {{ character.bio.gender | limitTo: 1 }} {{ character.race.main }} {{ character.class.main }}</p>
+        <img src="assets/images/icons/{{ character.bio.gender }}.png" class='char-icon' alt="{{ character.bio.gender }}"> <img src="assets/images/icons/{{ character.race.main }}.png" class='char-icon' alt="{{ character.race.main }}"> <img src="assets/images/icons/{{ character.class.main }}.png" class='char-icon' alt="{{ character.class.main }}">
       </div>
       </div>
     </div>
     <hr>
   </div>
-</div> -->
+</div>
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-lg-12">
 
@@ -39,4 +39,4 @@
       </button>
     </div>
   </div>
-</div>
+</div> -->
