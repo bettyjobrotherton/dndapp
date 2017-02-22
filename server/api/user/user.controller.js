@@ -98,6 +98,22 @@ export function changePassword(req, res) {
     });
 }
 
+/**
+ * Change a users email.
+ */
+export function changeEmail(req, res) {
+  var userId = req.user._id;
+  var newEmail = String(req.body.newEmail);
+  return User.findById(userId).exec()
+    .then(user => {
+      user.email = newEmail;
+      return user.save()
+        .then(() => {
+          res.status(204).end();
+        })
+        .catch(validationError(res));
+    });
+}
 
 /**
  * Change a users name.
@@ -105,7 +121,6 @@ export function changePassword(req, res) {
 export function changeUsername(req, res) {
   var userId = req.user._id;
   var newUsername = String(req.body.newUsername);
-
   return User.findById(userId).exec()
     .then(user => {
       user.name = newUsername;

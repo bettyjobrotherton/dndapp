@@ -126,6 +126,27 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
       })
         .$promise;
     },
+
+    /**
+     * Change email
+     *
+     * @param  {String}   newEmail
+     * @param  {Function} callback    - function(error, user)
+     * @return {Promise}
+     */
+    changeEmail(newEmail, callback) {
+      return User.changeEmail({
+        id: currentUser._id
+      }, {
+        newEmail
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      })
+        .$promise;
+    },
+
     /**
      * Gets all available info on a user
      *

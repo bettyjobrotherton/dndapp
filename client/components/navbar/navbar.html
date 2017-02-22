@@ -1,8 +1,9 @@
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top" >
   <div id='currentUser'>
+    <a ui-sref='/'> Back </a>
     <p ng-show="$ctrl.isLoggedIn()" class="navbar-text" > {{ $ctrl.getCurrentUser().name }}</p>
   </div>
-  <div class="container">
+  <div class="container" ng-show="$ctrl.isLoggedIn()" >
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
         <span class="sr-only">Toggle navigation</span>
@@ -12,6 +13,7 @@
       </button>
     </div>
     <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+
       <ul class="nav navbar-nav">
         <!-- <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
             <a ui-sref="{{item.state}}">{{item.title}}</a>

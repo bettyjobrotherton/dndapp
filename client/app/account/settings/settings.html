@@ -10,14 +10,14 @@
           <label>Username</label>
           <!-- current username here -->
           <div class="editContainer">
-            <p ng-hide='vm.editUsername'>{{ vm.username }}</p>
-            <input type="username" name="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername' required/>
-            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-click="vm.editUsername = true;" ng-show='!vm.editUsername'>
+            <button ng-show='!vm.editUsername' ng-click='vm.editUsername = true'>{{ vm.username }}</button>
+            <input type="username" name="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername'/>
+            <!-- <button class="btn btn-lg btn-primary editBtn" type="edit" ng-click="vm.editUsername = true;" ng-show='!vm.editUsername'>
               Edit
             </button>
             <button class="btn btn-lg btn-primary editBtn" type="Save" ng-click="vm.changeUsername(form)" ng-show="vm.editUsername">
               Save
-            </button>
+            </button> -->
           </div>
         </div>
 
@@ -25,14 +25,14 @@
           <label>Email</label>
           <!-- current username here -->
           <div class="editContainer">
-            <p ng-show='false'> John@Doe.com{{ $ctrl.getCurrentUser().email }}</p>
-            <input type="email" name="email" placeholder="" class="form-control" ng-hide='false'/>
-            <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show='false'>
+            <button ng-show='!vm.editEmail' ng-click='vm.editEmail = true'>{{ user.email }}</button>
+            <input type="email" name="email" placeholder="" class="form-control" ng-model="vm.email" ng-show='vm.editEmail'/>
+            <!-- <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show='false'>
               Edit
             </button>
             <button class="btn btn-lg btn-primary editBtn" type="Save" ng-hide='false'>
               Save
-            </button>
+            </button> -->
           </div>
         </div>
 
@@ -70,7 +70,7 @@
           </p>
         </div>
         <div class='buttonContainer'>
-          <button class="btn btn-lg btn-primary" type="submit">Save changes</button>
+          <button class="btn btn-lg btn-primary" type="save" ng-click='vm.editUsername = false; vm.editEmail = false' >Save changes</button>
         </div>
       </form>
     </div>
