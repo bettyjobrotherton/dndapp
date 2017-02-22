@@ -7,28 +7,27 @@ import routes from './charlist.routes';
 
 export class CharListComponent {
 
-  constructor(Auth, $http, $state){
+  constructor(Auth, $http, $state, $stateParams, Character){
     'ngInject';
 
     this.$http = $http;
     this.$state = $state;
+    this.$stateParams = $stateParams;
     this.getCurrentUser = Auth.getCurrentUserSync;
+    this.getProfile = Character.getProfile;
+    this.selectChar = Character.returnProfile;
   }
 
   $onInit(){
-      // console.log(this.getCurrentUser());
-      // this.getCurrentUser().$promise.then(data => {
-        // this.user = data;
-        // this.characters = data.characters;
-        // console.table(data.characters);
-      // });
+    if(this.$state.current.name == 'charprofile2'){
+      this.getProfile(this.$stateParams.id)
 
+     }
   }
 
   goToCharProfile(data){
-    this.selectChar = data;
-    this.$state.go('charprofile');
-    console.log(this.selectChar.bio.name);
+    this.$state.go('charprofile2', {id: data._id});
+    console.log(this.$stateParams);
   }
 
 
