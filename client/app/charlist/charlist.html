@@ -10,11 +10,11 @@
   <div ng-repeat="character in charCtrl.getCurrentUser().characters">
     <div class="row">
       <div ng-click="charCtrl.goToCharProfile(character)">
-      <div class="col-xs-6">
+      <div class="col-xs-7">
         {{ character.bio.name }} - Lvl. {{ character.general.level }}
       </div>
-      <div class="col-xs-6">
-        <img src="assets/images/icons/{{ character.bio.gender }}.png" class='char-icon' alt="{{ character.bio.gender }}"> <img src="assets/images/icons/{{ character.race.main }}.png" class='char-icon' alt="{{ character.race.main }}"> <img src="assets/images/icons/{{ character.class.main }}.png" class='char-icon' alt="{{ character.class.main }}">
+      <div class="col-xs-5">
+        <img src="assets/images/icons/{{character.bio.gender}}.png" class='char-icon' alt="{{character.bio.gender}}"> <img src="assets/images/icons/{{character.race.main}}.png" class='char-icon' alt="{{character.race.main}}"> <img src="assets/images/icons/{{character.class.main}}.png" class='char-icon' alt="{{character.class.main}}">
       </div>
       </div>
     </div>

@@ -16,6 +16,9 @@ import {
 import {
   UserResource
 } from './user.service';
+import {
+  CharacterService
+} from './character.service';
 
 import uiRouter from 'angular-ui-router';
 
@@ -30,5 +33,6 @@ export default angular.module('dndappApp.auth', [constants, util, ngCookies, uiR
   .run(routerDecorator)
   .factory('Auth', AuthService)
   .factory('User', UserResource)
+  .factory('Character', CharacterService)
   .config(['$httpProvider', addInterceptor])
   .name;

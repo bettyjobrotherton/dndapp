@@ -1,7 +1,111 @@
-<div class="container">
+<div class="container full-width">
   <div class="row">
-    <div class="col-xs-12">
-      {{ charCtrl.selectChar.bio.name }}
+    <div class="col-xs-4 col-xs-offset-4 center-content">
+      <img src="assets/images/circle-icons-1295218_640.png" id="char-profile-image" alt="Dragon Image">
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3 center-content">
+      {{ charCtrl.selectChar().bio.name }} &nbsp <img src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4 center-content">
+      Lvl. {{ charCtrl.selectChar().general.level }}
+    </div>
+    <div class="col-xs-4 center-content">
+      <img src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}"> {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
+    </div>
+    <div class="col-xs-4 center-content">
+      <img src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">
+      {{ charCtrl.selectChar().class.main }} ({{ charCtrl.selectChar().class.archetype }})
+    </div>
+  </div>
+  <!-- Beginning of profile menu tabs -->
+  <div class="row profile-tab-row">
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click="charCtrl.showGeneral()">General</div>
+    </div>
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click='charCtrl.showCombat()'>Combat</div>
+    </div>
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click='charCtrl.showSkills()'>Skills</div>
+    </div>
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click='charCtrl.showEquip()'>Equip</div>
+    </div>
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click='charCtrl.showSpells()'>Spells</div>
+    </div>
+    <div class="col-xs-2 profile-tab center-content">
+      <div ng-click='charCtrl.showMisc()'>Misc</div>
+    </div>
+  </div>
+  <!-- End of profile menu tabs -->
+
+  <!-- General tab view -->
+  <div ng-show="charCtrl.general">
+
+    <div class="row">
+      <div class="col-xs-3 align-right">Experience:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.experience }}</div>
+      <div class="col-xs-3 align-right">Alignment:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.alignment }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 align-right">Background:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().background.main }}</div>
+      <div class="col-xs-3 align-right">Deity:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.diety }}</div>
+    </div>
+    <div class="row center-content">
+      <table class="table table-bordered char-table">
+        <tr>
+          <th colspan='2'>Movement</th>
+        </tr>
+        <tr>
+          <th>Current</th>
+          <th>Base</th>
+        </tr>
+        <tr>
+          <td>{{ charCtrl.currentSpeed}}</td>
+          <td>{{ charCtrl.selectChar().general.movement }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="row center-content">
+      <table class="table tablebordered char-table">
+        <tr>
+          <th colspan='5' class='center-content'>Classes</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Lvl</th>
+          <th>Hit Dice</th>
+          <th>HP</th>
+          <th>Con</th>
+        </tr>
+        <tr>
+          <td>{{ charCtrl.selectChar().class.main }}</td>
+          <td>{{ charCtrl.selectChar().general.level }}</td>
+          <td>{{ charCtrl.selectChar().combat.hitDie }}</td>
+          <td>{{ charCtrl.selectChar().combat.hitPoints }}</td>
+          <td>{{ charCtrl.conModifier }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+  <!-- Combat tab view -->
+  <div ng-show="charCtrl.combat">Combat</div>
+  <!-- Skills tab view -->
+  <div ng-show="charCtrl.skills">Skills</div>
+  <!-- Equipment tab view -->
+  <div ng-show="charCtrl.equip">Equipment</div>
+  <!-- Spells tab view -->
+  <div ng-show="charCtrl.spells">Spells</div>
+  <!-- Miscellaneous tab view -->
+  <div ng-show="charCtrl.misc">Miscellaneous</div>
 </div>
