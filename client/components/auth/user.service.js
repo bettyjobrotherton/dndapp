@@ -18,6 +18,12 @@ export function UserResource($resource) {
         controller: 'username'
       }
     },
+    changeEmail: {
+      method: 'PUT',
+      params: {
+        controller: 'email'
+      }
+    },
     get: {
       method: 'GET',
       params: {
