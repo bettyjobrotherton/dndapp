@@ -10,7 +10,6 @@ export function CharacterService($location, $http) {
       $http.get('api/characters/' + data)
            .then(res => {
              selectChar = res.data;
-            //  console.log(selectChar);
              return selectChar;
            })
            .catch(err => {
@@ -19,12 +18,10 @@ export function CharacterService($location, $http) {
     },
 
     returnProfile(){
-      // console.log(selectChar);
       return selectChar;
     },
 
     calculateModifier(as){
-      console.log(as);
       var modifier;
       if( as <=1 ){
         modifier = -5;
@@ -59,8 +56,11 @@ export function CharacterService($location, $http) {
       } else {
         modifier = 10;
       }
-      console.log(modifier);
       return modifier;
+    },
+
+    calculateSpeed(data){
+
     }
 
   };

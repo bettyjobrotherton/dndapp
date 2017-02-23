@@ -1,29 +1,29 @@
 <div class="container full-width">
-  <div class="row">
+  <div class="row row-in-profile">
     <div class="col-xs-4 col-xs-offset-4 center-content">
       <img src="assets/images/circle-icons-1295218_640.png" id="char-profile-image" alt="Dragon Image">
     </div>
   </div>
-  <div class="row">
+  <div class="row row-in-profile">
     <div class="col-xs-6 col-xs-offset-3 center-content">
-      {{ charCtrl.selectChar().bio.name }} &nbsp <img src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
+      {{ charCtrl.selectChar().bio.name }} &nbsp; <img src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
 
     </div>
   </div>
-  <div class="row">
+  <div class="row row-in-profile">
     <div class="col-xs-4 center-content">
       Lvl. {{ charCtrl.selectChar().general.level }}
     </div>
     <div class="col-xs-4 center-content">
-      <img src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}"> {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
+      <img src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}">  &nbsp; {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
     </div>
     <div class="col-xs-4 center-content">
-      <img src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">
+      <img src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">  &nbsp;
       {{ charCtrl.selectChar().class.main }} ({{ charCtrl.selectChar().class.archetype }})
     </div>
   </div>
   <!-- Beginning of profile menu tabs -->
-  <div class="row profile-tab-row">
+  <div class="row profile-tab-row center-content">
     <div class="col-xs-2 profile-tab center-content">
       <div ng-click="charCtrl.showGeneral()">General</div>
     </div>
@@ -48,37 +48,22 @@
   <!-- General tab view -->
   <div ng-show="charCtrl.general">
 
-    <div class="row">
+    <div class="row row-in-profile">
       <div class="col-xs-3 align-right">Experience:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.experience }}</div>
       <div class="col-xs-3 align-right">Alignment:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.alignment }}</div>
     </div>
-    <div class="row">
+    <div class="row row-in-profile">
       <div class="col-xs-3 align-right">Background:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().background.main }}</div>
       <div class="col-xs-3 align-right">Deity:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.diety }}</div>
     </div>
-    <div class="row center-content">
+    <div class="row center-content row-in-profile">
       <table class="table table-bordered char-table">
-        <tr>
-          <th colspan='2'>Movement</th>
-        </tr>
-        <tr>
-          <th>Current</th>
-          <th>Base</th>
-        </tr>
-        <tr>
-          <td>{{ charCtrl.currentSpeed}}</td>
-          <td>{{ charCtrl.selectChar().general.movement }}</td>
-        </tr>
-      </table>
-    </div>
-    <div class="row center-content">
-      <table class="table tablebordered char-table">
-        <tr>
-          <th colspan='5' class='center-content'>Classes</th>
+        <tr class='table-head'>
+          <th colspan="5">Classes</th>
         </tr>
         <tr>
           <th>Name</th>
@@ -92,20 +77,129 @@
           <td>{{ charCtrl.selectChar().general.level }}</td>
           <td>{{ charCtrl.selectChar().combat.hitDie }}</td>
           <td>{{ charCtrl.selectChar().combat.hitPoints }}</td>
-          <td>{{ charCtrl.conModifier }}</td>
+          <td>*!*</td>
         </tr>
       </table>
     </div>
+    <div class="row row-in-profile center-content">
+      <table class="table table-bordered char-table">
+        <tr class="table-head">
+          <th colspan="3">Ability Scores/Modifiers</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>Score</th>
+          <th>Mod.</th>
+        </tr>
+        <tr>
+          <th>STR</th>
+          <td>{{ charCtrl.selectChar().abilityScores.str }}</td>
+          <td>*!*</td>
+        </tr>
+        <tr>
+          <th>DEX</th>
+          <td>{{ charCtrl.selectChar().abilityScores.dex }}</td>
+          <td>*!*</td>
+        </tr>
+        <tr>
+          <th>CON</th>
+          <td>{{ charCtrl.selectChar().abilityScores.con }}</td>
+          <td>*!*</td>
+        </tr>
+        <tr>
+          <th>INT</th>
+          <td>{{ charCtrl.selectChar().abilityScores.int }}</td>
+          <td>*!*</td>
+        </tr>
+        <tr>
+          <th>WIS</th>
+          <td>{{ charCtrl.selectChar().abilityScores.wis }}</td>
+          <td>*!*</td>
+        </tr>
+        <tr>
+          <th>CHA</th>
+          <td>{{ charCtrl.selectChar().abilityScores.cha }}</td>
+          <td>*!*</td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-5">
+        <table class="table table-bordered char-table">
+          <tr class="table-head">
+            <th colspan="2">Saving Throws</th>
+          </tr>
+          <tr>
+            <th>STR</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>DEX</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>CON</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>INT</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>WIS</th>
+            <td></td>
+          </tr>
+          <tr>
+            <th>CHA</th>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-xs-5 col-xs-offset-2">
+        <table class="table table-bordered char-table">
+          <tr class='table-head'>
+            <th colspan='2'>Movement</th>
+          </tr>
+          <tr>
+            <th>Current</th>
+            <th>Base</th>
+          </tr>
+          <tr>
+            <td>{{ charCtrl.currentSpeed}}</td>
+            <td>{{ charCtrl.selectChar().general.movement }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
   </div>
+  <!-- End of General tab view  -->
+
   <!-- Combat tab view -->
   <div ng-show="charCtrl.combat">Combat</div>
+  <!-- End of Combat tab view -->
+
   <!-- Skills tab view -->
   <div ng-show="charCtrl.skills">Skills</div>
+  <!-- End of Skills tab view -->
+
   <!-- Equipment tab view -->
   <div ng-show="charCtrl.equip">Equipment</div>
+  <!-- End of Equipment tab view -->
+
   <!-- Spells tab view -->
   <div ng-show="charCtrl.spells">Spells</div>
+  <!-- End of Spells tab view -->
+
   <!-- Miscellaneous tab view -->
-  <div ng-show="charCtrl.misc">Miscellaneous</div>
+  <div ng-show="charCtrl.misc">
+    <div class="row row-in-profile">
+      <div class="col-xs-3 align-right">Eye color:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.eyes }}</div>
+      <div class="col-xs-3"></div>
+      <div class="col-xs-3"></div>
+    </div>
+
+  </div>
+  <!-- End of Miscellaneous view tab -->
 </div>

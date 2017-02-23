@@ -29,17 +29,16 @@ export class CharListComponent {
       this.equip = false;
       this.spells = false;
       this.misc = false;
-      // this.selectChar().$promise.then(res => {
-      //   this.con = res.abilityScores.con;
-      //   return this.con;
-      // });
+
       this.conModifier = this.character.calculateModifier(16);
+
+      // findConMod();
      }
   }
 
   goToCharProfile(data){
     this.$state.go('charprofile2', {id: data._id});
-    console.log(this.$stateParams);
+    // console.log(this.$stateParams);
   }
 
   showGeneral(){
@@ -94,6 +93,10 @@ export class CharListComponent {
     this.equip = false;
     this.spells = false;
     this.misc = true;
+  }
+
+  findConMod(){
+    
   }
 
 
