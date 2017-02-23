@@ -64,6 +64,7 @@ User.find({}).remove()
         },
         background: {
           main: 'Acolyte',
+          specialType: '',
           special: '',
           trait: 'Nothing can shake my optimistic attitude.',
           ideal: 'Charity. I always try to help those in need, no matter what the personal cost.(Good)',
