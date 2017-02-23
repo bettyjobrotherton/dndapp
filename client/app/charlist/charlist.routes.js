@@ -10,5 +10,9 @@ export default function routes($stateProvider){
   .state('charprofile', {
     url: '/charprofile',
     template: '<charprofile></charprofile>'
+  })
+  .state('charprofile2', {
+    url: '/charprofile/:id',
+    template: '<charprofile></charprofile>'
   });
 }
