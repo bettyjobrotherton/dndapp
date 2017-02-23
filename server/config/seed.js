@@ -64,11 +64,11 @@ User.find({}).remove()
         },
         background: {
           main: 'Acolyte',
-          special: 0,
-          trait: 4,
-          ideal: 2,
-          bond: 4,
-          flaw: 6
+          special: '',
+          trait: 'Nothing can shake my optimistic attitude.',
+          ideal: 'Charity. I always try to help those in need, no matter what the personal cost.(Good)',
+          bond: 'Everything I do is for the common people.',
+          flaw: 'Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.'
         },
         combat: {
           armor: 'scale mail',
