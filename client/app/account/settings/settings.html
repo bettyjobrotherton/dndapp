@@ -4,13 +4,13 @@
       <h1>Account Settings</h1>
     </div>
     <div class="col-sm-12">
-      <form class="form" name="form" ng-submit="vm.changePassword(form)" novalidate>
-        <p ng-show="vm.message" class="help-block alert alert-danger">{{ vm.message }}</p>
+      <form class="form" name="form" ng-submit="vm.changeSettings(form)" novalidate>
+        <p ng-show="vm.message.text.length != 0" class="help-block alert" ng-class="{ 'alert-danger': vm.message.type == 'error', 'alert-success': vm.message.type == 'success' }">{{ vm.message.text }}</p>
         <div class="form-group">
           <label>Username</label>
           <!-- current username here -->
           <div class="editContainer">
-            <button ng-show='!vm.editUsername' ng-click='vm.editUsername = true'>{{ vm.username }}</button>
+            <button ng-show='!vm.editUsername' ng-click='vm.editUsername = true'><i class="fa fa-pencil" aria-hidden="true"></i> {{ vm.username }}</button>
             <input type="username" name="username" placeholder="" class="form-control" ng-model="vm.username" ng-show='vm.editUsername'/>
             <!-- <button class="btn btn-lg btn-primary editBtn" type="edit" ng-click="vm.editUsername = true;" ng-show='!vm.editUsername'>
               Edit
@@ -25,7 +25,7 @@
           <label>Email</label>
           <!-- current username here -->
           <div class="editContainer">
-            <button ng-show='!vm.editEmail' ng-click='vm.editEmail = true'>{{ user.email }}</button>
+            <button type="button" ng-show='!vm.editEmail' ng-click='vm.editEmail = true'>{{ vm.email }}</button>
             <input type="email" name="email" placeholder="" class="form-control" ng-model="vm.email" ng-show='vm.editEmail'/>
             <!-- <button class="btn btn-lg btn-primary editBtn" type="edit" ng-show='false'>
               Edit
@@ -70,7 +70,7 @@
           </p>
         </div>
         <div class='buttonContainer'>
-          <button class="btn btn-lg btn-primary" type="save" ng-click='vm.editUsername = false; vm.editEmail = false' >Save changes</button>
+          <button class="btn btn-lg btn-primary" type="submit" ng-click='vm.editUsername = false; vm.editEmail = false'>Save changes</button>
         </div>
       </form>
     </div>
