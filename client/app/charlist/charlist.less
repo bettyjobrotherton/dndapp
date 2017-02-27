@@ -66,6 +66,14 @@
   text-align: center;
 }
 
-.divine #wis {
-  color: @color-danger
+.footer-highlight {
+  color: @color-primary;
+  font-weight: bold
+}
+
+.divine #wis, .divine #cha, .fighters #str, .fighters #con, .musicians #dex, .musicians #cha, .powerful #int, .powerful #wis, .quick #str, .quick #dex, .sneaky #dex, .sneaky #cha, .inherent #con, .inherent #cha {
+  color: @color-primary;
+  &::after {
+    content: "**"
+  }
 }
