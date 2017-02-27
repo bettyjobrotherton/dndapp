@@ -23,6 +23,11 @@ export class CharListComponent {
     // When user navigates to character profile
     if(this.$state.current.name == 'charprofile2'){
       this.getProfile(this.$stateParams.id);
+      // this.selectChar().$promise.then(res => {
+      //   console.log(res);
+      // }).catch(err => {
+      //   console.log(err);
+      // });
       this.general = true;
       this.combat = false;
       this.skills = false;
@@ -30,11 +35,17 @@ export class CharListComponent {
       this.spells = false;
       this.misc = false;
 
-      this.conModifier = this.character.calculateModifier(16);
+      // this.conModifier = this.character.calculateModifier(this.selectChar().abilityScores.con);
 
       // findConMod();
      }
   }
+
+  // $onLoad(){
+  //   if(this.state.current.name == 'charprofile2'){
+  //     console.log(this.selectChar());
+  //   }
+  // }
 
   goToCharProfile(data){
     this.$state.go('charprofile2', {id: data._id});
@@ -96,7 +107,7 @@ export class CharListComponent {
   }
 
   findConMod(){
-    
+
   }
 
 
