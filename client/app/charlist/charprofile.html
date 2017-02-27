@@ -51,13 +51,17 @@
     <div class="row row-in-profile">
       <div class="col-xs-3 align-right">Experience:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.experience }}</div>
+      <div class="col-xs-3 align-right">Background:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().background.main }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-3 align-right">Size:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.size }}</div>
       <div class="col-xs-3 align-right">Alignment:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.alignment }}</div>
     </div>
     <div class="row row-in-profile">
-      <div class="col-xs-3 align-right">Background:</div>
-      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().background.main }}</div>
-      <div class="col-xs-3 align-right">Deity:</div>
+      <div class="col-xs-3 col-xs-offset-6 align-right">Deity:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().general.diety }}</div>
     </div>
     <div class="row center-content row-in-profile">
@@ -196,8 +200,58 @@
     <div class="row row-in-profile">
       <div class="col-xs-3 align-right">Eye color:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.eyes }}</div>
-      <div class="col-xs-3"></div>
-      <div class="col-xs-3"></div>
+      <div class="col-xs-3 align-right">Age:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.age }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-3 align-right">Hair color:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.hair }}</div>
+      <div class="col-xs-3 align-right">Height:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.height.feet }}ft. {{ charCtrl.selectChar().bio.appearance.height.inches }}in.</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-3 align-right">Skin color:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.skin }}</div>
+      <div class="col-xs-3 align-right">Weight:</div>
+      <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.weight }}lbs.</div>
+    </div>
+    <div class="row row-in-profile">
+      <div ng-show="charCtrl.selectChar().bio.appearance.descr.text.length >= 2">
+        <div class="col-xs-3 align-right">General Description:</div>
+        <div class="col-xs-9 align-left">{{ charCtrl.selectChar().bio.appearance.descr }}</div>
+      </div>
+    </div>
+    <div class="row row-in-profile">
+      <div ng-show="charCtrl.selectChar().bio.backstory.text.length >= 2">
+        <div class="col-xs-3 align-right">Backstory:</div>
+        <div class="col-xs-9 align-left">{{ charCtrl.selectChar().bio.backstory }}</div>
+      </div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-2 align-right">Background:</div>
+      <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.main }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div ng-show="charCtrl.selectChar().background.special.text.length >= 2">
+        <div class="col-xs-2 align-right">{{ charCtrl.selectChar().background.specialType }}:</div>
+        <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.special }}</div>
+      </div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-2 align-right">Trait:</div>
+      <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.trait }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-2 align-right">Ideal:</div>
+      <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.ideal }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-2 align-right">Bond:</div>
+      <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.bond }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-2 align-right">Flaw:</div>
+      <div class="col-xs-10 align-left">{{ charCtrl.selectChar().background.flaw }}</div>
     </div>
 
   </div>
