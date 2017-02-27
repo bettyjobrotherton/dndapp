@@ -9,7 +9,7 @@ export class NavbarComponent {
     state: 'main'
   }];
 
-  isCollapsed = true;
+  isCollapsedHorizontal = false;
 
   constructor(Auth) {
     'ngInject';

@@ -1,5 +1,4 @@
 'use strict';
-
 export default class SettingsController {
   user = {
     oldPassword: '',
@@ -9,9 +8,8 @@ export default class SettingsController {
   errors = {
     other: undefined
   };
-  message = '';
+  message = { text: '', type: '' };
   submitted = false;
-
 
   /*@ngInject*/
   constructor(Auth) {
@@ -23,40 +21,75 @@ export default class SettingsController {
   $onInit() {
       this.getCurrentUser().$promise.then(data => {
         this.username = data.name;
+        this.email = data.email;
         console.log(data);
       });
   }
 
-  changeUsername(form) {
-    this.submitted = true;
-    console.log(form);
-    if(form.username.$valid) {
-      this.Auth.changeUsername(this.username)
-        .then(() => {
-          this.message = 'Username successfully changed.';
-        })
-        .catch(() => {
-          this.message = 'Username failed to change.';
-        });
-    } else {
-      this.message = 'Username failed to change.';
+    changeSettings(form) {
+      console.log(form);
+      if(form.username.$dirty) {
+        this.changeUsername(form);
+      }
+      if (form.email.$dirty) {
+        this.changeEmail(form);
+      }
+      if (form.newPassword.$dirty) {
+        this.changePassword(form);
+      }
     }
-  }
+
+    changeEmail(form) {
+      this.submitted= true;
+      if(form.email.$valid) {
+        this.Auth.changeEmail(this.email)
+          .then(() => {
+            this.message.text = 'email successfully changed.';
+            this.message.type = 'success';
+          })
+          .catch(() => {
+            this.message.text = 'email failed to change.';
+            this.message.type = 'error';
+          });
+        } else {
+          this.message.text = 'email failed to change.';
+          this.message.type = 'error';
+        }
+      }
 
 
-  changePassword(form) {
-    this.submitted = true;
+      changeUsername(form) {
+        this.submitted = true;
+        if(form.username.$valid) {
+          this.Auth.changeUsername(this.username)
+            .then(() => {
+              this.message.text = 'Username successfully changed.';
+              this.message.type = 'success';
+            })
+            .catch(() => {
+              this.message.text = 'Username failed to change.';
+              this.message.type = 'error';
+            });
+        } else {
+          this.message.text = 'Username failed to change.';
+          this.message.type = 'error';
+        }
+      }
 
-    if(form.$valid) {
-      this.Auth.changePassword(this.user.oldPassword, this.user.newPassword)
-        .then(() => {
-          this.message = 'Password successfully changed.';
-        })
-        .catch(() => {
-          form.password.$setValidity('mongoose', false);
-          this.errors.other = 'Incorrect password';
-          this.message = '';
-        });
-    }
-  }
+      changePassword(form) {
+        this.submitted = true;
+        if(form.$valid) {
+          this.Auth.changePassword(this.user.oldPassword, this.user.newPassword)
+            .then(() => {
+              this.message.text = 'Password successfully changed.';
+              this.message.type = 'success';
+            })
+            .catch(() => {
+              form.password.$setValidity('mongoose', false);
+              this.errors.other = 'Incorrect password';
+              this.message.text = 'Incorrect password';
+              this.message.type = 'error';
+            });
+        }
+      }
 }

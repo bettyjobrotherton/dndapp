@@ -1,24 +1,18 @@
-<div class="navbar navbar-default navbar-static-top">
+<div class="navbar navbar-default navbar-static-top" >
   <div id='currentUser'>
     <p ng-show="$ctrl.isLoggedIn()" class="navbar-text" > {{ $ctrl.getCurrentUser().name }}</p>
   </div>
-  <div class="container">
+  <div class="container" ng-show="$ctrl.isLoggedIn()" >
     <div class="navbar-header">
-      <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed">
+      <button class="navbar-toggle" type="button" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
     </div>
-    <div uib-collapse="$ctrl.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+    <div uib-collapse="$ctrl.isCollapsedHorizontal" class="horizontal-collapse" id="navbar-main" horizontal>
       <ul class="nav navbar-nav">
-        <!-- <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li> -->
-        <!-- <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="usermain">Home</a></li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="charlist">Characters</a></li>
 
