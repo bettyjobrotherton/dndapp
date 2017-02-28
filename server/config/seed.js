@@ -44,11 +44,7 @@ User.find({}).remove()
             skin: 'tawny',
             descr: 'Her hair goes to her mid-back and is always up in a braid.'
           },
-          languages: {
-            0: 'Common',
-            1: 'Dwarvish',
-            2: 'Halfing',
-            3: 'Elvish'},
+          languages: [{name:'Common'}, {name:'Dwarvish'}, {name:'Halfing'}, {name:'Elvish'}],
           backStory: 'Neysa is a priestess of the goddess Mishakal. She is not from the city.'
         },
         race: {
@@ -77,9 +73,7 @@ User.find({}).remove()
         },
         combat: {
           armor: 'scale mail',
-          weapons: {
-            0: 'light crossbow',
-            1: 'dagger'},
+          weapons: [{name:'light crossbow'}, {name:'dagger'}],
           ammunition: {
             arrows: 0,
             bolts: 30,
@@ -92,19 +86,7 @@ User.find({}).remove()
           specialAttacks: 'none',
           specialDefense: 'none',
         },
-        equipment: {
-          0: 'backpack',
-          1: 'waterskin',
-          2: 'vestments',
-          3: 'block of incense',
-          4: 'holy amulet',
-          5: 'blanket',
-          6: 'candles',
-          7: 'tinderbox',
-          8: 'alms box',
-          9: 'clenser',
-          10: 'meal rations',
-          11: 'prayer book'},
+        equipment: [{name:'backpack'}, {name:'waterskin'}, {name:'vestments'}, {name:'block of incense'}, {name:'holy amulet'}, {name:'blanket'}, {name:'candles'}, {name:'tinderbox'}, {name:'alms box'}, {name:'clenser'}, {name:'meal rations'}, {name:'prayer book'}],
         money:{
           platinum: 0,
           gold: 15,
@@ -121,11 +103,7 @@ User.find({}).remove()
           cha: 11
         },
         skills: {
-          prof: {
-            0: 'Insight',
-            1: 'Medicine',
-            2: 'Persuasion',
-            3: 'Religion'},
+          prof: [{name:'Insight'}, {name:'Medicine'}, {name:'Persuasion'}, {name:'Religion'}],
           passive: {
             insight: 15,
             perception: 13
@@ -136,22 +114,9 @@ User.find({}).remove()
           ability: 'WIS',
           saveDc: 13,
           attackBonus: 5,
-          lvl0: {
-            0: 'Light',
-            1: 'Sacred Flame',
-            2: 'Thaumaturgy'},
-          lvl1: {
-            0: 'Bless',
-            1: 'Cure Wounds',
-            2: 'Healing Word',
-            3: 'Detect Magic',
-            4: 'Create or Destroy Water',
-            5: 'Purify Food and Drink',
-            6: 'Shield of Faith',
-            7: 'Guiding Bolt'},
-          lvl2: {
-            0: 'Lesser Restoration',
-            2: 'Prayer of Healing'}
+          lvl0: [{name:'Light'}, {name:'Sacred Flame'}, {name:'Thaumaturgy'}],
+          lvl1: [{name:'Bless'}, {name:'Cure Wounds'}, {name:'Healing Word'}, {name:'Detect Magic'}, {name:'Create or Destroy Water'}, {name:'Purify Food and Drink'}, {name:'Shield of Faith'}, {name:'Guiding Bolt'}],
+          lvl2: [{name:'Lesser Restoration'}, {name:'Prayer of Healing'}]
         }
       })
       .then((data) => {
