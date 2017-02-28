@@ -41,11 +41,12 @@ var CharacterSchema = new mongoose.Schema({
   },
   background: {
     main: String, //main background type, ex. Folkhero, Hermit, Acolyte, etc.
-    special: Number, //most backgrounds have an extra category, ex. Hermit type has Life of Seclusion. This is where those will go.
-    trait: Number,
-    ideal: Number,
-    bond: Number,
-    flaw: Number
+    specialType: String, //most backgrounds have an extra category,
+    special: String, //ex.Hermit type has Life of Seclusion. This is where those will go.
+    trait: String,
+    ideal: String,
+    bond: String,
+    flaw: String
   },
   combat: {
     armor: String,
