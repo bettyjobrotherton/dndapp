@@ -44,7 +44,7 @@ User.find({}).remove()
             skin: 'tawny',
             descr: 'Her hair goes to her mid-back and is always up in a braid.'
           },
-          languages: ['Common', 'Dwarvish', 'Halfing', 'Elvish'],
+          languages: [{name:'Common'}, {name:'Dwarvish'}, {name:'Halfing'}, {name:'Elvish'}],
           backStory: 'Neysa is a priestess of the goddess Mishakal. She is not from the city.'
         },
         race: {
@@ -64,15 +64,16 @@ User.find({}).remove()
         },
         background: {
           main: 'Acolyte',
-          special: 0,
-          trait: 4,
-          ideal: 2,
-          bond: 4,
-          flaw: 6
+          specialType: '',
+          special: '',
+          trait: 'Nothing can shake my optimistic attitude.',
+          ideal: 'Charity. I always try to help those in need, no matter what the personal cost.(Good)',
+          bond: 'Everything I do is for the common people.',
+          flaw: 'Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.'
         },
         combat: {
           armor: 'scale mail',
-          weapons: ['light crossbow', 'dagger'],
+          weapons: [{name:'light crossbow'}, {name:'dagger'}],
           ammunition: {
             arrows: 0,
             bolts: 30,
@@ -85,7 +86,7 @@ User.find({}).remove()
           specialAttacks: 'none',
           specialDefense: 'none',
         },
-        equipment: ['backpack', 'waterskin', 'vestments', 'block of incense', 'holy amulet', 'blanket', 'candles', 'tinderbox', 'alms box', 'clenser', 'meal rations', 'prayer book'],
+        equipment: [{name:'backpack'}, {name:'waterskin'}, {name:'vestments'}, {name:'block of incense'}, {name:'holy amulet'}, {name:'blanket'}, {name:'candles'}, {name:'tinderbox'}, {name:'alms box'}, {name:'clenser'}, {name:'meal rations'}, {name:'prayer book'}],
         money:{
           platinum: 0,
           gold: 15,
@@ -102,7 +103,7 @@ User.find({}).remove()
           cha: 11
         },
         skills: {
-          prof: ['Insight', 'Medicine', 'Persuasion', 'Religion'],
+          prof: [{name:'Insight'}, {name:'Medicine'}, {name:'Persuasion'}, {name:'Religion'}],
           passive: {
             insight: 15,
             perception: 13
@@ -113,9 +114,9 @@ User.find({}).remove()
           ability: 'WIS',
           saveDc: 13,
           attackBonus: 5,
-          lvl0: ['Light', 'Sacred Flame', 'Thaumaturgy'],
-          lvl1: ['Bless', 'Cure Wounds', 'Healing Word', 'Detect Magic', 'Create or Destroy Water', 'Purify Food and Drink', 'Shield of Faith', 'Guiding Bolt'],
-          lvl2: ['Lesser Restoration', 'Prayer of Healing']
+          lvl0: [{name:'Light'}, {name:'Sacred Flame'}, {name:'Thaumaturgy'}],
+          lvl1: [{name:'Bless'}, {name:'Cure Wounds'}, {name:'Healing Word'}, {name:'Detect Magic'}, {name:'Create or Destroy Water'}, {name:'Purify Food and Drink'}, {name:'Shield of Faith'}, {name:'Guiding Bolt'}],
+          lvl2: [{name:'Lesser Restoration'}, {name:'Prayer of Healing'}]
         }
       })
       .then((data) => {
