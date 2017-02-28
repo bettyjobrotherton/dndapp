@@ -44,7 +44,11 @@ User.find({}).remove()
             skin: 'tawny',
             descr: 'Her hair goes to her mid-back and is always up in a braid.'
           },
-          languages: ['Common', 'Dwarvish', 'Halfing', 'Elvish'],
+          languages: {
+            0: 'Common',
+            1: 'Dwarvish',
+            2: 'Halfing',
+            3: 'Elvish'},
           backStory: 'Neysa is a priestess of the goddess Mishakal. She is not from the city.'
         },
         race: {
@@ -73,7 +77,9 @@ User.find({}).remove()
         },
         combat: {
           armor: 'scale mail',
-          weapons: ['light crossbow', 'dagger'],
+          weapons: {
+            0: 'light crossbow',
+            1: 'dagger'},
           ammunition: {
             arrows: 0,
             bolts: 30,
@@ -86,7 +92,19 @@ User.find({}).remove()
           specialAttacks: 'none',
           specialDefense: 'none',
         },
-        equipment: ['backpack', 'waterskin', 'vestments', 'block of incense', 'holy amulet', 'blanket', 'candles', 'tinderbox', 'alms box', 'clenser', 'meal rations', 'prayer book'],
+        equipment: {
+          0: 'backpack',
+          1: 'waterskin',
+          2: 'vestments',
+          3: 'block of incense',
+          4: 'holy amulet',
+          5: 'blanket',
+          6: 'candles',
+          7: 'tinderbox',
+          8: 'alms box',
+          9: 'clenser',
+          10: 'meal rations',
+          11: 'prayer book'},
         money:{
           platinum: 0,
           gold: 15,
@@ -103,7 +121,11 @@ User.find({}).remove()
           cha: 11
         },
         skills: {
-          prof: ['Insight', 'Medicine', 'Persuasion', 'Religion'],
+          prof: {
+            0: 'Insight',
+            1: 'Medicine',
+            2: 'Persuasion',
+            3: 'Religion'},
           passive: {
             insight: 15,
             perception: 13
@@ -114,9 +136,22 @@ User.find({}).remove()
           ability: 'WIS',
           saveDc: 13,
           attackBonus: 5,
-          lvl0: ['Light', 'Sacred Flame', 'Thaumaturgy'],
-          lvl1: ['Bless', 'Cure Wounds', 'Healing Word', 'Detect Magic', 'Create or Destroy Water', 'Purify Food and Drink', 'Shield of Faith', 'Guiding Bolt'],
-          lvl2: ['Lesser Restoration', 'Prayer of Healing']
+          lvl0: {
+            0: 'Light',
+            1: 'Sacred Flame',
+            2: 'Thaumaturgy'},
+          lvl1: {
+            0: 'Bless',
+            1: 'Cure Wounds',
+            2: 'Healing Word',
+            3: 'Detect Magic',
+            4: 'Create or Destroy Water',
+            5: 'Purify Food and Drink',
+            6: 'Shield of Faith',
+            7: 'Guiding Bolt'},
+          lvl2: {
+            0: 'Lesser Restoration',
+            2: 'Prayer of Healing'}
         }
       })
       .then((data) => {
