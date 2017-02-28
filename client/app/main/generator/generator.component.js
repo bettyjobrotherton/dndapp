@@ -5,27 +5,23 @@ import routing from './generator.routes';
 export class GeneratorController {
 
   /*@ngInject*/
-  constructor($http) {
+  constructor($http, $state) {
     this.$http = $http;
+    this.$state = $state;
   }
 
   $onInit() {
-    console.log('init');
-
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-      });
   }
 
   createChar(firstOpt) {
-    console.log(firstOpt);
-
+    if(firstOpt == 'race'){
+      this.$state.go('generatorRace');
+    }
+    if(firstOpt == 'class'){
+      this.$state.go('generatorClass');
+    }
   }
 
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
-  }
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
@@ -37,6 +33,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickclass', {
     template: require('./pickclass.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('pickrace', {
+    template: require('./pickrace.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
