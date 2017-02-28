@@ -21,7 +21,7 @@ var CharacterSchema = new mongoose.Schema({
       descr: String, //miscellaneous description
       image: String
     },
-    languages: {},
+    languages: [{}],
     backStory: String
   },
   race: {
@@ -50,7 +50,7 @@ var CharacterSchema = new mongoose.Schema({
   },
   combat: {
     armor: String,
-    weapons: {},
+    weapons: [{}],
     ammunition: {
       arrows: Number,
       bolts: Number,
@@ -63,7 +63,7 @@ var CharacterSchema = new mongoose.Schema({
     specialAttacks: String,
     specialDefense: String
   },
-  equipment: {},
+  equipment: [{}],
   money: {
     platinum: Number,
     gold: Number,
@@ -80,7 +80,7 @@ var CharacterSchema = new mongoose.Schema({
     cha: Number
   },
   skills: {
-    prof: {}, //what skills a character is proficient at
+    prof: [{}], //what skills a character is proficient at
     passive: {
       insight: Number,
       perception: Number
@@ -91,16 +91,16 @@ var CharacterSchema = new mongoose.Schema({
     ability: String,
     saveDc: Number,
     attackBonus: Number,
-    lvl0: {},
-    lvl1: {},
-    lvl2: {},
-    lvl3: {},
-    lvl4: {},
-    lvl5: {},
-    lvl6: {},
-    lvl7: {},
-    lvl8: {},
-    lvl9: {}
+    lvl0: [{}],
+    lvl1: [{}],
+    lvl2: [{}],
+    lvl3: [{}],
+    lvl4: [{}],
+    lvl5: [{}],
+    lvl6: [{}],
+    lvl7: [{}],
+    lvl8: [{}],
+    lvl9: [{}]
   }
 });
 
