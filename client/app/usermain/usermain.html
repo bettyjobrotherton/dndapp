@@ -1,14 +1,25 @@
-<div class="container">
-  <div class='row'>
-    <div class="col-xs-6 col-xs-offset-3">
-      <h3>Hello {{ usermainCtrl.getCurrentUser().name }}</h3>
+
+<div class="container full-width">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-4 center-content">
+      <img src="assets/images/circle-icons-1295218_640.png" id="char-profile-image" alt="Dragon Image">
     </div>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <p>
-        Ability drain ability score loss air subtype animal type cavern domain character class colossal compulsion subschool enchantment fate domain fire immunity fly good domain invisible law domain melee touch attack modifier plant domain points of damage reach weapon rebuke undead rune domain strength domain swift action take 10 turning check unarmed strike. Ability score loss air domain animal domain bolster undead creature type druid elemental plane enemy falling gaseous form granted power hardness helpless insight bonus level melee attack mentalism domain metal domain overlap platinum piece point of origin rebuke undead regeneration result square tanar'ri subtype trickery domain
-      </p>
+  <div class='row'>
+    <div class="col-xs-4 center-content" >
+      <p>Need Help?</p>
+    </div>
+  </div>
+  <!-- Beginning of home menu tabs -->
+  <div class="row profile-tab-row">
+    <div class="col-xs-4 profile-tab center-content">
+      <div ng-click="charCtrl.showGeneral()">Rules</div>
+    </div>
+    <div class="col-xs-4 profile-tab center-content">
+      <div ng-click='charCtrl.showCombat()'>Spells List</div>
+    </div>
+    <div class="col-xs-4 profile-tab center-content">
+      <div ng-click='charCtrl.showSkills()'>Quick Guide</div>
     </div>
   </div>
 </div>
