@@ -223,17 +223,15 @@
           <th>Type</th>
           <th>Notes</th>
         </tr>
-        <div ng-repeat="weapon in charCtrl.selectChar().combat.weapons">
-          <tr>
-            <td>{{ weapon }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr ng-repeat="weapon in charCtrl.selectChar().combat.weapons">
+            <td>{{ weapon.name }}</td>
+            <td>*!*</td>
+            <td>*!*</td>
+            <td>*!*</td>
+            <td>*!*</td>
+            <td>*!*</td>
+            <td>*!*</td>
           </tr>
-        </div>
         <!-- <tr>
           <td>{{ charCtrl.selectChar().combat.weapons[0] }}</td>
           <td>*!*</td>
