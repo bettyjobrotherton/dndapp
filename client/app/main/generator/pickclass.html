@@ -1,14 +1,14 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul>
-        <li ng-repeat="class in classes" ng-click="selectClass(class)">
-          {{ class.name }}
-        </li>
-        <li>
-          Warrior
-        </li>
-      </ul>
+<div class='classView'>
+  <div class="iconList">
+    <div class='list-group' ng-repeat="class in genCtrl.classList" >
+      <img ng-src='{{ class.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
+    </div>
+  </div>
+
+  <div class='classDesc'>
+    <div>
+      <h3> {{genCtrl.currentClass.name}} </h3>
+      <p>{{genCtrl.currentClass.desc}}</p>
     </div>
   </div>
 </div>

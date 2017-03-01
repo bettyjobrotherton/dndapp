@@ -1,14 +1,32 @@
-  <div class='raceView'>
-    <div class="iconList">
-      <div class='list-group' ng-repeat="race in genCtrl.raceList" >
-        <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
-      </div>
+<div class='raceView'>
+  <div class="iconList">
+    <div class='list-group' ng-repeat="race in genCtrl.raceList" >
+      <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
+    </div>
+  </div>
+
+  <div class='raceDesc'>
+    <div>
+      <h3> {{genCtrl.currentRace.name}} </h3>
+      <p class='summary'>{{genCtrl.currentRace.desc}}</p>
     </div>
 
-    <div class='raceDesc'>
-      <div>
-        <h3> {{genCtrl.currentRace.name}} </h3>
-        <p>{{genCtrl.currentRace.desc}}</p>
-      </div>
-    </div>
+    <table class="table table-bordered">
+      <tr>
+        <th> Traits </th>
+      </tr>
+      <tr>
+        <td>{{ genCtrl.currentRace.traits.aveAge }}</td>
+        <td>{{ genCtrl.currentRace.traits.aveHeight }}</td>
+        <td>{{ genCtrl.currentRace.traits.baseSpd }}</td>
+        <td>{{ genCtrl.currentRace.traits.lang }}</td>
+        <td>{{ genCtrl.currentRace.traits.tools }}</td>
+      </tr>
+    </table>
+
+    <button class="btn btn-lg btn-primary" ng-click="" type="">
+      Submit &amp; Continue
+    </button>
+
+  </div>
 </div>
