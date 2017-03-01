@@ -161,6 +161,30 @@ export function CharacterService($location, $http) {
         bonus = 6;
       }
       return bonus;
+    },
+
+    skillRoll(data){
+      var rollBonus = {
+        acrobatics: this.proficiencyBonus(data.general.level) * data.skills.prof[0].score + this.calculateModifier(data.abilityScores.dex),
+        animalHandling: this.proficiencyBonus(data.general.level) * data.skills.prof[1].score + this.calculateModifier(data.abilityScores.wis),
+        arcana: this.proficiencyBonus(data.general.level) * data.skills.prof[2].score + this.calculateModifier(data.abilityScores.int),
+        athletics: this.proficiencyBonus(data.general.level) * data.skills.prof[3].score + this.calculateModifier(data.abilityScores.str),
+        deception: this.proficiencyBonus(data.general.level) * data.skills.prof[4].score + this.calculateModifier(data.abilityScores.cha),
+        history: this.proficiencyBonus(data.general.level) * data.skills.prof[5].score + this.calculateModifier(data.abilityScores.int),
+        insight: this.proficiencyBonus(data.general.level) * data.skills.prof[6].score + this.calculateModifier(data.abilityScores.wis),
+        intimidation: this.proficiencyBonus(data.general.level) * data.skills.prof[7].score + this.calculateModifier(data.abilityScores.cha),
+        investigation: this.proficiencyBonus(data.general.level) * data.skills.prof[8].score + this.calculateModifier(data.abilityScores.int),
+        medicine: this.proficiencyBonus(data.general.level) * data.skills.prof[9].score + this.calculateModifier(data.abilityScores.wis),
+        nature: this.proficiencyBonus(data.general.level) * data.skills.prof[10].score + this.calculateModifier(data.abilityScores.int),
+        perception: this.proficiencyBonus(data.general.level) * data.skills.prof[11].score + this.calculateModifier(data.abilityScores.wis),
+        perform: this.proficiencyBonus(data.general.level) * data.skills.prof[12].score + this.calculateModifier(data.abilityScores.cha),
+        persuasion: this.proficiencyBonus(data.general.level) * data.skills.prof[13].score + this.calculateModifier(data.abilityScores.cha),
+        religion: this.proficiencyBonus(data.general.level) * data.skills.prof[14].score + this.calculateModifier(data.abilityScores.int),
+        sleightOfHand: this.proficiencyBonus(data.general.level) * data.skills.prof[15].score + this.calculateModifier(data.abilityScores.dex),
+        stealth:this.proficiencyBonus(data.general.level) * data.skills.prof[16].score + this.calculateModifier(data.abilityScores.dex),
+        survival: this.proficiencyBonus(data.general.level) * data.skills.prof[17].score + this.calculateModifier(data.abilityScores.wis)
+      };
+      return rollBonus;
     }
 
   };

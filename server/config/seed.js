@@ -103,7 +103,26 @@ User.find({}).remove()
           cha: 11
         },
         skills: {
-          prof: [{name:'Insight'}, {name:'Medicine'}, {name:'Persuasion'}, {name:'Religion'}],
+          prof: [
+            {"name":"Acrobatics", "score": 0, "prof": false},
+            {"name":"Animal Handling", "score": 0, "prof": false},
+            {"name":"Arcana", "score": 0, "prof": false},
+            {"name":"Athletics", "score": 0, "prof": false},
+            {"name":"Deception", "score": 0, "prof": false},
+            {"name":"History", "score": 0, "prof": false},
+            {"name":"Insight", "score": 1, "prof": true},
+            {"name":"Intimidation", "score": 0, "prof": false},
+            {"name":"Investigation", "score": 0, "prof": false},
+            {"name":"Medicine", "score": 1, "prof": true},
+            {"name":"Nature", "score": 0, "prof": false},
+            {"name":"Perception", "score": 0, "prof": false},
+            {"name":"Performance", "score": 0, "prof": false},
+            {"name":"Persuasion", "score": 1, "prof": true},
+            {"name":"Religion", "score": 1, "prof": true},
+            {"name":"Sleight of Hand", "score": 0, "prof": false},
+            {"name":"Stealth", "score": 0, "prof": false},
+            {"name":"Survival", "score": 0, "prof": false}
+      ],
           passive: {
             insight: 15,
             perception: 13

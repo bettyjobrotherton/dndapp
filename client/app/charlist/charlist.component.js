@@ -29,6 +29,7 @@ export class CharListComponent {
       this.equip = false;
       this.spells = false;
       this.misc = false;
+
      }
   }
 
@@ -61,6 +62,8 @@ export class CharListComponent {
     this.equip = false;
     this.spells = false;
     this.misc = false;
+
+    this.rollBonus = this.character.skillRoll(this.selectChar());
   }
 
   showEquip(){
