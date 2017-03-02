@@ -28,10 +28,10 @@
       <div ng-click="charCtrl.showGeneral()">General</div>
     </div>
     <div class="col-xs-2 profile-tab center-content">
-      <div ng-click='charCtrl.showCombat()'>Combat</div>
+      <div ng-click='charCtrl.showSkills()'>Skills</div>
     </div>
     <div class="col-xs-2 profile-tab center-content">
-      <div ng-click='charCtrl.showSkills()'>Skills</div>
+      <div ng-click='charCtrl.showCombat()'>Combat</div>
     </div>
     <div class="col-xs-2 profile-tab center-content">
       <div ng-click='charCtrl.showEquip()'>Equip</div>
@@ -379,11 +379,277 @@
   <!-- End of Skills tab view -->
 
   <!-- Equipment tab view -->
-  <div ng-show="charCtrl.equip">Equipment</div>
+  <div ng-show="charCtrl.equip">
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="2">Money</th>
+	      </tr>
+	      <tr>
+	        <th>Copper</th>
+          <td>{{ charCtrl.selectChar().money.copper }}</td>
+	      </tr>
+        <tr>
+          <th>Silver</th>
+          <td>{{ charCtrl.selectChar().money.silver }}</td>
+        </tr>
+        <tr>
+          <th>Electrum</th>
+          <td>{{ charCtrl.selectChar().money.electrum }}</td>
+        </tr>
+        <tr>
+          <th>Gold</th>
+          <td>{{ charCtrl.selectChar().money.gold }}</td>
+        </tr>
+        <tr>
+          <th>Platinum</th>
+          <td>{{ charCtrl.selectChar().money.platinum }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="4">Equipment</th>
+	      </tr>
+	      <tr>
+	        <th>Item</th>
+          <th>No.</th>
+          <th>Wgt.</th>
+          <th>Total</th>
+	      </tr>
+        <tr ng-repeat="item in charCtrl.selectChar().equipment">
+          <td>{{ item.name }}</td>
+          <td>{{ item.number }}</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
   <!-- End of Equipment tab view -->
 
   <!-- Spells tab view -->
-  <div ng-show="charCtrl.spells">Spells</div>
+  <div ng-show="charCtrl.spells">
+    <div class="row row-in-place">
+      <div class="col-xs-6">Spell Ability: {{ charCtrl.selectChar().spells.ability }}</div>
+      <div class="col-xs-6">Save DC: {{ charCtrl.selectChar().spells.saveDc }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-6 col-xs-offset-6">Attack Bonus: {{ charCtrl.selectChar().spells.attackBonus }}</div>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Cantrips</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl0">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+        <tr class="table-head">
+          <th colspan="5">Level 1</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Time</th>
+          <th>Range</th>
+          <th>Target</th>
+          <th>Dur.</th>
+        </tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl1">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+        <tr class="table-head">
+          <th colspan="5">Level 2</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Time</th>
+          <th>Range</th>
+          <th>Target</th>
+          <th>Dur.</th>
+        </tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl2">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 3</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl3">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 4</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl4">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 5</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl5">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 6</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl6">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 7</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl7">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 8</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl8">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <div class="row row-in-profile">
+      <table class="table table-bordered char-table">
+	      <tr class="table-head">
+	        <th colspan="5">Level 9</th>
+	      </tr>
+      	<tr>
+      	  <th>Name</th>
+      	  <th>Time</th>
+      	  <th>Range</th>
+      	  <th>Target</th>
+      	  <th>Dur.</th>
+      	</tr>
+        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl9">
+          <td>{{ spell.name }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
   <!-- End of Spells tab view -->
 
   <!-- Miscellaneous tab view -->
@@ -402,6 +668,9 @@
       <div class="col-xs-6">Skin color: {{ charCtrl.selectChar().bio.appearance.skin }}</div>
       <div class="col-xs-3 align-right">Weight:</div>
       <div class="col-xs-3 align-left">{{ charCtrl.selectChar().bio.appearance.weight }}lbs.</div>
+    </div>
+    <div class="row row-in-profile">
+      <div class="col-xs-12">Languages: <span ng-repeat="language in charCtrl.selectChar().bio.languages">{{ language.name }}, </span></div>
     </div>
     <div class="row row-in-profile">
       <div ng-show="charCtrl.selectChar().bio.appearance.descr.text.length >= 2">

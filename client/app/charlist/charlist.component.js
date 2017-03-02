@@ -17,10 +17,11 @@ export class CharListComponent {
     this.getCurrentUser = Auth.getCurrentUserSync;
     this.getProfile = Character.getProfile;
     this.selectChar = Character.returnProfile;
-  }
 
+  }
   $onInit(){
     // When user navigates to character profile
+
     if(this.$state.current.name == 'charprofile2'){
       this.getProfile(this.$stateParams.id);
       this.general = true;
@@ -82,6 +83,25 @@ export class CharListComponent {
     this.equip = false;
     this.spells = true;
     this.misc = false;
+
+    var spellList;
+    var spells = this.selectChar().spells;
+    this.$http.get("assets/spells.json")
+              .then(function(res){
+                spellList = res.data;
+                findSpell(spellList);
+                console.log(findSpell(spellList));
+              })
+              .catch(function(err){
+                console.log(err);
+              });
+
+    function findSpell(spellList){
+      return _(spellList).keyBy('name').at(spells.lvl0.name).value();
+        };
+
+
+
   }
 
   showMisc(){

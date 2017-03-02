@@ -86,7 +86,7 @@ User.find({}).remove()
           specialAttacks: 'none',
           specialDefense: 'none',
         },
-        equipment: [{name:'backpack'}, {name:'waterskin'}, {name:'vestments'}, {name:'block of incense'}, {name:'holy amulet'}, {name:'blanket'}, {name:'candles'}, {name:'tinderbox'}, {name:'alms box'}, {name:'clenser'}, {name:'meal rations'}, {name:'prayer book'}],
+        equipment: [{name:'backpack', number: 1}, {name:'waterskin', number: 1}, {name:'vestments', number: 2}, {name:'block of incense', number: 2}, {name:'holy amulet', number: 1}, {name:'blanket', number: 1}, {name:'candles', number: 10}, {name:'tinderbox', number: 1}, {name:'alms box', number: 1}, {name:'clenser', number: 1}, {name:'meal rations', number: 2}, {name:'prayer book', number: 1}],
         money:{
           platinum: 0,
           gold: 15,
