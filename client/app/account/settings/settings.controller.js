@@ -22,12 +22,10 @@ export default class SettingsController {
       this.getCurrentUser().$promise.then(data => {
         this.username = data.name;
         this.email = data.email;
-        console.log(data);
       });
   }
 
     changeSettings(form) {
-      console.log(form);
       if(form.username.$dirty) {
         this.changeUsername(form);
       }
