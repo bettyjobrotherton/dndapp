@@ -2,6 +2,8 @@
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.2.
 
+Original spell list from https://github.com/vorpalhex/srd_spells
+
 ## Getting Started
 
 ### Prerequisites
@@ -26,5 +28,3 @@ Run `gulp build` for building and `npm start` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
-
-Original spell list from https://github.com/vorpalhex/srd_spells
