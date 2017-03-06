@@ -124,33 +124,33 @@
     </div>
     <div class="row row-in-profile">
       <div class="col-xs-6 center-content">
-        <table class="table table-bordered char-table {{ charCtrl.character.savingThrows(charCtrl.selectChar()).classCode }}">
+        <table class="table table-bordered char-table {{ charCtrl.savingThrowsData.classCode }}">
           <tr class="table-head">
             <th colspan="2">Saving Throws</th>
           </tr>
           <tr>
             <th id='str'>STR</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).str }}</td>
+            <td>{{ charCtrl.savingThrowsData.str }}</td>
           </tr>
           <tr>
             <th id='dex'>DEX</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).dex }}</td>
+            <td>{{ charCtrl.savingThrowsData.dex }}</td>
           </tr>
           <tr>
             <th id='con'>CON</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).con }}</td>
+            <td>{{ charCtrl.savingThrowsData.con }}</td>
           </tr>
           <tr>
             <th id='int'>INT</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).int }}</td>
+            <td>{{ charCtrl.savingThrowsData.int }}</td>
           </tr>
           <tr>
             <th id='wis'>WIS</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).wis }}</td>
+            <td>{{ charCtrl.savingThrowsData.wis }}</td>
           </tr>
           <tr>
             <th id='cha'>CHA</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).cha }}</td>
+            <td>{{ charCtrl.savingThrowsData.cha }}</td>
           </tr>
           <tr>
             <th colspan="2"><p class='footer-highlight'>**Proficient</p></th>

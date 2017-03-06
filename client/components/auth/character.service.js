@@ -6,10 +6,11 @@ export function CharacterService($location, $http) {
   var selectChar;
 
   var Character = {
-    getProfile(data){
+    getProfile(data, cb){
       $http.get('api/characters/' + data)
            .then(res => {
              selectChar = res.data;
+             cb(selectChar);
              return selectChar;
            })
            .catch(err => {
