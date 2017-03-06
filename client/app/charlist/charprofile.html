@@ -6,7 +6,7 @@
   </div>
   <div class="row row-in-profile">
     <div class="col-xs-6 col-xs-offset-3 center-content">
-      {{ charCtrl.selectChar().bio.name }} &nbsp; <img src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
+      {{ charCtrl.selectChar().bio.name }} &nbsp; <img ng-src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
 
     </div>
   </div>
@@ -15,10 +15,10 @@
       Lvl. {{ charCtrl.selectChar().general.level }}
     </div>
     <div class="col-xs-4 center-content">
-      <img src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}">  &nbsp; {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
+      <img ng-src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}">  &nbsp; {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
     </div>
     <div class="col-xs-4 center-content">
-      <img src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">  &nbsp;
+      <img ng-src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">  &nbsp;
       {{ charCtrl.selectChar().class.main }} ({{ charCtrl.selectChar().class.archetype }})
     </div>
   </div>
@@ -124,33 +124,33 @@
     </div>
     <div class="row row-in-profile">
       <div class="col-xs-6 center-content">
-        <table class="table table-bordered char-table {{ charCtrl.character.savingThrows(charCtrl.selectChar()).classCode }}">
+        <table class="table table-bordered char-table {{ charCtrl.savingThrowsData.classCode }}">
           <tr class="table-head">
             <th colspan="2">Saving Throws</th>
           </tr>
           <tr>
             <th id='str'>STR</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).str }}</td>
+            <td>{{ charCtrl.savingThrowsData.str }}</td>
           </tr>
           <tr>
             <th id='dex'>DEX</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).dex }}</td>
+            <td>{{ charCtrl.savingThrowsData.dex }}</td>
           </tr>
           <tr>
             <th id='con'>CON</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).con }}</td>
+            <td>{{ charCtrl.savingThrowsData.con }}</td>
           </tr>
           <tr>
             <th id='int'>INT</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).int }}</td>
+            <td>{{ charCtrl.savingThrowsData.int }}</td>
           </tr>
           <tr>
             <th id='wis'>WIS</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).wis }}</td>
+            <td>{{ charCtrl.savingThrowsData.wis }}</td>
           </tr>
           <tr>
             <th id='cha'>CHA</th>
-            <td>{{ charCtrl.character.savingThrows(charCtrl.selectChar()).cha }}</td>
+            <td>{{ charCtrl.savingThrowsData.cha }}</td>
           </tr>
           <tr>
             <th colspan="2"><p class='footer-highlight'>**Proficient</p></th>
@@ -450,12 +450,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl0">
+        <tr ng-repeat="spell in charCtrl.spellsArray0">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -471,12 +471,12 @@
           <th>Target</th>
           <th>Dur.</th>
         </tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl1">
+        <tr ng-repeat="spell in charCtrl.spellsArray1">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -492,12 +492,12 @@
           <th>Target</th>
           <th>Dur.</th>
         </tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl2">
+        <tr ng-repeat="spell in charCtrl.spellsArray2">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -513,12 +513,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl3">
+        <tr ng-repeat="spell in charCtrl.spellsArray3">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -534,12 +534,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl4">
+        <tr ng-repeat="spell in charCtrl.spellsArray4">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -555,12 +555,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl5">
+        <tr ng-repeat="spell in charCtrl.spellsArray5">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -576,12 +576,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl6">
+        <tr ng-repeat="spell in charCtrl.spellsArray6">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -597,12 +597,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl7">
+        <tr ng-repeat="spell in charCtrl.spellsArray7">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -618,12 +618,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl8">
+        <tr ng-repeat="spell in charCtrl.spellsArray8">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
@@ -639,12 +639,12 @@
       	  <th>Target</th>
       	  <th>Dur.</th>
       	</tr>
-        <tr ng-repeat="spell in charCtrl.selectChar().spells.lvl9">
+        <tr ng-repeat="spell in charCtrl.spellsArray9">
           <td>{{ spell.name }}</td>
+          <td>{{ spell.casting_time }}</td>
+          <td>{{ spell.range }}</td>
           <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>{{ spell.duration }}</td>
         </tr>
       </table>
     </div>
