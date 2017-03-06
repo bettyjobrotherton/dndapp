@@ -21,66 +21,15 @@ export class GeneratorController {
                 console.log(err);
               });
 
-  this.classList = [{
-    name: 'Barbarian',
-    desc: 'Quick Build: Highest ability scores in Strength and Constitution. Outlander background',
-    icon: './assets/images/icons/Barbarian.png',
-  },
-  {
-    name: 'Bard',
-    desc: '',
-    icon: './assets/images/icons/Bard.png',
-  },
-  {
-    name: 'Cleric',
-    desc: '',
-    icon: './assets/images/icons/Cleric.png',
-  },
-  {
-    name: 'Druid',
-    desc: '',
-    icon: './assets/images/icons/Druid.png',
-  },
-  {
-    name: 'Fighter',
-    desc: '',
-    icon: './assets/images/icons/Fighter.png',
-  },
-  {
-    name: 'Monk',
-    desc: '',
-    icon: './assets/images/icons/Monk.png',
-  },
-  {
-    name: 'Paladin',
-    desc: '',
-    icon: './assets/images/icons/Paladin.png',
-  },
-  {
-    name: 'Ranger',
-    desc: '',
-    icon: './assets/images/icons/Ranger.png',
-  },
-  {
-    name: 'Rogue',
-    desc: '',
-    icon: './assets/images/icons/Rogue.png',
-  },{
-    name: 'Sorcerer',
-    desc: '',
-    icon: './assets/images/icons/Sorcerer.png',
-  },
-  {
-    name: 'Warlock',
-    desc: '',
-    icon: './assets/images/icons/Warlock.png',
-  },{
-    name: 'Wizard',
-    desc: '',
-    icon: './assets/images/icons/Wizard.png',
-  },
+    this.$http.get("assets/classes.json")
+              .then(res => {
+                vm.classList = res.data;
+                vm.currentClass = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
 
-    ];
   }
 
 
