@@ -7,8 +7,12 @@ export default function routes($stateProvider) {
     url: '/generator',
     template: '<generator></generator>'
   })
-  .state('generator2', {
+  .state('generatorClass', {
     url: '/pickclass',
     template: '<pickclass></pickclass>'
+  })
+  .state('generatorRace', {
+    url:'/pickrace',
+    template: '<pickrace></pickrace>'
   });
 }
