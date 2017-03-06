@@ -26,3 +26,5 @@ Run `gulp build` for building and `npm start` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+Original spell list from https://github.com/vorpalhex/srd_spells

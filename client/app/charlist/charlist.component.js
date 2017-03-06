@@ -17,10 +17,11 @@ export class CharListComponent {
     this.getCurrentUser = Auth.getCurrentUserSync;
     this.getProfile = Character.getProfile;
     this.selectChar = Character.returnProfile;
-  }
 
+  }
   $onInit(){
     // When user navigates to character profile
+
     if(this.$state.current.name == 'charprofile2'){
       this.getProfile(this.$stateParams.id);
       this.general = true;
@@ -29,6 +30,7 @@ export class CharListComponent {
       this.equip = false;
       this.spells = false;
       this.misc = false;
+
      }
   }
 
@@ -61,6 +63,8 @@ export class CharListComponent {
     this.equip = false;
     this.spells = false;
     this.misc = false;
+
+    this.rollBonus = this.character.skillRoll(this.selectChar());
   }
 
   showEquip(){
@@ -79,6 +83,40 @@ export class CharListComponent {
     this.equip = false;
     this.spells = true;
     this.misc = false;
+
+    var spellList;
+    var spells = this.selectChar().spells;
+
+    this.$http.get("assets/spells.json")
+              .then(function(res){
+                spellList = res.data;
+                var spellsArray = findSpell(spellList, spells.lvl0);
+                console.log(spellsArray);
+              })
+              .catch(function(err){
+                console.log(err);
+              });
+
+      // function getSpellNames(){
+      //   var i;
+      //   for(i = 0; i < 10; i++){
+      //     return _(spellList).keyBy('name').at(spells.lvl0[i].name).value();
+      //   }
+      //   return;
+      // }
+      // console.log(getSpellNames);
+
+    function findSpell(spellList, spells){
+      var mySpellsFiltered = [];
+      for (var i = 0; i < spellList.length; i++) {
+          for (var j = 0; j < spells.length; j++) {
+              if (spellList[i].name === spells[j].name) {
+                  mySpellsFiltered.push(spellList[i]);
+              }
+          }
+      }
+      return mySpellsFiltered;      }
+
   }
 
   showMisc(){
