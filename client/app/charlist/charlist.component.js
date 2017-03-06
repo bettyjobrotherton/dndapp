@@ -16,8 +16,18 @@ export class CharListComponent {
     this.getCurrentUser = Auth.getCurrentUserSync;
     this.getProfile = Character.getProfile;
     this.selectChar = Character.returnProfile;
+    this.spellsArray0 = [{}];
+    this.spellsArray1 = [{}];
+    this.spellsArray2 = [{}];
+    this.spellsArray3 = [{}];
+    this.spellsArray4 = [{}];
+    this.spellsArray5 = [{}];
+    this.spellsArray6 = [{}];
+    this.spellsArray7 = [{}];
+    this.spellsArray8 = [{}];
+    this.spellsArray9 = [{}];
   }
-  
+
   $onInit(){
     // When user navigates to character profile
     var vm = this;
@@ -92,21 +102,20 @@ export class CharListComponent {
     this.$http.get("assets/spells.json")
               .then(function(res){
                 spellList = res.data;
-                vm.spellArray0 = findSpell(spellList, spells.lvl0);
-                //console.log(spellsArray);
-                console.log(vm.spellArray0);
+                vm.spellsArray0 = findSpell(spellList, spells.lvl0);
+                vm.spellsArray1 = findSpell(spellList, spells.lvl1);
+                vm.spellsArray2 = findSpell(spellList, spells.lvl2);
+                vm.spellsArray3 = findSpell(spellList, spells.lvl3);
+                vm.spellsArray4 = findSpell(spellList, spells.lvl4);
+                vm.spellsArray5 = findSpell(spellList, spells.lvl5);
+                vm.spellsArray6 = findSpell(spellList, spells.lvl6);
+                vm.spellsArray7 = findSpell(spellList, spells.lvl7);
+                vm.spellsArray8 = findSpell(spellList, spells.lvl8);
+                vm.spellsArray9 = findSpell(spellList, spells.lvl9);
               })
               .catch(function(err){
-                console.log(err);
+                return err;
               });
-      // function getSpellNames(){
-      //   var i;
-      //   for(i = 0; i < 10; i++){
-      //     return _(spellList).keyBy('name').at(spells.lvl0[i].name).value();
-      //   }
-      //   return;
-      // }
-      // console.log(getSpellNames);
 
     function findSpell(spellList, spells){
       var mySpellsFiltered = [];
@@ -117,7 +126,8 @@ export class CharListComponent {
               }
           }
       }
-      return mySpellsFiltered;      }
+      return mySpellsFiltered;
+    }
 
   }
 
