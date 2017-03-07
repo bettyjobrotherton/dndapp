@@ -5,9 +5,11 @@ import routing from './generator.routes';
 export class GeneratorController {
 
   /*@ngInject*/
-  constructor($http, $state) {
+  constructor($http, $state, Character) {
     this.$http = $http;
     this.$state = $state;
+    this.createChar = Character.createChar;
+    this.first = Character.firstOption;
   }
 
   $onInit() {
@@ -18,7 +20,7 @@ export class GeneratorController {
                 vm.currentRace = res.data[0];
               })
               .catch(err => {
-                console.log(err);
+                return err;
               });
 
     this.$http.get("assets/classes.json")
@@ -29,15 +31,6 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
-          }
-
-  createChar(firstOpt) {
-    if(firstOpt == 'race'){
-      this.$state.go('generatorRace');
-    }
-    if(firstOpt == 'class'){
-      this.$state.go('generatorClass');
-    }
   }
 
   // continueChar(generate) {
@@ -52,6 +45,11 @@ export class GeneratorController {
 
   selectClass(build) {
     this.currentClass = build;
+  }
+
+  saveRace(race){
+    console.log(this.first());
+
   }
 }
 
