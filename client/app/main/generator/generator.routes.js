@@ -14,5 +14,9 @@ export default function routes($stateProvider) {
   .state('generatorRace', {
     url:'/pickrace',
     template: '<pickrace></pickrace>'
+  })
+  .state('/generatorCont',{
+    url: '/generator2',
+    template: '<generator2></generator2>'
   });
 }

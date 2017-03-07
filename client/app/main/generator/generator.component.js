@@ -35,6 +35,12 @@ export class GeneratorController {
 
   }
 
+  // continueChar(generate) {
+  //   if(generate == 'race' && 'class'){
+  //     this.$state.go('generator');
+  //   }
+  // }
+
   selectRace(race) {
     this.currentRace = race;
   }
@@ -66,4 +72,9 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
+  // .component('generator2', {
+  //   template: require('./generator2.html'),
+  //   controller:GeneratorController,
+  //   controllerAs: 'genCtrl'
+  // })
   .name;
