@@ -1,0 +1,19 @@
+<div class='equipView'>
+  <div class="iconList">
+    <div class='list-group' ng-repeat="build in genCtrl.equipList" >
+      <img ng-src='{{ equip.icon }}' class='list-group-item' ng-click="genCtrl.selectequip(equip)">
+    </div>
+  </div>
+
+  <div class='equipDesc'>
+    <div>
+      <h3> {{genCtrl.currentEquip.name}} </h3>
+      <p class='summary'>{{genCtrl.currentEquip.desc}}</p>
+    </div>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('stats')"  type="new character">
+      Submit &amp; Continue
+    </button>
+
+  </div>
+</div>
