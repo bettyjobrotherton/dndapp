@@ -29,10 +29,7 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
-
-  }
-
-
+          }
 
   createChar(firstOpt) {
     if(firstOpt == 'race'){
@@ -72,6 +69,21 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickrace', {
     template: require('./pickrace.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('generator2', {
+    template: require('./generator2.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('pickbackground', {
+    template: require('./pickbackground.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('pickalignment', {
+    template: require('./pickalignment.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

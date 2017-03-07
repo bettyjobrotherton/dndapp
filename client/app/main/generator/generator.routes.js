@@ -15,8 +15,16 @@ export default function routes($stateProvider) {
     url:'/pickrace',
     template: '<pickrace></pickrace>'
   })
-  .state('/generatorCont',{
+  .state('generator2',{
     url: '/generator2',
     template: '<generator2></generator2>'
+  })
+  .state('generatorBackgralignment', {
+    url:'/pickbackground',
+    template: '<pickbackground></pickbackground>'
+  })
+  .state('generatorAlignment', {
+    url:'/pickalignment',
+    template: '<pickalignment></pickalignment>'
   });
 }
