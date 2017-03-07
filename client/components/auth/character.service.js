@@ -4,6 +4,7 @@ export function CharacterService($location, $http) {
   'ngInject';
 
   var selectChar;
+  var firstSelection;
 
   var Character = {
     getProfile(data, cb){
@@ -20,6 +21,21 @@ export function CharacterService($location, $http) {
 
     returnProfile(){
       return selectChar;
+    },
+
+    createChar(firstOpt){
+      if(firstOpt == 'race'){
+        firstSelection = 'race';
+        this.$state.go('generatorRace');
+      }
+      if(firstOpt == 'class'){
+        firstSelection = 'class';
+        this.$state.go('generatorClass');
+      }
+    },
+
+    firstOption(){
+      return firstSelection;
     },
 
     calculateModifier(as){
