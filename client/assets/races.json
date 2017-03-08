@@ -19,9 +19,9 @@
       "traits":{
          "adultAge":50,
          "lifeSpan":"350",
-         "aveHeight":"4-5 ft.",
-         "aveWeight":"150 lbs",
-         "size:":"Medium",
+         "aveHeight":"4-5ft.",
+         "aveWeight":"150lbs",
+         "size":"Medium",
          "baseSpd":25,
          "abilScore":"+2 Constitution",
          "lang":"Common and dwarvish",
