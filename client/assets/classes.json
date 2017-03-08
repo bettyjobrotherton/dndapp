@@ -1,8 +1,59 @@
 [
    {
       "name":"Barbarian",
-      "desc":"Quick Build: Highest ability scores in Strength and Constitution. Outlander background",
-      "icon":"./assets/images/icons/Barbarian.png"
+      "shortDesc":"A fierce warrior of primitive background who can enter a battle rage",
+      "longDesc": "Barbarians are defined by their rage. Their rage is a power that fuels a battle frenzy, as well as uncanny reflexes, resilience, and feats of strength. A barbarian can enter a beserker state where rage takes over, giving them superhuman strength and resilience./n/n/To a barbarian, civilization is a sign of weakness. They are uncomfortable when hedged in by walls and crowds and thrive in the wilds of their homeland. The barbarian is a protector of the people and leader in times of war. Courage in the face of danger is what makes a barbarian perfectly suited for adventuring.",
+      "icon":"./assets/images/icons/Barbarian.png",
+      "quickBuild": {
+        "highestAbility": "Strength",
+        "nextAbility": "Constitution",
+        "suggestedBackground": "Outlander"
+      },
+      "traits": {
+        "primeAbility": "Strength",
+        "SaveThrowProf": "Strength and Constitution",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "Animal Handling",
+          "Athletics",
+          "Intimidation",
+          "Nature",
+          "Perception",
+          "Survival"
+        ],
+        "features": {
+          "level1": [
+            "Rage",
+            "Unarmored Defense"
+          ],
+          "level2": [
+            "Reckless Attack",
+            "Danger Sense"
+          ]
+        },
+        "startEquip": {
+          "weapon1": "greataxe OR any martial weapon",
+          "weapon2": "two handaxes OR any simple weapon",
+          "misc": [
+            "explorer's pack",
+            "4 javelins"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d12",
+        "hitPtsLvl1": "12 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "martial weapons",
+          "simple weapons"
+        ]
+      }
    },
    {
       "name":"Bard",
