@@ -15,6 +15,10 @@ export class GeneratorController {
 
   $onInit() {
     var vm = this;
+
+    this.raceMain = true;
+    this.classMain = true;
+
     this.$http.get("assets/races.json")
               .then(res => {
                 vm.raceList = res.data;
@@ -44,13 +48,30 @@ export class GeneratorController {
     this.currentRace = race;
   }
 
+  selectMainRace(){
+    this.selectedRace = this.currentRace;
+    this.raceMain = false;
+    this.currentSubrace = this.selectedRace.subraces[0];
+  }
+
+  goBackToRace(){
+    this.raceMain = true;
+  }
+
+  selectSubrace(subrace){
+    this.currentSubrace = subrace;
+  }
+
   selectClass(build) {
     this.currentClass = build;
   }
 
   saveRace(){
+    console.log(this.currentRace);
+    console.log(this.currentSubrace);
     var newCharacter;
     var race = this.currentRace;
+    var subrace = this.currentSubrace;
     var raceInfo = {
       bio: {
         languages: race.traits.lang,
@@ -63,7 +84,7 @@ export class GeneratorController {
       },
       race: {
         main: race.name,
-        //subrace: **This needs to be added to the JSON file**
+        subrace: subrace.name
       }
     };
     if(this.first() == 'race'){
