@@ -8,8 +8,84 @@
   <div class='classDesc'>
     <div>
       <h3> {{genCtrl.currentClass.name}} </h3>
-      <p class='summary'>{{genCtrl.currentClass.desc}}</p>
+      <p class='summary'>{{genCtrl.currentClass.shortDesc}}</p>
     </div>
+
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Quick Build </th>
+      </tr>
+      <tr>
+        <td>Primary Ability</td>
+        <td>{{genCtrl.currentClass.quickBuild.highestAbility}}</td>
+      </tr>
+      <tr>
+        <td>Secondary Ability</td>
+        <td>{{ genCtrl.currentClass.quickBuild.nextAbility }}</td>
+      </tr>
+    </table>
+
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Skill List</th>
+      </tr>
+      <tr>
+        <td colspan="2"><div ng-repeat="skillsList in genCtrl.currentClass.traits.skillsList">{{ skillsList }}</div></td>
+      </tr>
+    </table>
+
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Features </th>
+      </tr>
+      <tr>
+        <td>Level 1</td>
+        <td><div ng-repeat="level1 in genCtrl.currentClass.traits.features.level1">{{ level1 }}</div></td>
+      </tr>
+      <tr>
+        <td>Level 2</td>
+        <td><div ng-repeat="level2 in genCtrl.currentClass.traits.features.level2">{{ level2 }}</div></td>
+      </tr>
+    </table>
+
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Starting Equipment </th>
+      </tr>
+      <tr>
+        <td>Primary Weapon</td>
+        <td>{{ genCtrl.currentClass.traits.startEquip.weapon1 }}</td>
+      <tr>
+        <td>Secondary Weapon</td>
+        <td>{{ genCtrl.currentClass.traits.startEquip.weapon2 }}</td>
+      </tr>
+      <tr>
+        <td>Miscellaneous</td>
+        <td><div ng-repeat="misc in genCtrl.currentClass.traits.startEquip.misc">{{ misc }}</div></td>
+      </tr>
+    </table>
+
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Combat </th>
+      </tr>
+      <tr>
+        <td>Hit Die</td>
+        <td>{{ genCtrl.currentClass.combat.hitDie }}</td>
+      </tr>
+      <tr>
+        <td>HP at level 1</td>
+        <td>{{ genCtrl.currentClass.combat.hitPtsLvl1 }}</td>
+      </tr>
+      <tr>
+        <td>Armor Proficiency</td>
+        <td><div ng-repeat="armorProf in genCtrl.currentClass.combat.armorProf">{{ armorProf }}</div></td>
+      </tr>
+      <tr>
+        <td>Weapon Proficiency</td>
+        <td><div ng-repeat="weaponProf in genCtrl.currentClass.combat.weaponProf">{{ weaponProf }}</div></td>
+      </tr>
+    </table>
 
     <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveClass()"  type="">
       Submit &amp; Continue
