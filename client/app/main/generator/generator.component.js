@@ -50,8 +50,13 @@ export class GeneratorController {
 
   selectMainRace(){
     this.selectedRace = this.currentRace;
-    this.raceMain = false;
-    this.currentSubrace = this.selectedRace.subraces[0];
+    if(this.selectedRace.name == 'Half-Elf' || this.selectedRace.name == 'Half-Orc' || this.selectedRace.name == 'Tiefling'){
+      this.saveRace();
+    }
+    else {
+      this.raceMain = false;
+      this.currentSubrace = this.selectedRace.subraces[0];
+    }
   }
 
   goBackToRace(){
@@ -68,33 +73,55 @@ export class GeneratorController {
 
   saveRace(){
     console.log(this.currentRace);
-    console.log(this.currentSubrace);
     var newCharacter;
     var race = this.currentRace;
-    var subrace = this.currentSubrace;
-    var raceInfo = {
-      bio: {
-        languages: race.traits.lang,
-        appearance: {
-          size: race.traits.size
+    var raceInfo;
+    if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
+      raceInfo = {
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
+        race: {
+          main: race.name,
         }
-      },
-      general: {
-        movement: race.traits.baseSpd
-      },
-      race: {
-        main: race.name,
-        subrace: subrace.name
-      }
-    };
+      };
+    }
+    else {
+      console.log(this.currentSubrace);
+      var subrace = this.currentSubrace;
+      raceInfo = {
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
+        race: {
+          main: race.name,
+          subrace: subrace.name
+        }
+      };
+    }
     if(this.first() == 'race'){
       newCharacter = raceInfo;
-      this.localStorage['character-in-progress'] = newCharacter;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorClass');
     } else {
-      newCharacter = this.localStorage['character-in-progress'];
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.push(raceInfo);
-      this.localStorage['character-in-progress'] = newCharacter;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorTwo');
     }
+    console.log(this.localStorage['character-in-progress']);
   }
 
   saveClass(){
