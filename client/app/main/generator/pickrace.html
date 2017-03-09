@@ -1,4 +1,4 @@
-<div class='raceView'>
+<div class='raceView' ng-show="genCtrl.raceMain">
   <div class="iconList">
     <div class='list-group' ng-repeat="race in genCtrl.raceList" >
       <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
@@ -8,7 +8,8 @@
   <div class='raceDesc'>
     <div>
       <h3> {{genCtrl.currentRace.name}} </h3>
-      <p class='summary'>{{genCtrl.currentRace.desc}}</p>
+      <p class='summary'>{{genCtrl.currentRace.shortDesc}}</p>
+      <p class="summary"><span class='emphasis'>Ability Scores:</span> {{genCtrl.currentRace.traits.abilScore}}</p>
     </div>
 
     <table class="table table-striped">
@@ -16,12 +17,20 @@
         <th colspan="2"> Traits </th>
       </tr>
       <tr>
-        <td>Average Age</td>
-        <td>{{ genCtrl.currentRace.traits.aveAge }}</td>
+        <td>Age of Adulthood</td>
+        <td>{{ genCtrl.currentRace.traits.adultAge }}</td>
+      </tr>
+      <tr>
+        <td>Average Lifespan</td>
+        <td>{{ genCtrl.currentRace.traits.lifespan}}</td>
       </tr>
       <tr>
         <td>Average Height</td>
         <td>{{ genCtrl.currentRace.traits.aveHeight }}</td>
+      </tr>
+      <tr>
+        <td>Average Weight</td>
+        <td>{{ genCtrl.currentRace.traits.aveWeight }}</td>
       </tr>
       <tr>
         <td>Base Speed</td>
@@ -29,18 +38,67 @@
       </tr>
       <tr>
         <td>Languages</td>
-        <td>{{ genCtrl.currentRace.traits.lang }}</td>
+        <td><div ng-repeat="lang in genCtrl.currentRace.traits.lang">{{ lang }}</div></td>
       </tr>
-      <tr>
-        <td>Tools</td>
-        <td>{{ genCtrl.currentRace.traits.tools }}</td>
+      <tr ng-show="genCtrl.currentRace.traits.features">
+        <td>Feats</td>
+        <td><div ng-repeat="feat in genCtrl.currentRace.traits.features">{{ feat }}</div></td>
+      </tr>
+      <tr ng-show="genCtrl.currentRace.subraces">
+        <td>Subraces</td>
+        <td><div ng-repeat="subrace in genCtrl.currentRace.subraces">{{ subrace.name }}</div></td>
       </tr>
     </table>
 
+<!-- i need help here -->
+<!--
+    <div>
+      <h3>Subraces</h3>
+      <div ng-repeat="subrace in genCtrl.currentRace">
+        <div>{{subrace.subraces}}</div>
+      </div>
+    </div> -->
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveRace(currentRace, first)" type="">
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainRace()" type="">
       Submit &amp; Continue
+    </button>
+  </div>
+</div>
+<div class="raceView" ng-hide="genCtrl.raceMain">
+  <div class="iconList">
+    <div class='list-group' ng-repeat="subrace in genCtrl.selectedRace.subraces">
+      <div class='list-group-item' ng-click="genCtrl.selectSubrace(subrace)"><img src="http://placehold.it/25"></div>
+    </div>
+  </div>
+
+  <div class="raceDesc">
+    <h3> {{genCtrl.currentSubrace.name}} </h3>
+    <p class='summary'>{{genCtrl.currentSubrace.summary}}</p>
+    <p class="summary" ng-show="genCtrl.currentSubrace.abilScore"><span class='emphasis'>Ability Scores:</span> {{genCtrl.currentSubrace.abilScore}}</p>
+
+    <table class="table" ng-show="genCtrl.currentSubrace.features">
+      <tr class="table-head">
+        <th>Additional Traits:</th>
+        <td>
+          <div ng-show="genCtrl.currentSubrace.repeat">
+            <div ng-repeat="trait in genCtrl.currentSubrace.features track by $index">{{ trait }}</div>
+          </div>
+          <div ng-hide="genCtrl.currentSubrace.repeat">
+            {{ genCtrl.currentSubrace.features }}
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveRace()" type="">
+      Submit &amp; Continue
+    </button>
+    <br>
+    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.goBackToRace()" type="new character">
+      Return to Race
     </button>
 
   </div>
+  </div>
+
 </div>

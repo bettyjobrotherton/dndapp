@@ -32,6 +32,38 @@ export function CharacterService($location, $http) {
         firstSelection = 'class';
         this.$state.go('generatorClass');
       }
+      if(firstOpt == 'generatortwo'){
+        firstSelection = 'generatortwo';
+        this.$state.go('generatorTwo');
+      }
+      if(firstOpt == 'background'){
+        firstSelection = 'background';
+        this.$state.go('generatorBackground');
+      }
+      if(firstOpt == 'alignment'){
+        firstSelection = 'alignment';
+        this.$state.go('generatorAlignment');
+      }
+      if(firstOpt == 'generatorthree'){
+        firstSelection = 'generatorthree';
+        this.$state.go('generatorThree');
+      }
+      if(firstOpt == 'spells'){
+        firstSelection = 'spells';
+        this.$state.go('generatorSpells');
+      }
+      if(firstOpt == 'weapons'){
+        firstSelection = 'weapons';
+        this.$state.go('generatorWeapons');
+      }
+      if(firstOpt == 'equip'){
+        firstSelection = 'equip';
+        this.$state.go('generatorEquip');
+      }
+      if(firstOpt == 'stats'){
+        firstSelection = 'stats';
+        this.$state.go('generatorStats');
+      }
     },
 
     firstOption(){
