@@ -125,30 +125,52 @@ export class GeneratorController {
   }
 
   saveClass(){
-    // console.log(this.first());
+    console.log(this.currentClass);
     var newCharacter;
     var currentClass = this.currentClass;
     var classInfo = {
-      //This is all greyed out because most of the needed info is not yet in the JSON file
-      // class: {
-      //   main: currentClass.name,
-      //   archetype:
-      // },
-      // combt: {
-      //   hitDie:
-      //   specialAttacks:
-      //   specialDefense:
-      // }
+      class: {
+        main: currentClass.name
+      },
+      skills: {
+        skillsList: currentClass.traits.skillsList
+      },
+      startEquip: {
+        primary: currentClass.traits.startEquip.weapon1,
+        secondary: currentClass.traits.startEquip.weapon2,
+        miscellaneous: currentClass.traits.startEquip.misc
+      },
+      combat: {
+        hitDie: currentClass.combat.hitDie,
+        armorProf: currentClass.combat.armorProf,
+        weaponProf: currentClass.combat.weaponProf
+      }
     };
+
     if(this.first() == 'class'){
       newCharacter = classInfo;
-      this.localStorage['character-in-progress'] = newCharacter;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorRace');
     } else {
-      newCharacter = this.localStorage['character-in-progress'];
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.push(classInfo);
-      this.localStorage['character-in-progress'] = newCharacter;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorTwo');
     }
+    console.log(this.localStorage['character-in-progress']);
   }
+
+    // if(this.first() == 'class'){
+    //   newCharacter = classInfo;
+    //   this.localStorage['character-in-progress'] = newCharacter;
+    // } else {
+    //   newCharacter = this.localStorage['character-in-progress'];
+    //   newCharacter.push(classInfo);
+    //   this.localStorage['character-in-progress'] = newCharacter;
+    // }
+
+
+
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
