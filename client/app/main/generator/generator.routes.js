@@ -15,6 +15,10 @@ export default function routes($stateProvider) {
     url:'/pickrace',
     template: '<pickrace></pickrace>'
   })
+  .state('generatorSubrace', {
+    url:'/picksubrace',
+    template: '<picksubrace></picksubrace>'
+  })
   .state('generatorTwo',{
     url: '/generatortwo',
     template: '<generatortwo></generatortwo>'

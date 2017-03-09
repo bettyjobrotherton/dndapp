@@ -28,6 +28,10 @@ export function CharacterService($location, $http) {
         firstSelection = 'race';
         this.$state.go('generatorRace');
       }
+      if(firstOpt == 'subrace'){
+        firstSelection = 'subrace';
+        this.$state.go('generatorSubrace');
+      }
       if(firstOpt == 'class'){
         firstSelection = 'class';
         this.$state.go('generatorClass');
