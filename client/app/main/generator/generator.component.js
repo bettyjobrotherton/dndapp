@@ -50,7 +50,12 @@ export class GeneratorController {
 
   selectMainRace(){
     this.selectedRace = this.currentRace;
+    this.raceMain = false;
     this.currentSubrace = this.selectedRace.subraces[0];
+  }
+
+  goBackToRace(){
+    this.raceMain = true;
   }
 
   selectSubrace(subrace){
@@ -133,11 +138,6 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickrace', {
     template: require('./pickrace.html'),
-    controller: GeneratorController,
-    controllerAs: 'genCtrl'
-  })
-  .component('picksubrace', {
-    template: require('./picksubrace.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
