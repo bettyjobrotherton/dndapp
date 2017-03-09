@@ -58,7 +58,7 @@
 <div class="raceView" ng-hide="genCtrl.raceMain">
   <div class="iconList">
     <div class='list-group' ng-repeat="subrace in genCtrl.selectedRace.subraces">
-      <div class='list-group-item' ng-click="genCtrl.selectSubrace(subrace)"><img src="http://placehold.it/25"></div>
+      <img ng-src='{{ subrace.placeholder }}' class='list-group-item' ng-click="genCtrl.selectSubrace(subrace)">
     </div>
   </div>
 
