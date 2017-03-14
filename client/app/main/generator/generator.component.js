@@ -131,7 +131,9 @@ selectArchetype(archetype){
       this.$state.go('generatorClass');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.push(raceInfo);
+      newCharacter.bio = raceInfo.bio;
+      newCharacter.general = raceInfo.general;
+      newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
@@ -155,7 +157,8 @@ selectArchetype(archetype){
       this.$state.go('generatorRace');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.push(classInfo);
+      newCharacter.class = classInfo.class;
+      // need to finish saving class info
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
