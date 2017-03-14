@@ -1,4 +1,4 @@
-<div class='classView'>
+<div class='classView' ng-show="genCtrl.classMain">
   <div class="iconList">
     <div class='list-group' ng-repeat="build in genCtrl.classList" >
       <img ng-src='{{ build.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
@@ -87,9 +87,43 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveClass()"  type="">
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainClass()"  type="">
       Submit &amp; Continue
     </button>
 
   </div>
 </div>
+
+<div class="classView" ng-hide="genCtrl.classMain">
+  <div class="iconList">
+    <div class='list-group' ng-repeat="archetype in genCtrl.selectedRace.archetype">
+      <img ng-src='{{ archetype.placeholder }}' class='list-group-item' ng-click="genCtrl.selectArchetype(archetype)">
+    </div>
+  </div>
+
+  <div class="classDesc">
+    <h3> {{genCtrl.currentArchetype.name}} </h3>
+    <p class='summary'>{{genCtrl.currentArchetype.summary}}</p>
+    <p class="summary" ng-show="genCtrl.currentArchetype"><span class='emphasis'></span>{{}}</p>
+
+    <table class="table" ng-show="genCtrl.currentArchetype.features">
+      <tr class="table-head">
+        <th>Traits:</th>
+        <td>
+          <div ng-show="genCtrl.currentArchetype.repeat">
+            <div ng-repeat="trait in genCtrl.currentArchetype.features track by $index">{{}}</div>
+          </div>
+          <div ng-hide="genCtrl.currentArchetype.repeat">
+            {{ genCtrl.currentArchetype }}
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveClass()" type="">
+      Submit &amp; Continue
+    </button>
+    <br>
+    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.goBackToClass()" type="new character">
+      Return to Class
+    </button>
