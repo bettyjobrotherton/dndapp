@@ -7,10 +7,11 @@ module.exports = {
 
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/dndapp-dev'
+    //uri: 'mongodb://localhost/dndapp-dev'
+    uri: 'mongodb://admin:dndapp@ds131320.mlab.com:31320/dndappdb'
   },
 
   // Seed database on startup
-  seedDB: true
+  seedDB: false
 
 };
