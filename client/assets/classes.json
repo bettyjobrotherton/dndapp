@@ -22,21 +22,69 @@
           "Perception",
           "Survival"
         ],
-        "features": {
-          "level1": [
-            "Rage",
-            "Unarmored Defense"
-          ],
-          "level2": [
-            "Reckless Attack",
-            "Danger Sense"
-          ]
-        },
+        "features": [
+          {
+            "level": 1,
+            "name": "Rage"
+          },
+          {
+            "level": 1,
+            "name": "Unarmored Defense"
+          },
+          {
+            "level": 2,
+            "name": "Reckless Attack"
+          },
+          {
+            "level": 2,
+            "name": "Danger Sense"
+          },
+          {
+            "level": 3,
+            "name": "Primal Path"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Extra Attack"
+          },
+          {
+            "level": 5,
+            "name": "Fast Movement"
+          },
+          {
+            "level": 7,
+            "name": "Feral Instinct"
+          },
+          {
+            "level": 9,
+            "name": "Brutal Critical"
+          },
+          {
+            "level": 11,
+            "name": "Relentless Rage"
+          },
+          {
+            "level": 15,
+            "name": "Persistent Rage"
+          },
+          {
+            "level": 18,
+            "name": "Indomitable Might"
+          },
+          {
+            "level": 20,
+            "name": "Primal Champion"
+          }
+        ],
         "startEquip": {
           "weapon1": "greataxe OR any martial weapon",
           "weapon2": "two handaxes OR any simple weapon",
           "misc": [
-            "explorer's pack",
+            "explorer\u2019s pack",
             "4 javelins"
           ]
         }
@@ -53,17 +101,396 @@
           "martial weapons",
           "simple weapons"
         ]
+      },
+      "archetype": {
+        "called": "Paths",
+        "types": [
+          {
+            "name": "Path of the Beserker",
+            "desc": "This is the path of untrammeled fury, slick with blood. As you enter the beserker\u2019s rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Frenzy"
+              },
+              {
+                "level": 6,
+                "name": "Mindless Rage"
+              },
+              {
+                "level": 10,
+                "name": "Intimidating Presence"
+              },
+              {
+                "level": 14,
+                "name": "Retaliation"
+              }
+            ]
+          }
+          {
+            "name": "Path of the Totem Warrior",
+            "desc": "This path is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle, your totem spirit fills you with supernatural might, adding magical fuel to your barbarian rage. It is unusual for an individual to have more than one totem spirit, but exceptions do exist.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Spirit Seeker"
+              },
+              {
+                "level": 3,
+                "name": "Totem Spirit"
+              },
+              {
+                "level": 6,
+                "name": "Aspect of the Beast"
+              },
+              {
+                "level": 10,
+                "name": "Spirit Walker"
+              },
+              {
+                "level": 14,
+                "name": "Totemic Attunement"
+              }
+            ]
+          }
+        ]
       }
    },
    {
       "name":"Bard",
-      "desc":"",
-      "icon":"./assets/images/icons/Bard.png"
+      "shortDesc":"An inspiring magician whose power echoes the music of creation.",
+      "longDesc":"The bard is a master of song, speech, and the magic they contain. The music of bards is an attempt to snatch and harness the echos of the Words of Creation used to shape the multiverse.\n\nThe greatest strength of bards is their sheer versatility. They have a wide-ranging knowledge of many subjects and a natural aptitude that lets them do almost anything well. True bards are not common, but it can be hard to spot the difference between an everyday performer and a bard. Discovering the magic hidden in music requires hard study and a measure of natural talent.\n\n Bards rarely settle in one place for long, and their natural desire to travel makes an adventuring career a natural calling.",
+      "icon":"./assets/images/icons/Bard.png",
+      "quickBuild": {
+        "highestAbility": "Charisma",
+        "nextAbility": "Dexterity",
+        "suggestedBackground": "Entertainer",
+        "spells": {
+          "cantrips": [
+            "Dancing Lights",
+            "Vicious Mockery"
+          ],
+          "lvl1": [
+            "Charm Person",
+            "Detect Magic",
+            "Healing Word",
+            "Thunderwave"
+          ]
+        }
+      },
+      "traits": {
+        "primeAbility": "Charisma",
+        "SaveThrowProf": "Dexterity and Charisma",
+        "tools": "3 musical instruments of your choice",
+        "noOfSkills": 3,
+        "skillsList": [
+          "Acrobatics",
+          "Animal Handling",
+          "Arcana",
+          "Athletics",
+          "Deception",
+          "History",
+          "Insight",
+          "Intimidation",
+          "Investigation",
+          "Medicine",
+          "Nature",
+          "Perception",
+          "Performance",
+          "Persuasion",
+          "Religion",
+          "Sleight of Hand",
+          "Stealth",
+          "Survival"
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Bardic Inspiration"
+          },
+          {
+            "level": 2,
+            "name": "Jack of All Trades"
+          },
+          {
+            "level": 2,
+            "name": "Song of Rest"
+          },
+          {
+            "level": 3,
+            "name": "Bard College"
+          },
+          {
+            "level": 3,
+            "name": "Expertise"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Font of Inspiration"
+          },
+          {
+            "level": 6,
+            "name": "Countercharm"
+          },
+          {
+            "level": 10,
+            "name": "Magical Secrets"
+          },
+          {
+            "level": 20,
+            "name": "Superior Inspiration"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "rapier OR longsword OR any simple weapon",
+          "weapon2": "diplomat\u2019s pack OR entertainer\u2019s pack AND lute OR any other instrument",
+          "misc": [
+            "leather armor",
+            "dagger"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor"
+        ],
+        "weaponProf": [
+          "simple weapons",
+          "hand crossbows",
+          "longswords",
+          "rapiers",
+          "shortswords"
+        ]
+      },
+      "archetype": {
+        "called": "Colleges",
+        "types": [
+          {
+            "name": "College of Lore",
+            "desc": "Bards of this college know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. They use their gifts to hold audiences spellbound.\n\nThe loyalty of these bards lies in the pursuit of beauty and truth. Member's of this college gather in libraries and actual colleges. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important authority figures.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Bonus Proficiencies"
+              },
+              {
+                "level": 3,
+                "name": "Cutting Words"
+              },
+              {
+                "level": 6,
+                "name": "Additional Magic Secrets"
+              },
+              {
+                "level": 14,
+                "name": "Peerles Skill"
+              }
+            ]
+          }
+          {
+            "name": "College of Valor",
+            "desc": "Bards of this college are daring poets whose tales keep alive the memory of great heros past. They trave the land to witness great events firsthand and to ensure that the memory of those events doesn\u2019t pass from the world.\n\nThese bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Bonus Proficiencies"
+              },
+              {
+                "level": 3,
+                "name": "Combat Inspiration"
+              },
+              {
+                "level": 6,
+                "name": "Extra Attack"
+              },
+              {
+                "level": 14,
+                "name": "Battle Magic"
+              }
+            ]
+          }
+        ]
+      }
    },
    {
       "name":"Cleric",
-      "desc":"",
-      "icon":"./assets/images/icons/Cleric.png"
+      "shortDesc":"A priestly champion who wields divine magic in service of a higher power.",
+      "longDesc":"Clerics are intermediaries between the mortal world and the distant planes of the gods. They strive to embody the handiwork of their deities and are imbued with divine magic.",
+      /*need to finish long description and go from here*/
+      "icon":"./assets/images/icons/Cleric.png",
+      "quickBuild": {
+        "highestAbility": "Strength",
+        "nextAbility": "Constitution",
+        "suggestedBackground": "Outlander",
+        "spells": {
+          "cantrips": [
+            "Dancing Lights",
+            "Vicious Mockery"
+          ],
+          "lvl1": [
+            "Charm Person",
+            "Detect Magic",
+            "Healing Word",
+            "Thunderwave"
+          ]
+        }
+      },
+      "traits": {
+        "primeAbility": "Strength",
+        "SaveThrowProf": "Strength and Constitution",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "Animal Handling",
+          "Athletics",
+          "Intimidation",
+          "Nature",
+          "Perception",
+          "Survival"
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Rage"
+          },
+          {
+            "level": 1,
+            "name": "Unarmored Defense"
+          },
+          {
+            "level": 2,
+            "name": "Reckless Attack"
+          },
+          {
+            "level": 2,
+            "name": "Danger Sense"
+          },
+          {
+            "level": 3,
+            "name": "Primal Path"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Extra Attack"
+          },
+          {
+            "level": 5,
+            "name": "Fast Movement"
+          },
+          {
+            "level": 7,
+            "name": "Feral Instinct"
+          },
+          {
+            "level": 9,
+            "name": "Brutal Critical"
+          },
+          {
+            "level": 11,
+            "name": "Relentless Rage"
+          },
+          {
+            "level": 15,
+            "name": "Persistent Rage"
+          },
+          {
+            "level": 18,
+            "name": "Indomitable Might"
+          },
+          {
+            "level": 20,
+            "name": "Primal Champion"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "greataxe OR any martial weapon",
+          "weapon2": "two handaxes OR any simple weapon",
+          "misc": [
+            "explorer\u2019s pack",
+            "4 javelins"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d12",
+        "hitPtsLvl1": "12 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "martial weapons",
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Paths",
+        "types": [
+          {
+            "name": "Path of the Beserker",
+            "desc": "This is the path of untrammeled fury, slick with blood. As you enter the beserker\u2019s rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Frenzy"
+              },
+              {
+                "level": 6,
+                "name": "Mindless Rage"
+              },
+              {
+                "level": 10,
+                "name": "Intimidating Presence"
+              },
+              {
+                "level": 14,
+                "name": "Retaliation"
+              }
+            ]
+          }
+          {
+            "name": "Path of the Totem Warrior",
+            "desc": "This path is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle, your totem spirit fills you with supernatural might, adding magical fuel to your barbarian rage. It is unusual for an individual to have more than one totem spirit, but exceptions do exist.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Spirit Seeker"
+              },
+              {
+                "level": 3,
+                "name": "Totem Spirit"
+              },
+              {
+                "level": 6,
+                "name": "Aspect of the Beast"
+              },
+              {
+                "level": 10,
+                "name": "Spirit Walker"
+              },
+              {
+                "level": 14,
+                "name": "Totemic Attunement"
+              }
+            ]
+          }
+        ]
+      }
    },
    {
       "name":"Druid",
