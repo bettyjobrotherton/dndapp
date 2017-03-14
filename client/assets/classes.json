@@ -84,8 +84,13 @@
           "weapon1": "greataxe OR any martial weapon",
           "weapon2": "two handaxes OR any simple weapon",
           "misc": [
+<<<<<<< HEAD
             "explorer\u2019s pack",
             "4 javelins"
+=======
+            "Explorer's pack",
+            "4 Javelins"
+>>>>>>> 3d9962f31af2db647642003a5020dc432f4b774e
           ]
         }
       },
