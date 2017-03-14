@@ -55,6 +55,7 @@
       <tr>
         <td>Primary Weapon</td>
         <td>{{ genCtrl.currentClass.traits.startEquip.weapon1 }}</td>
+      </tr>
       <tr>
         <td>Secondary Weapon</td>
         <td>{{ genCtrl.currentClass.traits.startEquip.weapon2 }}</td>
@@ -102,19 +103,18 @@
   </div>
 
   <div class="classDesc">
-    <h3> {{genCtrl.currentArchetype.name}} </h3>
-    <p class='summary'>{{genCtrl.currentArchetype.summary}}</p>
-    <p class="summary" ng-show="genCtrl.currentArchetype"><span class='emphasis'></span>{{}}</p>
+    <h3> {{genCtrl.currentArchetype.types.name}} </h3>
+    <p class='summary'>{{genCtrl.currentArchetype.types.desc}}</p>
 
-    <table class="table" ng-show="genCtrl.currentArchetype.features">
+    <table class="table" ng-show="genCtrl.currentArchetype.types.features">
       <tr class="table-head">
-        <th>Traits:</th>
+        <th>Features:</th>
         <td>
           <div ng-show="genCtrl.currentArchetype.repeat">
-            <div ng-repeat="trait in genCtrl.currentArchetype.features track by $index">{{}}</div>
+            <div ng-repeat="name in genCtrl.currentArchetype.types.features track by $index">{{ name }}</div>
           </div>
           <div ng-hide="genCtrl.currentArchetype.repeat">
-            {{ genCtrl.currentArchetype }}
+            {{ genCtrl.currentArchetype.types.features }}
           </div>
         </td>
       </tr>

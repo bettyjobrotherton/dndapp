@@ -110,15 +110,15 @@ selectArchetype(archetype){
       console.log(this.currentSubrace);
       var subrace = this.currentSubrace;
       raceInfo = {
-        // bio: {
-        //   languages: race.traits.lang,
-        //   appearance: {
-        //     size: race.traits.size
-        //   }
-        // },
-        // general: {
-        //   movement: race.traits.baseSpd
-        // },
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
         race: {
           main: race.name,
           subrace: subrace.name
@@ -148,7 +148,10 @@ selectArchetype(archetype){
     var classInfo = {
       class: {
         main: currentClass.name,
-        archetype: currentArchetype.name
+        archetype: currentArchetype.types.name
+      },
+      combat: {
+        hitDie: currentClass.combat.hitDie,
       }
     };
     if(this.first() == 'class'){
@@ -158,6 +161,7 @@ selectArchetype(archetype){
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.class = classInfo.class;
+      newCharacter.combat = classInfo.combat;
       // need to finish saving class info
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');

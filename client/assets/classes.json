@@ -331,7 +331,7 @@
       "quickBuild": {
         "highestAbility": "Wisdom",
         "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "suggestedBackground": "Acolyte"
       },
       "traits": {
         "primeAbility": "Wisdom",
@@ -343,7 +343,7 @@
           "Insight",
           "Medicine",
           "Persuasion",
-          "Religion",
+          "Religion"
         ],
         "features": [
           {
