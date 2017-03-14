@@ -556,6 +556,14 @@
                 "name": "Additional Spells: Animal Friendship and Speak with Animals"
               },
               {
+                "level": 1,
+                "name": "Bonus Proficiency"
+              },
+              {
+                "level": 2,
+                "name": "Charm Animals and Plants (Channel Divinity)"
+              },
+              {
                 "level": 3,
                 "name": "Additional Spells: Barkskin and Spike Growth"
               },
@@ -564,12 +572,170 @@
                 "name": "Additional Spells: Plant Growth and Wind Wall"
               },
               {
+                "level": 6,
+                "name": "Dampen Elements"
+              },
+              {
                 "level": 7,
                 "name": "Additional Spells: Dominate Beast and Grasping Vine"
               },
               {
+                "level": 8,
+                "name": "Divine Strike"
+              },
+              {
                 "level": 9,
                 "name": "Additional Spells: Insect Plague and Tree Stride"
+              },
+              {
+                "level": 17,
+                "name": "Master of Nature"
+              }
+            ]
+          },
+          {
+            "name": "Tempest Domain",
+            "desc": "Gods who influence the tempest domain govern storms, sea, and sky. They include gods of lightening and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them offer sacrifices of propiation to ward off divine wrath.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Wrath of the Storm"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Fog Cloud and Thunderwave"
+              },
+              {
+                "level": 1,
+                "name": "Bonus Proficiency"
+              },
+              {
+                "level": 2,
+                "name": "Destructive Wrath (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Gust of Wind and Shatter"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Call Lightening and Sleet Storm"
+              },
+              {
+                "level": 6,
+                "name": "Thunderbolt Strike"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Control Water and Ice Storm"
+              },
+              {
+                "level": 8,
+                "name": "Divine Strike"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Destructive Wave and Insect Plague"
+              },
+              {
+                "level": 17,
+                "name": "Stormborn"
+              }
+            ]
+          },
+          {
+            "name": "Trickery Domain",
+            "desc": "Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among gods and mortals. They\u2019re patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world who prefer subterfuge, pranks, deception, and theft rather than direct confrontation.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessing of the Trickster"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Charm Person and Disguise Self"
+              },
+              {
+                "level": 2,
+                "name": "Invoke Duplicity (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Mirror Image and Pass without Trace"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Blink and Dispel Magic"
+              },
+              {
+                "level": 6,
+                "name": "Cloak of Shadows (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Dimension Door and Polymorph"
+              },
+              {
+                "level": 8,
+                "name": "Divine Strike"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Dominate Person and Modify Memory"
+              },
+              {
+                "level": 17,
+                "name": "Improved Duplicity"
+              }
+            ]
+          },
+          {
+            "name": "War Domain",
+            "desc": "The gods of war watch over warriors and reward them for their great deeds. Their clerics excel in battle, inspiring others to fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry as well as gods of conquest and domination. Other gods of war take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
+            "features": [
+              {
+                "level": 1,
+                "name": "War Priest"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Divine Favor and Shield of Faith"
+              },
+              {
+                "level": 1,
+                "name": "Bonus Proficiency"
+              },
+              {
+                "level": 2,
+                "name": "Guided Strike (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Magic Weapon and Spiritual Weapon"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Crusader\u2019s Mantle and Spirit Guardians"
+              },
+              {
+                "level": 6,
+                "name": "War God\u2019s Blessing (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Freedom of Movement and Stoneskin"
+              },
+              {
+                "level": 8,
+                "name": "Divine Strike"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Flame Strike and Hold Monster"
+              },
+              {
+                "level": 17,
+                "name": "Avatar of Battle"
               }
             ]
           }
@@ -578,47 +744,1151 @@
    },
    {
       "name":"Druid",
-      "desc":"",
-      "icon":"./assets/images/icons/Druid.png"
+       "shortDesc":"A priest of the Old Faith, weilding the powers of nature- moonlight and plant growth, fire and lightening -and adopting animal forms.",
+       "longDesc":"Druids are an embodiment of nature\u2019s resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature\u2019s indomitable will. Druids revere nature above all, gaining their spells and other magical powers either from the force of nature itself or from a nature deity. The ancient druidic traditions are sometimes called the Old Faith, in contrast to the worship of gods in temples and shrines.\n\n For druids, nature exists in a precarious balance. The four elements that make up a world (air, earth, fire, and water) must remain in equilibrium. Druids are also concerned with the delicate ecological balance that sustains plant and animal life, and the need for civilized folk to live in harmony with nature. Druids accept that which is cruel in nature and hate the unnatural. Druids are often found guarding sacred sites or watching over regions of unspoiled nature.",
+       "icon":"./assets/images/icons/Druid.png",
+       "quickBuild": {
+         "highestAbility": "Wisdom",
+         "nextAbility": "Constitution",
+         "suggestedBackground": "Hermit",
+       },
+       "traits": {
+         "primeAbility": "Wisdom",
+         "SaveThrowProf": "Wisdom and Intelligence",
+         "tools": "herbalism kit",
+         "noOfSkills": 2,
+         "skillsList": [
+           "Arcane",
+           "Animal Handling",
+           "Insight",
+           "Medicine",
+           "Nature",
+           "Perception",
+           "Religion",
+           "Survival"
+         ],
+         "features": [
+           {
+             "level": 1,
+             "name": "Druidic"
+           },
+           {
+             "level": 1,
+             "name": "Spellcasting"
+           },
+           {
+             "level": 2,
+             "name": "Wild Shape"
+           },
+           {
+             "level": 2,
+             "name": "Druid Circle"
+           },
+           {
+             "level": 4,
+             "name": "Ability Score Improvement"
+           },
+           {
+             "level": 18,
+             "name": "Timeless Body"
+           },
+           {
+             "level": 18,
+             "name": "Beast Spells"
+           },
+           {
+             "level": 20,
+             "name": "Archdruid"
+           }
+         ],
+         "startEquip": {
+           "weapon1": "wooden shield OR any simple weapon",
+           "weapon2": "scimitar OR any simple melee weapon",
+           "misc": [
+             "explorer\u2019s pack",
+             "leather armor",
+             "druidic focus"
+           ]
+         }
+       },
+       "combat": {
+         "hitDie": "d8",
+         "hitPtsLvl1": "8 + constitution modifier",
+         "armorProf": [
+           "light armor",
+           "medium armor",
+           "shields",
+           "*Druids will not wear armor or use shieldsw made of metal*"
+         ],
+         "weaponProf": [
+           "clubs",
+           "daggers",
+           "darts",
+           "javelins",
+           "maces",
+           "quarterstaffs",
+           "scimitars",
+           "sickles",
+           "slings",
+           "spears"
+         ]
+       },
+       "archetype": {
+         "called": "Circles",
+         "types": [
+           {
+             "name": "Circle of the Land",
+             "desc": "This circle is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites. The different land types are: arctic, coast, desert, forest, grassland, mountain, swamp, and underdark.",
+             "features": [
+               {
+                 "level": 2,
+                 "name": "Bonus Cantrip"
+               },
+               {
+                 "level": 2,
+                 "name": "Natural Recovery"
+               },
+               {
+                 "level": 3,
+                 "name": "Circle Spells (based on land)"
+               },
+               {
+                 "level": 5,
+                 "name": "Circle Spells (based on land)"
+               },
+               {
+                 "level": 6,
+                 "name": "Land\u2019s Stride"
+               },
+               {
+                 "level": 7,
+                 "name": "Circle Spells (based on land)"
+               },
+               {
+                 "level": 9,
+                 "name": "Circle Spells (based on land)"
+               },
+               {
+                 "level": 10,
+                 "name": "Nature\u2019s Ward"
+               },
+               {
+                 "level": 14,
+                 "name": "Nature\u2019s Sanctuary"
+               }
+             ]
+           },
+           {
+             "name": "Circle of the Moon",
+             "desc": "This circle is made up of fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepest parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid. Changeable as the moon, the wild is in the druid\u2019s blood.",
+             "features": [
+               {
+                 "level": 2,
+                 "name": "Combat Wild Shape"
+               },
+               {
+                 "level": 2,
+                 "name": "Circle Forms"
+               },
+               {
+                 "level": 6,
+                 "name": "Primal Strike"
+               },
+               {
+                 "level": 10,
+                 "name": "Elemental Wild Shape"
+               },
+               {
+                 "level": 14,
+                 "name": "Thousand Forms"
+               }
+             ]
+           }
+        ]
+      }
    },
    {
       "name":"Fighter",
-      "desc":"",
-      "icon":"./assets/images/icons/Fighter.png"
-   },
-   {
+      "shortDesc":"A master of martial combat, skilled with a variety of weapons and armor.",
+      "longDesc":"Fighters all share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. Beyond the basic degree of familiarity, each fighter specializes in a certain style of combat. The combination of broad general ability and extensive specialization makes fighters superior combatants on battlefields and in dungeons alike.",
+      "icon":"./assets/images/icons/Fighter.png",
+      "quickBuild": {
+        "highestAbility": "Strength or Dexterity",
+        "nextAbility": "Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Strength or Dexterity",
+        "SaveThrowProf": "Strength and Constitution",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
+  {
       "name":"Monk",
-      "desc":"",
-      "icon":"./assets/images/icons/Monk.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Paladin",
-      "desc":"",
-      "icon":"./assets/images/icons/Paladin.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Ranger",
-      "desc":"",
-      "icon":"./assets/images/icons/Ranger.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Rogue",
-      "desc":"",
-      "icon":"./assets/images/icons/Rogue.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Sorcerer",
-      "desc":"",
-      "icon":"./assets/images/icons/Sorcerer.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Warlock",
-      "desc":"",
-      "icon":"./assets/images/icons/Warlock.png"
-   },
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  },
    {
       "name":"Wizard",
-      "desc":"",
-      "icon":"./assets/images/icons/Wizard.png"
-   }
+      "shortDesc":".",
+      "longDesc":"",
+      "icon":"./assets/images/icons/Druid.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        }
+      },
+      "combat": {
+        "hitDie": "d8",
+        "hitPtsLvl1": "8 + constitution modifier",
+        "armorProf": [
+          "light armor",
+          "medium armor",
+          "shields"
+        ],
+        "weaponProf": [
+          "simple weapons"
+        ]
+      },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+       ]
+     }
+  }
 ]
