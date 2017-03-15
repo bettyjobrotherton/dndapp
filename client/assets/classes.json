@@ -914,8 +914,8 @@
       "icon":"./assets/images/icons/Fighter.png",
       "quickBuild": {
         "highestAbility": "Strength or Dexterity",
-        "nextAbility": "Constitution",
-        "suggestedBackground": "Acolyte",
+        "nextAbility": "Constitution or Intelligence",
+        "suggestedBackground": "Soldier",
       },
       "traits": {
         "primeAbility": "Strength or Dexterity",
@@ -923,24 +923,31 @@
         "tools": "none",
         "noOfSkills": 2,
         "skillsList": [
+          "Acrobatics",
+          "Animal Handling",
+          "Athletics",
           "History",
           "Insight",
-          "Medicine",
-          "Persuasion",
-          "Religion",
+          "Intimidation",
+          "Perception",
+          "Survival"
         ],
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Fighting Style"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Second Wind"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Action Surge"
+          },
+          {
+            "level": 3,
+            "name": "Martial Archetype"
           },
           {
             "level": 4,
@@ -948,144 +955,233 @@
           },
           {
             "level": 5,
-            "name": "Destroy Undead"
+            "name": "Extra Attack"
           },
           {
-            "level": 10,
-            "name": "Divine Intervention"
+            "level": 9,
+            "name": "Indomitable"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "martial weapon and shield OR two martial weapons",
+          "weapon2": "light crossbow with 20 bolts OR two hand axes",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "dungeoneer\u2019s pack OR explorer\u2019s pack",
+            "chain mail OR leather armor, long bow, and 20 arrows"
           ]
         }
       },
       "combat": {
-        "hitDie": "d8",
-        "hitPtsLvl1": "8 + constitution modifier",
+        "hitDie": "d10",
+        "hitPtsLvl1": "10 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
+          "all armor",
           "shields"
         ],
         "weaponProf": [
-          "simple weapons"
+          "simple weapons",
+          "martial weapons"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Martial Archetypes",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Champion",
+            "desc": "Focuses on development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.",
             "features": [
               {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
                 "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
-              },
-              {
-                "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Improved Critical"
               },
               {
                 "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
+                "name": "Remarkable Athlete"
               },
               {
-                "level": 8,
-                "name": "Potent Spellcasting"
+                "level": 10,
+                "name": "Additional Fighting Style"
               },
               {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
+                "level": 15,
+                "name": "Superior Critical"
               },
               {
-                "level": 17,
-                "name": "Visions of the Past"
+                "level": 18,
+                "name": "Survivor"
               }
             ]
           },
+          {
+            "name": "Battle Master",
+            "desc": "Those who model themselves on this archetype employ martial techniques passed down through generations. To a battle master, combat is an academic field. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in this archetype, but those who do are well-rounded fighters of great skill and knowledge.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Combat Superiority"
+              },
+              {
+                "level": 3,
+                "name": "Student of War"
+              },
+              {
+                "level": 7,
+                "name": "Know Your Enemy"
+              },
+              {
+                "level": 10,
+                "name": "Improved Combat Superiority"
+              },
+              {
+                "level": 15,
+                "name": "Relentless"
+              },
+              {
+                "level": 18,
+                "name": "Survivor"
+              }
+            ]
+          },
+          {
+            "name": "Eldritch Knight",
+            "desc": "Combines the martial mastery common to all fighters with a careful study of magic. Eldritch knights use magical techniques similiar to those practiced by wizards. They focus their study on the abjuration and evocation schools of magic. These knights learn a comparatively small number of spells, commiting them to memory instead of keeping them in a spellbook.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Spellcasting"
+              },
+              {
+                "level": 3,
+                "name": "Weapon Bond"
+              },
+              {
+                "level": 7,
+                "name": "War Magic"
+              },
+              {
+                "level": 10,
+                "name": "Eldritch Strike"
+              },
+              {
+                "level": 15,
+                "name": "Arcane Charge"
+              },
+              {
+                "level": 18,
+                "name": "Improved War Magic"
+              }
+            ]
+          }
        ]
      }
   },
   {
       "name":"Monk",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A master of martial arts, harnessing the power of the body in pursuit of physical and spiritual perfection.",
+      "longDesc":"Monks are united in their ability to magically harness the energy that flows in their bodies. Monks make a careful study of a magical energy that most monastic traditions call ki. This energy is an element that suffuses the multiverse, specifically through living bodies. Monks harness this power within themselves to create magical effects and exceed their bodies\u2019 physical capabilities. Some of their special attacks can hinder the flow of ki in their opponents.\n\n The majority of monks make frequent visits to nearby towns or villages and exchange their service for food and other goods. As versatile warriors, monks often end up protecting their neighbors from monsters or tyrants. For a monk, becoming an adventurer means leaving a structured, communal lifestyle to become a wanderer. This can be a harsh transition, which monks don\u2019t undertake lightly. Usually, monks care little for material wealth and are driven by a desire to accomplish a greater mission than merely slaying monsters and plundering their treasure.",
+      "icon":"./assets/images/icons/Monk.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Dexterity",
+        "nextAbility": "Wisdom",
+        "suggestedBackground": "Hermit",
       },
       "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
-        "tools": "none",
+        "primeAbility": "Dexterity and Wisdom",
+        "SaveThrowProf": "Strength and Dexterity",
+        "tools": "One type of artisan\u2019s tool OR musical instrument",
         "noOfSkills": 2,
         "skillsList": [
+          "Acrobatics",
+          "Athletics",
           "History",
           "Insight",
-          "Medicine",
-          "Persuasion",
           "Religion",
+          "Stealth"
         ],
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Unarmored Defense"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Martial Arts"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Ki"
+          },
+          {
+            "level": 2,
+            "name": "Unarmored Movement"
+          },
+          {
+            "level": 3,
+            "name": "Monastic Tradition"
+          },
+          {
+            "level": 3,
+            "name": "Deflect Missiles"
           },
           {
             "level": 4,
             "name": "Ability Score Improvement"
           },
           {
+            "level": 4,
+            "name": "Slow Fall"
+          },
+          {
             "level": 5,
-            "name": "Destroy Undead"
+            "name": "Extra Attack"
+          },
+          {
+            "level": 5,
+            "name": "Stunning Strike"
+          },
+          {
+            "level": 6,
+            "name": "Ki-Empowered Strikes"
+          },
+          {
+            "level": 7,
+            "name": "Evasion"
+          },
+          {
+            "level": 7,
+            "name": "Stillness of Mind"
           },
           {
             "level": 10,
-            "name": "Divine Intervention"
+            "name": "Purity of Body"
+          },
+          {
+            "level": 13,
+            "name": "Tongue of the Sun and Moon"
+          },
+          {
+            "level": 14,
+            "name": "Diamond Soul"
+          },
+          {
+            "level": 15,
+            "name": "Timeless Body"
+          },
+          {
+            "level": 18,
+            "name": "Empty Body"
+          },
+          {
+            "level": 20,
+            "name": "Perfect Self"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "shortsword OR any simple weapon",
+          "weapon2": " ",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "dungeoneer\u2019s pack OR explorer\u2019s pack",
+            "10 darts"
           ]
         }
       },
@@ -1093,84 +1189,96 @@
         "hitDie": "d8",
         "hitPtsLvl1": "8 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
-          "shields"
+          "none"
         ],
         "weaponProf": [
-          "simple weapons"
+          "simple weapons",
+          "shortswords"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Monastic Traditions",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Way of the Open Hand",
+            "desc": "Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.",
             "features": [
               {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
                 "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
+                "name": "Open Hand Technique"
               },
               {
                 "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Wholeness of Body"
               },
               {
-                "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
-              },
-              {
-                "level": 8,
-                "name": "Potent Spellcasting"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
+                "level": 11,
+                "name": "Tranquility"
               },
               {
                 "level": 17,
-                "name": "Visions of the Past"
+                "name": "Quivering Palm"
               }
             ]
           },
+          {
+            "name": "Way of Shadow",
+            "desc": "Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Sometimes the members of a ninja monastery are family members that form a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves\u2019 guilds, hiring out their services to anyone who can pay their fee. Either way, the heads of these monasteries expect unquestioning obedience from their students.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Shadow Arts"
+              },
+              {
+                "level": 6,
+                "name": "Shadow Step"
+              },
+              {
+                "level": 11,
+                "name": "Cloak of Shadows"
+              },
+              {
+                "level": 17,
+                "name": "Opportunist"
+              }
+            ]
+          },
+          {
+            "name": "Way of the Four Elements",
+            "desc": "Monks of the Way of the Four Elements learn to harness the elements. When they focus their ki, they can align themselves with the forces of creation and bend the four elements to their will, using the elements as an extension of their body. Some members if this tradition dedicate themselves to a single element, while others weave the elements together. Many monks from this tradition tattoo their bodies with representations of their ki powers.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Disciple of the Elements"
+              },
+              {
+                "level": 3,
+                "name": "Elemental Disciplines"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Paladin",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A holy warrior bound to a sacred oath.",
+      "longDesc":"Paladins are united by their oaths to stand against the forces of evil. A paladin\u2019s oath is a powerful bond and is a source of power that turns a devout warrior into a blessed champion. Different paladins focus on various aspects of the oaths that grant them power to do their sacred work. A paladin\u2019s power comes as much from a commitment to justice itself as it does from a god. Paladins train for years to learn the skills of combat, but their martial skills are secondary to the magical power they weild: power to heal the sick and injured, to smite the wicked and undead, and to protect the innocent and those who join them in the fight for justice.",
+      "icon":"./assets/images/icons/Paladin.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Strength",
+        "nextAbility": "Charisma",
+        "suggestedBackground": "Noble",
       },
       "traits": {
-        "primeAbility": "Wisdom",
+        "primeAbility": "Strength and Charisma",
         "SaveThrowProf": "Wisdom and Charisma",
         "tools": "none",
         "noOfSkills": 2,
         "skillsList": [
-          "History",
+          "Athletics",
           "Insight",
+          "Intimidation",
           "Medicine",
           "Persuasion",
           "Religion",
@@ -1178,15 +1286,27 @@
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Divine Sense"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Lay on Hands"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Fighting Style"
+          },
+          {
+            "level": 2,
+            "name": "Divine Smite"
+          },
+          {
+            "level": 3,
+            "name": "Divine Health"
+          },
+          {
+            "level": 3,
+            "name": "Sacred Oath"
           },
           {
             "level": 4,
@@ -1194,122 +1314,240 @@
           },
           {
             "level": 5,
-            "name": "Destroy Undead"
+            "name": "Extra Attack"
+          },
+          {
+            "level": 6,
+            "name": "Aura of Protection"
           },
           {
             "level": 10,
-            "name": "Divine Intervention"
+            "name": "Aura of Courage"
+          },
+          {
+            "level": 11,
+            "name": "Improved Divine Smite"
+          },
+          {
+            "level": 14,
+            "name": "Cleansing Touch"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "martial weapon and sheild OR two martial weapons",
+          "weapon2": "5 javelins OR any simple weapon",
           "misc": [
             "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
+            "chain mail",
             "holy symbol"
           ]
         }
       },
       "combat": {
-        "hitDie": "d8",
-        "hitPtsLvl1": "8 + constitution modifier",
+        "hitDie": "d10",
+        "hitPtsLvl1": "10 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
+          "all armor",
           "shields"
         ],
         "weaponProf": [
-          "simple weapons"
+          "simple weapons",
+          "martial weapons"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Sacred Oaths",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Oath of Devotion",
+            "desc": "Binds a paladin to the loftiest of ideals of justice, virtue, and order. These paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and incorporate images of angelic wings into their coat of arms.",
             "features": [
               {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
+                "level": 3,
+                "name": "Tenets of Devotion"
               },
               {
                 "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
+                "name": "Channel Divinity"
+              },
+              {
+                "level": 3,
+                "name": "Oath Spells: Protection from Evil and Good, Sanctuary"
               },
               {
                 "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
-              },
-              {
-                "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Oath Spells: Lesser Restoration, Zone of Truth"
               },
               {
                 "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
-              },
-              {
-                "level": 8,
-                "name": "Potent Spellcasting"
+                "name": "Aura of Devotion"
               },
               {
                 "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
+                "name": "Oath Spells: Beacon of Hope, Dispel Magic"
+              },
+              {
+                "level": 13,
+                "name": "Oath Spells: Freedom of Movement, Guardian of Faith"
+              },
+              {
+                "level": 15,
+                "name": "Purity of Spirit"
               },
               {
                 "level": 17,
-                "name": "Visions of the Past"
+                "name": "Oath Spells: Commune, Flame Strike"
+              },
+              {
+                "level": 20,
+                "name": "Holy Nimbus"
               }
             ]
           },
+          {
+            "name": "Oath of the Ancients",
+            "desc": "The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Paladins who swear this oath cast their lot with the side of light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in the principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things to reflect their commitment to preserving life and light in the world.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Tenets of the Ancients"
+              },
+              {
+                "level": 3,
+                "name": "Channel Divinity"
+              },
+              {
+                "level": 3,
+                "name": "Oath Spells: Ensnaring Strike, Speak with Animals"
+              },
+              {
+                "level": 5,
+                "name": "Oath Spells: Misty Step, Moonbeam"
+              },
+              {
+                "level": 7,
+                "name": "Aura of Warding"
+              },
+              {
+                "level": 9,
+                "name": "Oath Spells: Plant Growth, Protection from Energy"
+              },
+              {
+                "level": 13,
+                "name": "Oath Spells: Ice Storm, Stoneskin"
+              },
+              {
+                "level": 15,
+                "name": "Undying Sentinel"
+              },
+              {
+                "level": 17,
+                "name": "Oath Spells: Commune with Nature, Tree Stride"
+              },
+              {
+                "level": 20,
+                "name": "Elder Champion"
+              }
+            ]
+          },
+          {
+            "name": "Oath of Vengeance",
+            "desc": "A solemn commitment to punish those who have commited a grievous sin. Paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins, their own purity is not as important as delivering justice",
+            "features": [
+              {
+                "level": 3,
+                "name": "Tenets of Vengeance"
+              },
+              {
+                "level": 3,
+                "name": "Channel Divinity"
+              },
+              {
+                "level": 3,
+                "name": "Oath Spells: Bane, Hunter\u2019s Mark"
+              },
+              {
+                "level": 5,
+                "name": "Oath Spells: Hold Person, Misty Step"
+              },
+              {
+                "level": 7,
+                "name": "Relentless Avenger"
+              },
+              {
+                "level": 9,
+                "name": "Oath Spells: Haste, Protection from Energy"
+              },
+              {
+                "level": 13,
+                "name": "Oath Spells: Banishment, Dimension Door"
+              },
+              {
+                "level": 15,
+                "name": "Soul of Vengeance"
+              },
+              {
+                "level": 17,
+                "name": "Oath Spells: Hold Monster, Scrying"
+              },
+              {
+                "level": 20,
+                "name": "Avenging Angel"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Ranger",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A warrior who uses martial prowess and nature magic to combat threats on the edges of civilization.",
+      "longDesc":"Warriors of the wilderness, rangers specialize in hunting monsters that threaten the edge of civilization. They learn to track their quarry like a predator, moving stealthily through the wilds and hiding themselves in brush and rubble. Rangers acquire the ability to cast spells that narness nature\u2019s power, much as a druid does. Their spells and combat abilities emphasize speed, stealth, and the hunt.\n\nIn some places, rangers gather in secretive orders or join forces with druidic circles, but many rangers are independent almost to a fault. Their fierce independence makes rangers well suited to adventuring, since they are accustomed to life far from the comforts of a dry bed and hot bath.",
+      "icon":"./assets/images/icons/Ranger.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Dexterity",
+        "nextAbility": "Wisdom",
+        "suggestedBackground": "Outlander",
       },
       "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
+        "primeAbility": "Dexterity and Wisdom",
+        "SaveThrowProf": "Strength and Dexterity",
         "tools": "none",
-        "noOfSkills": 2,
+        "noOfSkills": 3,
         "skillsList": [
-          "History",
+          "Animal Handling",
+          "Athletics",
           "Insight",
-          "Medicine",
-          "Persuasion",
-          "Religion",
+          "Investigation",
+          "Nature",
+          "Perception",
+          "Stealth",
+          "Survival"
         ],
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Favored Enemy"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Natural Explorer"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Fighting Style"
+          },
+          {
+            "level": 2,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 3,
+            "name": "Ranger Archetype"
+          },
+          {
+            "level": 3,
+            "name": "Primal Awareness"
           },
           {
             "level": 4,
@@ -1317,122 +1555,148 @@
           },
           {
             "level": 5,
-            "name": "Destroy Undead"
+            "name": "Extra Attack"
+          },
+          {
+            "level": 8,
+            "name": "Land\u2019s Stride"
           },
           {
             "level": 10,
-            "name": "Divine Intervention"
+            "name": "Hide in Plain Sight"
+          },
+          {
+            "level": 14,
+            "name": "Vanish"
+          },
+          {
+            "level": 18,
+            "name": "Feral Senses"
+          },
+          {
+            "level": 20,
+            "name": "Foe Slayer"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "2 shortswords OR 2 simple melee weapons",
+          "weapon2": "longbow and quiver of 20 arrows",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "dungeoneer\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor"
           ]
         }
       },
       "combat": {
-        "hitDie": "d8",
-        "hitPtsLvl1": "8 + constitution modifier",
+        "hitDie": "d10",
+        "hitPtsLvl1": "10 + constitution modifier",
         "armorProf": [
           "light armor",
           "medium armor",
           "shields"
         ],
         "weaponProf": [
-          "simple weapons"
+          "simple weapons",
+          "martial weapons"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Ranger Archetypes",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Hunter",
+            "desc": "These rangers accept their place as a bulwark between civilization and the terrors of the wilderness. As you walk the hunter\u2019s path, you learn specialized techniques for fighting the threats you face.",
             "features": [
               {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
                 "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
-              },
-              {
-                "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Hunter\u2019s Prey"
               },
               {
                 "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
+                "name": "Defensive Tactics"
               },
               {
-                "level": 8,
-                "name": "Potent Spellcasting"
+                "level": 11,
+                "name": "Multiattack"
               },
               {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
-              },
-              {
-                "level": 17,
-                "name": "Visions of the Past"
+                "level": 15,
+                "name": "Superior Hunter's Defense"
               }
             ]
           },
+          {
+            "name": "Beast Master",
+            "desc": "These rangers embody a friendship between the civilized races and the beasts of the wild. United in focus, beast and ranger fight the monsters that threaten civilization and the wilderness alike.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Ranger\u2019s Companion"
+              },
+              {
+                "level": 7,
+                "name": "Exceptional Training"
+              },
+              {
+                "level": 11,
+                "name": "Bestial Fury"
+              },
+              {
+                "level": 15,
+                "name": "Share Spells"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Rogue",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A scoundrel who uses stealth and trickery to overcome obstacles and enemies.",
+      "longDesc":"Rogues rely on skill, stealth, and their foes\u2019 vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating resourcefulness and versatility that is the cornerstone of any successful adventuring party. Rogues devote as much effort to mastering the use of a variety of skills as they do to perfecting their combat abilities, giving them a broad expertise that few other characters can match.\n\nWhen it comes to combat, rogues prioritize cunning over brute strength. Rogues have an almost supernatural knack for avoiding danger, and a few learn magical tricks to supplement their other abilities. As adventurers, rogues fall on both sides of the law.",
+      "icon":"./assets/images/icons/Rogue.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Dexterity",
+        "nextAbility": "Intelligence or Charisma",
+        "suggestedBackground": "Charlatan",
       },
       "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
-        "tools": "none",
-        "noOfSkills": 2,
+        "primeAbility": "Dexterity",
+        "SaveThrowProf": "Dexterity and Intelligence",
+        "tools": "thieve\u2019s tools",
+        "noOfSkills": 4,
         "skillsList": [
-          "History",
+          "Acrobatics",
+          "Athletics",
+          "Deception",
           "Insight",
-          "Medicine",
+          "Intimidation",
+          "Investigation",
+          "Perception",
           "Persuasion",
-          "Religion",
+          "Sleight of Hand",
+          "Stealth"
         ],
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Expertise"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Sneak Attack"
+          },
+          {
+            "level": 1,
+            "name": "Thieves\u2019 Cant"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Cunning Action"
+          },
+          {
+            "level": 3,
+            "name": "Roguish Archetype"
           },
           {
             "level": 4,
@@ -1440,21 +1704,41 @@
           },
           {
             "level": 5,
-            "name": "Destroy Undead"
+            "name": "Uncanny Dodge"
           },
           {
-            "level": 10,
-            "name": "Divine Intervention"
+            "level": 7,
+            "name": "Evasion"
+          },
+          {
+            "level": 11,
+            "name": "Reliable Talent"
+          },
+          {
+            "level": 14,
+            "name": "Blindsense"
+          },
+          {
+            "level": 15,
+            "name": "Slippery Mind"
+          },
+          {
+            "level": 18,
+            "name": "Elusive"
+          },
+          {
+            "level": 20,
+            "name": "Stroke of Luck"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "rapier OR shortsword",
+          "weapon2": "shortbow and quiver of 20 arrows OR shortsword",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "burglar\u2019s pack OR dungeoneer\u2019s pack OR explorer\u2019s pack",
+            "leather armor",
+            "2 daggers",
+            "thieve\u2019s tools"
           ]
         }
       },
@@ -1462,85 +1746,132 @@
         "hitDie": "d8",
         "hitPtsLvl1": "8 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
-          "shields"
+          "light armor"
         ],
         "weaponProf": [
-          "simple weapons"
+          "simple weapons",
+          "hand crossbows",
+          "longswords",
+          "rapiers",
+          "shortswords"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Roguish Archetypes",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Thief",
+            "desc": "These rogues hone their skill in the larcenous arts. In addition to improving their agility and stealth, they learn skills usefull for delving into ancient ruins, reading unfamiliar languages, and using magic items they normally couldn\u2019t employ.",
             "features": [
               {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
+                "level": 3,
+                "name": "Fast Hands"
               },
               {
                 "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
-              },
-              {
-                "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
-              },
-              {
-                "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
-              },
-              {
-                "level": 8,
-                "name": "Potent Spellcasting"
+                "name": "Second-Story Work"
               },
               {
                 "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
+                "name": "Supreme Sneak"
+              },
+              {
+                "level": 13,
+                "name": "Use Magic Device"
               },
               {
                 "level": 17,
-                "name": "Visions of the Past"
+                "name": "Thief\u2019s Reflexes"
               }
             ]
           },
+          {
+            "name": "Assassin",
+            "desc": "These rogues focus their training on the grim art of death. Stealth, poison, and disguise help them eliminate their foes with deadly efficiency.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Assassinate"
+              },
+              {
+                "level": 3,
+                "name": "Bonus Proficiencies"
+              },
+              {
+                "level": 9,
+                "name": "Infiltration Expertise"
+              },
+              {
+                "level": 13,
+                "name": "Impostor"
+              },
+              {
+                "level": 17,
+                "name": "Death Strike"
+              }
+            ]
+          },
+          {
+            "name": "Arcane Trickster",
+            "desc": "These rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion.",
+            "features": [
+              {
+                "level": 3,
+                "name": "Spellcasting"
+              },
+              {
+                "level": 3,
+                "name": "Mage Hand Legerdemain"
+              },
+              {
+                "level": 9,
+                "name": "Magical Ambush"
+              },
+              {
+                "level": 13,
+                "name": "Versatile Trickster"
+              },
+              {
+                "level": 17,
+                "name": "Spell Thief"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Sorcerer",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A spellcaster who draws on inherent magic from a gift or bloodline.",
+      "longDesc":"No one chooses sorcery; the power chooses the sorcerer. Magic is a part of every sorcerer, suffusing body, mind, and spirit with a latent power that waits to be tapped. The appearance of sorcerous power is wildly unpredictable. Most of the time, the talents of sorcery appear as apparent flukes. Some sorcerers can\u2019t name the origin of their power, while others trace it to strange events in their lives. Sorcerers have no use for the spellbooks and ancient tomes of magic lore that wizards rely on, nor do they rely on a patron to grant their spells as warlocks do. By learning to harness and channel their own inborn magic, they can discover new and staggering ways to unleash that power. People with magical power seething in their veins soon discover that the power doesn't like to stay quiet, and that power has a tendency to spill out in unpredictable ways if it isn\u2019t called on.",
+      "icon":"./assets/images/icons/Sorcerer.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Charisma",
+        "nextAbility": "Constitution",
+        "suggestedBackground": "Hermit",
+        "spells": {
+          "cantrips": [
+            "Light",
+            "Prestidigitation",
+            "Ray of Frost",
+            "Shocking Grasp"
+          ],
+          "lvl1": [
+            "Shield",
+            "Magic Missile"
+          ]
+        }
       },
       "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
+        "primeAbility": "Charisma",
+        "SaveThrowProf": "Charisma and Constitution",
         "tools": "none",
         "noOfSkills": 2,
         "skillsList": [
-          "History",
+          "Arcana",
+          "Deception",
           "Insight",
-          "Medicine",
+          "Intimidation",
           "Persuasion",
           "Religion",
         ],
@@ -1551,156 +1882,178 @@
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Sorcerous Origin"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Font of Magic"
+          },
+          {
+            "level": 3,
+            "name": "Metamagic"
           },
           {
             "level": 4,
             "name": "Ability Score Improvement"
           },
           {
-            "level": 5,
-            "name": "Destroy Undead"
-          },
-          {
-            "level": 10,
-            "name": "Divine Intervention"
+            "level": 20,
+            "name": "Sorcerous Restoration"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon2": "2 daggers",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "dungeoneer\u2019s pack OR explorer\u2019s pack",
+            "component pouch OR arcane focus"
           ]
         }
       },
       "combat": {
-        "hitDie": "d8",
-        "hitPtsLvl1": "8 + constitution modifier",
+        "hitDie": "d6",
+        "hitPtsLvl1": "6 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
-          "shields"
+          "none"
         ],
         "weaponProf": [
-          "simple weapons"
+          "daggers",
+          "darts",
+          "slings",
+          "quarterstaffs",
+          "light crossbows"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Sorcerous Origins",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "Draconic Bloodline",
+            "desc": "These sorcerers\u2019 innate magic comes from draconic magic that was mingled with their blood or that of their ancestors. Most often, sorcerers with this origin trace their bloodline back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might have even claimed a dragon parent. Any sorcerer could be the first of a new bloodline, as a result of a pact or some other special circumstance.",
             "features": [
               {
                 "level": 1,
-                "name": "Blessings of Knowledge"
+                "name": "Dragon Ancestor"
               },
               {
                 "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
+                "name": "Draconic Resilience"
               },
               {
                 "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Elemental Affinity"
               },
               {
-                "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
+                "level": 14,
+                "name": "Dragon Wings"
               },
               {
-                "level": 8,
-                "name": "Potent Spellcasting"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
-              },
-              {
-                "level": 17,
-                "name": "Visions of the Past"
+                "level": 18,
+                "name": "Draconic Presence"
               }
             ]
           },
+          {
+            "name": "Wild Magic",
+            "desc": "These sorcerers\u2019 innate magic comes from the forces of chaos that underlie the order of creation. They might have endured exposure to raw magic, blessed by a fey being, marked by a demon, or their magic could be a fluke of their birth. However it came to be, this magic churns within them, waiting for an outlet.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Wild Magic Surge"
+              },
+              {
+                "level": 1,
+                "name": "Tides of Chaos"
+              },
+              {
+                "level": 6,
+                "name": "Bend Luck"
+              },
+              {
+                "level": 14,
+                "name": "Controlled Chaos"
+              },
+              {
+                "level": 18,
+                "name": "Spell Bombardment"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Warlock",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A wielder of magic that is derived from a bargain with an extraplanetary entity.",
+      "longDesc":"Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular. Warlocks draw on the ancient knowledge of beings such as fey nobles, demons, devils, hags, and alien entities of the Far Realm and piece together arcane secrets to bolster their own power.\n\nWarlocks are driven by an insatiable need for knowledge and power, which compels them into their pacts and shapes their lives. A warlock is defined by their pact with an otherworldly being. Most often, the arrangement is similiar to that between a master and apprentice. The magic bestowed on a warlock ranges from minor but lasting alterations to the warlock\u2019s being to access to powerful spells. Once a pact is made, a warlock\u2019s thirst for knowledge and power can\u2019t be slaked with mere study and research.\n\n Warlocks supplement their magic with some facility at hand-to-hand combat.",
+      "icon":"./assets/images/icons/Warlock.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Charisma",
+        "nextAbility": "Constitution",
+        "suggestedBackground": "Charlatan",
+        "spells": {
+          "cantrips": [
+            "Eldritch Blast",
+            "Chill Touch"
+          ],
+          "lvl1": [
+            "Charm Person",
+            "Witch Bolt"
+          ]
+        }
       },
       "traits": {
-        "primeAbility": "Wisdom",
+        "primeAbility": "Charisma",
         "SaveThrowProf": "Wisdom and Charisma",
         "tools": "none",
         "noOfSkills": 2,
         "skillsList": [
+          "Arcana",
+          "Deception",
           "History",
-          "Insight",
-          "Medicine",
-          "Persuasion",
+          "Intimidation",
+          "Investigation",
+          "Nature",
           "Religion",
         ],
         "features": [
           {
             "level": 1,
-            "name": "Spellcasting"
+            "name": "Otherworldly Patron"
           },
           {
             "level": 1,
-            "name": "Divine Domain"
+            "name": "Pact Magic"
           },
           {
             "level": 2,
-            "name": "Channel Divinity"
+            "name": "Eldritch Invocations"
+          },
+          {
+            "level": 3,
+            "name": "Pact Boon"
           },
           {
             "level": 4,
             "name": "Ability Score Improvement"
           },
           {
-            "level": 5,
-            "name": "Destroy Undead"
+            "level": 11,
+            "name": "Mystic Arcanum"
           },
           {
-            "level": 10,
-            "name": "Divine Intervention"
+            "level": 20,
+            "name": "Eldritch Master"
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon2": "any simple weapon",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "scholar\u2019s pack OR dungeoneer\u2019s pack",
+            "component pouch OR arcane focus",
+            "leather armor",
+            "2 daggers"
           ]
         }
       },
@@ -1708,87 +2061,133 @@
         "hitDie": "d8",
         "hitPtsLvl1": "8 + constitution modifier",
         "armorProf": [
-          "light armor",
-          "medium armor",
-          "shields"
+          "light armor"
         ],
         "weaponProf": [
           "simple weapons"
         ]
       },
       "archetype": {
-        "called": "Domains",
+        "called": "Otherworldly Patrons",
         "types": [
           {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "name": "The Archfey",
+            "desc": "This patron is a lord or lady of the fey, a creatur eof legend who holds secrets that were forgotten before the mortal races were born. This being\u2019s motivations are often inscrutable, and sometimes whimsical, and might involve striving for greater magical power or settling age-old grudges.\n\n Examples of these beings are: the Prince of Frost, the Queen of Air and Darkness and ruler of the Gloaming Court, Titania of the Summer Court, the Green Lord (Oberon), the Prince of Fools (Hyrsam), and ancient hags.",
             "features": [
               {
                 "level": 1,
-                "name": "Blessings of Knowledge"
+                "name": "Expanded Spell List"
               },
               {
                 "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
+                "name": "Fey Presence"
               },
               {
                 "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
+                "name": "Misty Escape"
               },
               {
-                "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
+                "level": 10,
+                "name": "Beguiling Defenses"
               },
               {
-                "level": 8,
-                "name": "Potent Spellcasting"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
-              },
-              {
-                "level": 17,
-                "name": "Visions of the Past"
+                "level": 14,
+                "name": "Dark Delirium"
               }
             ]
           },
+          {
+            "name": "The Fiend",
+            "desc": "This patron is a being from the lower planes of existence, whose aims are evil, even if a warlock strives against those aims. Such beings desire the corruption or destruction of all things, ultimately including the warlock.\n\n Fiends powerful enough to forge a pact include: demonlords such as Demogorgon, Orcus, Fraz\u2019Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; especially mighty pit fiends and balors; and ultroloths and other lords of the yugoloths. ",
+            "features": [
+              {
+                "level": 1,
+                "name": "Expanded Spell List"
+              },
+              {
+                "level": 1,
+                "name": "Dark One\u2019s Blessing"
+              },
+              {
+                "level": 6,
+                "name": "Dark One\u2019s Own Luck"
+              },
+              {
+                "level": 10,
+                "name": "Fiendish Resilience"
+              },
+              {
+                "level": 14,
+                "name": "Hurl Through Hell"
+              }
+            ]
+          },
+          {
+            "name": "The Great Old One",
+            "desc": "This patron is a mysterious entity whose nature is utterly forweign to the fabric of reality. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of a warlock\u2019s existence or entirely indifferent to them, but the secrets a warlock has learned allows them to draw their magic from it.\n\n Entities of this type include: Ghaunadar, That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Expanded Spell List"
+              },
+              {
+                "level": 1,
+                "name": "Awakened Mind"
+              },
+              {
+                "level": 6,
+                "name": "Entropic Ward"
+              },
+              {
+                "level": 10,
+                "name": "Thought Shield"
+              },
+              {
+                "level": 14,
+                "name": "Create Thrall"
+              }
+            ]
+          }
        ]
      }
   },
    {
       "name":"Wizard",
-      "shortDesc":".",
-      "longDesc":"",
-      "icon":"./assets/images/icons/Druid.png",
+      "shortDesc":"A scholarly magic-user capable of manipulating the structures of reality.",
+      "longDesc":"Wizards are supreme magic-users, defined and united as a class by the spells they cast. They draw on the subtle weave of magic that permeates the cosmos to cast their spells. Wizards live and die by their spells; everything else is secondary. They learn new spells are they experiment and grow in experience. They can also learn from other wizards, ancient tomes or inscriptions, and ancient creatures that are steeped in magic. The lure of knowledge and power calls even the most unadventerous wizard out of the safety of their libraries and laboratories and into crumbling ruins and lost cities. Most wizards believe that their counterparts in ancient civilizations knew secret magic that has been lost to the ages, and discovering those secrets could unlock the path to a power greater than any magic available in the present age.",
+      "icon":"./assets/images/icons/Wizard.png",
       "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
+        "highestAbility": "Intelligence",
+        "nextAbility": "Constitution or Dexterity",
+        "suggestedBackground": "Sage",
+        "spells": {
+          "cantrips": [
+            "Mage Hand",
+            "Light",
+            "Ray of Frost"
+          ],
+          "lvl1": [
+            "Burning Hands",
+            "Charm Person",
+            "Feather Fall",
+            "Mage Armor",
+            "Magic Missile",
+            "Sleep"
+          ]
+        }
       },
       "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
+        "primeAbility": "Intelligence",
+        "SaveThrowProf": "Intelligence and Wisdom",
         "tools": "none",
         "noOfSkills": 2,
         "skillsList": [
+          "Arcana",
           "History",
           "Insight",
+          "Investigation",
           "Medicine",
-          "Persuasion",
-          "Religion",
+          "Religion"
         ],
         "features": [
           {
@@ -1797,8 +2196,8 @@
           },
           {
             "level": 1,
-            "name": "Divine Domain"
-          },
+            "name": "Arcane Recovery"
+          }, //Stopped Here//
           {
             "level": 2,
             "name": "Channel Divinity"
@@ -1817,19 +2216,17 @@
           }
         ],
         "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "weapon1": "quarterstaff OR dagger",
+          "weapon2": "spellbook",
           "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
+            "scholar\u2019s pack OR explorer\u2019s pack",
+            "component pouch OR arcane focus"
           ]
         }
       },
       "combat": {
-        "hitDie": "d8",
-        "hitPtsLvl1": "8 + constitution modifier",
+        "hitDie": "d6",
+        "hitPtsLvl1": "6 + constitution modifier",
         "armorProf": [
           "light armor",
           "medium armor",
