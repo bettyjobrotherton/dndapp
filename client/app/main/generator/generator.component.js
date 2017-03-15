@@ -48,6 +48,10 @@ export class GeneratorController {
     this.currentRace = race;
   }
 
+  selectClass(build) {
+    this.currentClass = build;
+  }
+
   selectMainRace(){
     this.selectedRace = this.currentRace;
     if(this.selectedRace.name == 'Half-Elf' || this.selectedRace.name == 'Half-Orc' || this.selectedRace.name == 'Tiefling'){
@@ -59,16 +63,26 @@ export class GeneratorController {
     }
   }
 
+selectMainClass(){
+  this.selectedClass = this.currentClass;
+  this.classMain = false;
+  this.currentArchetype = this.selectedArchetype.archetype[0];
+}
+
+selectSubrace(subrace){
+  this.currentSubrace = subrace;
+}
+
+selectArchetype(archetype){
+  this.currentArchetype = archetype;
+}
+
   goBackToRace(){
     this.raceMain = true;
   }
 
-  selectSubrace(subrace){
-    this.currentSubrace = subrace;
-  }
-
-  selectClass(build) {
-    this.currentClass = build;
+  goBackToClass(){
+    this.classMain = true;
   }
 
   saveRace(){
@@ -78,17 +92,17 @@ export class GeneratorController {
     var raceInfo;
     if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
       raceInfo = {
-        bio: {
-          languages: race.traits.lang,
-          appearance: {
-            size: race.traits.size
-          }
-        },
-        general: {
-          movement: race.traits.baseSpd
-        },
+        // bio: {
+        //   languages: race.traits.lang,
+        //   appearance: {
+        //     size: race.traits.size
+        //   }
+        // },
+        // general: {
+        //   movement: race.traits.baseSpd
+        // },
         race: {
-          main: race.name,
+          main: race.name
         }
       };
     }
@@ -130,25 +144,16 @@ export class GeneratorController {
     console.log(this.currentClass);
     var newCharacter;
     var currentClass = this.currentClass;
+    var archetype = this.currentArchetype;
     var classInfo = {
       class: {
-        main: currentClass.name
-      },
-      skills: {
-        skillsList: currentClass.traits.skillsList
-      },
-      startEquip: {
-        primary: currentClass.traits.startEquip.weapon1,
-        secondary: currentClass.traits.startEquip.weapon2,
-        miscellaneous: currentClass.traits.startEquip.misc
+        main: currentClass.name,
+        archetype: currentArchetype.types.name
       },
       combat: {
         hitDie: currentClass.combat.hitDie,
-        armorProf: currentClass.combat.armorProf,
-        weaponProf: currentClass.combat.weaponProf
       }
     };
-
     if(this.first() == 'class'){
       newCharacter = classInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
@@ -156,6 +161,7 @@ export class GeneratorController {
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.class = classInfo.class;
+      newCharacter.combat = classInfo.combat;
       // need to finish saving class info
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
