@@ -86,28 +86,28 @@ selectArchetype(archetype){
   }
 
   saveRace(){
-    console.log(this.currentRace);
+    // console.log(this.currentRace);
     var newCharacter;
     var race = this.currentRace;
     var raceInfo;
     if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
       raceInfo = {
-        // bio: {
-        //   languages: race.traits.lang,
-        //   appearance: {
-        //     size: race.traits.size
-        //   }
-        // },
-        // general: {
-        //   movement: race.traits.baseSpd
-        // },
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
         race: {
           main: race.name
         }
       };
     }
     else {
-      console.log(this.currentSubrace);
+      // console.log(this.currentSubrace);
       var subrace = this.currentSubrace;
       raceInfo = {
         bio: {
