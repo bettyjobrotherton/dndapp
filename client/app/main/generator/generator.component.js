@@ -36,6 +36,15 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
+
+    this.$http.get('assets/alignment.json')
+              .then(res => {
+                vm.alignList = res.data;
+                vm.currentAlign = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
   }
 
   continueChar(generate) {
@@ -50,6 +59,10 @@ export class GeneratorController {
 
   selectClass(build) {
     this.currentClass = build;
+  }
+
+  selectAlign(align) {
+    this.currentAlign = align;
   }
 
   selectMainRace(){
@@ -68,6 +81,7 @@ selectMainClass(){
   this.classMain = false;
   this.currentArchetype = this.selectedClass.archetype.types[0];
 }
+
 
 selectSubrace(subrace){
   this.currentSubrace = subrace;
@@ -163,7 +177,7 @@ selectArchetype(archetype){
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorThree');
+      this.$state.go('generatorTwo');
     }
     // console.log(this.localStorage['character-in-progress']);
   }
