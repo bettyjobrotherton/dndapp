@@ -1,17 +1,17 @@
 <div class='alignmentView'>
   <div class="iconList">
     <div class='list-group' ng-repeat="align in genCtrl.alignList" >
-      <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectalignment(align)">
+      <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectAlign(align)">
     </div>
   </div>
 
   <div class='alignmentDesc'>
     <div>
-      <h3> {{genCtrl.currentAlignment.name}} </h3>
-      <p class='summary'>{{genCtrl.currentAlignment.desc}}</p>
+      <h3> {{genCtrl.currentAlign.name}} </h3>
+      <p class='summary'>{{genCtrl.currentAlign.desc}}</p>
     </div>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('generatorthree')"  type="">
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveAlign()"  type="">
       Submit &amp; Continue
     </button>
 

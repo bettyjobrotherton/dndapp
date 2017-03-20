@@ -36,6 +36,15 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
+
+    this.$http.get('assets/alignment.json')
+              .then(res => {
+                vm.alignList = res.data;
+                vm.currentAlign = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
   }
 
   continueChar(generate) {
@@ -50,6 +59,10 @@ export class GeneratorController {
 
   selectClass(build) {
     this.currentClass = build;
+  }
+
+  selectAlign(align) {
+    this.currentAlign = align;
   }
 
   selectMainRace(){
@@ -163,10 +176,30 @@ selectArchetype(archetype){
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorThree');
+      this.$state.go('generatorTwo');
     }
     // console.log(this.localStorage['character-in-progress']);
   }
+
+saveAlign(){
+  var newCharacter;
+  var currentAlign = this.currentAlign;
+  var alignInfo = {
+      alignment:{
+        main: currentAlign.name
+      }
+  };
+  if(this.first() =='class'){
+    newcharacter = alignInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorBackground');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.alignment = alignInfo.alignment;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
+  }
+}
 
     // if(this.first() == 'class'){
     //   newCharacter = classInfo;
