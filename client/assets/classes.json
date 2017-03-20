@@ -276,7 +276,7 @@
          ]
       },
       "archetype":{
-         "called":"Colleges",
+         "called":"Bardic Colleges",
          "types":[
             {
                "name":"College of Lore",
@@ -332,59 +332,6 @@
       "shortDesc":"A priestly champion who wields divine magic in service of a higher power.",
       "longDesc":"Clerics are intermediaries between the mortal world and the distant planes of the gods. They strive to embody the handiwork of their deities and are imbued with divine magic. The ability to cast cleric spells relies on devotion and an intuitive sense of a deity's wishes.\n\n When a cleric takes up an adventuring life, it is usually because his/her god demands it. Pursuing the goals of the gods often involves braving dangers beyond the walls of civilization. Many clerics are also expected to proctect their deity's worshipers.",
       "icon":"./assets/images/Cleric.png",
-      "quickBuild": {
-        "highestAbility": "Wisdom",
-        "nextAbility": "Strength or Constitution",
-        "suggestedBackground": "Acolyte",
-      },
-      "traits": {
-        "primeAbility": "Wisdom",
-        "SaveThrowProf": "Wisdom and Charisma",
-        "tools": "none",
-        "noOfSkills": 2,
-        "skillsList": [
-          "History",
-          "Insight",
-          "Medicine",
-          "Persuasion",
-          "Religion",
-        ],
-        "features": [
-          {
-            "level": 1,
-            "name": "Spellcasting"
-          },
-          {
-            "level": 1,
-            "name": "Divine Domain"
-          },
-          {
-            "level": 2,
-            "name": "Channel Divinity"
-          },
-          {
-            "level": 4,
-            "name": "Ability Score Improvement"
-          },
-          {
-            "level": 5,
-            "name": "Destroy Undead"
-          },
-          {
-            "level": 10,
-            "name": "Divine Intervention"
-          }
-        ],
-        "startEquip": {
-          "weapon1": "mace OR warhammer(if proficient)",
-          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
-          "misc": [
-            "priest\u2019s pack OR explorer\u2019s pack",
-            "scale mail OR leather armor OR chain mail (if proficient)",
-            "shield",
-            "holy symbol"
-          ]
-        },
       "quickBuild":{
          "highestAbility":"Wisdom",
          "nextAbility":"Strength or Constitution",
@@ -451,186 +398,6 @@
             "simple weapons"
          ]
       },
-      "archetype": {
-        "called": "Domains",
-        "types": [
-          {
-            "name": "Knowledge Domain",
-            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
-            "features": [
-              {
-                "level": 1,
-                "name": "Blessings of Knowledge"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Command and Identify"
-              },
-              {
-                "level": 2,
-                "name": "Knowledge of the Ages (Channel Divinity)"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Augury and Suggestion"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Nondetection and Speak with Dead"
-              },
-              {
-                "level": 6,
-                "name": "Read Thoughts (Channel Divinity)"
-              },
-              {
-                "level": 7,
-                "name": "Additional Spells: Arcane Eye and Confusion"
-              },
-              {
-                "level": 8,
-                "name": "Potent Spellcasting"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Legend Lore and Scrying"
-              },
-              {
-                "level": 17,
-                "name": "Visions of the Past"
-              }
-            ]
-          },
-          {
-            "name": "Life Domain",
-            "desc": "This domain focuses on the vibrant positive energy that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil diety can claim influence over this domain.",
-            "features": [
-              {
-                "level": 1,
-                "name": "Disciple of Life"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Bless and Cure Wounds"
-              },
-              {
-                "level": 1,
-                "name": "Bonus Proficiency"
-              },
-              {
-                "level": 2,
-                "name": "Preserve Life (Channel Divinty)"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Lesser Restoration and Spiritual Weapon"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Beacon of Hope and Revivfy"
-              },
-              {
-                "level": 6,
-                "name": "Blessed Healer (Channel Divinity)"
-              },
-              {
-                "level": 7,
-                "name": "Additional Spells: Death Ward and Guardian of Faith"
-              },
-              {
-                "level": 8,
-                "name": "Divine Strike (Channel Divinity)"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Mass Cure Wounds and Raise Dead"
-              },
-              {
-                "level": 17,
-                "name": "Supreme Healing"
-              }
-            ]
-          },
-          {
-            "name": "Light Domain",
-            "desc": "Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Clerics of a god of light are enlightened souls infused with radiance and the power of their god's discerning vision, charged with chasing away lies and burning away darkness.",
-            "features": [
-              {
-                "level": 1,
-                "name": "Warding Flare"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Burning Hands and Faerie Fire"
-              },
-              {
-                "level": 1,
-                "name": "Bonus Cantrip"
-              },
-              {
-                "level": 2,
-                "name": "Radiance of the Dawn (Channel Divinity)"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Flaming Sphere and Scorching Ray"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Daylight and Fireball"
-              },
-              {
-                "level": 6,
-                "name": "Improved Flare (Channel Divinity)"
-              },
-              {
-                "level": 7,
-                "name": "Additional Spells: Guardian of Faith and Wall of Fire"
-              },
-              {
-                "level": 8,
-                "name": "Potent Spellcasting"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Flame Strike and Scrying"
-              },
-              {
-                "level": 17,
-                "name": "Corona of Light"
-              }
-            ]
-          },
-          {
-            "name": "Nature Domain",
-            "desc": "Gods of nature are as varied as the natural world itself. Druids revere nature as a whole and might serve one of these deities, but many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god.",
-            "features": [
-              {
-                "level": 1,
-                "name": "Acolyte of Nature"
-              },
-              {
-                "level": 1,
-                "name": "Additional Spells: Animal Friendship and Speak with Animals"
-              },
-              {
-                "level": 3,
-                "name": "Additional Spells: Barkskin and Spike Growth"
-              },
-              {
-                "level": 5,
-                "name": "Additional Spells: Plant Growth and Wind Wall"
-              },
-              {
-                "level": 7,
-                "name": "Additional Spells: Dominate Beast and Grasping Vine"
-              },
-              {
-                "level": 9,
-                "name": "Additional Spells: Insect Plague and Tree Stride"
-              }
-            ]
-          }
-        ],
       "archetype":{
          "called":"Domains",
          "types":[
@@ -984,14 +751,10 @@
                ]
             }
          ]
-
       }
    },
-
    {
-      "name":"Wizard",
-      "desc":"",
-      "icon":"./assets/images/Wizard.png",
+      "name":"Druid",
       "shortDesc":"A priest of the Old Faith, weilding the powers of nature- moonlight and plant growth, fire and lightening -and adopting animal forms.",
       "longDesc":"Druids are an embodiment of nature\u2019s resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature\u2019s indomitable will. Druids revere nature above all, gaining their spells and other magical powers either from the force of nature itself or from a nature deity. The ancient druidic traditions are sometimes called the Old Faith, in contrast to the worship of gods in temples and shrines.\n\n For druids, nature exists in a precarious balance. The four elements that make up a world (air, earth, fire, and water) must remain in equilibrium. Druids are also concerned with the delicate ecological balance that sustains plant and animal life, and the need for civilized folk to live in harmony with nature. Druids accept that which is cruel in nature and hate the unnatural. Druids are often found guarding sacred sites or watching over regions of unspoiled nature.",
       "icon":"./assets/images/Druid.png",
@@ -2339,7 +2102,7 @@
             {
                "name":"The Archfey",
                "desc":"This patron is a lord or lady of the fey, a creatur eof legend who holds secrets that were forgotten before the mortal races were born. This being\u2019s motivations are often inscrutable, and sometimes whimsical, and might involve striving for greater magical power or settling age-old grudges.\n\n Examples of these beings are: the Prince of Frost, the Queen of Air and Darkness and ruler of the Gloaming Court, Titania of the Summer Court, the Green Lord (Oberon), the Prince of Fools (Hyrsam), and ancient hags.",
-               "placeholder":"./assets/images/Warlock.png",
+               "placeholder": "./assets/images/Warlock.png",
                "features":[
                   {
                      "level":1,
@@ -2366,7 +2129,7 @@
             {
                "name":"The Fiend",
                "desc":"This patron is a being from the lower planes of existence, whose aims are evil, even if a warlock strives against those aims. Such beings desire the corruption or destruction of all things, ultimately including the warlock.\n\n Fiends powerful enough to forge a pact include: demonlords such as Demogorgon, Orcus, Fraz\u2019Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; especially mighty pit fiends and balors; and ultroloths and other lords of the yugoloths. ",
-               "placeholder":"./assets/images/Warlock.png",
+               "placeholder": "./assets/images/Warlock.png",
                "features":[
                   {
                      "level":1,
@@ -2393,7 +2156,7 @@
             {
                "name":"The Great Old One",
                "desc":"This patron is a mysterious entity whose nature is utterly forweign to the fabric of reality. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of a warlock\u2019s existence or entirely indifferent to them, but the secrets a warlock has learned allows them to draw their magic from it.\n\n Entities of this type include: Ghaunadar, That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.",
-               "placeholder":"./assets/images/Warlock.png",
+               "placeholder": "./assets/images/Warlock.png",
                "features":[
                   {
                      "level":1,
