@@ -97,25 +97,20 @@
 
 <div class="classView" ng-hide="genCtrl.classMain">
   <div class="iconList">
-    <div class='list-group' ng-repeat="archetype in genCtrl.selectedRace.archetype.types">
+    <div class='list-group' ng-repeat="archetype in genCtrl.selectedClass.archetype.types">
       <img ng-src='{{ archetype.placeholder }}' class='list-group-item' ng-click="genCtrl.selectArchetype(archetype)">
     </div>
   </div>
 
   <div class="classDesc">
-    <h3> {{genCtrl.currentArchetype.types.name}} </h3>
+    <h3> {{genCtrl.currentArchetype.name}} </h3>
     <p class='summary'>{{genCtrl.currentArchetype.desc}}</p>
 
     <table class="table" ng-show="genCtrl.currentArchetype.features">
       <tr class="table-head">
         <th>Features:</th>
         <td>
-          <div ng-show="genCtrl.currentArchetype.repeat">
-            <div ng-repeat="name in genCtrl.currentArchetype.features.name track by $index">{{ name }}</div>
-          </div>
-          <div ng-hide="genCtrl.currentArchetype.repeat">
-            {{ genCtrl.currentArchetype.features }}
-          </div>
+            <div ng-repeat="feature in genCtrl.currentArchetype.features track by $index">Level {{ feature.level }} - {{ feature.name }}</div>
         </td>
       </tr>
     </table>

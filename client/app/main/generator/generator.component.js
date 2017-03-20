@@ -137,18 +137,18 @@ selectArchetype(archetype){
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
-    console.log(this.localStorage['character-in-progress']);
+    // console.log(this.localStorage['character-in-progress']);
   }
 
   saveClass(){
-    console.log(this.currentClass);
+    // console.log(this.currentClass);
     var newCharacter;
     var currentClass = this.currentClass;
     var archetype = this.currentArchetype;
     var classInfo = {
       class: {
         main: currentClass.name,
-        archetype: currentArchetype.types.name
+        archetype: archetype.name
       },
       combat: {
         hitDie: currentClass.combat.hitDie,
@@ -162,11 +162,10 @@ selectArchetype(archetype){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
-      // need to finish saving class info
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
-    console.log(this.localStorage['character-in-progress']);
+    // console.log(this.localStorage['character-in-progress']);
   }
 
     // if(this.first() == 'class'){
