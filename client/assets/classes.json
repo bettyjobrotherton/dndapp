@@ -108,6 +108,7 @@
             {
                "name":"Path of the Beserker",
                "desc":"This is the path of untrammeled fury, slick with blood. As you enter the beserker\u2019s rage, you thrill in the chaos of battle, heedless of your own health or well-being.",
+               "placeholder": "./assets/images/icons/Barbarian.png",
                "features":[
                   {
                      "level":3,
@@ -130,6 +131,7 @@
             {
                "name":"Path of the Totem Warrior",
                "desc":"This path is a spiritual journey, as the barbarian accepts a spirit animal as guide, protector, and inspiration. In battle, your totem spirit fills you with supernatural might, adding magical fuel to your barbarian rage. It is unusual for an individual to have more than one totem spirit, but exceptions do exist.",
+               "placeholder": "./assets/images/icons/Barbarian.png",
                "features":[
                   {
                      "level":3,
@@ -279,6 +281,7 @@
             {
                "name":"College of Lore",
                "desc":"Bards of this college know something about most things, collecting bits of knowledge from sources as diverse as scholarly tomes and peasant tales. They use their gifts to hold audiences spellbound.\n\nThe loyalty of these bards lies in the pursuit of beauty and truth. Member's of this college gather in libraries and actual colleges. They also meet at festivals or affairs of state, where they can expose corruption, unravel lies, and poke fun at self-important authority figures.",
+               "placeholder": "./assets/images/icons/Bard.png",
                "features":[
                   {
                      "level":3,
@@ -301,6 +304,7 @@
             {
                "name":"College of Valor",
                "desc":"Bards of this college are daring poets whose tales keep alive the memory of great heros past. They trave the land to witness great events firsthand and to ensure that the memory of those events doesn\u2019t pass from the world.\n\nThese bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present.",
+               "placeholder": "./assets/images/icons/Bard.png",
                "features":[
                   {
                      "level":3,
@@ -328,6 +332,59 @@
       "shortDesc":"A priestly champion who wields divine magic in service of a higher power.",
       "longDesc":"Clerics are intermediaries between the mortal world and the distant planes of the gods. They strive to embody the handiwork of their deities and are imbued with divine magic. The ability to cast cleric spells relies on devotion and an intuitive sense of a deity's wishes.\n\n When a cleric takes up an adventuring life, it is usually because his/her god demands it. Pursuing the goals of the gods often involves braving dangers beyond the walls of civilization. Many clerics are also expected to proctect their deity's worshipers.",
       "icon":"./assets/images/icons/Cleric.png",
+      "quickBuild": {
+        "highestAbility": "Wisdom",
+        "nextAbility": "Strength or Constitution",
+        "suggestedBackground": "Acolyte",
+      },
+      "traits": {
+        "primeAbility": "Wisdom",
+        "SaveThrowProf": "Wisdom and Charisma",
+        "tools": "none",
+        "noOfSkills": 2,
+        "skillsList": [
+          "History",
+          "Insight",
+          "Medicine",
+          "Persuasion",
+          "Religion",
+        ],
+        "features": [
+          {
+            "level": 1,
+            "name": "Spellcasting"
+          },
+          {
+            "level": 1,
+            "name": "Divine Domain"
+          },
+          {
+            "level": 2,
+            "name": "Channel Divinity"
+          },
+          {
+            "level": 4,
+            "name": "Ability Score Improvement"
+          },
+          {
+            "level": 5,
+            "name": "Destroy Undead"
+          },
+          {
+            "level": 10,
+            "name": "Divine Intervention"
+          }
+        ],
+        "startEquip": {
+          "weapon1": "mace OR warhammer(if proficient)",
+          "weapon2": "light crossbow with 20 bolts OR any simple weapon",
+          "misc": [
+            "priest\u2019s pack OR explorer\u2019s pack",
+            "scale mail OR leather armor OR chain mail (if proficient)",
+            "shield",
+            "holy symbol"
+          ]
+        },
       "quickBuild":{
          "highestAbility":"Wisdom",
          "nextAbility":"Strength or Constitution",
@@ -394,12 +451,193 @@
             "simple weapons"
          ]
       },
+      "archetype": {
+        "called": "Domains",
+        "types": [
+          {
+            "name": "Knowledge Domain",
+            "desc": "The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Blessings of Knowledge"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Command and Identify"
+              },
+              {
+                "level": 2,
+                "name": "Knowledge of the Ages (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Augury and Suggestion"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Nondetection and Speak with Dead"
+              },
+              {
+                "level": 6,
+                "name": "Read Thoughts (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Arcane Eye and Confusion"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Legend Lore and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Visions of the Past"
+              }
+            ]
+          },
+          {
+            "name": "Life Domain",
+            "desc": "This domain focuses on the vibrant positive energy that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil diety can claim influence over this domain.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Disciple of Life"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Bless and Cure Wounds"
+              },
+              {
+                "level": 1,
+                "name": "Bonus Proficiency"
+              },
+              {
+                "level": 2,
+                "name": "Preserve Life (Channel Divinty)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Lesser Restoration and Spiritual Weapon"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Beacon of Hope and Revivfy"
+              },
+              {
+                "level": 6,
+                "name": "Blessed Healer (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Death Ward and Guardian of Faith"
+              },
+              {
+                "level": 8,
+                "name": "Divine Strike (Channel Divinity)"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Mass Cure Wounds and Raise Dead"
+              },
+              {
+                "level": 17,
+                "name": "Supreme Healing"
+              }
+            ]
+          },
+          {
+            "name": "Light Domain",
+            "desc": "Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Clerics of a god of light are enlightened souls infused with radiance and the power of their god's discerning vision, charged with chasing away lies and burning away darkness.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Warding Flare"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Burning Hands and Faerie Fire"
+              },
+              {
+                "level": 1,
+                "name": "Bonus Cantrip"
+              },
+              {
+                "level": 2,
+                "name": "Radiance of the Dawn (Channel Divinity)"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Flaming Sphere and Scorching Ray"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Daylight and Fireball"
+              },
+              {
+                "level": 6,
+                "name": "Improved Flare (Channel Divinity)"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Guardian of Faith and Wall of Fire"
+              },
+              {
+                "level": 8,
+                "name": "Potent Spellcasting"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Flame Strike and Scrying"
+              },
+              {
+                "level": 17,
+                "name": "Corona of Light"
+              }
+            ]
+          },
+          {
+            "name": "Nature Domain",
+            "desc": "Gods of nature are as varied as the natural world itself. Druids revere nature as a whole and might serve one of these deities, but many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god.",
+            "features": [
+              {
+                "level": 1,
+                "name": "Acolyte of Nature"
+              },
+              {
+                "level": 1,
+                "name": "Additional Spells: Animal Friendship and Speak with Animals"
+              },
+              {
+                "level": 3,
+                "name": "Additional Spells: Barkskin and Spike Growth"
+              },
+              {
+                "level": 5,
+                "name": "Additional Spells: Plant Growth and Wind Wall"
+              },
+              {
+                "level": 7,
+                "name": "Additional Spells: Dominate Beast and Grasping Vine"
+              },
+              {
+                "level": 9,
+                "name": "Additional Spells: Insect Plague and Tree Stride"
+              }
+            ]
+          }
+        ],
       "archetype":{
          "called":"Domains",
          "types":[
             {
                "name":"Knowledge Domain",
                "desc":"The gods of knowledge value learning and understanding above all. Some gods teach that knowledge is to be gathered and shared, while others hoard knowledge and keep their secrets to themselves. Followers of these gods study esoteric lore, collect old tomes, delve into secret places of the earth, and learn all they can.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -446,6 +684,7 @@
             {
                "name":"Life Domain",
                "desc":"This domain focuses on the vibrant positive energy that sustains all life. The gods of life promote vitality and health through healing the sick and wounded, caring for those in need, and driving away the forces of death and undeath. Almost any non-evil diety can claim influence over this domain.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -496,6 +735,7 @@
             {
                "name":"Light Domain",
                "desc":"Gods of light promote the ideals of rebirth and renewal, truth, vigilance, and beauty, often using the symbol of the sun. Clerics of a god of light are enlightened souls infused with radiance and the power of their god's discerning vision, charged with chasing away lies and burning away darkness.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -546,6 +786,7 @@
             {
                "name":"Nature Domain",
                "desc":"Gods of nature are as varied as the natural world itself. Druids revere nature as a whole and might serve one of these deities, but many of these gods have clerics as well, champions who take a more active role in advancing the interests of a particular nature god.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -596,6 +837,7 @@
             {
                "name":"Tempest Domain",
                "desc":"Gods who influence the tempest domain govern storms, sea, and sky. They include gods of lightening and thunder, gods of earthquakes, some fire gods, and certain gods of violence, physical strength, and courage. Tempest gods send their clerics to inspire fear in the common folk, either to keep those folk on the path of righteousness or to encourage them offer sacrifices of propiation to ward off divine wrath.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -646,6 +888,7 @@
             {
                "name":"Trickery Domain",
                "desc":"Gods of trickery are mischief-makers and instigators who stand as a constant challenge to the accepted order among gods and mortals. They\u2019re patrons of thieves, scoundrels, gamblers, rebels, and liberators. Their clerics are a disruptive force in the world who prefer subterfuge, pranks, deception, and theft rather than direct confrontation.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -692,6 +935,7 @@
             {
                "name":"War Domain",
                "desc":"The gods of war watch over warriors and reward them for their great deeds. Their clerics excel in battle, inspiring others to fight or offering acts of violence as prayers. Gods of war include champions of honor and chivalry as well as gods of conquest and domination. Other gods of war take a more neutral stance, promoting war in all its manifestations and supporting warriors in any circumstance.",
+               "placeholder": "./assets/images/icons/Cleric.png",
                "features":[
                   {
                      "level":1,
@@ -740,10 +984,14 @@
                ]
             }
          ]
+
       }
    },
+
    {
-      "name":"Druid",
+      "name":"Wizard",
+      "desc":"",
+      "icon":"./assets/images/icons/Wizard.png",
       "shortDesc":"A priest of the Old Faith, weilding the powers of nature- moonlight and plant growth, fire and lightening -and adopting animal forms.",
       "longDesc":"Druids are an embodiment of nature\u2019s resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature\u2019s indomitable will. Druids revere nature above all, gaining their spells and other magical powers either from the force of nature itself or from a nature deity. The ancient druidic traditions are sometimes called the Old Faith, in contrast to the worship of gods in temples and shrines.\n\n For druids, nature exists in a precarious balance. The four elements that make up a world (air, earth, fire, and water) must remain in equilibrium. Druids are also concerned with the delicate ecological balance that sustains plant and animal life, and the need for civilized folk to live in harmony with nature. Druids accept that which is cruel in nature and hate the unnatural. Druids are often found guarding sacred sites or watching over regions of unspoiled nature.",
       "icon":"./assets/images/icons/Druid.png",
@@ -839,6 +1087,7 @@
             {
                "name":"Circle of the Land",
                "desc":"This circle is made up of mystics and sages who safeguard ancient knowledge and rites through a vast oral tradition. These druids meet within sacred circles of trees or standing stones to whisper primal secrets in Druidic. As a member of this circle, your magic is influenced by the land where you were initiated into the circle's mysterious rites. The different land types are: arctic, coast, desert, forest, grassland, mountain, swamp, and underdark.",
+               "placeholder": "./assets/images/icons/Druid.png",
                "features":[
                   {
                      "level":2,
@@ -881,6 +1130,7 @@
             {
                "name":"Circle of the Moon",
                "desc":"This circle is made up of fierce guardians of the wilds. Their order gathers under the full moon to share news and trade warnings. They haunt the deepest parts of the wilderness, where they might go for weeks on end before crossing paths with another humanoid creature, let alone another druid. Changeable as the moon, the wild is in the druid\u2019s blood.",
+               "placeholder": "./assets/images/icons/Druid.png",
                "features":[
                   {
                      "level":2,
@@ -989,6 +1239,7 @@
             {
                "name":"Champion",
                "desc":"Focuses on development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.",
+               "placeholder": "./assets/images/icons/Fighter.png",
                "features":[
                   {
                      "level":3,
@@ -1015,6 +1266,7 @@
             {
                "name":"Battle Master",
                "desc":"Those who model themselves on this archetype employ martial techniques passed down through generations. To a battle master, combat is an academic field. Not every fighter absorbs the lessons of history, theory, and artistry that are reflected in this archetype, but those who do are well-rounded fighters of great skill and knowledge.",
+               "placeholder": "./assets/images/icons/Fighter.png",
                "features":[
                   {
                      "level":3,
@@ -1045,6 +1297,7 @@
             {
                "name":"Eldritch Knight",
                "desc":"Combines the martial mastery common to all fighters with a careful study of magic. Eldritch knights use magical techniques similiar to those practiced by wizards. They focus their study on the abjuration and evocation schools of magic. These knights learn a comparatively small number of spells, commiting them to memory instead of keeping them in a spellbook.",
+               "placeholder": "./assets/images/icons/Fighter.png",
                "features":[
                   {
                      "level":3,
@@ -1202,6 +1455,7 @@
             {
                "name":"Way of the Open Hand",
                "desc":"Monks of the Way of the Open Hand are the ultimate masters of martial arts combat, whether armed or unarmed. They learn techniques to push and trip their opponents, manipulate ki to heal damage to their bodies, and practice advanced meditation that can protect them from harm.",
+               "placeholder": "./assets/images/icons/Monk.png",
                "features":[
                   {
                      "level":3,
@@ -1224,6 +1478,7 @@
             {
                "name":"Way of Shadow",
                "desc":"Monks of the Way of Shadow follow a tradition that values stealth and subterfuge. These monks might be called ninjas or shadowdancers, and they serve as spies and assassins. Sometimes the members of a ninja monastery are family members that form a clan sworn to secrecy about their arts and missions. Other monasteries are more like thieves\u2019 guilds, hiring out their services to anyone who can pay their fee. Either way, the heads of these monasteries expect unquestioning obedience from their students.",
+               "placeholder": "./assets/images/icons/Monk.png",
                "features":[
                   {
                      "level":3,
@@ -1246,6 +1501,7 @@
             {
                "name":"Way of the Four Elements",
                "desc":"Monks of the Way of the Four Elements learn to harness the elements. When they focus their ki, they can align themselves with the forces of creation and bend the four elements to their will, using the elements as an extension of their body. Some members if this tradition dedicate themselves to a single element, while others weave the elements together. Many monks from this tradition tattoo their bodies with representations of their ki powers.",
+               "placeholder": "./assets/images/icons/Monk.png",
                "features":[
                   {
                      "level":3,
@@ -1361,6 +1617,7 @@
             {
                "name":"Oath of Devotion",
                "desc":"Binds a paladin to the loftiest of ideals of justice, virtue, and order. These paladins meet the ideal of the knight in shining armor, acting with honor in pursuit of justice and the greater good. They hold themselves to the highest standards of conduct, and some hold the rest of the world to the same standards. Many who swear this oath are devoted to gods of law and good and incorporate images of angelic wings into their coat of arms.",
+               "placeholder": "./assets/images/icons/Paladin.png",
                "features":[
                   {
                      "level":3,
@@ -1407,6 +1664,7 @@
             {
                "name":"Oath of the Ancients",
                "desc":"The Oath of the Ancients is as old as the race of elves and the rituals of the druids. Paladins who swear this oath cast their lot with the side of light in the cosmic struggle against darkness because they love the beautiful and life-giving things of the world, not necessarily because they believe in the principles of honor, courage, and justice. They adorn their armor and clothing with images of growing things to reflect their commitment to preserving life and light in the world.",
+               "placeholder": "./assets/images/icons/Paladin.png",
                "features":[
                   {
                      "level":3,
@@ -1453,6 +1711,7 @@
             {
                "name":"Oath of Vengeance",
                "desc":"A solemn commitment to punish those who have commited a grievous sin. Paladins arise and swear an Oath of Vengeance to set right that which has gone wrong. To these paladins, their own purity is not as important as delivering justice",
+               "placeholder": "./assets/images/icons/Paladin.png",
                "features":[
                   {
                      "level":3,
@@ -1606,6 +1865,7 @@
             {
                "name":"Hunter",
                "desc":"These rangers accept their place as a bulwark between civilization and the terrors of the wilderness. As you walk the hunter\u2019s path, you learn specialized techniques for fighting the threats you face.",
+               "placeholder": "./assets/images/icons/Ranger.png",
                "features":[
                   {
                      "level":3,
@@ -1628,6 +1888,7 @@
             {
                "name":"Beast Master",
                "desc":"These rangers embody a friendship between the civilized races and the beasts of the wild. United in focus, beast and ranger fight the monsters that threaten civilization and the wilderness alike.",
+               "placeholder": "./assets/images/icons/Ranger.png",
                "features":[
                   {
                      "level":3,
@@ -1762,6 +2023,7 @@
             {
                "name":"Thief",
                "desc":"These rogues hone their skill in the larcenous arts. In addition to improving their agility and stealth, they learn skills usefull for delving into ancient ruins, reading unfamiliar languages, and using magic items they normally couldn\u2019t employ.",
+               "placeholder": "./assets/images/icons/Rogue.png",
                "features":[
                   {
                      "level":3,
@@ -1788,6 +2050,7 @@
             {
                "name":"Assassin",
                "desc":"These rogues focus their training on the grim art of death. Stealth, poison, and disguise help them eliminate their foes with deadly efficiency.",
+               "placeholder": "./assets/images/icons/Rogue.png",
                "features":[
                   {
                      "level":3,
@@ -1814,6 +2077,7 @@
             {
                "name":"Arcane Trickster",
                "desc":"These rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion.",
+               "placeholder": "./assets/images/icons/Rogue.png",
                "features":[
                   {
                      "level":3,
@@ -1930,6 +2194,7 @@
             {
                "name":"Draconic Bloodline",
                "desc":"These sorcerers\u2019 innate magic comes from draconic magic that was mingled with their blood or that of their ancestors. Most often, sorcerers with this origin trace their bloodline back to a mighty sorcerer of ancient times who made a bargain with a dragon or who might have even claimed a dragon parent. Any sorcerer could be the first of a new bloodline, as a result of a pact or some other special circumstance.",
+               "placeholder": "./assets/images/icons/Sorcerer.png",
                "features":[
                   {
                      "level":1,
@@ -1956,6 +2221,7 @@
             {
                "name":"Wild Magic",
                "desc":"These sorcerers\u2019 innate magic comes from the forces of chaos that underlie the order of creation. They might have endured exposure to raw magic, blessed by a fey being, marked by a demon, or their magic could be a fluke of their birth. However it came to be, this magic churns within them, waiting for an outlet.",
+               "placeholder": "./assets/images/icons/Sorcerer.png",
                "features":[
                   {
                      "level":1,
@@ -2073,6 +2339,7 @@
             {
                "name":"The Archfey",
                "desc":"This patron is a lord or lady of the fey, a creatur eof legend who holds secrets that were forgotten before the mortal races were born. This being\u2019s motivations are often inscrutable, and sometimes whimsical, and might involve striving for greater magical power or settling age-old grudges.\n\n Examples of these beings are: the Prince of Frost, the Queen of Air and Darkness and ruler of the Gloaming Court, Titania of the Summer Court, the Green Lord (Oberon), the Prince of Fools (Hyrsam), and ancient hags.",
+               "placeholder":"./assets/images/icons/Warlock.png",
                "features":[
                   {
                      "level":1,
@@ -2099,6 +2366,7 @@
             {
                "name":"The Fiend",
                "desc":"This patron is a being from the lower planes of existence, whose aims are evil, even if a warlock strives against those aims. Such beings desire the corruption or destruction of all things, ultimately including the warlock.\n\n Fiends powerful enough to forge a pact include: demonlords such as Demogorgon, Orcus, Fraz\u2019Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; especially mighty pit fiends and balors; and ultroloths and other lords of the yugoloths. ",
+               "placeholder":"./assets/images/icons/Warlock.png",
                "features":[
                   {
                      "level":1,
@@ -2125,6 +2393,7 @@
             {
                "name":"The Great Old One",
                "desc":"This patron is a mysterious entity whose nature is utterly forweign to the fabric of reality. Its motives are incomprehensible to mortals, and its knowledge so immense and ancient that even the greatest libraries pale in comparison to the vast secrets it holds. The Great Old One might be unaware of a warlock\u2019s existence or entirely indifferent to them, but the secrets a warlock has learned allows them to draw their magic from it.\n\n Entities of this type include: Ghaunadar, That Which Lurks; Tharizdun, the Chained God; Dendar, the Night Serpent; Zargon, the Returner; Great Cthulhu; and other unfathomable beings.",
+               "placeholder":"./assets/images/icons/Warlock.png",
                "features":[
                   {
                      "level":1,
@@ -2244,6 +2513,7 @@
             {
                "name":"School of Abjuration",
                "desc":"Emphasizes magic that blocks, banishes, or protects. You understand that ending harmful effects, protecting the weak, and banishing evil influences is a proud and respected vocation.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2270,6 +2540,7 @@
             {
                "name":"School of Conjuration",
                "desc":"Favors spells that produce objects and creatures out of thin air. As your mastery grows, you learn spells of transportation and can teleport yourself across vast distances.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2296,6 +2567,7 @@
             {
                "name":"School of Divination",
                "desc":"All seek a clearer understanding of the past, present, and future. As a diviner, you strive to part the veils of space, time, and conciousness so that you can see clearly. You work to master spells of discernment, remote viewing, supernatural knowledge, and foresight.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2322,6 +2594,7 @@
             {
                "name":"School of Enchantment",
                "desc":"Memebers have honed their ability to magically entrance and beguile other people and monsters.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2348,6 +2621,7 @@
             {
                "name":"School of Evocation",
                "desc":"Emphasizes magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightening, and burning acid.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2374,6 +2648,7 @@
             {
                "name":"School of Illusion",
                "desc":"Focus of studies on magic that dazzles the senses, befuddles the mind, and tricks even the wisest folk. Your magic is subtle, but the illusions crafted by your keen mind make the impossible seem real.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2400,6 +2675,7 @@
             {
                "name":"School of Necromancy",
                "desc":"Explores the cosmic forces of life, death, and undeath. As you focus your studies in this tradition, you learn to manipulate the energy that animates all living things. As you progress, you learn to sap the life force from a creature as your magic destroys its body, transforming that vital energy into magical power you can manipulate. Not all necormancers are evil, but the forces they manipulate are considered taboo by many societies.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,
@@ -2426,6 +2702,7 @@
             {
                "name":"School of Transmutation",
                "desc":"Studies spells that modify energy and matter. To you, the world is not a fixed thing, but eminently mutable, and you delight in being an agent of change. You wield the raw stuff of creation and learn to alter both physical forms and mental qualities.",
+               "placeholder": "./assets/images/icons/Wizard.png",
                "features":[
                   {
                      "level":2,

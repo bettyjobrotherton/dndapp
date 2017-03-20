@@ -66,7 +66,7 @@ export class GeneratorController {
 selectMainClass(){
   this.selectedClass = this.currentClass;
   this.classMain = false;
-  this.currentArchetype = this.selectedArchetype.archetype[0];
+  this.currentArchetype = this.selectedClass.archetype.types[0];
 }
 
 selectSubrace(subrace){
@@ -86,28 +86,28 @@ selectArchetype(archetype){
   }
 
   saveRace(){
-    console.log(this.currentRace);
+    // console.log(this.currentRace);
     var newCharacter;
     var race = this.currentRace;
     var raceInfo;
     if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
       raceInfo = {
-        // bio: {
-        //   languages: race.traits.lang,
-        //   appearance: {
-        //     size: race.traits.size
-        //   }
-        // },
-        // general: {
-        //   movement: race.traits.baseSpd
-        // },
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
         race: {
           main: race.name
         }
       };
     }
     else {
-      console.log(this.currentSubrace);
+      // console.log(this.currentSubrace);
       var subrace = this.currentSubrace;
       raceInfo = {
         bio: {
@@ -137,18 +137,18 @@ selectArchetype(archetype){
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
-    console.log(this.localStorage['character-in-progress']);
+    // console.log(this.localStorage['character-in-progress']);
   }
 
   saveClass(){
-    console.log(this.currentClass);
+    // console.log(this.currentClass);
     var newCharacter;
     var currentClass = this.currentClass;
     var archetype = this.currentArchetype;
     var classInfo = {
       class: {
         main: currentClass.name,
-        archetype: currentArchetype.types.name
+        archetype: archetype.name
       },
       combat: {
         hitDie: currentClass.combat.hitDie,
@@ -162,11 +162,10 @@ selectArchetype(archetype){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
-      // need to finish saving class info
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
-    console.log(this.localStorage['character-in-progress']);
+    // console.log(this.localStorage['character-in-progress']);
   }
 
     // if(this.first() == 'class'){
