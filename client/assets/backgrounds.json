@@ -563,25 +563,117 @@
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number":"1" ,
+        "desc":"I hide scraps of food and trinkets away in my pockets."
+      },
+      {
+        "number":"2" ,
+        "desc":"I ask a lot of questions."
+      },
+      {
+        "number":"3" ,
+        "desc":"I like to squeeze into small places where no one else can get to me"
+      },
+      {
+        "number":"4" ,
+        "desc":"I sleep with my back to a wall or tree, with everything i own wrapped in a bundle in my arms."
+      },
+      {
+        "number":"5" ,
+        "desc":"I eat like a pig and have bad maners."
+      },
+      {
+        "number":"6" ,
+        "desc":"I think anyone who's nice to me is hiding evil intent."
+      },
+      {
+        "number":"7" ,
+        "desc":"I dont like to bathe."
+      },
+      {
+        "number":"8" ,
+        "desc":"I bluntly say what other people are hinting at or hiding."
       }
+
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number":"1" ,
+        "desc":"Respect. All people, rich or poor, deserve respect."
+      },
+      {
+        "number":"2",
+        "desc":"Community. We have to take care of each other, because no one else is going to do it."
+      },
+      {
+        "number":"3",
+        "desc":"Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things."
+      },
+      {
+        "number":"4",
+        "desc":"Retribution. The rich need to be shown what life and death are like in the gutters."
+      },
+      {
+        "number":"5",
+        "desc":"People. I help the people who help me--thats what keeps us alive."
+      },
+      {
+        "number":"6",
+        "desc":"Aspiration. Im going to prove that im worthy of a better life."
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number":"1" ,
+        "desc":"My town or city is my home, and I'll fight to defend it."
+      },
+      {
+        "number":"2",
+        "desc":"I sponsor an orphanage to keep others from enduring what i was forced to endure."
+      },
+      {
+        "number":"3",
+        "desc":"I owe my survival to another urchin who taught me to live on the streets."
+      },
+      {
+        "number":"4",
+        "desc":"I owe a debt I can never repay to the person who toook pity on me."
+      },
+      {
+        "number":"5",
+        "desc":"I escaped my life of poverty by robbing an important person, and im wanted for it."
+      },
+      {
+        "number":"6",
+        "desc":"No one else should have to endure the hardships ive been through."
       }
+
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number":"1",
+        "desc":"If im outnumbered, I will run away from a fight."
+      },
+      {
+        "number":"2",
+        "desc":"Gold seems like a lot of money to me, and i'll do just about anything for more of it"
+      },
+      {
+        "number":"3",
+        "desc":"I will never fully trust anyone other than myself."
+      },
+      {
+        "number":"4",
+        "desc":"Id rather kill someone in their sleep then fight fair."
+      },
+      {
+        "number":"5",
+        "desc":"Its not stealing if i need it more than someone else."
+      },
+      {
+        "number":"6",
+        "desc":"People who cant take care of themselves get what they deserve."
+      }
+    ]
   }
 ]
