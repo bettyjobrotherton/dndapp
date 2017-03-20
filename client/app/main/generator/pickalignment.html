@@ -1,7 +1,7 @@
 <div class='alignmentView'>
   <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.alignmentList" >
-      <img ng-src='{{ alignment.icon }}' class='list-group-item' ng-click="genCtrl.selectalignment(align)">
+    <div class='list-group' ng-repeat="align in genCtrl.alignList" >
+      <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectalignment(align)">
     </div>
   </div>
 
