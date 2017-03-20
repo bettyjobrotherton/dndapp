@@ -163,7 +163,7 @@ selectArchetype(archetype){
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorTwo');
+      this.$state.go('generatorThree');
     }
     // console.log(this.localStorage['character-in-progress']);
   }
