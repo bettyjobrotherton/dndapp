@@ -66,7 +66,7 @@ export class GeneratorController {
 selectMainClass(){
   this.selectedClass = this.currentClass;
   this.classMain = false;
-  this.currentArchetype = this.selectedArchetype.archetype[0];
+  this.currentArchetype = this.selectedClass.archetype.types[0];
 }
 
 selectSubrace(subrace){
