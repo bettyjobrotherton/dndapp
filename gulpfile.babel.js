@@ -571,7 +571,7 @@ grunt.initConfig({
         },
         heroku: {
             options: {
-                remote: 'heroku',
+                remote: 'git@heroku.com:dndcharactercreator',
                 branch: 'master'
             }
         },
