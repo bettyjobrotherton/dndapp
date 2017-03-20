@@ -45,6 +45,15 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
+
+    this.$http.get('assets/background.json')
+              .then(res => {
+                vm.backgroundList = res.data;
+                vm.currentBackground = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
   }
 
   continueChar(generate) {
@@ -63,6 +72,10 @@ export class GeneratorController {
 
   selectAlign(align) {
     this.currentAlign = align;
+  }
+
+  selectBackground(background) {
+    this.currentBackground = background;
   }
 
   selectMainRace(){
@@ -189,13 +202,33 @@ saveAlign(){
         main: currentAlign.name
       }
   };
-  if(this.first() =='class'){
+  if(this.first() =='align'){
     newcharacter = alignInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorBackground');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.alignment = alignInfo.alignment;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
+  }
+}
+
+saveBackground(){
+  var newCharacter;
+  var currentBackground = this.currentBackground;
+  var backgroundInfo = {
+      background:{
+        main: currentBackground.name
+      }
+  };
+  if(this.first() =='background'){
+    newcharacter = alignInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorAlignment');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.background = backgroundInfo.background;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
