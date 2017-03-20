@@ -1,6 +1,6 @@
 'use strict';
 
-export function CharacterService($location, $http) {
+export function CharacterService($location, $http, $window) {
   'ngInject';
 
   var selectChar;
@@ -26,47 +26,50 @@ export function CharacterService($location, $http) {
     createChar(firstOpt){
       if(firstOpt == 'race'){
         firstSelection = 'race';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
+        console.log($window.localStorage['first-selection']);
         this.$state.go('generatorRace');
-      }
-      if(firstOpt == 'class'){
+      } else if(firstOpt == 'class'){
         firstSelection = 'class';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorClass');
-      }
-      if(firstOpt == 'generatortwo'){
+      } else if(firstOpt == 'generatortwo'){
         firstSelection = 'generatortwo';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorTwo');
-      }
-      if(firstOpt == 'background'){
+      } else if(firstOpt == 'background'){
         firstSelection = 'background';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorBackground');
-      }
-      if(firstOpt == 'alignment'){
+      } else if(firstOpt == 'alignment'){
         firstSelection = 'alignment';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorAlignment');
-      }
-      if(firstOpt == 'generatorthree'){
+      } else if(firstOpt == 'generatorthree'){
         firstSelection = 'generatorthree';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorThree');
-      }
-      if(firstOpt == 'spells'){
+      } else if(firstOpt == 'spells'){
         firstSelection = 'spells';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorSpells');
-      }
-      if(firstOpt == 'weapons'){
+      } else if(firstOpt == 'weapons'){
         firstSelection = 'weapons';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorWeapons');
-      }
-      if(firstOpt == 'equip'){
+      } else if(firstOpt == 'equip'){
         firstSelection = 'equip';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorEquip');
-      }
-      if(firstOpt == 'stats'){
+      } else if(firstOpt == 'stats'){
         firstSelection = 'stats';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorStats');
       }
     },
 
     firstOption(){
+      firstSelection = JSON.parse($window.localStorage['first-selection']);
       return firstSelection;
     },
 
