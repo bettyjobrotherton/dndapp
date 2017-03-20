@@ -1,52 +1,141 @@
 [
   {
     "name": "Acolyte",
-    "desc": "",
-    "addSkillProf": [],
+    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric - performing sacred rites is NOT the same thing as channeling divine power.",
+    "icon": "./assets/images/star.png",
+    "addSkillProf": [
+      "Insight",
+      "Religion"
+    ],
     "addToolProf": [],
-    "addLanguages": [],
+    "addLanguages": [
+      "2 additional languages of your choice"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Shelter of the Faithful",
+      "desc": "As an acolyte, you command respect of those who share your faith, and you can perform religious ceremonies for your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.\n\n You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
       }
     ],
-    "characteristics": "",
-    "specialTrait": {
-      "name": "",
-      "list": [
-        {
-          "number": ,
-          "desc":
-        }
-      ]
-    },
+    "characteristics": "Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, ot hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.",
+    "specialTrait": {},
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example."
+      },
+      {
+        "number": 2,
+        "desc": "I can find commow ground between the fierciest of enemies, empathizing with them and and always working toward peace."
+      },
+      {
+        "number": 3,
+        "desc": "I see omens in every event and action. The gods try to speak to us, we just need to listen."
+      },
+      {
+        "number": 4,
+        "desc": "Nothing can shake my optimistic attitude."
+      },
+      {
+        "number": 5,
+        "desc": "I quote (or misquote) sacred texts and proverbs in almost every situation."
+      },
+      {
+        "number": 6,
+        "desc": "I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods."
+      },
+      {
+        "number": 7,
+        "desc": "I\u2019ve enjjoyed fine food, drink, and high society amoing my temple\u2019s elite. Rough living grates on me."
+      },
+      {
+        "number": 8,
+        "desc": "I\u2019ve spent so long in the temple that I have little practical experience dealing with people in the outside world."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld.(Lawful)"
+      },
+      {
+        "number": 2,
+        "desc": "Charity. I always try to help those in need, no matter what the personal cost. (Good)"
+      },
+      {
+        "number": 3,
+        "desc": "Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Power. I hope to one day rise to the top of my faith\u2019s religious hierarchy. (Lawful)"
+      },
+      {
+        "number": 5,
+        "desc": "Faith. I trust that my diety will guide my actions. I have faith that if I work hard, things will go well."
+      },
+      {
+        "number": 6,
+        "desc": "Aspiration: I seek to prove myself worthy of my god\u2019s favor by matching my actions against his or her teachings. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I would die to recover an ancient relic of my faith that was lost long ago."
+      },
+      {
+        "number": 2,
+        "desc": "I will someday get revenge on the corrupt temple hierarchy who branded me a heretic."
+      },
+      {
+        "number": 3,
+        "desc": "I owe my life to the priest who took me in when my parents died."
+      },
+      {
+        "number": 4,
+        "desc": "Everything I do is for the common people."
+      },
+      {
+        "number": 5,
+        "desc": "I will do anything to protect the temple where I served."
+      },
+      {
+        "number": 6,
+        "desc": "I seek to preserve a sacred text that my enemies consider heretical and seek to destroy."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I judge others harshly, and myself even more severely."
+      },
+      {
+        "number": 2,
+        "desc": "I put too much trust in those who wield power within my temple\u2019s hierarchy."
+      },
+      {
+        "number": 3,
+        "desc": "My piety sometimes leads me to blindly trust those that profess faith in my god."
+      },
+      {
+        "number": 4,
+        "desc": "I am inflexible in my thinking."
+      },
+      {
+        "number": 5,
+        "desc": "I am suspicious of strangers and expect the worst of them."
+      },
+      {
+        "number": 6,
+        "desc": "Once I pick a goal, I become obsessed with it to the detriment of everything else."
+      }
+    ]
   },
   {
     "name": "Charlatan",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -92,6 +181,7 @@
   {
     "name": "Criminal",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -137,6 +227,7 @@
   {
     "name": "Entertainer",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -182,6 +273,7 @@
   {
     "name": "Folk Hero",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -227,6 +319,7 @@
   {
     "name": "Guild Artisan",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -272,6 +365,7 @@
   {
     "name": "Hermit",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -317,6 +411,7 @@
   {
     "name": "Noble",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -362,6 +457,7 @@
   {
     "name": "Outlander",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -407,6 +503,7 @@
   {
     "name": "Sage",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -452,6 +549,7 @@
   {
     "name": "Sailor",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -497,6 +595,7 @@
   {
     "name": "Soldier",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
@@ -542,6 +641,7 @@
   {
     "name": "Urchin",
     "desc": "",
+    "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
