@@ -1,0 +1,587 @@
+[
+  {
+    "name": "Acolyte",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Charlatan",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Criminal",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Entertainer",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Folk Hero",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Guild Artisan",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Hermit",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Noble",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Outlander",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Sage",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Sailor",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Soldier",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  },
+  {
+    "name": "Urchin",
+    "desc": "",
+    "addSkillProf": [],
+    "addToolProf": [],
+    "addLanguages": [],
+    "features": [
+      {
+      "name": "",
+      "desc": ""
+      }
+    ],
+    "characteristics": "",
+    "specialTrait": {
+      "name": "",
+      "list": [
+        {
+          "number": ,
+          "desc":
+        }
+      ]
+    },
+    "personalityTraits": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "ideals": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "bonds": [
+      {
+        "number": ,
+        "desc":
+      }
+    ],
+    "flaws": {
+      "number": ,
+      "desc":
+    }
+  }
+]
