@@ -1,7 +1,7 @@
 [
   {
     "name": "Acolyte",
-    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric - performing sacred rites is NOT the same thing as channeling divine power.",
+    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric\u0336 performing sacred rites is NOT the same thing as channeling divine power.",
     "variant": {
       "isThere": "false",
     },
@@ -227,7 +227,7 @@
     "ideals": [
       {
         "number": 1,
-        "desc": "Independence. I am a free spirit - no one tells me what to do. (Chaotic)"
+        "desc": "Independence. I am a free spirit\u0336 no one tells me what to do. (Chaotic)"
       },
       {
         "number": 2,
@@ -257,7 +257,7 @@
       },
       {
         "number": 2,
-        "desc": "I owe everything to my mentor - a horrible person who\u2019s probably rotting in jail somewhere."
+        "desc": "I owe everything to my mentor\u0336 a horrible person who\u2019s probably rotting in jail somewhere."
       },
       {
         "number": 3,
@@ -379,7 +379,7 @@
       },
       {
         "number": 3,
-        "desc": "The first thing I do in a new place is note the locations of everything valuable - or where such things could be hidden."
+        "desc": "The first thing I do in a new place is note the locations of everything valuable\u0336 or where such things could be hidden."
       },
       {
         "number": 4,
@@ -485,7 +485,7 @@
     "variant": {
       "isThere": "true",
       "title": "Variant Entertainer: Gladiator",
-      "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment - perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net."
+      "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment\u0336 perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net."
     },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
@@ -671,85 +671,323 @@
   },
   {
     "name": "Folk Hero",
-    "desc": "",
+    "desc": "You come from a humble social rank, but you are destined for so much more. Already the people of your home village regard you as their champion, and your destiny class you to stand against the tyrants and monsters that threaten the common folk everywhere.",
     "variant": {
       "isThere": "false",
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Animal Handling",
+      "Survival"
+    ],
+    "addToolProf": [
+      "one type of artisan\u2019s tools",
+      "land vehicles"
+    ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+      "one set of artisan\u2019s tools of your choice",
+      "shovel",
+      "iron pot",
+      "set of common clothes",
+      "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Rustic Hospitality",
+      "desc": "Since you come from the ranks of the common folk, you fit in among them with ease. You can find a place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them. They will shield you from the law or anyone else searching for you, though they will not risk their lives for you."
       }
     ],
-    "characteristics": "",
+    "characteristics": "A folk hero is one of the common people, for better or for worse. Most folk heroes look on their humble origins as a virtue, not a shortcoming, and their home communities remain very important to them.",
     "specialTrait": {
-      "name": "",
+      "name": "Defining Event",
+      "desc": "You previously pursued a simple profession among the peasantry, perhaps as a farmer, miner, servant, shepherd, woodcutter, or gravedigger. But something happened that set you on a different path and marked you for greater things.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "I stood up to a tyrant\u2019s agents."
+        },
+        {
+          "number": 2,
+          "desc": "I saved people during a natural disaster."
+        },
+        {
+          "number": 3,
+          "desc": "I stood alone against a terrible monster."
+        },
+        {
+          "number": 4,
+          "desc": "I stole from a corrupt merchant to help the poor."
+        },
+        {
+          "number": 5,
+          "desc": "I led a militia to fight off an invading army."
+        },
+        {
+          "number": 6,
+          "desc": "I broke into a tyrant\u2019s castle and stole weapons to arm the people."
+        },
+        {
+          "number": 7,
+          "desc": "I trained the peasantry to use farm implements as weapons against a tyrant\u2019s soldiers."
+        },
+        {
+          "number": 8,
+          "desc": "A lord rescinded an unpopular decree after I led a symbolic act of protest against it."
+        },
+        {
+          "number": 9,
+          "desc": "A celestial, fey, or similar creature gave me a blessing or revealed my secret origin."
+        },
+        {
+          "number": 10,
+          "desc": "Recruited into a lord\u2019s army, I rose to leadership and was commended for my heroism."
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I judge people by their actions, not their words."
+      },
+      {
+        "number": 2,
+        "desc": "If someone is in trouble, I\u2019m always ready to lend help."
+      },
+      {
+        "number": 3,
+        "desc": "When I set my mind to something, I follow through no matter what gets in my way."
+      },
+      {
+        "number": 4,
+        "desc": "I have a strong sense of fair play and always try to find the most equitable solution to arguments."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019m confident in my own abilities and do what I can to instill confidence in others."
+      },
+      {
+        "number": 6,
+        "desc": "Thinking is for other people. I prefer action."
+      },
+      {
+        "number": 7,
+        "desc": "I misuse long words in an attempt to sound smarter."
+      },
+      {
+        "number": 8,
+        "desc": "I get bored easily. When am I going to get on with my destiny?"
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Respect. People deserve to be treated with dignity and respect. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Might. If I become strong, I can take what I want\u0336 what I deserve. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "Sincerity. There\u2019s no good in pretending to be something I\u2019m not. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Destiny. Nothing and no one can steer me away from my higher calling. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I have a family, but I have no idea where they are. One day, I hope to see them again."
+      },
+      {
+        "number": 2,
+        "desc": "I worked the land, I love the land, and I will protect the land."
+      },
+      {
+        "number": 3,
+        "desc": "A proud noble once gave me a horrible beating, and I will take my revenge on any bully I encounter."
+      },
+      {
+        "number": 4,
+        "desc": "My tools are symbols of my past life, and I carry them so that I will never forget my roots."
+      },
+      {
+        "number": 5,
+        "desc": "I protect those who cannot protect themselves."
+      },
+      {
+        "number": 6,
+        "desc": "I wish my childhood sweetheart had come with me to pursue my destiny."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "The tyrant who rules my land will stop at nothing to see me killed."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m convinced of the significance of my destiny, and blind to my shortcomings and the risk of failure."
+      },
+      {
+        "number": 3,
+        "desc": "The people who knew me when I was young know my shameful secret, so I can never go home again."
+      },
+      {
+        "number": 4,
+        "desc": " have a weakness for the vices of the city, especially hard drink."
+      },
+      {
+        "number": 5,
+        "desc": "Secretly, I believe that things would be better if I were a tyrant lording over the land."
+      },
+      {
+        "number": 6,
+        "desc": "I have trouble trusting my allies."
+      }
+    ]
   },
   {
     "name": "Guild Artisan",
-    "desc": "",
+    "desc": "You are a member of an artisan\u2019s guild, skilled in a particular field and closely associated with other artisans. You are a well-established part of the mercantile world, freed by talent and wealth from the constraints of a feudal social order. You learned your skills as an apprentice to a master artisan, under the sponsorship of your guild, until you became a master in your own right.",
     "variant": {
-      "isThere": "false",
+      "isThere": "true",
+      "title": "Variant Guild Artisan: Guild Merchant",
+      "desc": "Instead of an artisan\u2019s guild, you might belong to a guild of traders, caravan masters, or shopkeepers. You don\u2019t craft items yourself but earn a living by buying and selling the works of others (or the raw materials artisans need to practice their craft). Your guild might be a large merchant consortium (or family) with interests across the region. Perhaps you transported goods from one place to another, by ship, wagon, or, caravan, or bought them from traveling traders and sold them in your own little shop. In some ways, the traveling merchant\u2019s life lends itself to adventure far more than the life of an artisan.\n\n Rather than proficiency with artisan\u2019s tools, you might be proficient with navigator\u2019s tools or an additional language. And instead of artisan\u2019s tools, you can start with a mule and a cart."
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
-    "addLanguages": [],
-    "addEquipment": [],
+    "addSkillProf": [
+      "Insight",
+      "Persuasion"
+    ],
+    "addToolProf": [
+      "one type of artisan\u2019s tools"
+    ],
+    "addLanguages": [
+      "one of your choice"
+    ],
+    "addEquipment": [
+      "one set of artisan\u2019s tools of your choice",
+      "letter of introduction from your guild",
+      "set of traveler\u2019s clothes",
+      "pouch containing 15gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Guild Membership",
+      "desc": "As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for you funeral if neeeded. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings.\n\n Guilds often wield tremendous political power. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild\u2019s coffers.\n\n You must pay dues of 5gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild\u2019s good graces."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Guild artisans are among the most ordinary people in the world\u0336 until they sey down their tools and take up an adventuring career. They understand the value of hard work and the importance of community, but they\u2019re vulnerable to sins of greed and covetousness.",
     "specialTrait": {
-      "name": "",
+      "name": "Guild Business",
+      "desc": "Guilds are generally found in cities large enough to support several artisans practicing the same trade. However, your guild might instead be a loose network of artisans who each work in a different village within a larger realm. Work with your DM to determine the nature of your guild.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Alchemists and apothecaries"
+        },
+        {
+          "number": 2,
+          "desc": "Armorers, locksmiths, and finesmiths"
+        },
+        {
+          "number": 3,
+          "desc": "Brewers, distillers, and vintners"
+        },
+        {
+          "number": 4,
+          "desc": "Calligraphers, scribes, and scriveners"
+        },
+        {
+          "number": 5,
+          "desc": "Carpenters, roofers, and plasterers"
+        },
+        {
+          "number": 6,
+          "desc": "Cartographers, surveyors, and chart-makers"
+        },
+        {
+          "number": 7,
+          "desc": "Cobblers and shoemakers"
+        },
+        {
+          "number": 8,
+          "desc": "Cooks and bakers"
+        },
+        {
+          "number": 9,
+          "desc": "Glassblowers and glaziers"
+        },
+        {
+          "number": 10,
+          "desc": "Jewelers and gemcutters"
+        },
+        {
+          "number": 11,
+          "desc": "Leatherworkers, skinners, and tanners"
+        },
+        {
+          "number": 12,
+          "desc": "Masons and stonecutters"
+        },
+        {
+          "number": 13,
+          "desc": "Painters, limners, and sign-makers"
+        },
+        {
+          "number": 14,
+          "desc": "Potters and tile-makers"
+        },
+        {
+          "number": 15,
+          "desc": "Shipwrights and sailmakers"
+        },
+        {
+          "number": 16,
+          "desc": "Smiths and metal-forgers"
+        },
+        {
+          "number": 17,
+          "desc": "Tinkers, pewterers, and casters"
+        },
+        {
+          "number": 18,
+          "desc": "Wagon-makers and wheelwrights"
+        },
+        {
+          "number": 19,
+          "desc": "Weavers and dyers"
+        },
+        {
+          "number": 20,
+          "desc": "Woodcarvers, coopers, and bowyers"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I believe that anything worth doing is worth doing right. I can\u2019t help it\u0336 I\u2019m a perfectionist."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m a snob who looks down on those who can\u2019t appreciate fine art."
+      },
+      {
+        "number": 3,
+        "desc": "I always want to know how things work and what makes people tick."
       }
     ],
     "ideals": [
