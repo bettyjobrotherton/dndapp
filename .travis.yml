@@ -1,16 +1,18 @@
 language: node_js
 node_js:
-  - 6
+- '6'
 matrix:
   fast_finish: true
   allow_failures:
     - node_js: 5.12.0
-before_script:
-  - npm install -g gulp-cli node-gyp
-services: mongodb
+branches:
+  only:
+  - dev
+services:
+- mongodb
 cache:
   directories:
-    - node_modules
+  - node_modules
 env:
   - CXX=g++-4.8
 addons:
@@ -19,5 +21,11 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+before_install:
+- sudo apt-add-repository ppa:brightbox/ruby-ng -y
+- sudo apt-get update 
+- sudo apt-get install ruby2.2 -y
+before_script:
+- npm install -g gulp-cli node-gyp
 after_success:
-  - git config --global user.email "lbmcleod@gmail.com" - git config --global user.name "bmcleod" - echo "Host heroku.com" >> ~/.ssh/config - echo " StrictHostKeyChecking no" >> ~/.ssh/config - echo " CheckHostIP no" >> ~/.ssh/config; - echo " UserKnownHostsFile=/dev/null" >> ~/.ssh/config; - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then gem install heroku; fi - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then heroku keys:clear; fi - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then yes | heroku keys:add; fi - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then gulp build; fi - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then yes | gulp buildcontrol:heroku; fi - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then heroku keys:clear; fi
+- bash ./travis/after_success.sh

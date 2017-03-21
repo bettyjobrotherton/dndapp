@@ -1,6 +1,6 @@
 <div class='backgroundView'>
   <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.backgroundList" >
+    <div class='list-group' ng-repeat="background in genCtrl.backgroundList" >
       <img ng-src='{{ background.icon }}' class='list-group-item' ng-click="genCtrl.selectBackground(background)">
     </div>
   </div>
@@ -11,7 +11,25 @@
       <p class='summary'>{{genCtrl.currentBackground.desc}}</p>
     </div>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('generatorthree')"  type="">
+    <table class="table table-striped">
+      <tr class="table-head">
+        <th colspan="2"> Traits </th>
+      </tr>
+      <tr>
+        <td>Skill Proficiency</td>
+        <td><div ng-repeat="skill in genCtrl.currentBackground.addSkillProf">{{ skill }}</div></td>
+      </tr>
+      <tr>
+        <td>Language Proficiency</td>
+        <td><div ng-repeat="lang in genCtrl.currentbackground.addLanguages">{{ lang }}</div></td>
+      </tr>
+      <tr>
+        <td>Tools</td>
+        <td><div ng-repeat="tool in genCtrl.currentbackground.addToolProf">{{ tool }}</div></td>
+      </tr>
+    </table>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveBackground()"  type="">
       Submit &amp; Continue
     </button>
 
