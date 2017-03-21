@@ -11,6 +11,7 @@
     "addLanguages": [
       "2 additional languages of your choice"
     ],
+    "addEquipment": [],
     "features": [
       {
       "name": "Shelter of the Faithful",
@@ -134,57 +135,181 @@
   },
   {
     "name": "Charlatan",
-    "desc": "",
+    "desc": "You have always had a way with people. You know what makes them tick, you can tease out their hearts\u2019 desires after a few minutes of conversation, and with a few leading questions you can read them like they were children\u2019s books. It\u2019s a useful talent, and one that you\u2019re prefectly willing to use for your advantage.\n\n You know what people want and you deliver, or rather, you promise to deliver. Common sense should steer people away from things that sound too good to be true, but common sense seems to be in short supply when you\u2019re around.",
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Deception",
+      "Sleight of Hand"
+    ],
+    "addToolProf": [
+      "disguise kit",
+      "forgery kit"
+    ],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "False Identity",
+      "desc": "You have created a second identity that includes documentation, established acquaintances, and disguises that allow you to assume that persona. Additionally, you can forge documents including official papers and personal letters, as long as you have seen an example of the kind of document or the handwriting you are trying to copy."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Charlatans are colorful characters who conceal their true selves behind the masks they construct. They reflect what people want to see, what they want to believe, and how they see the world. But their true sleves are sometimes plagued by an uneasy conscience, an old enemy, or deep-seated trust issues.",
     "specialTrait": {
-      "name": "",
+      "name": "Favorite Schemes",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "I cheat at games of chance."
+        },
+        {
+          "number": 2,
+          "desc": "I shave coins or forge documents."
+        },
+        {
+          "number": 3,
+          "desc": "I insinuate myself into people's lives to prey on their weakness and secure their fortunes."
+        },
+        {
+          "number": 4,
+          "desc": "I put on new identities like clothes."
+        },
+        {
+          "number": 5,
+          "desc": "I run sleight-of-hand cons on street corners."
+        },
+        {
+          "number": 6,
+          "desc": "I convince people that worhtless junk is worth their hard-earned money."
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I fall in and out of love easily, and am always pursuing someone."
+      },
+      {
+        "number": 2,
+        "desc": "I have a joke for every occasion, especially occasions where humor is inappropriate."
+      },
+      {
+        "number": 3,
+        "desc": "Flattery is my preferred trick for getting what I want."
+      },
+      {
+        "number": 4,
+        "desc": "I\u2019m a born gambler who can\u2019t resist taking a risk for a potential payoff."
+      },
+      {
+        "number": 5,
+        "desc": "I lie about almost everything, even when there\u2019s no good reason to."
+      },
+      {
+        "number": 6,
+        "desc": "Sarcasm and insults are my weapons of choice."
+      },
+      {
+        "number": 7,
+        "desc": "I keep multiple holy symbols on me and invoke whatever deity might come in useful at any given moment."
+      },
+      {
+        "number": 8,
+        "desc": "I pocket anything I see that might have soem value."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Independence. I am a free spirit - no one tells me what to do. (Chaotic)"
+      },
+      {
+        "number": 2,
+        "desc": "Fairness. I never target people who can\u2019t afford to lose a few coins. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Charity. I distribute the money I acquire to the people who really need it. (Good)"
+      },
+      {
+        "number": 4,
+        "desc": "Creativity. I never run the same con twice. (Chaotic)"
+      },
+      {
+        "number": 5,
+        "desc": "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)"
+      },
+      {
+        "number": 6,
+        "desc": "Aspiration. I'm determined to make something of myself. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about."
+      },
+      {
+        "number": 2,
+        "desc": "I owe everything to my mentor - a horrible person who\u2019s probably rotting in jail somewhere."
+      },
+      {
+        "number": 3,
+        "desc": "Somewhere out there, I have a child who doesn\u2019t know me. I\u2019m making the world better for him or her"
+      },
+      {
+        "number": 4,
+        "desc": "I come from a noble family, and one day I\u2019ll reclaim my lands and title from those who stole them from me."
+      },
+      {
+        "number": 5,
+        "desc": "A powerful person killed someone I love. Some day soon, I\u2019ll have my revenge."
+      },
+      {
+        "number": 6,
+        "desc": "I swindled and ruined a person who didn\u2019t deserve it. I seek to atone for my misdeeds but might never be able to forgive myself."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I can\u2019t resist a pretty face."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m always in debt. I spend my ill-gotten gains on decadent luxuries faster than I bring them in."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019m convinced that no one could ever fool me the way I fool others."
+      },
+      {
+        "number": 4,
+        "desc": "I\u2019m too greedy for my own good. I can\u2019t resist taking a risk if there\u2019s money involved."
+      },
+      {
+        "number": 5,
+        "desc": "I can\u2019t resist swindling people who are more powerful than me."
+      },
+      {
+        "number": 6,
+        "desc": "I hate to admit it and will hate myself for it, but I\u2019ll run and preserve my own hide if the going gets tough."
+      }
+    ]
   },
   {
     "name": "Criminal",
-    "desc": "",
+    "desc": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You\u2019re far closer that most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules ajnd regulations of society.",
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Deception",
+      "Stealth"
+    ],
+    "addToolProf": [
+      "one type of gaming set",
+      "thieves\u2019 tools"
+    ],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -231,6 +356,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -277,6 +403,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -323,6 +450,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -369,6 +497,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -415,6 +544,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -461,6 +591,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -507,6 +638,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -553,6 +685,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -599,6 +732,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
@@ -645,6 +779,7 @@
     "addSkillProf": [],
     "addToolProf": [],
     "addLanguages": [],
+    "addEquipment": [],
     "features": [
       {
       "name": "",
