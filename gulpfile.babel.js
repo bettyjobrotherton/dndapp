@@ -572,7 +572,7 @@ grunt.initConfig({
         heroku: {
             options: {
                 remote: 'git@heroku.com:dndcharactercreator',
-                branch: 'master'
+                branch: 'dev'
             }
         },
         openshift: {
