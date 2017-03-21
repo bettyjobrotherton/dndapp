@@ -36,6 +36,24 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
+
+    this.$http.get('assets/alignment.json')
+              .then(res => {
+                vm.alignList = res.data;
+                vm.currentAlign = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
+
+    this.$http.get('assets/background.json')
+              .then(res => {
+                vm.backgroundList = res.data;
+                vm.currentBackground = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
   }
 
   continueChar(generate) {
@@ -50,6 +68,14 @@ export class GeneratorController {
 
   selectClass(build) {
     this.currentClass = build;
+  }
+
+  selectAlign(align) {
+    this.currentAlign = align;
+  }
+
+  selectBackground(background) {
+    this.currentBackground = background;
   }
 
   selectMainRace(){
@@ -163,10 +189,50 @@ selectArchetype(archetype){
       newCharacter.class = classInfo.class;
       newCharacter.combat = classInfo.combat;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorThree');
+      this.$state.go('generatorTwo');
     }
     // console.log(this.localStorage['character-in-progress']);
   }
+
+saveAlign(){
+  var newCharacter;
+  var currentAlign = this.currentAlign;
+  var alignInfo = {
+      alignment:{
+        main: currentAlign.name
+      }
+  };
+  if(this.first() =='align'){
+    newcharacter = alignInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorBackground');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.alignment = alignInfo.alignment;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
+  }
+}
+
+saveBackground(){
+  var newCharacter;
+  var currentBackground = this.currentBackground;
+  var backgroundInfo = {
+      background:{
+        main: currentBackground.name
+      }
+  };
+  if(this.first() =='background'){
+    newcharacter = alignInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorAlignment');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.background = backgroundInfo.background;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
+  }
+}
 
     // if(this.first() == 'class'){
     //   newCharacter = classInfo;
