@@ -2,6 +2,9 @@
   {
     "name": "Acolyte",
     "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric - performing sacred rites is NOT the same thing as channeling divine power.",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
       "Insight",
@@ -23,7 +26,7 @@
     "personalityTraits": [
       {
         "number": 1,
-        "desc": "I idolize a particular hero of my faith, and constantly refer to that person's deeds and example."
+        "desc": "I idolize a particular hero of my faith, and constantly refer to that person\u2019s deeds and example."
       },
       {
         "number": 2,
@@ -136,6 +139,9 @@
   {
     "name": "Charlatan",
     "desc": "You have always had a way with people. You know what makes them tick, you can tease out their hearts\u2019 desires after a few minutes of conversation, and with a few leading questions you can read them like they were children\u2019s books. It\u2019s a useful talent, and one that you\u2019re prefectly willing to use for your advantage.\n\n You know what people want and you deliver, or rather, you promise to deliver. Common sense should steer people away from things that sound too good to be true, but common sense seems to be in short supply when you\u2019re around.",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
       "Deception",
@@ -156,6 +162,7 @@
     "characteristics": "Charlatans are colorful characters who conceal their true selves behind the masks they construct. They reflect what people want to see, what they want to believe, and how they see the world. But their true sleves are sometimes plagued by an uneasy conscience, an old enemy, or deep-seated trust issues.",
     "specialTrait": {
       "name": "Favorite Schemes",
+      "desc": "Every charlatan has an angle he or she uses in preference to other schemes.",
       "list": [
         {
           "number": 1,
@@ -167,7 +174,7 @@
         },
         {
           "number": 3,
-          "desc": "I insinuate myself into people's lives to prey on their weakness and secure their fortunes."
+          "desc": "I insinuate myself into people\u2019s lives to prey on their weakness and secure their fortunes."
         },
         {
           "number": 4,
@@ -240,7 +247,7 @@
       },
       {
         "number": 6,
-        "desc": "Aspiration. I'm determined to make something of myself. (Any)"
+        "desc": "Aspiration. I\u2019m determined to make something of myself. (Any)"
       }
     ],
     "bonds": [
@@ -299,6 +306,9 @@
   {
     "name": "Criminal",
     "desc": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You\u2019re far closer that most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules ajnd regulations of society.",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
       "Deception",
@@ -309,96 +319,362 @@
       "thieves\u2019 tools"
     ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+      "crowbar",
+      "set of dark common clothes including a hood"
+      "pouch containing 15gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Criminal Contact",
+      "desc": "You have a reliable and trustworthy contact who acts as your liason to a network of other criminals. You know how to get messages to and from your contact, even over great distances; specifically, you know the local messengers, corrupt caravan masters, and seedy sailors who can deliver messages for you."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Criminals might seem like villians on the surface, and many of them are villainous to the core. But some have an abundance of endearing, if not redeeming, characteristics. There might be honor among thieves, but criminals rarely show any respect for law or authority.",
     "specialTrait": {
-      "name": "",
+      "name": "Criminal Specialty",
+      "desc": "There are many kinds of criminals, and within a thieves\u2019 guild or similar criminal organization, individual members have particular specialties. Even criminals who operate outside of such organizations have strong preferences for certain kinds of crimes over others.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Blackmailer"
+        },
+        {
+          "number": 2,
+          "desc": "Burgular"
+        },
+        {
+          "number": 3,
+          "desc": "Enforcer"
+        },{
+          "number": 4,
+          "desc": "Fence"
+        },
+        {
+          "number": 5,
+          "desc": "Highway Robber"
+        },
+        {
+          "number": 6,
+          "desc": "Hired Killer"
+        },
+        {
+          "number": 7,
+          "desc": "Pickpocket"
+        },
+        {
+          "number": 8,
+          "desc": "Smuggler"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I always have a plan for what to do when things go wrong."
+      },
+      {
+        "number": 2,
+        "desc": "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me."
+      },
+      {
+        "number": 3,
+        "desc": "The first thing I do in a new place is note the locations of everything valuable - or where such things could be hidden."
+      },
+      {
+        "number": 4,
+        "desc": "I would rather make a new friend than a new enemy."
+      },{
+        "number": 5,
+        "desc": "I am incredibly slow to trust. Those who seem the fairest often have the most to hide."
+      },{
+        "number": 6,
+        "desc": "I don\u2019t pay attention to the risks in a situation. Never tell me the odds."
+      },
+      {
+        "number": 7,
+        "desc": "The best way to get me to do something is to tell me I can\u2019t do it."
+      },
+      {
+        "number": 8,
+        "desc": "I blow up at the slightest insult."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Honor. I don\u2019t steal from others in the trade. (Lawful)"
+      },
+      {
+        "number": 2,
+        "desc": "Freedom. Chains are meant to be broken, as are those who would forge them. (Chaotic)"
+      },
+      {
+        "number": 3,
+        "desc": "Charity. I steal from the wealthy so that I can help people in need. (Good)"
+      },
+      {
+        "number": 4,
+        "desc": "Greed. I will do whatever it takes to become wealthy. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "People. I\u2019m loyal to my friends, not to any ideals, and everyone else can take a trip down the Styx for all I care. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Redemption. There\u2019s a spark of good in everyone. (Good)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I\u2019m trying to pay off an old debt I owe to a generous benefactor."
+      },
+      {
+        "number": 2,
+        "desc": "My ill-gotten gains go to support my family."
+      },
+      {
+        "number": 3,
+        "desc": "Something important was taken from me, and I aim to steal it back."
+      },
+      {
+        "number": 4,
+        "desc": "I will become the greatest thief that ever lived."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019m guilty of a terrible crime. I hope I can redeem myself for it."
+      },
+      {
+        "number": 6,
+        "desc": "Someone I loved died because of a mistake I made. That will never happen again."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "When I see something valuable, I can\u2019t think about anything but how to steal it."
+      },
+      {
+        "number": 2,
+        "desc": "When faced with a choice between money and my friends, I usually choose the money."
+      },
+      {
+        "number": 3,
+        "desc": "If there\u2019s a plan, I\u2019ll forget it. If I don\u2019t forget it, I\u2019ll ignore it."
+      },
+      {
+        "number": 4,
+        "desc": "I have a \u0022tell\u0022 that reveals when I\u2019m lying."
+      },
+      {
+        "number": 5,
+        "desc": "I turn tail and run when things look bad."
+      },
+      {
+        "number": 6,
+        "desc": "An innocent person is in prison for a crime that I committed. I\u2019m okay with that."
+      }
+    ]
   },
   {
     "name": "Entertainer",
-    "desc": "",
+    "desc": "You thrive in front of an audience. You know how to entrance them, entertain them, and even inspire them. Your poetics can stir the hearts of those who hear you, awakening grief or joy, laughter or anger. Your music raises their spirits or captures their sorrow. Your dance steps captivate, your humor cuts to the quick. Whatever techniques you use, your art is your life.",
+    "variant": {
+      "isThere": "true",
+      "title": "Variant Entertainer: Gladiator",
+      "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment - perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net."
+    },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Acrobatics",
+      "Performance"
+    ],
+    "addToolProf": [
+      "disguise kit",
+      "one type of musical instrument"
+    ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+      "musical instrument of your choice",
+      "the favor of an admirer (like a love letter, lock of hair, or trinket)",
+      "costume",
+      "pouch containing 15gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "By Popular Demand",
+      "desc": "You can always find a place to perform, usually in an inn or tavern but possibly with a circus, at a theater, or in a noble\u2019s court. At such a place, you receive free lodging and food of a modest or comfortable standard (depending on the quality of the establishment), as long as you perform each night. In addition, your performance makes you something of a local figure. When strangers recognize you in a town where you have performed, they typically take a liking to you."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Successful entertainers have to be able to capture and hold an audience\u2019s attention, so they tend to have flamboyant or forceful personalities. They\u2019re inclined toward the romantic and often cling to high-minded ideals about the practice of art and the appreciation of beauty.",
     "specialTrait": {
-      "name": "",
+      "name": "Entertainer Routine",
+      "desc": "A good entertainer is versatile, spicing up every performance with a variety of different routines. Choose one to three routines.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Actor"
+        },
+        {
+          "number": 2,
+          "desc": "Dancer"
+        },
+        {
+          "number": 3,
+          "desc": "Fire-eater"
+        },
+        {
+          "number": 4,
+          "desc": "Jester"
+        },
+        {
+          "number": 5,
+          "desc": "Juggler"
+        },
+        {
+          "number": 6,
+          "desc": "Instrumentalist"
+        },
+        {
+          "number": 7,
+          "desc": "Poet"
+        },
+        {
+          "number": 8,
+          "desc": "Singer"
+        },
+        {
+          "number": 9,
+          "desc": "Storyteller"
+        },
+        {
+          "number": 10,
+          "desc": "Tumbler"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I know a story relevant to almost every situation."
+      },
+      {
+        "number": 2,
+        "desc": "Whenever I come to a new place, I collect local rumors and spread gossip."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019m a hopeless romantic, always searching for that \u0022special someone.\u0022"
+      },
+      {
+        "number": 4,
+        "desc": "Nobody stays angry at me or around me for long, since I can defuse any amount of tension."
+      },
+      {
+        "number": 5,
+        "desc": "I love a good insult, even one directed at me."
+      },
+      {
+        "number": 6,
+        "desc": "I get bitter if I\u2019m not the center of attention."
+      },
+      {
+        "number": 7,
+        "desc": "I\u2019ll settle for nothing less than perfection."
+      },
+      {
+        "number": 8,
+        "desc": "I change my mood or my mind as quickly as I change key in a song."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Beauty. When I perform, I make the world better than it was. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Tradition. The stories, legends, and songs of the past must never be forgotten, for they teach us who we are. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Creativity. The world is in need of new ideas and bold action. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Greed. I\u2019m only in it for the money and fame. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "People. I like seeing the smiles on people\u2019s faces when I perform. That\u2019s all that matters. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Honesty. Art should reflect the soul; it should come from within and reveal who we really are. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "My instrument is my most treasured possession, and it reminds me of someone I love."
+      },
+      {
+        "number": 2,
+        "desc": "Someone stole my precious instrument, and someday I\u2019ll get it back."
+      },
+      {
+        "number": 3,
+        "desc": "I want to be famous, whatever it takes."
+      },
+      {
+        "number": 4,
+        "desc": "I idolize a hero of the old tales and measure my deed against that person\u2019s."
+      },
+      {
+        "number": 5,
+        "desc": "I will do anything to prove myself superior to my hated rival."
+      },
+      {
+        "number": 6,
+        "desc": "I would do anything for the other members of my old troupe."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I\u2019ll do anything to win fame and renown."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m a sucker for a pretty face."
+      },
+      {
+        "number": 3,
+        "desc": "A scandal prevents me from ever going home again. That kind of trouble seems to follow me around."
+      },
+      {
+        "number": 4,
+        "desc": "I once satirized a noble who still wants my head. It was a mistake that I will likely repeat."
+      },
+      {
+        "number": 5,
+        "desc": "I have trouble keeping my true feelings hidden. My sharp tongue lands me in trouble."
+      },
+      {
+        "number": 6,
+        "desc": "Despite my best efforts, I am unreliable to my friends."
+      }
+    ]
   },
   {
     "name": "Folk Hero",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -446,6 +722,9 @@
   {
     "name": "Guild Artisan",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -493,6 +772,9 @@
   {
     "name": "Hermit",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -540,6 +822,9 @@
   {
     "name": "Noble",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -587,6 +872,9 @@
   {
     "name": "Outlander",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -634,6 +922,9 @@
   {
     "name": "Sage",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -681,6 +972,9 @@
   {
     "name": "Sailor",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -728,6 +1022,9 @@
   {
     "name": "Soldier",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -775,6 +1072,9 @@
   {
     "name": "Urchin",
     "desc": "",
+    "variant": {
+      "isThere": "false",
+    },
     "icon": "./assets/images/star.png",
     "addSkillProf": [],
     "addToolProf": [],
@@ -819,7 +1119,7 @@
       },
       {
         "number":"6" ,
-        "desc":"I think anyone who's nice to me is hiding evil intent."
+        "desc":"I think anyone who\u2019s nice to me is hiding evil intent."
       },
       {
         "number":"7" ,
@@ -860,7 +1160,7 @@
     "bonds": [
       {
         "number":"1" ,
-        "desc":"My town or city is my home, and I'll fight to defend it."
+        "desc":"My town or city is my home, and I\u2019ll fight to defend it."
       },
       {
         "number":"2",
@@ -891,7 +1191,7 @@
       },
       {
         "number":"2",
-        "desc":"Gold seems like a lot of money to me, and i'll do just about anything for more of it"
+        "desc":"Gold seems like a lot of money to me, and I\u2019ll do just about anything for more of it"
       },
       {
         "number":"3",
