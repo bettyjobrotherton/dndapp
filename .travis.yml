@@ -21,6 +21,7 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+    - ruby2.2
 before_script:
 - npm install -g gulp-cli node-gyp
 after_success:
