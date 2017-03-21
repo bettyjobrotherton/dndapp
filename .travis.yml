@@ -15,11 +15,7 @@ cache:
   - node_modules
   - client/bower_components
 before_script:
-- npm install -g bower gulp-cli gulp
-- npm install --only=dev
-- npm install gulp
-- npm install grunt
-- npm install babel babel-preset-es2015 babel-plugin-transform-class-properties
+- npm install
 - bower install
 after_success:
 - bash ./travis/after_success.sh
