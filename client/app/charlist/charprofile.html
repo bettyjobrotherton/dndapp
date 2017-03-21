@@ -6,7 +6,7 @@
   </div>
   <div class="row row-in-profile">
     <div class="col-xs-6 col-xs-offset-3 center-content">
-      {{ charCtrl.selectChar().bio.name }} &nbsp; <img ng-src="assets/images/icons/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
+      {{ charCtrl.selectChar().bio.name }} &nbsp; <img ng-src="assets/images/{{charCtrl.selectChar().bio.gender}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().bio.gender}}">
 
     </div>
   </div>
@@ -15,10 +15,10 @@
       Lvl. {{ charCtrl.selectChar().general.level }}
     </div>
     <div class="col-xs-4 center-content">
-      <img ng-src="assets/images/icons/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}">  &nbsp; {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
+      <img ng-src="assets/images/{{charCtrl.selectChar().race.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().race.main}}">  &nbsp; {{ charCtrl.selectChar().race.main }} ({{ charCtrl.selectChar().race.subrace }})
     </div>
     <div class="col-xs-4 center-content">
-      <img ng-src="assets/images/icons/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">  &nbsp;
+      <img ng-src="assets/images/{{charCtrl.selectChar().class.main}}.png" class='char-icon-small' alt="{{charCtrl.selectChar().class.main}}">  &nbsp;
       {{ charCtrl.selectChar().class.main }} ({{ charCtrl.selectChar().class.archetype }})
     </div>
   </div>
@@ -286,92 +286,92 @@
 	      <tr>
 	        <td>{{ charCtrl.rollBonus.acrobatics }}</td>
 	        <td>Acrobatics (Dex)</td>
-	        <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[0].prof"></td>
+	        <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[0].prof"></td>
 	      </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.animalHandling }}</td>
           <td>Animal Handling (Wis)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[1].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[1].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.arcana }}</td>
           <td>Arcana (Int)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[2].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[2].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.athletics }}</td>
           <td>Athletics (Str)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[3].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[3].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.deception }}</td>
           <td>Deception (Cha)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[4].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[4].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.history }}</td>
           <td>History (Int)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[5].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[5].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.insight }}</td>
           <td>Insight (Wis)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[6].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[6].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.intimidation }}</td>
           <td>Intimidation (Cha)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[7].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[7].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.investigation }}</td>
           <td>Investigation (Int)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[8].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[8].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.medicine }}</td>
           <td>Medicine (Wis)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[9].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[9].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.nature }}</td>
           <td>Nature (Int)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[10].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[10].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.perception }}</td>
           <td>Perception (Wis)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[11].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[11].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.perform }}</td>
           <td>Performance (Cha)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[12].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[12].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.persuasion }}</td>
           <td>Persuasion (Cha)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[13].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[13].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.religion }}</td>
           <td>Religion (Int)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[14].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[14].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.sleightOfHand }}</td>
           <td>Sleight of Hand (Dex)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[15].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[15].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.stealth }}</td>
           <td>Stealth (Dex)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[16].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[16].prof"></td>
         </tr>
         <tr>
           <td>{{ charCtrl.rollBonus.survival }}</td>
           <td>Survival (Wis)</td>
-          <td><img src='assets/images/icons/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[17].prof"></td>
+          <td><img src='assets/images/star.png' alt='Star Icon' class='char-icon-small' ng-show="charCtrl.selectChar().skills.prof[17].prof"></td>
         </tr>
       </table>
     </div>

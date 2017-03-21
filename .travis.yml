@@ -21,9 +21,5 @@ before_script:
 - npm install grunt
 - npm install babel babel-preset-es2015 babel-plugin-transform-class-properties
 - bower install
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure: BFzjzzqwCSCkaK5nCdquc6yaUUb7hz5LDpZ1+JNRomDINcvtxyE3jbtfN25KqqUcbh9M2iZ1Mri+8IVJze4v4vMlq6QD5+6HW6kxVJFoK+G+y7JTFa/XrDKL09MyIJlxukkDxzuVsvIYHWX6bHKY5jT3QYPQoigoulwrh4gfoLpELv9+WeTlHH04YdZ3ybUzVlWLaWzjVNZQbejelwQXpeP4Fx0fx2acf/R9JVWSkkZsRvMCC5LeA2qFfsDJxpl5dNbQDEO+Z3SC4sYyhwDJzdwksN27TrbrWC76NQgKduXUP7uWHO2hQ4UNmX9r+8zVFSNa2k9i6fC3r0CItX8IQgES6sSPV9P/54PnLtaIRppqzq0H9CbnG+AKBdpC0eZ4UDiZFz9RJOWO1mnDRnkI0Iw5NEd0rndQNlIFFKiT/XnHfzlBcF2bNc3Ldtge/KLGSPCrlShCBegZPLeYdEJyczIPV/9YjLDM09OSPkF1BL1lgWRz0X1mZWxW+VtMUG4wUmhqquuVmvFZeWdW1Olvk3eao6d4YgE9grtkrdPNFdUtRJXLasV9X7HhiacOXuAVjb/1vdv6lmuoBnmDam2yJ3F/HP0LYsfE2VmuzyyrSNc4Qxwmi3XBd5d9RhvRy7q8w6+ybfGcIG1CDtc/6AeLVozVIuXhUTJREhDXZiL5nrQ=
 after_success:
 - bash ./travis/after_success.sh
