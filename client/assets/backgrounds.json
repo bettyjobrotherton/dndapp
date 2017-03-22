@@ -3,7 +3,7 @@
     "name": "Acolyte",
     "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric\u0336 performing sacred rites is NOT the same thing as channeling divine power.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
@@ -140,7 +140,7 @@
     "name": "Charlatan",
     "desc": "You have always had a way with people. You know what makes them tick, you can tease out their hearts\u2019 desires after a few minutes of conversation, and with a few leading questions you can read them like they were children\u2019s books. It\u2019s a useful talent, and one that you\u2019re prefectly willing to use for your advantage.\n\n You know what people want and you deliver, or rather, you promise to deliver. Common sense should steer people away from things that sound too good to be true, but common sense seems to be in short supply when you\u2019re around.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
@@ -307,7 +307,7 @@
     "name": "Criminal",
     "desc": "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld. You\u2019re far closer that most people to the world of murder, theft, and violence that pervades the underbelly of civilization, and you have survived up to this point by flouting the rules ajnd regulations of society.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
@@ -321,7 +321,7 @@
     "addLanguages": [],
     "addEquipment": [
       "crowbar",
-      "set of dark common clothes including a hood"
+      "set of dark common clothes including a hood",
       "pouch containing 15gp"
     ],
     "features": [
@@ -673,7 +673,7 @@
     "name": "Folk Hero",
     "desc": "You come from a humble social rank, but you are destined for so much more. Already the people of your home village regard you as their champion, and your destiny class you to stand against the tyrants and monsters that threaten the common folk everywhere.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
     "addSkillProf": [
@@ -892,7 +892,7 @@
     "characteristics": "Guild artisans are among the most ordinary people in the world\u0336 until they sey down their tools and take up an adventuring career. They understand the value of hard work and the importance of community, but they\u2019re vulnerable to sins of greed and covetousness.",
     "specialTrait": {
       "name": "Guild Business",
-      "desc": "Guilds are generally found in cities large enough to support several artisans practicing the same trade. However, your guild might instead be a loose network of artisans who each work in a different village within a larger realm. Work with your DM to determine the nature of your guild.",
+      "desc": "Guilds are generally found in cities large enough to support several artisans practicing the same trade. However, your guild might instead be a loose network of artisans who each work in a different village within a larger realm. Work with your Game Master to determine the nature of your guild.",
       "list": [
         {
           "number": 1,
@@ -1012,460 +1012,1237 @@
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Community. It is the duty of all civilized people to strengthen the bonds of community and the security of civilization. (Lawful)"
+      },
+      {
+        "number": 2,
+        "desc": "Generosity. My talents were given to me so that I could use them to benefit the world. (Good)"
+      },
+      {
+        "number": 3,
+        "desc": "Freedom. Everyone should be free to pursue his or her own livelihood. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Greed. I\u2019m only in it for the money. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "People. I\u2019m committed to the people I care about, not to ideals. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Aspiration. I work hard to be the best there is at my craft. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "The workshop where I learned my trade is the most important place in the world to me."
+      },
+      {
+        "number": 2,
+        "desc": "I created a great work for someone, and then found them unworthy to receive it. I\u2019m still looking for someone worthy."
+      },
+      {
+        "number": 3,
+        "desc": "I owe my guild a great debt for forging me into the person I am today."
+      },
+      {
+        "number": 4,
+        "desc": "I pursue wealth to secure someone\u2019s love."
+      },
+      {
+        "number": 5,
+        "desc": "One day, I will return to my guild and prove that I am the greatest artisan of them all."
+      },
+      {
+        "number": 6,
+        "desc": "I will get revenge on the evil forces that destroyed my place of business and ruined my livelihood."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I\u2019ll do anything to get my hands on something rare or priceless."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m quick to assume that someone is trying to cheat me."
+      },
+      {
+        "number": 3,
+        "desc": "No one must ever learn that I once stol money from guild coffers."
+      },
+      {
+        "number": 4,
+        "desc": "I\u2019m never satisfied with what I have\u0336 I always want more. "
+      },
+      {
+        "number": 5,
+        "desc": "I would kill to acquire a noble title."
+      },
+      {
+        "number": 6,
+        "desc": "I\u2019m horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I\u2019m surrounded by rivals."
+      }
+    ]
   },
   {
     "name": "Hermit",
-    "desc": "",
+    "desc": "You lived in seclusion\u0336 either in a sheltered community such as a monastery, or entirely alone\u0336 for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.\n\n Note on other hermits: The hermit background assumes a contemplative sort of seclusion that allows room for study and prayer. If you want to plat a rugged wilderness recluse who lives off the land while shunning the company of other people, look at the outlander background. On the other hand, if you want to go in a more religious direction, the acolyte might be what you're looking for. Or you could even be a charlatan, posing as a wise and holy person and letting pious fools support you.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
-    "addLanguages": [],
-    "addEquipment": [],
+    "addSkillProf": [
+      "Medicine",
+      "Religion"
+    ],
+    "addToolProf": [
+      "herbalism kit"
+    ],
+    "addLanguages": [
+      "one of your choice"
+    ],
+    "addEquipment": [
+      "scroll case stuffed full of notes from your studies or prayers",
+      "winter blanket",
+      "set fo common clothes",
+      "herbalism kit",
+      "5gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Discovery",
+      "desc": "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces fo nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who consigned you to exile, and hence the reason for your return to society. Work with your Game Master to determine the details of your discovery and its impact on the campaign."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Some hermits are well suited to a life of seclusion, whereas others chafe against it and long for company. Whether they embrace solitude or long to escape it, the solitary life shapes their attitude and ideals. A few are driven slightly mad by their years apart from society.",
     "specialTrait": {
-      "name": "",
+      "name": "Life of Seclusion",
+      "desc": "What was the reason for your isolation, and what changed to allow you to end your solitude? You can work with your Game Master to determine the exact nature of your seclusion.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "I was searching for spiritual enlightenment."
+        },
+        {
+          "number": 2,
+          "desc": "I was partaking of communal living in accordance with the dictates of a religious order."
+        },
+        {
+          "number": 3,
+          "desc": "I was exiled for a crime I didn\u2019t commit."
+        },
+        {
+          "number": 4,
+          "desc": "I retreated from society after a life-altering event."
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I\u2019ve been isolated for so long that I rarely speak, preferring gestures and the occasional grunt."
+      },
+      {
+        "number": 2,
+        "desc": "I am utterly serene, even in the face of danger."
+      },
+      {
+        "number": 3,
+        "desc": "The leader of my community had something wise to say on every topic, and I am eager to share that wisdom."
+      },
+      {
+        "number": 4,
+        "desc": "I feel tremendous empathy for all who suffer."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019m oblivious to etiquette and social expectations."
+      },
+      {
+        "number": 6,
+        "desc": "I connect everything that happens to me to a grand, cosmic plan."
+      },
+      {
+        "number": 7,
+        "desc": "I often get lost in my own thoughts and contemplation, becoming oblivious to my surroundings."
+      },
+      {
+        "number": 8,
+        "desc": "I am working on a grand philosophical theory and love sharing my ideas."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Greater Good. My gifts are meant to be shared with all, not used for my own benefit. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Logic. Emotions must not cloud our sense of what is right and true, or our logical thinking. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Free Thinking. Inquiry and curiosity are the pillars of progress. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Power. Solitude and contemplation are paths toward mystical or magical power. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "Live and Let Live. Meddling in the affairs of others only causes trouble. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Self-Knowledge. If you know yourself, there\u2019s nothing left to know. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Nothing is more important than the other members of my hermitage, order, or association."
+      },
+      {
+        "number": 2,
+        "desc": "I entered seclusion to hide from the ones who might still be hunting me. I must someday confront them."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019m still seeking the enlightenment I pursued in my seclusion, and it still eludes me."
+      },
+      {
+        "number": 4,
+        "desc": "I entered seclusion because I loved someone I could not have."
+      },
+      {
+        "number": 5,
+        "desc": "Should my discovery come to light, it could bring ruin to the world."
+      },
+      {
+        "number": 6,
+        "desc": "My isolation gave me great insight into a great evil that only I can destroy."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "Now that I\u2019ve returned to the world, I enjoy its delights a little too much."
+      },
+      {
+        "number": 2,
+        "desc": "I harbor dark, bloodthirsty thoughts that my isolation and meditation failed to quell."
+      },
+      {
+        "number": 3,
+        "desc": "I am dogmatic in my thoughts and philosophy."
+      },
+      {
+        "number": 4,
+        "desc": "I let my need to win arguments overshadow friendships and harmony."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019d risk too much to uncover a lost bit of knowledge."
+      },
+      {
+        "number": 6,
+        "desc": "I like keeping secrets and won\u2019t share them with anyone."
+      }
+    ]
   },
   {
     "name": "Noble",
-    "desc": "",
+    "desc": "You understande wealth, power, and privilege. you carry a noble title, and your family owns land, collects taxes, and wields significant political influence. You might be a pampered aristocrat unfamiliar with work or discomfort, a former just elevated to the nobility, or a disinherited scoundrel with a disproportionate sense of entitlement. Or you could be an honest, hard-working landowner who cares deeply about the people who live and work on your land, keenly aware of your responsibility to them.\n\n Work with your Game Master to come up with an appropriate title and determine how much authority that title carries. A noble title doesn't stand on its own\u0336 it\u2019s connected to an entire family, and whatever title you hold, you will pass it down to your own children. Not only do you need to determine your noble title, but you should also work with the Game Master to describe your family and their influence on you.",
     "variant": {
-      "isThere": "false",
+      "isThere": "true",
+      "title": "Variant Noble: Knight",
+      "desc": "A knighthood is among the lowest noble titles in most societies, but it can be a path to higher status. If you wish to be a knight, choose the Retainers feature (see below) instead of the Position of Privilege feature. One of your commoner retainers is replaced by a noble who serves as your squire, aiding you in exchange for training on his or her own path to knighthood. Your two remaining retainers might include a groom to care for your horse and a servant who polishes your armor and even helps you put it on.\n\n As an emblem of chivalry and the ideals of courtly love, you, might include among your equipment a banner or other token from a noble lord or lady to whom you have given your heart\u0336 in a chaste sort of devotion.\n\n Variant Feature: Retainers\n\n If your character has a noble background, you may select this background feature instead of Position of Privilege. You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas, and will leave if they are frequently endangered or abused."
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
-    "addLanguages": [],
-    "addEquipment": [],
+    "addSkillProf": [
+      "History",
+      "Persuasion"
+    ],
+    "addToolProf": [
+      "one type of gaming set"
+    ],
+    "addLanguages": [
+      "one language of your choice"
+    ],
+    "addEquipment": [
+      "set of fine clothes",
+      "signet ring",
+      "scroll of pedigree",
+      "purse containing 25gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Position of Privilege",
+      "desc": "Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to."
       }
     ],
-    "characteristics": "",
-    "specialTrait": {
-      "name": "",
-      "list": [
-        {
-          "number": ,
-          "desc":
-        }
-      ]
-    },
+    "characteristics": "Nobles are born and raised to a very different lifestyle than most people ever experience, and their personalities reflect that upbringing. A noble title comes with a plethora of bonds\u0336 responsibilities to family, to other nobles (including the sovereign), to the people entrusted to the family\u2019s care, or even to the title itself. But this responsibility is often a good way to undermine a noble.",
+    "specialTrait": {},
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "My eloquent flattery makes everyone I talk to feel like the most wonderful and important person in the world."
+      },
+      {
+        "number": 2,
+        "desc": "The common folk love me for my kindness and generosity."
+      },
+      {
+        "number": 3,
+        "desc": "No one could doubt by looking at my regal bearing that I am cut above the unwashed masses."
+      },
+      {
+        "number": 4,
+        "desc": "I take great pains to always look my best and follow the latest fashions."
+      },
+      {
+        "number": 5,
+        "desc": "I don\u2019t like to get my hands dirty, and I won\u2019t be caught dead in unsuitable accommodations."
+      },
+      {
+        "number": 6,
+        "desc": "Despite my noble birth, I do not place myself above other folk. We all have the same blood."
+      },
+      {
+        "number": 7,
+        "desc": "My favor, once lost, is lost forever."
+      },
+      {
+        "number": 8,
+        "desc": "If you do me an injury, I will crush you, ruin your name, and salt your fields."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Respect. Respect is due to me because of my position, but all people regardless of station deserve to be treated with dignity. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Responsibility. It is my duty to respect the authority of those above me, just as those below me must respect mine. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Independence. I must prove that I can handle myself without the coddling of my family. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Power. If I can attain more power, no one will tell me what to do. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "Family. Blood runs thicker than water. (Any)"
+      },
+      {
+        "number": 6,
+        "desc": "Noble Obligation. It is my duty to protect and care for the people beneath me. (Good)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I will face any challenge to win the approval of my family."
+      },
+      {
+        "number": 2,
+        "desc": "My house\u2019s alliance with another noble family must be sustained at all cost."
+      },
+      {
+        "number": 3,
+        "desc": "Nothing is more important than the other members of my family."
+      },
+      {
+        "number": 4,
+        "desc": "I am in love with the heir of a family that my family despises."
+      },
+      {
+        "number": 5,
+        "desc": "My loyalty to my sovereign is unwavering."
+      },
+      {
+        "number": 6,
+        "desc": "The common folk must see me as a hero of the people."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I secretly believe that everyone is beneath me."
+      },
+      {
+        "number": 2,
+        "desc": "I hide a truly scandalous secret that could ruin my family forever."
+      },
+      {
+        "number": 3,
+        "desc": "I too often hear veiled insults and threats in every word addressed to me, and I\u2019m quick to anger."
+      },
+      {
+        "number": 4,
+        "desc": "I have an insatiable desire for carnal pleasures."
+      },
+      {
+        "number": 5,
+        "desc": "In fact, the world does revolve around me."
+      },
+      {
+        "number": 6,
+        "desc": "By my words and actions, I often bring shame to my family."
+      }
+    ]
   },
   {
     "name": "Outlander",
-    "desc": "",
+    "desc": "You grew up in the wilds, far from civilization and the comforts of town and technology. You\u2019ve witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction. The wilds are in your blood, whether you were a nomad, an explorer, a recluse, a hunter-gatherer, or even a marauder. Even in places where you don\u2019t know the specific features of the terrainm you know the ways of the wild.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
-    "addLanguages": [],
-    "addEquipment": [],
+    "addSkillProf": [
+      "Athletics",
+      "Survival"
+    ],
+    "addToolProf": [
+      "one type of musical instrument"
+    ],
+    "addLanguages": [
+      "one language of your choice"
+    ],
+    "addEquipment": [
+      "staff",
+      "hunting trap",
+      "trophy from an animal you killed",
+      "set of traveler\u2019s clothes",
+      "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Wanderer",
+      "desc": "You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, and so forth."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Often considered rude and uncouth among civilized folk, outlanders have little respect for the niceties of life in the cities. The ties of tribe, clan, family, and the natural world of which they are a part are the most important bonds to most outlanders.",
     "specialTrait": {
-      "name": "",
+      "name": "Origin",
+      "desc": "You\u2019ve been to strange places and seen things that others cannot begin to fathom. Consider some of the distant lands you have visited, and how they impacted you.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Forester"
+        },
+        {
+          "number": 2,
+          "desc": "Trapper"
+        },
+        {
+          "number": 3,
+          "desc": "Homesteader"
+        },
+        {
+          "number": 4,
+          "desc": "Guide"
+        },
+        {
+          "number": 5,
+          "desc": "Exile or Outcast"
+        },
+        {
+          "number": 6,
+          "desc": "Bounty Hunter"
+        },
+        {
+          "number": 7,
+          "desc": "Pilgrim"
+        },
+        {
+          "number": 8,
+          "desc": "Tribal Nomad"
+        },
+        {
+          "number": 9,
+          "desc": "Hunter-Gatherer"
+        },
+        {
+          "number": 10,
+          "desc": "Tribal Marauder"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I\u2019m driven by a wanderlust that led me away from home."
+      },
+      {
+        "number": 2,
+        "desc": "I watch over my friends as if they were a litter of newborn pups."
+      },
+      {
+        "number": 3,
+        "desc": "I once ran twenty-five miles without stopping to warn my clan of an approaching orc horde. I\u2019d do it again if I had to."
+      },
+      {
+        "number": 4,
+        "desc": "I have a lesson for every situation, drawn from observing nature."
+      },
+      {
+        "number": 5,
+        "desc": "I place no stock in wealthy or well-mannered folk. Money and manners won\u2019t save you from a hungry owlbear."
+      },
+      {
+        "number": 6,
+        "desc": "I\u2019m always picking things up, absently fiddling with them, and sometimes accidently breaking them."
+      },
+      {
+        "number": 7,
+        "desc": "I feel far more comfortable around animals than people."
+      },
+      {
+        "number": 8,
+        "desc": "I was, in fact, raised by wolves."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Change. Life is like the seasons, in constant change, and we must change with it. (Chaotic)"
+      },
+      {
+        "number": 2,
+        "desc": "Greater Good. It is each person\u2019s responsibility to make the most happiness for the whole tribe. (Good)"
+      },
+      {
+        "number": 3,
+        "desc": "Honor. If I dishonor myself, I dishonor my whole clan. (Lawful)"
+      },
+      {
+        "number": 4,
+        "desc": "Might. The strongest are meant to rule. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "Nature. The natural world is more important than all the constructs of civilization. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Glory. I must earn glory in battle, for myself and my clan. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "My family, clan, or tribe is the most important thing in my life, even when they are far from me."
+      },
+      {
+        "number": 2,
+        "desc": "An injury to the unspoiled wilderness of my home is an injury to me."
+      },
+      {
+        "number": 3,
+        "desc": "I will bring terrible wrath down on the evildoers who destroyed my homeland."
+      },
+      {
+        "number": 4,
+        "desc": "I am the last of my tribe, and it\u2019s up to me to ensure their names enter legend."
+      },
+      {
+        "number": 5,
+        "desc": "I suffer awful visions of a coming disaster and will do anything to prevent it."
+      },
+      {
+        "number": 6,
+        "desc": "It is my duty to provide children to sustain my tribe."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I am too enamored of ale, wine, and other intoxicants."
+      },
+      {
+        "number": 2,
+        "desc": "There\u2019s no room for caution in a life lived to the fullest."
+      },
+      {
+        "number": 3,
+        "desc": "I remember every insult I\u2019ve received and nurse a silent resentment toward anyone who\u2019s every wronged me."
+      },
+      {
+        "number": 4,
+        "desc": "I am slow to trust members of other races, tribes, and societies."
+      },
+      {
+        "number": 5,
+        "desc": "Violence is my answer to almost any challenge."
+      },
+      {
+        "number": 6,
+        "desc": "Don\u2019t expect me to save those who can\u2019t save themselves. It is nature's way that the strong thrive and the weak perish."
+      }
+    ]
   },
   {
     "name": "Sage",
-    "desc": "",
+    "desc": "You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
+    "addSkillProf": [
+      "Arcana",
+      "History"
+    ],
     "addToolProf": [],
-    "addLanguages": [],
-    "addEquipment": [],
+    "addLanguages": [
+      "two languages of your choice"
+    ],
+    "addEquipment": [
+      "bottle of black ink",
+      "quill",
+      "small knife",
+      "letter from a dead colleague posing a question you have not been able to answer",
+      "set of common clothes",
+      "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Researcher",
+      "desc": "When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your Game Master might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign."
       }
     ],
-    "characteristics": "",
+    "characteristics": "Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly\u0336 sometimes in its own right, sometimes as a means toward other ideals.",
     "specialTrait": {
-      "name": "",
+      "name": "Speciality",
+      "desc": "Determine the nature of your scholarly training.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Alchemist"
+        },
+        {
+          "number": 2,
+          "desc": "Astronomer"
+        },
+        {
+          "number": 3,
+          "desc": "Discredited Academic"
+        },
+        {
+          "number": 4,
+          "desc": "Librarian"
+        },
+        {
+          "number": 5,
+          "desc": "Professor"
+        },
+        {
+          "number": 6,
+          "desc": "Researcher"
+        },
+        {
+          "number": 7,
+          "desc": "Wizard\u2019s Apprentice"
+        },
+        {
+          "number": 8,
+          "desc": "Scribe"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I use polysyllabic words that convey the impression of great erudition."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019ve read every book in the world\u2019s greatest libraries\u0336 or I like to boast that I have."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019m used to helping out those who aren\u2019t as smart as I am, and I patiently explain anything and everything to others."
+      },
+      {
+        "number": 4,
+        "desc": "There\u2019s nothing I like more than a good mystery."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019m willing to listen to every side of an argument before I make my own judgement."
+      },
+      {
+        "number": 6,
+        "desc": "I . . . speak . . . slowly . . . when talking . . . to idiots . . . which . . . almost . . . everyone . . . is . . . compared . . . to me."
+      },
+      {
+        "number": 7,
+        "desc": "I am horribly, horribly awkward in social situations."
+      },
+      {
+        "number": 8,
+        "desc": "I\u2019m convinced that people are always trying to steal my secrets."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Knowledge. The path to power and self-improvement is through knowledge. (Neutral)"
+      },
+      {
+        "number": 2,
+        "desc": "Beauty. What is beautiful points us beyond itself toward what is true. (Good)"
+      },
+      {
+        "number": 3,
+        "desc": "Logic. Emotions must not cloud our logical thinking. (Lawful)"
+      },
+      {
+        "number": 4,
+        "desc": "No Limits. Nothing should fetter the infinite possibility inherent in all existence. (Chaotic)"
+      },
+      {
+        "number": 5,
+        "desc": "Power. Knowledge is the path to power and domination. (Evil)"
+      },
+      {
+        "number": 6,
+        "desc": "Self-Improvement. The goal of a life study is the betterment of oneself. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "t is my duty to protect my students."
+      },
+      {
+        "number": 2,
+        "desc": "I have an ancient text that holds terrible secrets that must not fall into the wrong hands."
+      },
+      {
+        "number": 3,
+        "desc": "I work to preserve a library, university, scriptorium, or monastery."
+      },
+      {
+        "number": 4,
+        "desc": "My life\u2019s work is a series of tomes related to a specific field of lore."
+      },
+      {
+        "number": 5,
+        "desc": "I\u2019ve been searching my whole life for the answer to a certain question."
+      },
+      {
+        "number": 6,
+        "desc": "I sold my soul for knowledge. I hope to do great deeds and win it back."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I am easily distracted by the promise of information."
+      },
+      {
+        "number": 2,
+        "desc": "Most people scream and run when they see a demon. I stop and take notes on its anatomy."
+      },
+      {
+        "number": 3,
+        "desc": "Unlocking an ancient mystery is worth the price of a civilization."
+      },
+      {
+        "number": 4,
+        "desc": "I overlook obvious solutions in favor of complicated ones."
+      },
+      {
+        "number": 5,
+        "desc": "I speak without really thinking through my words, invariably insulting others."
+      },
+      {
+        "number": 6,
+        "desc": "I can\u2019t keep a secret to save my life, or anyone else\u2019s."
+      }
+    ]
   },
   {
     "name": "Sailor",
-    "desc": "",
+    "desc": "You sailed on a seagoing vessel for years. In that time, you faced down mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths. Your first love is the distant line of the horizon, but the time has come to try your hand at something new. Discuss the nature of the ship you previously sailed and what your duties were on board the ship with your Game Master.",
     "variant": {
-      "isThere": "false",
+      "isThere": "true",
+      "title": "Variant Sailor: Pirate",
+      "desc": "You spent your youth under the sway of a dread pirate, a ruthless cutthroat who taught you how to survive in a world of sharks and savages. You\u2019ve indulged in larceny on the high seas and sent more than one deserving soul to a briny grave. Fear and bloodshed are no strangers to you, and you\u2019ve garnered a somewhat unsavory reputation in many a port town. If you decide that your sailing career involved piracy, you can choose the Bad Reputation feature (see below) instead of the Ship\u2019s Passage feature.\n\n Variant Feature: Bad Reputation\n\n If your character has a sailor background, you my select this background feature instead of Ship\u2019s Passage. No matter where you go, people are afraid of you due to your reputation. When you are in a civilized settlement, you can get away with minor criminal offenses, such as refusing to pay for food at a tavern or breaking down doors at a local shop, since most people will not report your activity to the authorities."
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Athletics",
+      "Perception"
+    ],
+    "addToolProf": [
+      "navigator\u2019s tools",
+      "water vehicles"
+    ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+      "belaying pin (club)",
+      "50ft of silk rope",
+      "lucky charm like a rabbit\u2019s foot or small stone with a hole in the center",
+      "set of common clothes",
+      "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Ship\u2019s Passage",
+      "desc": "When you need to, you can secure free passage on a sailing ship for yourself and your adventuring companions. You might sail on the ship you served on, or another ship you have good relations with (perhaps one captained by a former crewmate). Because you\u2019re calling in a favor, you can\u2019t be certain of a schedule or route that will meet your every need. Your Game Master will determine how long it takes to get where you need to go. In return for your free passage, you and your companions are expected to assist the crew during the voyage."
       }
     ],
-    "characteristics": "",
-    "specialTrait": {
-      "name": "",
-      "list": [
-        {
-          "number": ,
-          "desc":
-        }
-      ]
-    },
+    "characteristics": "Sailors can be a rough lot, but the responsibilities of life on a ship make them generally reliable as well. Life aboard a ship shapes their outlook and forms their most important attachments.",
+    "specialTrait": {},
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "My friends know they can rely on me, no matter what."
+      },
+      {
+        "number": 2,
+        "desc": "I work hard so that I can play hard when the work is done."
+      },
+      {
+        "number": 3,
+        "desc": "I enjoy sailing into new ports and making new friends over a flagon of ale."
+      },
+      {
+        "number": 4,
+        "desc": "I stretch the truth for the sake of a good story."
+      },
+      {
+        "number": 5,
+        "desc": "To me, a tavern brawl is a nice way to get to know a new city."
+      },
+      {
+        "number": 6,
+        "desc": "I never pass up a friendly wager."
+      },
+      {
+        "number": 7,
+        "desc": "My language is as foul as an otyugh nest."
+      },
+      {
+        "number": 8,
+        "desc": "I like a job well done, especially if I can convince someone else to do it."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Respect. The thing that keeps a ship together is mutual respect between captain and crew. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Fairness. We all do the work, so we all share in the rewards. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Freedom. The sea is freedom\u0336 the freedom to go anywhere and do anything. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Mastery. I\u2019m a predator, and the other ships on the sea are my prey. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "People. I\u2019m committed to my crewmates, not to ideals. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Aspiration. Someday I\u2019ll own my own ship and chart my own destiny. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I\u2019m loyal to my captain first, everything else second."
+      },
+      {
+        "number": 2,
+        "desc": "The ship is most important\u0336 crewmates and captains come and go."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019ll always remember my first ship."
+      },
+      {
+        "number": 4,
+        "desc": "In a harbor town, I have a paramour whose eyes nearly stole me from the sea."
+      },
+      {
+        "number": 5,
+        "desc": "I was cheated out of my fair share of the profits, and I want to get my due."
+      },
+      {
+        "number": 6,
+        "desc": "Ruthless pirates murdered my captain and crewmates, plundered our ship, and left me to die. Vengeance will be mine."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "I follow orders, even if I think they\u2019re wrong."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019ll say anything to avoid having to do extra work."
+      },
+      {
+        "number": 3,
+        "desc": "Once someone questions my courage, I never back down no matter how dangerous the situation."
+      },
+      {
+        "number": 4,
+        "desc": "Once I start drinking, it\u2019s hard for me to stop."
+      },
+      {
+        "number": 5,
+        "desc": "I can\u2019t help but pocket loose coins and other trinkets I come across."
+      },
+      {
+        "number": 6,
+        "desc": "My pride will probably lead to my destruction."
+      }
+    ]
   },
   {
     "name": "Soldier",
-    "desc": "",
+    "desc": "War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield. You might have been part of a standing national army or a militia who rose to prominence during a recent war. When you choose this background, work with your Game Master to determine which military organization you were a part of, how far in the ranks you progressed, and what kind of experiences you had during your military career.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Athletics",
+      "Intimidation"
+    ],
+    "addToolProf": [
+      "one type of gaming set",
+      "land vehicles"
+    ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+      "insignia of rank",
+      "trophy taken from a fallen enemy (i.e. a dagger, broken blade, or a piece of a banner)",
+      "set of bone dice OR deck of cards",
+      "set of common clothes",
+      "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "Military Rank",
+      "desc": "You have a military rank from your career as a soldier. Soldiers loyal to you former military organization still recognize your authority and influence, and they defer to you if they are of a lower rank. You can invoke your rank to exert influence over other soldiers and requisition simple equipment or horses for temporary use. You can also usually gain access to friendly military encampments and fortresses where your rank is recognized."
       }
     ],
-    "characteristics": "",
+    "characteristics": "The horrors of war combined with the rigid discipline of military service leave their mark on all soldiers, shaping their ideals, creating strong bonds, and often leaving them scarred and vulnerable to fear, shame, and hatred.",
     "specialTrait": {
-      "name": "",
+      "name": "Speciality",
+      "desc": "Determine your specific role in your unit or army during your time as a soldier,.",
       "list": [
         {
-          "number": ,
-          "desc":
+          "number": 1,
+          "desc": "Officer"
+        },
+        {
+          "number": 2,
+          "desc": "Scout"
+        },
+        {
+          "number": 3,
+          "desc": "Infantry"
+        },
+        {
+          "number": 4,
+          "desc": "Cavalry"
+        },
+        {
+          "number": 5,
+          "desc": "Healer"
+        },
+        {
+          "number": 6,
+          "desc": "Quartermaster"
+        },
+        {
+          "number": 7,
+          "desc": "Standard Bearer"
+        },
+        {
+          "number": 8,
+          "desc": "Support Staff (cook, blacksmith, etc.)"
         }
       ]
     },
     "personalityTraits": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I\u2019m always polite and respectful."
+      },
+      {
+        "number": 2,
+        "desc": "I\u2019m haunted by memories of war. I can\u2019t get the images of violence out of my mind."
+      },
+      {
+        "number": 3,
+        "desc": "I\u2019ve lost too many friends, and I\u2019m slow to make new ones."
+      },
+      {
+        "number": 4,
+        "desc": "I\u2019m full of inspiring and cautionary tales from my military experience relevant to almost every combat situation."
+      },
+      {
+        "number": 5,
+        "desc": "I can stare down a hell hound without flinching."
+      },
+      {
+        "number": 6,
+        "desc": "I enjoy being strong and like breaking things."
+      },
+      {
+        "number": 7,
+        "desc": "I have a crude sense of humor."
+      },
+      {
+        "number": 8,
+        "desc": "I face problems head-on. A simple, direct solution is the best plan to success."
       }
     ],
     "ideals": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "Greater Good. Our lot is to lay down our lives in defense of others. (Good)"
+      },
+      {
+        "number": 2,
+        "desc": "Responsibility. I do what I must and obey just authority. (Lawful)"
+      },
+      {
+        "number": 3,
+        "desc": "Independence. When people follow orders blindly, they embrace a kind of tyranny. (Chaotic)"
+      },
+      {
+        "number": 4,
+        "desc": "Might. In life as in war, the stronger force wins. (Evil)"
+      },
+      {
+        "number": 5,
+        "desc": "Live and Let Live. Ideals aren\u2019t worth killing over or going to war for. (Neutral)"
+      },
+      {
+        "number": 6,
+        "desc": "Nation. My city, nation, or people are all that matter. (Any)"
       }
     ],
     "bonds": [
       {
-        "number": ,
-        "desc":
+        "number": 1,
+        "desc": "I would still lay down my life for the people I served with."
+      },
+      {
+        "number": 2,
+        "desc": "Someone saved my life on the battlefield. To this day, I will never leave a friend behind."
+      },
+      {
+        "number": 3,
+        "desc": "My honor is my life."
+      },
+      {
+        "number": 4,
+        "desc": "I\u2019ll never forget the crushing defeat my company suffered or the enemies who dealt it."
+      },
+      {
+        "number": 5,
+        "desc": "Those who fight beside me are those worth dying for."
+      },
+      {
+        "number": 6,
+        "desc": "I fight for those who cannot fight for themsleves."
       }
     ],
-    "flaws": {
-      "number": ,
-      "desc":
-    }
+    "flaws": [
+      {
+        "number": 1,
+        "desc": "The monsterous enemy we faced in battle still leaves me quivering with fear."
+      },
+      {
+        "number": 2,
+        "desc": "I have little respect for anyone who is not a proven warrior."
+      },
+      {
+        "number": 3,
+        "desc": "I made a terrible mistake in battle that cost many lives, and I would do anything to keep that mistake secret."
+      },
+      {
+        "number": 4,
+        "desc": "My hatred of my enemies is blind and unreasoning."
+      },
+      {
+        "number": 5,
+        "desc": "I obey the law, even if the law causes misery."
+      },
+      {
+        "number": 6,
+        "desc": "I'd rather eat my armor than admit when I\u2019m wrong."
+      }
+    ]
   },
   {
     "name": "Urchin",
-    "desc": "",
+    "desc": "You grew up on the streets alone, orphaned, and poor. You had no one to watch over you or to provide for you, so you learned to provide for yourself. You fought fiercly over food and kept a constant watch out for other desperate souls who might steal from you. You slept on rooftops and in alleyways, exposed to the elements, and endured sickness without the advantage of medicine or a place to recuperate. You\u2019ve survived despite all odds, and did so through cunning, strength, speed, or some combination of each. You begin your adventuring career with enough money to live modestly but securely for at least ten days.",
     "variant": {
-      "isThere": "false",
+      "isThere": "false"
     },
     "icon": "./assets/images/star.png",
-    "addSkillProf": [],
-    "addToolProf": [],
+    "addSkillProf": [
+      "Sleight of Hand",
+      "Stealth"
+    ],
+    "addToolProf": [
+      "disguise kit",
+      "thieves\u2019 tools"
+    ],
     "addLanguages": [],
-    "addEquipment": [],
+    "addEquipment": [
+       "small knife",
+       "map of the city you grew up in",
+       "pet mouse",
+       "token to remember your parents by",
+       "set of common clothes",
+       "pouch containing 10gp"
+    ],
     "features": [
       {
-      "name": "",
-      "desc": ""
+      "name": "City Secrets",
+      "desc": "You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow."
       }
     ],
-    "characteristics": "",
-    "specialTrait": {
-      "name": "",
-      "list": [
-        {
-          "number": ,
-          "desc":
-        }
-      ]
-    },
+    "characteristics": "Urchins are shaped by lives of desperate poverty, for good and for ill. They tend to be driven either by a commitment to the people with whom they shared life on the street or by a burning desire to find a better life\u0336 and maybe get some payback on all the rich people who treated them badly.",
+    "specialTrait": {},
     "personalityTraits": [
       {
-        "number":"1" ,
+        "number": 1 ,
         "desc":"I hide scraps of food and trinkets away in my pockets."
       },
       {
-        "number":"2" ,
+        "number": 2,
         "desc":"I ask a lot of questions."
       },
       {
-        "number":"3" ,
-        "desc":"I like to squeeze into small places where no one else can get to me"
+        "number": 3,
+        "desc":"I like to squeeze into small places where no one else can get to me."
       },
       {
-        "number":"4" ,
-        "desc":"I sleep with my back to a wall or tree, with everything i own wrapped in a bundle in my arms."
+        "number": 4,
+        "desc":"I sleep with my back to a wall or tree, with everything I own wrapped in a bundle in my arms."
       },
       {
-        "number":"5" ,
-        "desc":"I eat like a pig and have bad maners."
+        "number": 5,
+        "desc":"I eat like a pig and have bad manners."
       },
       {
-        "number":"6" ,
+        "number": 6,
         "desc":"I think anyone who\u2019s nice to me is hiding evil intent."
       },
       {
-        "number":"7" ,
+        "number": 7,
         "desc":"I dont like to bathe."
       },
       {
-        "number":"8" ,
+        "number": 8,
         "desc":"I bluntly say what other people are hinting at or hiding."
       }
 
     ],
     "ideals": [
       {
-        "number":"1" ,
-        "desc":"Respect. All people, rich or poor, deserve respect."
+        "number": 1,
+        "desc":"Respect. All people, rich or poor, deserve respect. (Good)"
       },
       {
-        "number":"2",
-        "desc":"Community. We have to take care of each other, because no one else is going to do it."
+        "number": 2,
+        "desc":"Community. We have to take care of each other, because no one else is going to do it. (Lawful)"
       },
       {
-        "number":"3",
-        "desc":"Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things."
+        "number": 3,
+        "desc":"Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things. (Chaotic)"
       },
       {
-        "number":"4",
-        "desc":"Retribution. The rich need to be shown what life and death are like in the gutters."
+        "number": 4,
+        "desc":"Retribution. The rich need to be shown what life and death are like in the gutters. (Evil)"
       },
       {
-        "number":"5",
-        "desc":"People. I help the people who help me--thats what keeps us alive."
+        "number": 5,
+        "desc":"People. I help the people who help me\u0336 that\u2019s what keeps us alive. (Neutral)"
       },
       {
-        "number":"6",
-        "desc":"Aspiration. Im going to prove that im worthy of a better life."
+        "number": 6,
+        "desc":"Aspiration. I\u2019m going to prove that I\u2019m worthy of a better life. (Any)"
       }
     ],
     "bonds": [
       {
-        "number":"1" ,
+        "number": 1,
         "desc":"My town or city is my home, and I\u2019ll fight to defend it."
       },
       {
-        "number":"2",
-        "desc":"I sponsor an orphanage to keep others from enduring what i was forced to endure."
+        "number": 2,
+        "desc":"I sponsor an orphanage to keep others from enduring what I was forced to endure."
       },
       {
-        "number":"3",
+        "number": 3,
         "desc":"I owe my survival to another urchin who taught me to live on the streets."
       },
       {
-        "number":"4",
+        "number": 4,
         "desc":"I owe a debt I can never repay to the person who toook pity on me."
       },
       {
-        "number":"5",
-        "desc":"I escaped my life of poverty by robbing an important person, and im wanted for it."
+        "number": 5,
+        "desc":"I escaped my life of poverty by robbing an important person, and I\u2019m wanted for it."
       },
       {
-        "number":"6",
-        "desc":"No one else should have to endure the hardships ive been through."
+        "number": 6,
+        "desc":"No one else should have to endure the hardships I\u2019ve been through."
       }
 
     ],
     "flaws": [
       {
-        "number":"1",
-        "desc":"If im outnumbered, I will run away from a fight."
+        "number": 1,
+        "desc":"If I\u2019m outnumbered, I will run away from a fight."
       },
       {
-        "number":"2",
+        "number": 2,
         "desc":"Gold seems like a lot of money to me, and I\u2019ll do just about anything for more of it"
       },
       {
-        "number":"3",
+        "number": 3,
         "desc":"I will never fully trust anyone other than myself."
       },
       {
-        "number":"4",
-        "desc":"Id rather kill someone in their sleep then fight fair."
+        "number": 4,
+        "desc":"I\u2019d rather kill someone in their sleep then fight fair."
       },
       {
-        "number":"5",
-        "desc":"Its not stealing if i need it more than someone else."
+        "number": 5,
+        "desc":"It\u2019s not stealing if i need it more than someone else."
       },
       {
-        "number":"6",
-        "desc":"People who cant take care of themselves get what they deserve."
+        "number": 6,
+        "desc":"People who can\u2019t take care of themselves get what they deserve."
       }
     ]
   }
