@@ -1,0 +1,64 @@
+<div class="backgroundView">
+
+<div class="backgroundDesc">
+  <div ng-if="genCtrl.currentBackground.specialTrait.isThere">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.specialTraitButton()">
+      {{ genCtrl.currentBackground.specialTrait.name }}
+    </button>
+    <div ng-show="genCtrl.display1">
+      <div class="background-detail-box">
+        <p>{{ genCtrl.currentBackground.specialTrait.desc }}</p>
+        <form class="form-group">
+          <div ng-repeat="item in genCtrl.currentBackground.specialTrait.list">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-value="{{ item.desc }}">
+                {{ item.desc }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.traitsButton()">
+      Traits
+    </button>
+    <div ng-show="genCtrl.display2">
+      display2
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.idealsButton()">
+      Ideals
+    </button>
+    <div ng-show="genCtrl.display3">
+      display3
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.bondsButton()">
+      Bonds
+    </button>
+    <div ng-show="genCtrl.display4">
+      display4
+    </div>
+  </div>
+
+  <div>
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.flawsButton()">
+      Flaws
+    </button>
+    <div ng-show="genCtrl.display5">
+      display5
+    </div>
+  </div>
+
+
+</div>
+
+</div>

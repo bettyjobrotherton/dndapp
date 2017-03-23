@@ -15,46 +15,56 @@ export class GeneratorController {
 
   $onInit() {
     var vm = this;
+    if(this.$state.current.name == 'generatorClass'){
+      this.classMain = true;
 
-    this.raceMain = true;
-    this.classMain = true;
-    this.showBackgroundVariant = false;
+      this.$http.get("assets/classes.json")
+                .then(res => {
+                  vm.classList = res.data;
+                  vm.currentClass = res.data[0];
+                })
+                .catch(err => {
+                  return err;
+                });
+    } else if(this.$state.current.name == 'generatorRace'){
+      this.raceMain = true;
 
-    this.$http.get("assets/races.json")
-              .then(res => {
-                vm.raceList = res.data;
-                vm.currentRace = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.$http.get("assets/races.json")
+          .then(res => {
+              vm.raceList = res.data;
+              vm.currentRace = res.data[0];
+          })
+          .catch(err => {
+              return err;
+          });
+    } else if(this.$state.current.name == 'generatorBackground'){
+      this.showBackgroundVariant = false;
 
-    this.$http.get("assets/classes.json")
-              .then(res => {
-                vm.classList = res.data;
-                vm.currentClass = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
-
-    this.$http.get('assets/alignment.json')
-              .then(res => {
-                vm.alignList = res.data;
-                vm.currentAlign = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
-
-    this.$http.get('assets/backgrounds.json')
-              .then(res => {
-                vm.backgroundList = res.data;
-                vm.currentBackground = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.$http.get('assets/backgrounds.json')
+                .then(res => {
+                  vm.backgroundList = res.data;
+                  vm.currentBackground = res.data[0];
+                })
+                .catch(err => {
+                  return err;
+                });
+    } else if(this.$state.current.name == 'backgrounddetails'){
+      this.currentBackground = JSON.parse(this.localStorage['selected-background']);
+      this.display1 = false;
+      this.display2 = false;
+      this.display3 = false;
+      this.display4 = false;
+      this.display5 = false;
+    } else if(this.$state.current.name == 'generatorAlignment'){
+      this.$http.get('assets/alignment.json')
+                .then(res => {
+                  vm.alignList = res.data;
+                  vm.currentAlign = res.data[0];
+                })
+                .catch(err => {
+                  return err;
+                });
+    }
   }
 
   continueChar(generate) {
@@ -98,19 +108,19 @@ export class GeneratorController {
     }
   }
 
-selectMainClass(){
-  this.selectedClass = this.currentClass;
-  this.classMain = false;
-  this.currentArchetype = this.selectedClass.archetype.types[0];
-}
+  selectMainClass(){
+    this.selectedClass = this.currentClass;
+    this.classMain = false;
+    this.currentArchetype = this.selectedClass.archetype.types[0];
+  }
 
-selectSubrace(subrace){
-  this.currentSubrace = subrace;
-}
+  selectSubrace(subrace){
+    this.currentSubrace = subrace;
+  }
 
-selectArchetype(archetype){
-  this.currentArchetype = archetype;
-}
+  selectArchetype(archetype){
+    this.currentArchetype = archetype;
+  }
 
   goBackToRace(){
     this.raceMain = true;
@@ -118,6 +128,52 @@ selectArchetype(archetype){
 
   goBackToClass(){
     this.classMain = true;
+  }
+
+  pickBackground(){
+    var background = this.currentBackground;
+    this.localStorage.setItem('selected-background', JSON.stringify(background));
+    this.$state.go('backgrounddetails');
+  }
+
+  specialTraitButton(){
+    if(this.display1){
+      this.display1 = false;
+    } else {
+      this.display1 = true;
+    }
+  }
+
+  traitsButton(){
+    if(this.display2){
+      this.display2 = false;
+    } else {
+      this.display2 = true;
+    }
+  }
+
+  idealsButton(){
+    if(this.display3){
+      this.display3 = false;
+    } else {
+      this.display3 = true;
+    }
+  }
+
+  bondsButton(){
+    if(this.display4){
+      this.display4 = false;
+    } else {
+      this.display4 = true;
+    }
+  }
+
+  flawsButton(){
+    if(this.display5){
+      this.display5 = false;
+    } else {
+      this.display5 = true;
+    }
   }
 
   saveRace(){
@@ -266,6 +322,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickbackground', {
     template: require('./pickbackground.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('backgrounddetails', {
+    template: require('./backgrounddetails.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

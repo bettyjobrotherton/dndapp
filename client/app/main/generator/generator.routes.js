@@ -23,6 +23,10 @@ export default function routes($stateProvider) {
     url:'/pickbackground',
     template: '<pickbackground></pickbackground>'
   })
+  .state('backgrounddetails', {
+    url: '/backgrounddetails',
+    template: '<backgrounddetails></backgrounddetails>'
+  })
   .state('generatorAlignment', {
     url:'/pickalignment',
     template: '<pickalignment></pickalignment>'
