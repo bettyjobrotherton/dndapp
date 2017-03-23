@@ -18,6 +18,7 @@ export class GeneratorController {
 
     this.raceMain = true;
     this.classMain = true;
+    this.showBackgroundVariant = false;
 
     this.$http.get("assets/races.json")
               .then(res => {
@@ -46,7 +47,7 @@ export class GeneratorController {
                 return err;
               });
 
-    this.$http.get('assets/background.json')
+    this.$http.get('assets/backgrounds.json')
               .then(res => {
                 vm.backgroundList = res.data;
                 vm.currentBackground = res.data[0];
@@ -76,6 +77,14 @@ export class GeneratorController {
 
   selectBackground(background) {
     this.currentBackground = background;
+  }
+
+  backgroundVariant(){
+    if(this.showBackgroundVariant){
+      this.showBackgroundVariant = false;
+    } else {
+      this.showBackgroundVariant = true;
+    }
   }
 
   selectMainRace(){
@@ -197,18 +206,15 @@ selectArchetype(archetype){
 saveAlign(){
   var newCharacter;
   var currentAlign = this.currentAlign;
-  var alignInfo = {
-      alignment:{
-        main: currentAlign.name
-      }
-  };
+  var alignInfo = currentAlign.name;
   if(this.first() =='align'){
-    newcharacter = alignInfo;
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.general.alignment = alignInfo
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorBackground');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.alignment = alignInfo.alignment;
+    newCharacter.general.alignment = alignInfo
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
@@ -233,17 +239,6 @@ saveBackground(){
     this.$state.go('generatorThree');
   }
 }
-
-    // if(this.first() == 'class'){
-    //   newCharacter = classInfo;
-    //   this.localStorage['character-in-progress'] = newCharacter;
-    // } else {
-    //   newCharacter = this.localStorage['character-in-progress'];
-    //   newCharacter.push(classInfo);
-    //   this.localStorage['character-in-progress'] = newCharacter;
-    // }
-
-
 
 }
 
