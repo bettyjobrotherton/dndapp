@@ -27,7 +27,6 @@ export function CharacterService($location, $http, $window) {
       if(firstOpt == 'race'){
         firstSelection = 'race';
         $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
-        console.log($window.localStorage['first-selection']);
         this.$state.go('generatorRace');
       } else if(firstOpt == 'class'){
         firstSelection = 'class';

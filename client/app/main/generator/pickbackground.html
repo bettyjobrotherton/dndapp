@@ -9,27 +9,41 @@
     <div>
       <h3> {{genCtrl.currentBackground.name}} </h3>
       <p class='summary'>{{genCtrl.currentBackground.desc}}</p>
+      <p class='summary'><span class="emphasis">General Characteristics:</span> {{ genCtrl.currentBackground.characteristics }}</p>
+    </div>
+    <div ng-if="genCtrl.currentBackground.variant.isThere">
+      <div class="emphasis"><a ng-href="" ng-click="genCtrl.backgroundVariant()">{{ genCtrl.currentBackground.variant.title }}</a></div>
+      <div ng-show="genCtrl.showBackgroundVariant">
+        <div>{{ genCtrl.currentBackground.variant.desc }}</div>
+        <div ng-if="genCtrl.currentBackground.variant.isAltFeature">
+          <span class="emphasis">Varient Feature: {{ genCtrl.currentBackground.variant.altFeatureTitle }}:</span> {{ genCtrl.currentBackground.variant.altFeature }}
+        </div>
+      </div>
     </div>
 
     <table class="table table-striped">
       <tr class="table-head">
-        <th colspan="2"> Traits </th>
+        <th colspan="2">Bonuses</th>
       </tr>
       <tr>
-        <td>Skill Proficiency</td>
+        <td>Additional Skill Proficiencies</td>
         <td><div ng-repeat="skill in genCtrl.currentBackground.addSkillProf">{{ skill }}</div></td>
       </tr>
       <tr>
-        <td>Language Proficiency</td>
-        <td><div ng-repeat="lang in genCtrl.currentbackground.addLanguages">{{ lang }}</div></td>
+        <td>Additional Language Proficiencies</td>
+        <td><div ng-repeat="lang in genCtrl.currentBackground.addLanguages">{{ lang }}</div></td>
       </tr>
       <tr>
-        <td>Tools</td>
-        <td><div ng-repeat="tool in genCtrl.currentbackground.addToolProf">{{ tool }}</div></td>
+        <td>Additional Tools Proficiencies</td>
+        <td><div ng-repeat="tool in genCtrl.currentBackground.addToolProf">{{ tool }}</div></td>
+      </tr>
+      <tr>
+        <td>Additional Equipment</td>
+        <td><div ng-repeat="equip in genCtrl.currentBackground.addEquipment">{{ equip }}</div></td>
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveBackground()"  type="">
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.pickBackground()">
       Submit &amp; Continue
     </button>
 
