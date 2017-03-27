@@ -78,28 +78,9 @@ export class GeneratorController {
     }
   }
 
+// Start code for pick race --
   selectRace(race) {
     this.currentRace = race;
-  }
-
-  selectClass(build) {
-    this.currentClass = build;
-  }
-
-  selectAlign(align) {
-    this.currentAlign = align;
-  }
-
-  selectBackground(background) {
-    this.currentBackground = background;
-  }
-
-  backgroundVariant(){
-    if(this.showBackgroundVariant){
-      this.showBackgroundVariant = false;
-    } else {
-      this.showBackgroundVariant = true;
-    }
   }
 
   selectMainRace(){
@@ -113,32 +94,153 @@ export class GeneratorController {
     }
   }
 
-  selectMainClass(){
-    this.selectedClass = this.currentClass;
-    this.classMain = false;
-    this.currentArchetype = this.selectedClass.archetype.types[0];
-  }
-
   selectSubrace(subrace){
     this.currentSubrace = subrace;
-  }
-
-  selectArchetype(archetype){
-    this.currentArchetype = archetype;
   }
 
   goBackToRace(){
     this.raceMain = true;
   }
 
+  saveRace(){
+    var newCharacter;
+    var race = this.currentRace;
+    var raceInfo;
+    if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
+      raceInfo = {
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
+        race: {
+          main: race.name
+        }
+      };
+    }
+    else {
+      var subrace = this.currentSubrace;
+      raceInfo = {
+        bio: {
+          languages: race.traits.lang,
+          appearance: {
+            size: race.traits.size
+          }
+        },
+        general: {
+          movement: race.traits.baseSpd
+        },
+        race: {
+          main: race.name,
+          subrace: subrace.name
+        }
+      };
+    }
+    if(this.first() == 'race'){
+      newCharacter = raceInfo;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorClass');
+    } else {
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.bio = raceInfo.bio;
+      newCharacter.general = raceInfo.general;
+      newCharacter.race = raceInfo.race;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorTwo');
+    }
+  }
+// -- End code for pick race
+
+// Start code for pick class --
+  selectClass(build) {
+    this.currentClass = build;
+  }
+
+  selectMainClass(){
+    this.selectedClass = this.currentClass;
+    this.classMain = false;
+    this.currentArchetype = this.selectedClass.archetype.types[0];
+  }
+
+  selectArchetype(archetype){
+    this.currentArchetype = archetype;
+  }
+
   goBackToClass(){
     this.classMain = true;
   }
+// -- End code for pick class
 
+// Start code for pick alignment --
+  selectAlign(align) {
+    this.currentAlign = align;
+  }
+
+  saveClass(){
+    var newCharacter;
+    var currentClass = this.currentClass;
+    var archetype = this.currentArchetype;
+    var classInfo = {
+      class: {
+        main: currentClass.name,
+        archetype: archetype.name
+      },
+      combat: {
+        hitDie: currentClass.combat.hitDie,
+      }
+    };
+    if(this.first() == 'class'){
+      newCharacter = classInfo;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorRace');
+    } else {
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.class = classInfo.class;
+      newCharacter.combat = classInfo.combat;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorTwo');
+    }
+  }
+
+  saveAlign(){
+    var newCharacter;
+    var currentAlign = this.currentAlign;
+    var alignInfo = currentAlign.name;
+    if(this.first() =='align'){
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.general.alignment = alignInfo
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorBackground');
+    } else {
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.general.alignment = alignInfo
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorThree');
+    }
+  }
+// -- End code for pick alignment
+
+// Start code for pick background --
   pickBackground(){
     var background = this.currentBackground;
     this.localStorage.setItem('selected-background', JSON.stringify(background));
     this.$state.go('backgrounddetails');
+  }
+
+  selectBackground(background) {
+    this.currentBackground = background;
+  }
+
+  backgroundVariant(){
+    if(this.showBackgroundVariant){
+      this.showBackgroundVariant = false;
+    } else {
+      this.showBackgroundVariant = true;
+    }
   }
 
   specialTraitButton(){
@@ -189,106 +291,6 @@ export class GeneratorController {
     }
   }
 
-  saveRace(){
-    // console.log(this.currentRace);
-    var newCharacter;
-    var race = this.currentRace;
-    var raceInfo;
-    if(race.name == 'Half-Elf' || race.name == 'Half-Orc' || race.name == 'Tiefling'){
-      raceInfo = {
-        bio: {
-          languages: race.traits.lang,
-          appearance: {
-            size: race.traits.size
-          }
-        },
-        general: {
-          movement: race.traits.baseSpd
-        },
-        race: {
-          main: race.name
-        }
-      };
-    }
-    else {
-      // console.log(this.currentSubrace);
-      var subrace = this.currentSubrace;
-      raceInfo = {
-        bio: {
-          languages: race.traits.lang,
-          appearance: {
-            size: race.traits.size
-          }
-        },
-        general: {
-          movement: race.traits.baseSpd
-        },
-        race: {
-          main: race.name,
-          subrace: subrace.name
-        }
-      };
-    }
-    if(this.first() == 'race'){
-      newCharacter = raceInfo;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorClass');
-    } else {
-      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.bio = raceInfo.bio;
-      newCharacter.general = raceInfo.general;
-      newCharacter.race = raceInfo.race;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorTwo');
-    }
-    // console.log(this.localStorage['character-in-progress']);
-  }
-
-  saveClass(){
-    // console.log(this.currentClass);
-    var newCharacter;
-    var currentClass = this.currentClass;
-    var archetype = this.currentArchetype;
-    var classInfo = {
-      class: {
-        main: currentClass.name,
-        archetype: archetype.name
-      },
-      combat: {
-        hitDie: currentClass.combat.hitDie,
-      }
-    };
-    if(this.first() == 'class'){
-      newCharacter = classInfo;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorRace');
-    } else {
-      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.class = classInfo.class;
-      newCharacter.combat = classInfo.combat;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorTwo');
-    }
-    // console.log(this.localStorage['character-in-progress']);
-  }
-
-saveAlign(){
-  var newCharacter;
-  var currentAlign = this.currentAlign;
-  var alignInfo = currentAlign.name;
-  if(this.first() =='align'){
-    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.general.alignment = alignInfo
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorBackground');
-  } else {
-    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.general.alignment = alignInfo
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorThree');
-  }
-}
-
 saveBackground(){
   var newCharacter;
   var currentBackground = this.currentBackground;
@@ -308,6 +310,7 @@ saveBackground(){
     this.$state.go('generatorThree');
   }
 }
+// -- End code for pick background
 
 }
 
