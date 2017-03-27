@@ -55,6 +55,11 @@ export class GeneratorController {
       this.display3 = false;
       this.display4 = false;
       this.display5 = false;
+      this.writeSpecialTrait = false;
+      this.writeTrait = false;
+      this.writeIdeal = false;
+      this.writeBond = false;
+      this.writeFlaw = false;
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -141,6 +146,14 @@ export class GeneratorController {
       this.display1 = false;
     } else {
       this.display1 = true;
+    }
+  }
+
+  createOwnSpecialTrait(){
+    if(this.writeSpecialTrait){
+      this.writeSpecialTrait = false;
+    } else {
+      this.writeSpecialTrait = true;
     }
   }
 

@@ -1,6 +1,6 @@
 <div class="backgroundView">
 
-<div class="backgroundDesc">
+<div>
   <div ng-if="genCtrl.currentBackground.specialTrait.isThere">
     <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.specialTraitButton()">
       {{ genCtrl.currentBackground.specialTrait.name }}
@@ -8,16 +8,23 @@
     <div ng-show="genCtrl.display1">
       <div class="background-detail-box">
         <p>{{ genCtrl.currentBackground.specialTrait.desc }}</p>
-        <form class="form-group">
           <div ng-repeat="item in genCtrl.currentBackground.specialTrait.list">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-value="{{ item.desc }}">
+                <input type="checkbox" ng-click="genCtrl.specialTraitButton()" ng-model="{{ item.number }}">
                 {{ item.desc }}
               </label>
             </div>
           </div>
-        </form>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="genCtrl.createOwnSpecialTrait()">
+              Create your own.
+            </label>
+          </div>
+          <div ng-show="genCtrl.writeSpecialTrait">
+            <textarea class="form-control" rows="3" ng-keydown="$event.which === 13 && genCtrl.specialTraitButton()"></textarea>
+          </div>
       </div>
     </div>
   </div>
