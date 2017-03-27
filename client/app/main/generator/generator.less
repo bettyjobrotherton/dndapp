@@ -1,16 +1,19 @@
 
 @background-color: #F2CD82;
 @color-secondary: #575A61;
-
+@active-item: #d7f7ff;
 
 .iconList {
   margin-top: 10px;
-  margin-left: 10px;
-  width: 55px;
+  // margin-left: 10px;
+  // width: 55px;
 }
 
 .list-group {
   margin-bottom: 0px;
+  &.active img {
+    background-color: @active-item;
+  }
 }
 
 .list-group-item {
