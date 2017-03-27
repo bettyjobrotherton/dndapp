@@ -23,15 +23,18 @@ export default function routes($stateProvider) {
   })
   .state('generatorBackground', {
     url:'/pickbackground',
-    template: '<pickbackground></pickbackground>'
+    template: '<pickbackground></pickbackground>',
+    friendlyName: 'Pick your Background'
   })
   .state('backgrounddetails', {
     url: '/backgrounddetails',
-    template: '<backgrounddetails></backgrounddetails>'
+    template: '<backgrounddetails></backgrounddetails>',
+    friendlyName: 'Choose your Background Details'
   })
   .state('generatorAlignment', {
     url:'/pickalignment',
-    template: '<pickalignment></pickalignment>'
+    template: '<pickalignment></pickalignment>',
+    friendlyName:'Choose your Alignment'
   })
   .state('generatorThree',{
     url: '/generatorthree',
@@ -39,18 +42,22 @@ export default function routes($stateProvider) {
   })
   .state('generatorSpells', {
     url:'/pickspells',
-    template: '<pickspells></pickspells>'
+    template: '<pickspells></pickspells>',
+    friendlyName:'Plenty of Spells to Choose From'
   })
   .state('generatorWeapons', {
     url:'/pickweapons',
-    template: '<pickweapons></pickweapons>'
+    template: '<pickweapons></pickweapons>',
+    friendlyName:'What will you fight with?'
   })
   .state('generatorEquip', {
     url:'/pickequip',
-    template: '<pickequip></pickequip>'
+    template: '<pickequip></pickequip>',
+    friendlyName:'Get ready for your next Adventure'
   })
   .state('generatorStats', {
     url:'/pickstats',
-    template: '<pickstats></pickstats>'
+    template: '<pickstats></pickstats>',
+    friendlyName:'Your Characters Stats'
   });
 }
