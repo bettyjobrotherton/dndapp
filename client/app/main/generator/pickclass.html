@@ -13,15 +13,15 @@
 
     <table class="table table-striped">
       <tr class="table-head">
-        <th colspan="2"> Quick Build </th>
+        <th colspan="2"> Traits </th>
       </tr>
       <tr>
         <td>Primary Ability</td>
-        <td>{{genCtrl.currentClass.quickBuild.highestAbility}}</td>
+        <td>{{ genCtrl.currentClass.traits.primeAbility }}</td>
       </tr>
       <tr>
-        <td>Secondary Ability</td>
-        <td>{{ genCtrl.currentClass.quickBuild.nextAbility }}</td>
+        <td>Saving Throw Proficiencies</td>
+        <td>{{ genCtrl.currentClass.traits.SaveThrowProf }}</td>
       </tr>
     </table>
 
@@ -36,15 +36,10 @@
 
     <table class="table table-striped">
       <tr class="table-head">
-        <th colspan="2"> Features </th>
+        <th> Features </th>
       </tr>
       <tr>
-        <td>Level 1</td>
-        <td><div ng-repeat="level1 in genCtrl.currentClass.traits.features.level1">{{ level1 }}</div></td>
-      </tr>
-      <tr>
-        <td>Level 2</td>
-        <td><div ng-repeat="level2 in genCtrl.currentClass.traits.features.level2">{{ level2 }}</div></td>
+        <td><div ng-repeat="feature in genCtrl.currentClass.traits.features">Level {{ feature.level }} - {{ feature.name }}</div></td>
       </tr>
     </table>
 
