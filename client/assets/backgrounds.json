@@ -22,7 +22,9 @@
       }
     ],
     "characteristics": "Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, ot hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.",
-    "specialTrait": {},
+    "specialTrait": {
+      "isThere": false
+    },
     "personalityTraits": [
       {
         "number": 1,
@@ -161,6 +163,7 @@
     ],
     "characteristics": "Charlatans are colorful characters who conceal their true selves behind the masks they construct. They reflect what people want to see, what they want to believe, and how they see the world. But their true sleves are sometimes plagued by an uneasy conscience, an old enemy, or deep-seated trust issues.",
     "specialTrait": {
+      "isThere": true,
       "name": "Favorite Schemes",
       "desc": "Every charlatan has an angle he or she uses in preference to other schemes.",
       "list": [
@@ -332,6 +335,7 @@
     ],
     "characteristics": "Criminals might seem like villians on the surface, and many of them are villainous to the core. But some have an abundance of endearing, if not redeeming, characteristics. There might be honor among thieves, but criminals rarely show any respect for law or authority.",
     "specialTrait": {
+      "isThere": true,
       "name": "Criminal Specialty",
       "desc": "There are many kinds of criminals, and within a thieves\u2019 guild or similar criminal organization, individual members have particular specialties. Even criminals who operate outside of such organizations have strong preferences for certain kinds of crimes over others.",
       "list": [
@@ -511,6 +515,7 @@
     ],
     "characteristics": "Successful entertainers have to be able to capture and hold an audience\u2019s attention, so they tend to have flamboyant or forceful personalities. They\u2019re inclined toward the romantic and often cling to high-minded ideals about the practice of art and the appreciation of beauty.",
     "specialTrait": {
+      "isThere": true,
       "name": "Entertainer Routine",
       "desc": "A good entertainer is versatile, spicing up every performance with a variety of different routines. Choose one to three routines.",
       "list": [
@@ -700,6 +705,7 @@
     ],
     "characteristics": "A folk hero is one of the common people, for better or for worse. Most folk heroes look on their humble origins as a virtue, not a shortcoming, and their home communities remain very important to them.",
     "specialTrait": {
+      "isThere": true,
       "name": "Defining Event",
       "desc": "You previously pursued a simple profession among the peasantry, perhaps as a farmer, miner, servant, shepherd, woodcutter, or gravedigger. But something happened that set you on a different path and marked you for greater things.",
       "list": [
@@ -891,6 +897,7 @@
     ],
     "characteristics": "Guild artisans are among the most ordinary people in the world\u0336 until they sey down their tools and take up an adventuring career. They understand the value of hard work and the importance of community, but they\u2019re vulnerable to sins of greed and covetousness.",
     "specialTrait": {
+      "isThere": true,
       "name": "Guild Business",
       "desc": "Guilds are generally found in cities large enough to support several artisans practicing the same trade. However, your guild might instead be a loose network of artisans who each work in a different village within a larger realm. Work with your Game Master to determine the nature of your guild.",
       "list": [
@@ -1121,6 +1128,7 @@
     ],
     "characteristics": "Some hermits are well suited to a life of seclusion, whereas others chafe against it and long for company. Whether they embrace solitude or long to escape it, the solitary life shapes their attitude and ideals. A few are driven slightly mad by their years apart from society.",
     "specialTrait": {
+      "isThere": true,
       "name": "Life of Seclusion",
       "desc": "What was the reason for your isolation, and what changed to allow you to end your solitude? You can work with your Game Master to determine the exact nature of your seclusion.",
       "list": [
@@ -1287,7 +1295,9 @@
       }
     ],
     "characteristics": "Nobles are born and raised to a very different lifestyle than most people ever experience, and their personalities reflect that upbringing. A noble title comes with a plethora of bonds\u0336 responsibilities to family, to other nobles (including the sovereign), to the people entrusted to the family\u2019s care, or even to the title itself. But this responsibility is often a good way to undermine a noble.",
-    "specialTrait": {},
+    "specialTrait": {
+      "isThere": false
+    },
     "personalityTraits": [
       {
         "number": 1,
@@ -1433,6 +1443,7 @@
     ],
     "characteristics": "Often considered rude and uncouth among civilized folk, outlanders have little respect for the niceties of life in the cities. The ties of tribe, clan, family, and the natural world of which they are a part are the most important bonds to most outlanders.",
     "specialTrait": {
+      "isThere": true,
       "name": "Origin",
       "desc": "You\u2019ve been to strange places and seen things that others cannot begin to fathom. Consider some of the distant lands you have visited, and how they impacted you.",
       "list": [
@@ -1622,6 +1633,7 @@
     ],
     "characteristics": "Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly\u0336 sometimes in its own right, sometimes as a means toward other ideals.",
     "specialTrait": {
+      "isThere": true,
       "name": "Speciality",
       "desc": "Determine the nature of your scholarly training.",
       "list": [
@@ -1804,7 +1816,9 @@
       }
     ],
     "characteristics": "Sailors can be a rough lot, but the responsibilities of life on a ship make them generally reliable as well. Life aboard a ship shapes their outlook and forms their most important attachments.",
-    "specialTrait": {},
+    "specialTrait": {
+      "isThere": false
+    },
     "personalityTraits": [
       {
         "number": 1,
@@ -1949,6 +1963,7 @@
     ],
     "characteristics": "The horrors of war combined with the rigid discipline of military service leave their mark on all soldiers, shaping their ideals, creating strong bonds, and often leaving them scarred and vulnerable to fear, shame, and hatred.",
     "specialTrait": {
+      "isThere": true,
       "name": "Speciality",
       "desc": "Determine your specific role in your unit or army during your time as a soldier,.",
       "list": [
@@ -2130,7 +2145,9 @@
       }
     ],
     "characteristics": "Urchins are shaped by lives of desperate poverty, for good and for ill. They tend to be driven either by a commitment to the people with whom they shared life on the street or by a burning desire to find a better life\u0336 and maybe get some payback on all the rich people who treated them badly.",
-    "specialTrait": {},
+    "specialTrait": {
+      "isThere": false
+    },
     "personalityTraits": [
       {
         "number": 1 ,

@@ -6,19 +6,17 @@
   </div>
 
   <div class='backgroundDesc'>
-    <div ng-show="genCtrl.background1">
-      <div>
-        <h3> {{genCtrl.currentBackground.name}} </h3>
-        <p class='summary'>{{genCtrl.currentBackground.desc}}</p>
-        <p class='summary'><span class="emphasis">General Characteristics:</span> {{ genCtrl.currentBackground.characteristics }}</p>
-      </div>
-      <div ng-if="genCtrl.currentBackground.variant.isThere">
-        <div class="emphasis"><a ng-href="" ng-click="genCtrl.backgroundVariant()">{{ genCtrl.currentBackground.variant.title }}</a></div>
-        <div ng-show="genCtrl.showBackgroundVariant">
-          <div>{{ genCtrl.currentBackground.variant.desc }}</div>
-          <div ng-if="genCtrl.currentBackground.variant.isAltFeature">
-            <span class="emphasis">Varient Feature: {{ genCtrl.currentBackground.variant.altFeatureTitle }}:</span> {{ genCtrl.currentBackground.variant.altFeature }}
-          </div>
+    <div>
+      <h3> {{genCtrl.currentBackground.name}} </h3>
+      <p class='summary'>{{genCtrl.currentBackground.desc}}</p>
+      <p class='summary'><span class="emphasis">General Characteristics:</span> {{ genCtrl.currentBackground.characteristics }}</p>
+    </div>
+    <div ng-if="genCtrl.currentBackground.variant.isThere">
+      <div class="emphasis"><a ng-href="" ng-click="genCtrl.backgroundVariant()">{{ genCtrl.currentBackground.variant.title }}</a></div>
+      <div ng-show="genCtrl.showBackgroundVariant">
+        <div>{{ genCtrl.currentBackground.variant.desc }}</div>
+        <div ng-if="genCtrl.currentBackground.variant.isAltFeature">
+          <span class="emphasis">Varient Feature: {{ genCtrl.currentBackground.variant.altFeatureTitle }}:</span> {{ genCtrl.currentBackground.variant.altFeature }}
         </div>
       </div>
 
@@ -47,62 +45,6 @@
       <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainBackground()">
         Submit &amp; Continue
       </button>
+
     </div>
   </div>
-</div>
-
-<div class='backgroundView' ng-hide='genCtrl.MainBackground'>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#special'>Special Trait</button>
-  <div id='special' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.specialTrait.list.desc}}' ng-model='background.selected'>
-      {{background.specialTrait.list.desc}}
-    </label>
-  </div>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#personality'>Personality Trait</button>
-  <div id='personality' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.personalityTraits.desc}}' ng-model='background.selected'>
-      {{background.personalityTraits.desc}}
-    </label>
-  </div>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#ideals'>Ideals</button>
-  <div id='ideals' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.ideals.desc}}' ng-model='background.selected'>
-      {{background.ideals.desc}}
-    </label>
-  </div>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#ideals'>Ideals</button>
-  <div id='ideals' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.ideals.desc}}' ng-model='background.selected'>
-      {{background.ideals.desc}}
-    </label>
-  </div>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#bonds'>Bonds</button>
-  <div id='ideals' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.bonds.desc}}' ng-model='background.selected'>
-      {{background.bonds.desc}}
-    </label>
-  </div>
-
-  <button class='btn btn-lg btn-secondary' data-toggle='collapse' data-target='#flaws'>Flaws</button>
-  <div id='ideals' class='collapse'>
-    <label ng-repeat='background in genCtrl.backgroundList'>
-      <input type='checkbox' name='selectedbackground[]' value='{{background.flaws.desc}}' ng-model='background.selected'>
-      {{background.flaws.desc}}
-    </label>
-  </div>
-
-  <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveBackground()" type="">
-    Submit &amp; Continue
-  </button>
-
-</div>

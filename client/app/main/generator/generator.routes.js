@@ -9,11 +9,13 @@ export default function routes($stateProvider) {
   })
   .state('generatorClass', {
     url: '/pickclass',
-    template: '<pickclass></pickclass>'
+    template: '<pickclass></pickclass>',
+    friendlyName: 'Pick a Class'
   })
   .state('generatorRace', {
     url:'/pickrace',
-    template: '<pickrace></pickrace>'
+    template: '<pickrace></pickrace>',
+    friendlyName: 'Pick your Race'
   })
   .state('generatorTwo',{
     url: '/generatortwo',
@@ -22,6 +24,10 @@ export default function routes($stateProvider) {
   .state('generatorBackground', {
     url:'/pickbackground',
     template: '<pickbackground></pickbackground>'
+  })
+  .state('backgrounddetails', {
+    url: '/backgrounddetails',
+    template: '<backgrounddetails></backgrounddetails>'
   })
   .state('generatorAlignment', {
     url:'/pickalignment',
