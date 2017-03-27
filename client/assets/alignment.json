@@ -3,54 +3,54 @@
     "name":"Lawful good",
     "desc":"Creatures can be counted on to do the right thing as expected by society.",
     "common":"Gold dragons, paladins, and most dwarves are lawful good.",
-    "icon":""
+    "icon":"LG"
   },
   {
     "name":"Neutral good",
     "desc":"Folk do the best they can to hep others according to their needs.",
     "common":"Many celestials, some cloud giants, and most gnomes are neutral good.",
-    "icon":""
+    "icon":"NG"
   },
   {
     "name":"Chaotic good",
     "desc":"Creatures act as their conscience directs, with little regard for what others expect.",
     "common":"Copper dragons, many elves, and unicorns are chaotic good.",
-    "icon":""
+    "icon":"CG"
   },
   {
     "name":"Lawful neutral",
     "desc":"Individuals act in accordance with law, tradition or personal codes.",
     "common":"Many monks and some wizards are lawful neutral.",
-    "icon":""
+    "icon":"LN"
   },
   {
     "name":"Neutral",
     "desc":"For those who prefer to steer clear of moral questions and dont take sides, doing what seems best at the time.",
     "common":"Lizardfold, most druids, and many humans are neutral.",
-    "icon":""
+    "icon":"N"
   },
   {
     "name":"Chaotic neutral",
     "desc":"Creatures follow their whims, holding their personal freedom above all else.",
     "common":"Many barbarians and rogues, and some bards, are chaotic neutral.",
-    "icon":""
+    "icon":"CN"
   },
   {
     "name":"Lawful evil",
     "desc":"Creatues methodically take what they want, within the limits of a code of tradition, loyalty, or order.",
     "common":"Devils, blue dragons, and hobgoblins are lawful evil.",
-    "icon":""
+    "icon":"LN"
   },
   {
     "name":"Neutral evil",
     "desc":"For those who do whatever they can get away with, without compassion or qualms.",
     "common":"Many drow, some cloud giants, and yugoloths are neutral evil.",
-    "icon":""
+    "icon":"NE"
   },
   {
     "name":"Chaotic evil",
     "desc":"Creatures act with arbitrary violence, spurred by their greed, hatred, or bloodlust.",
     "common":"Demons, red dragons and orcs are Chaotic evil.",
-    "icon":""
+    "icon":"CN"
   },
 ]
