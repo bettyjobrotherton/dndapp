@@ -1,6 +1,9 @@
 <div class="navbar navbar-default navbar-static-top" >
   <div id='currentUser'>
-    <p ng-show="$ctrl.isLoggedIn()" class="navbar-text" > {{ $ctrl.getCurrentUser().name }}</p>
+    <p ng-show="$ctrl.isLoggedIn()" class="navbar-text navbar-loggedin"> {{ $ctrl.getCurrentUser().name }}</p>
+    <div class="step-name" ng-if="$ctrl.$state.current.friendlyName">
+      &mdash; {{ $ctrl.$state.current.friendlyName }}
+    </div>
   </div>
   <div class="container" ng-show="$ctrl.isLoggedIn()" >
     <div class="navbar-header">
