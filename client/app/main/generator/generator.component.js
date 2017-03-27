@@ -43,7 +43,11 @@ export class GeneratorController {
       this.$http.get('assets/backgrounds.json')
                 .then(res => {
                   vm.backgroundList = res.data;
-                  vm.currentBackground = res.data[0];
+                  if(!vm.localStorage['selected-background']){
+                    vm.currentBackground = res.data[0];
+                  } else {
+                    vm.currentBackground = JSON.parse(this.localStorage['selected-background']);
+                  }
                 })
                 .catch(err => {
                   return err;
@@ -60,6 +64,20 @@ export class GeneratorController {
       this.writeIdeal = false;
       this.writeBond = false;
       this.writeFlaw = false;
+
+      this.countSpecialTrait = 0;
+      if(this.currentBackground.name === "Entertainer"){
+        this.maxSpecialTrait = 2;
+      } else {
+        this.maxSpecialTrait = 0;
+      }
+      this.specialTraitsList = [];
+
+      this.countTraits = 0;
+      this.maxTraits = 1;
+
+
+    
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -291,14 +309,52 @@ export class GeneratorController {
     }
   }
 
+  checkedSpecialTrait(item){
+    var count = this.countSpecialTrait;
+    if(item.check){
+      this.countSpecialTrait = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.specialTraitsList.push(item);
+      } else {
+        this.specialTraitsList.push(item);
+      }
+      // console.log(this.specialTraitsList);
+    } else {
+      this.countSpecialTrait = count -1;
+      if(!item.number){
+        item.number = 0;
+        for(var i = 0; i < this.specialTraitsList.length; i++){
+          if(this.specialTraitsList[i].number === item.number){
+            this.specialTraitsList.splice(i, 1);
+          }
+        }
+      }
+      for(var i = 0; i < this.specialTraitsList.length; i++){
+        if(this.specialTraitsList[i].number === item.number){
+          this.specialTraitsList.splice(i, 1);
+        }
+      }
+      console.log(this.specialTraitsList);
+    }
+  }
+
+  saveOwnSpecialTrait(text){
+    for(var i = 0; i < this.specialTraitsList.length; i++){
+      if(this.specialTraitsList[i].number === 0){
+        this.specialTraitsList[i].desc = text;
+        console.log(this.specialTraitsList);
+      }
+    }
+  }
+
 saveBackground(){
-  var newCharacter;
   var currentBackground = this.currentBackground;
   var backgroundInfo = {
       background:{
         main: currentBackground.name
       }
-  };
+  }
   if(this.first() =='background'){
     newcharacter = alignInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));

@@ -1,6 +1,6 @@
 <div class="backgroundView">
 
-<div>
+<div class="backgroundDesc">
   <div ng-if="genCtrl.currentBackground.specialTrait.isThere">
     <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.specialTraitButton()">
       {{ genCtrl.currentBackground.specialTrait.name }}
@@ -8,23 +8,25 @@
     <div ng-show="genCtrl.display1">
       <div class="background-detail-box">
         <p>{{ genCtrl.currentBackground.specialTrait.desc }}</p>
+        <form ng-submit="genCtrl.saveSpecialTrait()">
           <div ng-repeat="item in genCtrl.currentBackground.specialTrait.list">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-click="genCtrl.specialTraitButton()" ng-model="{{ item.number }}">
+                <input type="checkbox" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTrait) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedSpecialTrait(item)">
                 {{ item.desc }}
               </label>
             </div>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" ng-click="genCtrl.createOwnSpecialTrait()">
+              <input type="checkbox" ng-click="genCtrl.checkedSpecialTrait(createItem); genCtrl.createOwnSpecialTrait()" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTrait) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
               Create your own.
             </label>
           </div>
           <div ng-show="genCtrl.writeSpecialTrait">
-            <textarea class="form-control" rows="3" ng-keydown="$event.which === 13 && genCtrl.specialTraitButton()"></textarea>
+            <textarea class="form-control" rows="3" ng-model="genCtrl.textSpecialTrait" ng-keydown="$event.which === 13 && genCtrl.saveOwnSpecialTrait(genCtrl.textSpecialTrait)"></textarea>
           </div>
+        </form>
       </div>
     </div>
   </div>
