@@ -12,14 +12,14 @@
           <div ng-repeat="item in genCtrl.currentBackground.specialTrait.list">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTrait) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedSpecialTrait(item)">
+                <input type="checkbox" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTraits) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedSpecialTrait(item)">
                 {{ item.desc }}
               </label>
             </div>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" ng-click="genCtrl.checkedSpecialTrait(createItem); genCtrl.createOwnSpecialTrait()" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTrait) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
+              <input type="checkbox" ng-click="genCtrl.checkedSpecialTrait(createItem); genCtrl.createOwnSpecialTrait()" ng-disabled="(genCtrl.countSpecialTrait > genCtrl.maxSpecialTraits) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
               Create your own.
             </label>
           </div>
@@ -27,6 +27,7 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textSpecialTrait" ng-keydown="$event.which === 13 && genCtrl.saveOwnSpecialTrait(genCtrl.textSpecialTrait)"></textarea>
           </div>
         </form>
+        <button class="btn btn-lg btn-primary btn-list-button" ng-click="genCtrl.randomizeSpecialTrait()">Pick for me</button>
       </div>
     </div>
   </div>
@@ -36,7 +37,28 @@
       Traits
     </button>
     <div ng-show="genCtrl.display2">
-      display2
+      <div class="background-detail-box">
+        <form ng-submit="genCtrl.saveTrait()">
+          <div ng-repeat="item in genCtrl.currentBackground.personalityTraits">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countTrait > genCtrl.maxTraits) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedTrait(item)">
+                {{ item.desc }}
+              </label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="genCtrl.checkedTrait(createItem); genCtrl.createOwnTrait()" ng-disabled="(genCtrl.countTrait > genCtrl.maxTraits) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
+              Create your own.
+            </label>
+          </div>
+          <div ng-show="genCtrl.writeTrait">
+            <textarea class="form-control" rows="3" ng-model="genCtrl.textTrait" ng-keydown="$event.which === 13 && genCtrl.saveOwnTrait(genCtrl.textTrait)"></textarea>
+          </div>
+        </form>
+        <button class="btn btn-lg btn-primary btn-list-button" ng-click="genCtrl.randomizeTrait()">Pick for me</button>
+      </div>
     </div>
   </div>
 
@@ -45,7 +67,28 @@
       Ideals
     </button>
     <div ng-show="genCtrl.display3">
-      display3
+      <div class="background-detail-box">
+        <form ng-submit="genCtrl.saveIdeal()">
+          <div ng-repeat="item in genCtrl.currentBackground.ideals">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countIdeal > genCtrl.maxIdeals) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedIdeal(item)">
+                {{ item.desc }}
+              </label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="genCtrl.checkedIdeal(createItem); genCtrl.createOwnIdeal()" ng-disabled="(genCtrl.countIdeal > genCtrl.maxIdeals) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
+              Create your own.
+            </label>
+          </div>
+          <div ng-show="genCtrl.writeIdeal">
+            <textarea class="form-control" rows="3" ng-model="genCtrl.textIdeal" ng-keydown="$event.which === 13 && genCtrl.saveOwnIdeal(genCtrl.textIdeal)"></textarea>
+          </div>
+        </form>
+        <button class="btn btn-lg btn-primary btn-list-button" ng-click="genCtrl.randomizeIdeal()">Pick for me</button>
+      </div>
     </div>
   </div>
 
@@ -54,7 +97,28 @@
       Bonds
     </button>
     <div ng-show="genCtrl.display4">
-      display4
+      <div class="background-detail-box">
+        <form ng-submit="genCtrl.saveBond()">
+          <div ng-repeat="item in genCtrl.currentBackground.bonds">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countBond > genCtrl.maxBonds) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedBond(item)">
+                {{ item.desc }}
+              </label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="genCtrl.checkedBond(createItem); genCtrl.createOwnBond()" ng-disabled="(genCtrl.countBond > genCtrl.maxBonds) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
+              Create your own.
+            </label>
+          </div>
+          <div ng-show="genCtrl.writeBond">
+            <textarea class="form-control" rows="3" ng-model="genCtrl.textBond" ng-keydown="$event.which === 13 && genCtrl.saveOwnBond(genCtrl.textBond)"></textarea>
+          </div>
+        </form>
+        <button class="btn btn-lg btn-primary btn-list-button" ng-click="genCtrl.randomizeBond()">Pick for me</button>
+      </div>
     </div>
   </div>
 
@@ -63,7 +127,28 @@
       Flaws
     </button>
     <div ng-show="genCtrl.display5">
-      display5
+      <div class="background-detail-box">
+        <form ng-submit="genCtrl.saveFlaw()">
+          <div ng-repeat="item in genCtrl.currentBackground.flaws">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countFlaw > genCtrl.maxFlaws) && (!item.check)" ng-checked="item.check" ng-model="item.check" ng-click="genCtrl.checkedFlaw(item)">
+                {{ item.desc }}
+              </label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-click="genCtrl.checkedFlaw(createItem); genCtrl.createOwnFlaw()" ng-disabled="(genCtrl.countFlaw > genCtrl.maxFlaws) && (!createItem.check)"  ng-checked="createItem.check" ng-model="createItem.check">
+              Create your own.
+            </label>
+          </div>
+          <div ng-show="genCtrl.writeFlaw">
+            <textarea class="form-control" rows="3" ng-model="genCtrl.textFlaw" ng-keydown="$event.which === 13 && genCtrl.saveOwnFlaw(genCtrl.textFlaw)"></textarea>
+          </div>
+        </form>
+        <button class="btn btn-lg btn-primary btn-list-button" ng-click="genCtrl.randomizeFlaw()">Pick for me</button>
+      </div>
     </div>
   </div>
 

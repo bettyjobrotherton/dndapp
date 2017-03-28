@@ -67,17 +67,24 @@ export class GeneratorController {
 
       this.countSpecialTrait = 0;
       if(this.currentBackground.name === "Entertainer"){
-        this.maxSpecialTrait = 2;
+        this.maxSpecialTraits = 2;
       } else {
-        this.maxSpecialTrait = 0;
+        this.maxSpecialTraits = 0;
       }
       this.specialTraitsList = [];
 
-      this.countTraits = 0;
+      this.countTrait = 0;
       this.maxTraits = 1;
+      this.traitsList = [];
 
+      this.countIdeal = 0;
+      this.maxIdeals = 0;
 
-    
+      this.countBond = 0;
+      this.maxBonds = 0;
+
+      this.countFlaw = 0;
+      this.maxFlaws = 0;
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -285,11 +292,27 @@ export class GeneratorController {
     }
   }
 
+  createOwnTrait(){
+    if(this.writeTrait){
+      this.writeTrait = false;
+    } else {
+      this.writeTrait = true;
+    }
+  }
+
   idealsButton(){
     if(this.display3){
       this.display3 = false;
     } else {
       this.display3 = true;
+    }
+  }
+
+  createOwnIdeal(){
+    if(this.writeIdeal){
+      this.writeIdeal = false;
+    } else {
+      this.writeIdeal = true;
     }
   }
 
@@ -301,11 +324,27 @@ export class GeneratorController {
     }
   }
 
+  createOwnBond(){
+    if(this.writeBond){
+      this.writeBond = false;
+    } else {
+      this.writeBond = true;
+    }
+  }
+
   flawsButton(){
     if(this.display5){
       this.display5 = false;
     } else {
       this.display5 = true;
+    }
+  }
+
+  createOwnFlaw(){
+    if(this.writeFlaw){
+      this.writeFlaw = false;
+    } else {
+      this.writeFlaw = true;
     }
   }
 
@@ -319,23 +358,18 @@ export class GeneratorController {
       } else {
         this.specialTraitsList.push(item);
       }
-      // console.log(this.specialTraitsList);
+      console.log(this.specialTraitsList);
     } else {
       this.countSpecialTrait = count -1;
       if(!item.number){
         item.number = 0;
-        for(var i = 0; i < this.specialTraitsList.length; i++){
-          if(this.specialTraitsList[i].number === item.number){
-            this.specialTraitsList.splice(i, 1);
-          }
-        }
       }
       for(var i = 0; i < this.specialTraitsList.length; i++){
         if(this.specialTraitsList[i].number === item.number){
           this.specialTraitsList.splice(i, 1);
         }
       }
-      console.log(this.specialTraitsList);
+      // console.log(this.specialTraitsList);
     }
   }
 
@@ -343,25 +377,266 @@ export class GeneratorController {
     for(var i = 0; i < this.specialTraitsList.length; i++){
       if(this.specialTraitsList[i].number === 0){
         this.specialTraitsList[i].desc = text;
-        console.log(this.specialTraitsList);
+        // console.log(this.specialTraitsList);
+      }
+    }
+  }
+
+  randomizeSpecialTrait(){
+    var number = Math.round(Math.random()*8);
+    var specialTraits = this.currentBackground.specialTrait.list;
+    if(this.countSpecialTrait > this.maxSpecialTraits){
+      return;
+    } else {
+      for(var i = 0; i < specialTraits.length; i++){
+        if(specialTraits[i].number === number){
+          if(specialTraits[i].check){
+            this.randomizeSpecialTrait();
+          } else {
+            specialTraits[i].check = true;
+            this.checkedSpecialTrait(specialTraits[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedTrait(item){
+    var count = this.countTrait;
+    if(item.check){
+      this.countTrait = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.traitsList.push(item);
+      } else {
+        this.traitsList.push(item);
+      }
+      // console.log(this.traitsList);
+    } else {
+      this.countTrait = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      for(var i = 0; i < this.traitsList.length; i++){
+        if(this.traitsList[i].number === item.number){
+          this.traitsList.splice(i, 1);
+        }
+      }
+      // console.log(this.traitsList);
+    }
+  }
+
+  saveOwnTrait(text){
+    for(var i = 0; i < this.traitsList.length; i++){
+      if(this.traitsList[i].number === 0){
+        this.traitsList[i].desc = text;
+        // console.log(this.traitsList);
+      }
+    }
+  }
+
+  randomizeTrait(){
+    var number = Math.round(Math.random()*8);
+    var traits = this.currentBackground.personalityTraits;
+    if(this.countTrait > this.maxTraits){
+      return;
+    } else {
+      for(var i = 0; i < traits.length; i++){
+        if(traits[i].number === number){
+          if(traits[i].check){
+            this.randomizeTrait();
+          } else {
+            traits[i].check = true;
+            this.checkedTrait(traits[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedIdeal(item){
+    var count = this.countIdeal;
+    if(item.check){
+      this.countIdeal = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentIdeal = item;
+      } else {
+        this.currentIdeal = item;
+      }
+      // console.log(this.currentIdeal);
+    } else {
+      this.countIdeal = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentIdeal = " ";
+      // console.log(this.currentIdeal);
+    }
+  }
+
+  saveOwnIdeal(text){
+    this.currentIdeal.desc = text;
+    // console.log(this.currentIdeal);
+  }
+
+  randomizeIdeal(){
+    var number = Math.round(Math.random()*6);
+    var ideals = this.currentBackground.ideals;
+    if(this.countIdeal > this.maxIdeals){
+      return;
+    } else {
+      for(var i = 0; i < ideals.length; i++){
+        if(ideals[i].number === number){
+          if(ideals[i].check){
+            this.randomizeIdeal();
+          } else {
+            ideals[i].check = true;
+            this.checkedIdeal(ideals[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedBond(item){
+    var count = this.countBond;
+    if(item.check){
+      this.countBond = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentBond = item;
+      } else {
+        this.currentBond = item;
+      }
+      console.log(this.currentBond);
+    } else {
+      this.countBond = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentBond = " ";
+      console.log(this.currentBond);
+    }
+  }
+
+  saveOwnBond(text){
+    this.currentBond.desc = text;
+    console.log(this.currentBond);
+  }
+
+  randomizeBond(){
+    var number = Math.round(Math.random()*6);
+    var bonds = this.currentBackground.bonds;
+    if(this.countBond > this.maxBonds){
+      return;
+    } else {
+      for(var i = 0; i < bonds.length; i++){
+        if(bonds[i].number === number){
+          if(bonds[i].check){
+            this.randomizeBond();
+          } else {
+            bonds[i].check = true;
+            this.checkedBond(bonds[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedFlaw(item){
+    var count = this.countFlaw;
+    if(item.check){
+      this.countFlaw = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentFlaw = item;
+      } else {
+        this.currentFlaw = item;
+      }
+      console.log(this.currentFlaw);
+    } else {
+      this.countFlaw = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentFlaw = " ";
+      console.log(this.currentFlaw);
+    }
+  }
+
+  saveOwnFlaw(text){
+    this.currentFlaw.desc = text;
+    console.log(this.currentFlaw);
+  }
+
+  randomizeFlaw(){
+    var number = Math.round(Math.random()*8);
+    var flaws = this.currentBackground.flaws;
+    if(this.countFlaw > this.maxFlaws){
+      return;
+    } else {
+      for(var i = 0; i < flaws.length; i++){
+        if(flaws[i].number === number){
+          if(flaws[i].check){
+            this.randomizeFlaw();
+          } else {
+            flaws[i].check = true;
+            this.checkedFlaw(flaws[i]);
+          }
+        }
       }
     }
   }
 
 saveBackground(){
   var currentBackground = this.currentBackground;
-  var backgroundInfo = {
-      background:{
-        main: currentBackground.name
-      }
+  var backgroundInfo;
+  var currentSpecialTraits;
+  var currentTraits = this.traitsList[0].desc + "; " + this.traitsList[1].desc;
+  if(currentBackground.name == 'Entertainer'){
+    currentSpecialTraits = this.specialTraits[0].desc;
+    for(i = 1; i < this.specialTraitsList.length; i++){
+      currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraits[i].desc;
+      backgroundInfo = {
+            main: this.currentBackground.name,
+            specialType: this.currentBackground.specialTrait.name,
+            special: currentSpecialTraits,
+            trait: currentTraits,
+            ideal: this.currentIdeal.desc,
+            bond: this.currentBond.desc,
+            flaw: this.currentFlaw.desc
+      };
+    }
+    console.log(currentSpecialTraits);
+  } else if(currentBackground.specialTrait.isThere && currentBackground.name !== 'Entertainer'){
+    currentSpecialTraits = this.specialTraits[0].desc;
+    backgroundInfo = {
+          main: this.currentBackground.name,
+          specialType: this.currentBackground.specialTrait.name,
+          special: currentSpecialTraits,
+          trait: currentTraits,
+          ideal: this.currentIdeal.desc,
+          bond: this.currentBond.desc,
+          flaw: this.currentFlaw.desc
+    };
+  } else {
+    backgroundInfo = {
+          main: this.currentBackground.name,
+          trait: currentTraits,
+          ideal: this.currentIdeal.desc,
+          bond: this.currentBond.desc,
+          flaw: this.currentFlaw.desc
+    };
   }
   if(this.first() =='background'){
-    newcharacter = alignInfo;
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.background = backgroundInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorAlignment');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.background = backgroundInfo.background;
+    newCharacter.background = backgroundInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
