@@ -90,9 +90,10 @@ export class GeneratorController {
                 .then(res => {
                   vm.alignList = res.data;
                   vm.currentAlign = res.data[0];
+                  console.log(vm.currentAlign);
                 })
                 .catch(err => {
-                  return err;
+                  console.log(err);
                 });
     }
   }
@@ -358,7 +359,6 @@ export class GeneratorController {
       } else {
         this.specialTraitsList.push(item);
       }
-      console.log(this.specialTraitsList);
     } else {
       this.countSpecialTrait = count -1;
       if(!item.number){
@@ -369,7 +369,6 @@ export class GeneratorController {
           this.specialTraitsList.splice(i, 1);
         }
       }
-      // console.log(this.specialTraitsList);
     }
   }
 
@@ -377,7 +376,6 @@ export class GeneratorController {
     for(var i = 0; i < this.specialTraitsList.length; i++){
       if(this.specialTraitsList[i].number === 0){
         this.specialTraitsList[i].desc = text;
-        // console.log(this.specialTraitsList);
       }
     }
   }
@@ -411,7 +409,6 @@ export class GeneratorController {
       } else {
         this.traitsList.push(item);
       }
-      // console.log(this.traitsList);
     } else {
       this.countTrait = count -1;
       if(!item.number){
@@ -422,7 +419,6 @@ export class GeneratorController {
           this.traitsList.splice(i, 1);
         }
       }
-      // console.log(this.traitsList);
     }
   }
 
@@ -430,7 +426,6 @@ export class GeneratorController {
     for(var i = 0; i < this.traitsList.length; i++){
       if(this.traitsList[i].number === 0){
         this.traitsList[i].desc = text;
-        // console.log(this.traitsList);
       }
     }
   }
@@ -464,20 +459,17 @@ export class GeneratorController {
       } else {
         this.currentIdeal = item;
       }
-      // console.log(this.currentIdeal);
     } else {
       this.countIdeal = count -1;
       if(!item.number){
         item.number = 0;
       }
       this.currentIdeal = " ";
-      // console.log(this.currentIdeal);
     }
   }
 
   saveOwnIdeal(text){
     this.currentIdeal.desc = text;
-    // console.log(this.currentIdeal);
   }
 
   randomizeIdeal(){
@@ -509,20 +501,17 @@ export class GeneratorController {
       } else {
         this.currentBond = item;
       }
-      console.log(this.currentBond);
     } else {
       this.countBond = count -1;
       if(!item.number){
         item.number = 0;
       }
       this.currentBond = " ";
-      console.log(this.currentBond);
     }
   }
 
   saveOwnBond(text){
     this.currentBond.desc = text;
-    console.log(this.currentBond);
   }
 
   randomizeBond(){
@@ -554,20 +543,17 @@ export class GeneratorController {
       } else {
         this.currentFlaw = item;
       }
-      console.log(this.currentFlaw);
     } else {
       this.countFlaw = count -1;
       if(!item.number){
         item.number = 0;
       }
       this.currentFlaw = " ";
-      console.log(this.currentFlaw);
     }
   }
 
   saveOwnFlaw(text){
     this.currentFlaw.desc = text;
-    console.log(this.currentFlaw);
   }
 
   randomizeFlaw(){
@@ -590,6 +576,7 @@ export class GeneratorController {
   }
 
 saveBackground(){
+  var newCharacter;
   var currentBackground = this.currentBackground;
   var backgroundInfo;
   var currentSpecialTraits;
@@ -598,6 +585,7 @@ saveBackground(){
     currentSpecialTraits = this.specialTraits[0].desc;
     for(i = 1; i < this.specialTraitsList.length; i++){
       currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraits[i].desc;
+      console.log(currentSpecialTraits);
       backgroundInfo = {
             main: this.currentBackground.name,
             specialType: this.currentBackground.specialTrait.name,
@@ -608,9 +596,9 @@ saveBackground(){
             flaw: this.currentFlaw.desc
       };
     }
-    console.log(currentSpecialTraits);
   } else if(currentBackground.specialTrait.isThere && currentBackground.name !== 'Entertainer'){
     currentSpecialTraits = this.specialTraits[0].desc;
+    console.log(currentSpecialTraits);
     backgroundInfo = {
           main: this.currentBackground.name,
           specialType: this.currentBackground.specialTrait.name,
@@ -629,6 +617,7 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
+  console.log(backgroundInfo)
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -640,6 +629,7 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
+  console.log(this.localStorage['character-in-progress']);
 }
 // -- End code for pick background
 
