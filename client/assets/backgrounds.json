@@ -5,7 +5,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Acolyte.png",
     "addSkillProf": [
       "Insight",
       "Religion"
@@ -148,7 +148,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Charlatan.png",
     "addSkillProf": [
       "Deception",
       "Sleight of Hand"
@@ -320,7 +320,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Criminal.png",
     "addSkillProf": [
       "Deception",
       "Stealth"
@@ -502,7 +502,7 @@
       "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment\u0336 perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net.",
       "isAltFeature": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Entertainer.png",
     "addSkillProf": [
       "Acrobatics",
       "Performance"
@@ -693,7 +693,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Folk Hero.png",
     "addSkillProf": [
       "Animal Handling",
       "Survival"
@@ -888,7 +888,7 @@
       "desc": "Instead of an artisan\u2019s guild, you might belong to a guild of traders, caravan masters, or shopkeepers. You don\u2019t craft items yourself but earn a living by buying and selling the works of others (or the raw materials artisans need to practice their craft). Your guild might be a large merchant consortium (or family) with interests across the region. Perhaps you transported goods from one place to another, by ship, wagon, or, caravan, or bought them from traveling traders and sold them in your own little shop. In some ways, the traveling merchant\u2019s life lends itself to adventure far more than the life of an artisan.\n\n Rather than proficiency with artisan\u2019s tools, you might be proficient with navigator\u2019s tools or an additional language. And instead of artisan\u2019s tools, you can start with a mule and a cart.",
       "isAltFeature": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Guild Artisan.png",
     "addSkillProf": [
       "Insight",
       "Persuasion"
@@ -1118,7 +1118,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Hermit.png",
     "addSkillProf": [
       "Medicine",
       "Religion"
@@ -1290,7 +1290,7 @@
       "altFeatureTitle": "Retainers",
       "altFeature": "If your character has a noble background, you may select this background feature instead of Position of Privilege. You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas, and will leave if they are frequently endangered or abused."
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Noble.png",
     "addSkillProf": [
       "History",
       "Persuasion"
@@ -1436,7 +1436,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Outlander.png",
     "addSkillProf": [
       "Athletics",
       "Survival"
@@ -1627,7 +1627,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Sage.png",
     "addSkillProf": [
       "Arcana",
       "History"
@@ -1816,7 +1816,7 @@
       "altFeatureTitle": "Bad Reputation",
       "altFeature": "If your character has a sailor background, you my select this background feature instead of Ship\u2019s Passage. No matter where you go, people are afraid of you due to your reputation. When you are in a civilized settlement, you can get away with minor criminal offenses, such as refusing to pay for food at a tavern or breaking down doors at a local shop, since most people will not report your activity to the authorities."
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Sailor.png",
     "addSkillProf": [
       "Athletics",
       "Perception"
@@ -1964,7 +1964,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Soldier.png",
     "addSkillProf": [
       "Athletics",
       "Intimidation"
@@ -2148,7 +2148,7 @@
     "variant": {
       "isThere": false
     },
-    "icon": "./assets/images/star.png",
+    "icon": "./assets/images/Urchin.png",
     "addSkillProf": [
       "Sleight of Hand",
       "Stealth"
