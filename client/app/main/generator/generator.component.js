@@ -39,6 +39,7 @@ export class GeneratorController {
           });
     } else if(this.$state.current.name == 'generatorBackground'){
       this.showBackgroundVariant = false;
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
 
       this.$http.get('assets/backgrounds.json')
                 .then(res => {
@@ -202,37 +203,39 @@ export class GeneratorController {
   goBackToClass(){
     this.classMain = true;
   }
+
+  saveClass(){
+      var newCharacter;
+      var currentClass = this.currentClass;
+      var archetype = this.currentArchetype;
+      var classInfo = {
+        class: {
+          main: currentClass.name,
+          archetype: archetype.name
+        },
+        combat: {
+          hitDie: currentClass.combat.hitDie,
+        }
+      };
+      if(this.first() == 'class'){
+        newCharacter = classInfo;
+        this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+        this.$state.go('generatorRace');
+      } else {
+        newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+        newCharacter.class = classInfo.class;
+        newCharacter.combat = classInfo.combat;
+        this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+        this.$state.go('generatorTwo');
+      }
+      this.localStorage.setItem('class-info', JSON.stringify(currentClass));
+      console.log(this.localStorage['class-info'])
+    }
 // -- End code for pick class
 
 // Start code for pick alignment --
   selectAlign(align) {
     this.currentAlign = align;
-  }
-
-  saveClass(){
-    var newCharacter;
-    var currentClass = this.currentClass;
-    var archetype = this.currentArchetype;
-    var classInfo = {
-      class: {
-        main: currentClass.name,
-        archetype: archetype.name
-      },
-      combat: {
-        hitDie: currentClass.combat.hitDie,
-      }
-    };
-    if(this.first() == 'class'){
-      newCharacter = classInfo;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorRace');
-    } else {
-      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.class = classInfo.class;
-      newCharacter.combat = classInfo.combat;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorTwo');
-    }
   }
 
   saveAlign(){
