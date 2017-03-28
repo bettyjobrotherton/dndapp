@@ -1,6 +1,6 @@
 <div class='raceView' ng-show="genCtrl.raceMain">
   <div class="iconList">
-    <div class='list-group' ng-repeat="race in genCtrl.raceList" >
+    <div class='list-group' ng-class="{ 'active': race == genCtrl.currentRace }" ng-repeat="race in genCtrl.raceList" >
       <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
     </div>
   </div>

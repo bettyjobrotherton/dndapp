@@ -117,6 +117,7 @@ export class GeneratorController {
     else {
       this.raceMain = false;
       this.currentSubrace = this.selectedRace.subraces[0];
+      this.$state.current.friendlyName = "Pick your Sub-Race";
     }
   }
 
@@ -124,8 +125,10 @@ export class GeneratorController {
     this.currentSubrace = subrace;
   }
 
+
   goBackToRace(){
     this.raceMain = true;
+    this.$state.current.friendlyName = "Pick your Race";
   }
 
   saveRace(){

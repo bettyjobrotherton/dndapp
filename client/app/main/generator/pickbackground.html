@@ -1,4 +1,4 @@
-<div class='backgroundView'>
+<div class='backgroundView' ng-show='genCtrl.MainBackground'>
   <div class="iconList">
     <div class='list-group' ng-repeat="background in genCtrl.backgroundList" >
       <img ng-src='{{ background.icon }}' class='list-group-item' ng-click="genCtrl.selectBackground(background)">
@@ -19,33 +19,32 @@
           <span class="emphasis">Varient Feature: {{ genCtrl.currentBackground.variant.altFeatureTitle }}:</span> {{ genCtrl.currentBackground.variant.altFeature }}
         </div>
       </div>
+
+      <table class="table table-striped">
+        <tr class="table-head">
+          <th colspan="2">Bonuses</th>
+        </tr>
+        <tr>
+          <td>Additional Skill Proficiencies</td>
+          <td><div ng-repeat="skill in genCtrl.currentBackground.addSkillProf">{{ skill }}</div></td>
+        </tr>
+        <tr>
+          <td>Additional Language Proficiencies</td>
+          <td><div ng-repeat="lang in genCtrl.currentBackground.addLanguages">{{ lang }}</div></td>
+        </tr>
+        <tr>
+          <td>Additional Tools Proficiencies</td>
+          <td><div ng-repeat="tool in genCtrl.currentBackground.addToolProf">{{ tool }}</div></td>
+        </tr>
+        <tr>
+          <td>Additional Equipment</td>
+          <td><div ng-repeat="equip in genCtrl.currentBackground.addEquipment">{{ equip }}</div></td>
+        </tr>
+      </table>
+
+      <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainBackground()">
+        Submit &amp; Continue
+      </button>
+
     </div>
-
-    <table class="table table-striped">
-      <tr class="table-head">
-        <th colspan="2">Bonuses</th>
-      </tr>
-      <tr>
-        <td>Additional Skill Proficiencies</td>
-        <td><div ng-repeat="skill in genCtrl.currentBackground.addSkillProf">{{ skill }}</div></td>
-      </tr>
-      <tr>
-        <td>Additional Language Proficiencies</td>
-        <td><div ng-repeat="lang in genCtrl.currentBackground.addLanguages">{{ lang }}</div></td>
-      </tr>
-      <tr>
-        <td>Additional Tools Proficiencies</td>
-        <td><div ng-repeat="tool in genCtrl.currentBackground.addToolProf">{{ tool }}</div></td>
-      </tr>
-      <tr>
-        <td>Additional Equipment</td>
-        <td><div ng-repeat="equip in genCtrl.currentBackground.addEquipment">{{ equip }}</div></td>
-      </tr>
-    </table>
-
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.pickBackground()">
-      Submit &amp; Continue
-    </button>
-
   </div>
-</div>
