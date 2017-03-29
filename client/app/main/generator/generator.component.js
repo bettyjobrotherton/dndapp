@@ -244,7 +244,7 @@ export class GeneratorController {
     var alignInfo = currentAlign.name;
     if(this.first() =='align'){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.general.alignment = alignInfo
+      newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorBackground');
     } else {
@@ -623,7 +623,7 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
-  console.log(backgroundInfo)
+  // console.log(backgroundInfo)
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -635,7 +635,7 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
-  console.log(this.localStorage['character-in-progress']);
+  // console.log(this.localStorage['character-in-progress']);
 }
 // -- End code for pick background
 
