@@ -1,0 +1,92 @@
+[
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Acrobatics"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Animal Handling"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Arcana"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Athletics"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Deception"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "History"
+            },
+            {
+                "prof" : false,
+                "score" : 1,
+                "name" : "Insight"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Intimidation"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Investigation"
+            },
+            {
+                "prof" : false,
+                "score" : 1,
+                "name" : "Medicine"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Nature"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Perception"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Performance"
+            },
+            {
+                "prof" : false,
+                "score" : 1,
+                "name" : "Persuasion"
+            },
+            {
+                "prof" : false,
+                "score" : 1,
+                "name" : "Religion"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Sleight of Hand"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Stealth"
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Survival"
+            }
+        ]

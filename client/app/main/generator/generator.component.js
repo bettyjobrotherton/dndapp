@@ -683,10 +683,29 @@ saveBackground(){
     console.log(bonusSkills);
     var selectedSkills = this.skillsList;
     console.log(selectedSkills);
-    var finalSkillsList = selectedSkills;
+    this.$http.get("assets/blank-skills.json")
+              .then(res => {
+                this.finalSkillsList = res.data;
+              })
+              .catch(err => {
+                return err;
+              });
 
-    for(i = 0; i < bonusSkills.length; i++){
-      finalSkillsList.push(bonusSkills);
+    for(i = 0; i < this.finalSkillsList.length; i++){
+        for(j = 0; j < bonusSkills.length; j++){
+          if(this.finalSkillsList[i].name == bonusSkills[j]){
+            this.finalSkillsList[i].prof = true;
+            this.finalSkillsList[i].score = 1;
+          }
+        }
+    }
+    for(i = 0; i < this.finalSkillsList.length; i++){
+      for(j = 0; j < selectedSkills.length; j++){
+        if(this.finalSkillsList[i].name == selectedSkills[j]){
+          this.finalSkillsList[i].prof = true;
+          this.finalSkillsList[i].score = 1;
+        }
+      }
     }
     console.log(finalSkillsList);
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
