@@ -1,7 +1,7 @@
 [
   {
     "name": "Acolyte",
-    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric\u0336 performing sacred rites is NOT the same thing as channeling divine power.",
+    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realms of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshippers into the presence of the divine. You are not necessarily a cleric- performing sacred rites is NOT the same thing as channeling divine power.",
     "variant": {
       "isThere": false
     },
@@ -238,7 +238,7 @@
     "ideals": [
       {
         "number": 1,
-        "desc": "Independence. I am a free spirit\u0336 no one tells me what to do. (Chaotic)"
+        "desc": "Independence. I am a free spirit- no one tells me what to do. (Chaotic)"
       },
       {
         "number": 2,
@@ -268,7 +268,7 @@
       },
       {
         "number": 2,
-        "desc": "I owe everything to my mentor\u0336 a horrible person who\u2019s probably rotting in jail somewhere."
+        "desc": "I owe everything to my mentor- a horrible person who\u2019s probably rotting in jail somewhere."
       },
       {
         "number": 3,
@@ -393,7 +393,7 @@
       },
       {
         "number": 3,
-        "desc": "The first thing I do in a new place is note the locations of everything valuable\u0336 or where such things could be hidden."
+        "desc": "The first thing I do in a new place is note the locations of everything valuable- or where such things could be hidden."
       },
       {
         "number": 4,
@@ -499,7 +499,7 @@
     "variant": {
       "isThere": true,
       "title": "Variant Entertainer: Gladiator",
-      "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment\u0336 perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net.",
+      "desc": "A gladiator is as much an entertainer as any minstrel or circus performer, trained to make the arts of combat into a spectacle the crowd can enjoy. This kind of flashy combat is your entertainer routine, though you might also have some skills as a tumbler or actor. Using your By Popular Demand feature, you can find a place to perform in any place that features combat for entertainment- perhaps a gladiatorial arena or secret pit fighting club. You can replace the musical instrument in your equipment package with an inexpensive but unusual weapon, such as a trident or net.",
       "isAltFeature": false
     },
     "icon": "./assets/images/Entertainer.png",
@@ -815,7 +815,7 @@
       },
       {
         "number": 4,
-        "desc": "Might. If I become strong, I can take what I want\u0336 what I deserve. (Evil)"
+        "desc": "Might. If I become strong, I can take what I want- what I deserve. (Evil)"
       },
       {
         "number": 5,
@@ -911,7 +911,7 @@
       "desc": "As an established and respected member of a guild, you can rely on certain benefits that membership provides. Your fellow guild members will provide you with lodging and food if necessary, and pay for you funeral if neeeded. In some cities and towns, a guildhall offers a central place to meet other members of your profession, which can be a good place to meet potential patrons, allies, or hirelings.\n\n Guilds often wield tremendous political power. If you are accused of a crime, your guild will support you if a good case can be made for your innocence or the crime is justifiable. You can also gain access to powerful political figures through the guild, if you are a member in good standing. Such connections might require the donation of money or magic items to the guild\u2019s coffers.\n\n You must pay dues of 5gp per month to the guild. If you miss payments, you must make up back dues to remain in the guild\u2019s good graces."
       }
     ],
-    "characteristics": "Guild artisans are among the most ordinary people in the world\u0336 until they sey down their tools and take up an adventuring career. They understand the value of hard work and the importance of community, but they\u2019re vulnerable to sins of greed and covetousness.",
+    "characteristics": "Guild artisans are among the most ordinary people in the world- until they sey down their tools and take up an adventuring career. They understand the value of hard work and the importance of community, but they\u2019re vulnerable to sins of greed and covetousness.",
     "specialTrait": {
       "isThere": true,
       "name": "Guild Business",
@@ -1002,7 +1002,7 @@
     "personalityTraits": [
       {
         "number": 1,
-        "desc": "I believe that anything worth doing is worth doing right. I can\u2019t help it\u0336 I\u2019m a perfectionist."
+        "desc": "I believe that anything worth doing is worth doing right. I can\u2019t help it- I\u2019m a perfectionist."
       },
       {
         "number": 2,
@@ -1100,7 +1100,7 @@
       },
       {
         "number": 4,
-        "desc": "I\u2019m never satisfied with what I have\u0336 I always want more. "
+        "desc": "I\u2019m never satisfied with what I have- I always want more. "
       },
       {
         "number": 5,
@@ -1114,7 +1114,7 @@
   },
   {
     "name": "Hermit",
-    "desc": "You lived in seclusion\u0336 either in a sheltered community such as a monastery, or entirely alone\u0336 for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.\n\n Note on other hermits: The hermit background assumes a contemplative sort of seclusion that allows room for study and prayer. If you want to plat a rugged wilderness recluse who lives off the land while shunning the company of other people, look at the outlander background. On the other hand, if you want to go in a more religious direction, the acolyte might be what you're looking for. Or you could even be a charlatan, posing as a wise and holy person and letting pious fools support you.",
+    "desc": "You lived in seclusion- either in a sheltered community such as a monastery, or entirely alone- for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.\n\n Note on other hermits: The hermit background assumes a contemplative sort of seclusion that allows room for study and prayer. If you want to plat a rugged wilderness recluse who lives off the land while shunning the company of other people, look at the outlander background. On the other hand, if you want to go in a more religious direction, the acolyte might be what you're looking for. Or you could even be a charlatan, posing as a wise and holy person and letting pious fools support you.",
     "variant": {
       "isThere": false
     },
@@ -1281,11 +1281,11 @@
   },
   {
     "name": "Noble",
-    "desc": "You understande wealth, power, and privilege. you carry a noble title, and your family owns land, collects taxes, and wields significant political influence. You might be a pampered aristocrat unfamiliar with work or discomfort, a former just elevated to the nobility, or a disinherited scoundrel with a disproportionate sense of entitlement. Or you could be an honest, hard-working landowner who cares deeply about the people who live and work on your land, keenly aware of your responsibility to them.\n\n Work with your Game Master to come up with an appropriate title and determine how much authority that title carries. A noble title doesn't stand on its own\u0336 it\u2019s connected to an entire family, and whatever title you hold, you will pass it down to your own children. Not only do you need to determine your noble title, but you should also work with the Game Master to describe your family and their influence on you.",
+    "desc": "You understande wealth, power, and privilege. you carry a noble title, and your family owns land, collects taxes, and wields significant political influence. You might be a pampered aristocrat unfamiliar with work or discomfort, a former just elevated to the nobility, or a disinherited scoundrel with a disproportionate sense of entitlement. Or you could be an honest, hard-working landowner who cares deeply about the people who live and work on your land, keenly aware of your responsibility to them.\n\n Work with your Game Master to come up with an appropriate title and determine how much authority that title carries. A noble title doesn't stand on its own- it\u2019s connected to an entire family, and whatever title you hold, you will pass it down to your own children. Not only do you need to determine your noble title, but you should also work with the Game Master to describe your family and their influence on you.",
     "variant": {
       "isThere": true,
       "title": "Variant Noble: Knight",
-      "desc": "A knighthood is among the lowest noble titles in most societies, but it can be a path to higher status. If you wish to be a knight, choose the Retainers feature (see below) instead of the Position of Privilege feature. One of your commoner retainers is replaced by a noble who serves as your squire, aiding you in exchange for training on his or her own path to knighthood. Your two remaining retainers might include a groom to care for your horse and a servant who polishes your armor and even helps you put it on.\n\n As an emblem of chivalry and the ideals of courtly love, you, might include among your equipment a banner or other token from a noble lord or lady to whom you have given your heart\u0336 in a chaste sort of devotion.",
+      "desc": "A knighthood is among the lowest noble titles in most societies, but it can be a path to higher status. If you wish to be a knight, choose the Retainers feature (see below) instead of the Position of Privilege feature. One of your commoner retainers is replaced by a noble who serves as your squire, aiding you in exchange for training on his or her own path to knighthood. Your two remaining retainers might include a groom to care for your horse and a servant who polishes your armor and even helps you put it on.\n\n As an emblem of chivalry and the ideals of courtly love, you, might include among your equipment a banner or other token from a noble lord or lady to whom you have given your heart- in a chaste sort of devotion.",
       "isAltFeature": true,
       "altFeatureTitle": "Retainers",
       "altFeature": "If your character has a noble background, you may select this background feature instead of Position of Privilege. You have the service of three retainers loyal to your family. These retainers can be attendants or messengers, and one might be a majordomo. Your retainers are commoners who can perform mundane tasks for you, but they do not fight for you, will not follow you into obviously dangerous areas, and will leave if they are frequently endangered or abused."
@@ -1313,7 +1313,7 @@
       "desc": "Thanks to your noble birth, people are inclined to think the best of you. You are welcome in high society, and people assume you have the right to be wherever you are. The common folk make every effort to accommodate you and avoid your displeasure, and other people of high birth treat you as a member of the same social sphere. You can secure an audience with a local noble if you need to."
       }
     ],
-    "characteristics": "Nobles are born and raised to a very different lifestyle than most people ever experience, and their personalities reflect that upbringing. A noble title comes with a plethora of bonds\u0336 responsibilities to family, to other nobles (including the sovereign), to the people entrusted to the family\u2019s care, or even to the title itself. But this responsibility is often a good way to undermine a noble.",
+    "characteristics": "Nobles are born and raised to a very different lifestyle than most people ever experience, and their personalities reflect that upbringing. A noble title comes with a plethora of bonds- responsibilities to family, to other nobles (including the sovereign), to the people entrusted to the family\u2019s care, or even to the title itself. But this responsibility is often a good way to undermine a noble.",
     "specialTrait": {
       "isThere": false
     },
@@ -1652,7 +1652,7 @@
       "desc": "When you attempt to learn or recall a piece of lore, if you do not know that information, you often know where and from whom you can obtain it. Usually, this information comes from a library, scriptorium, university, or a sage or other learned person or creature. Your Game Master might rule that the knowledge you seek is secreted away in an almost inaccessible place, or that it simply cannot be found. Unearthing the deepest secrets of the multiverse can require an adventure or even a whole campaign."
       }
     ],
-    "characteristics": "Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly\u0336 sometimes in its own right, sometimes as a means toward other ideals.",
+    "characteristics": "Sages are defined by their extensive studies, and their characteristics reflect this life of study. Devoted to scholarly pursuits, a sage values knowledge highly- sometimes in its own right, sometimes as a means toward other ideals.",
     "specialTrait": {
       "isThere": true,
       "name": "Speciality",
@@ -1699,7 +1699,7 @@
       },
       {
         "number": 2,
-        "desc": "I\u2019ve read every book in the world\u2019s greatest libraries\u0336 or I like to boast that I have."
+        "desc": "I\u2019ve read every book in the world\u2019s greatest libraries- or I like to boast that I have."
       },
       {
         "number": 3,
@@ -1890,7 +1890,7 @@
       },
       {
         "number": 3,
-        "desc": "Freedom. The sea is freedom\u0336 the freedom to go anywhere and do anything. (Chaotic)"
+        "desc": "Freedom. The sea is freedom- the freedom to go anywhere and do anything. (Chaotic)"
       },
       {
         "number": 4,
@@ -1912,7 +1912,7 @@
       },
       {
         "number": 2,
-        "desc": "The ship is most important\u0336 crewmates and captains come and go."
+        "desc": "The ship is most important- crewmates and captains come and go."
       },
       {
         "number": 3,
@@ -2174,7 +2174,7 @@
       "desc": "You know the secret patterns and flow to cities and can find passages through the urban sprawl that others would miss. When you are not in combat, you (and companions you lead) can travel between any two locations in the city twice as fast as your speed would normally allow."
       }
     ],
-    "characteristics": "Urchins are shaped by lives of desperate poverty, for good and for ill. They tend to be driven either by a commitment to the people with whom they shared life on the street or by a burning desire to find a better life\u0336 and maybe get some payback on all the rich people who treated them badly.",
+    "characteristics": "Urchins are shaped by lives of desperate poverty, for good and for ill. They tend to be driven either by a commitment to the people with whom they shared life on the street or by a burning desire to find a better life- and maybe get some payback on all the rich people who treated them badly.",
     "specialTrait": {
       "isThere": false
     },
@@ -2232,7 +2232,7 @@
       },
       {
         "number": 5,
-        "desc":"People. I help the people who help me\u0336 that\u2019s what keeps us alive. (Neutral)"
+        "desc":"People. I help the people who help me- that\u2019s what keeps us alive. (Neutral)"
       },
       {
         "number": 6,

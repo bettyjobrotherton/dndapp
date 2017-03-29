@@ -1,4 +1,4 @@
-<div class='backgroundView' ng-show='genCtrl.MainBackground'>
+<div class='backgroundView'>
   <div class="iconList">
     <div class='list-group' ng-repeat="background in genCtrl.backgroundList" >
       <img ng-src='{{ background.icon }}' class='list-group-item' ng-click="genCtrl.selectBackground(background)">
@@ -7,6 +7,7 @@
 
   <div class='backgroundDesc'>
     <div>
+      <p><span class="emphasis">Reccommended Background:</span> {{ genCtrl.classInfo.quickBuild.suggestedBackground }}</p>
       <h3> {{genCtrl.currentBackground.name}} </h3>
       <p class='summary'>{{genCtrl.currentBackground.desc}}</p>
       <p class='summary'><span class="emphasis">General Characteristics:</span> {{ genCtrl.currentBackground.characteristics }}</p>
@@ -19,6 +20,7 @@
           <span class="emphasis">Varient Feature: {{ genCtrl.currentBackground.variant.altFeatureTitle }}:</span> {{ genCtrl.currentBackground.variant.altFeature }}
         </div>
       </div>
+    </div>
 
       <table class="table table-striped">
         <tr class="table-head">
@@ -42,7 +44,7 @@
         </tr>
       </table>
 
-      <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainBackground()">
+      <button class="btn btn-lg btn-primary" ng-click="genCtrl.pickBackground()">
         Submit &amp; Continue
       </button>
 
