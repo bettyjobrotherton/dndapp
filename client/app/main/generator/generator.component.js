@@ -101,6 +101,14 @@ export class GeneratorController {
       this.currentBackground = JSON.parse(this.localStorage['selected-background']);
       console.log(this.currentBackground);
 
+      this.$http.get("assets/blank-skills.json")
+                .then(res => {
+                  vm.generalSkillsList = res.data;
+                })
+                .catch(err => {
+                  return err;
+                });
+
       this.countSkill = 1;
       this.maxSkills = this.classInfo.traits.noOfSkills;
       this.skillsList = [];
@@ -683,13 +691,7 @@ saveBackground(){
     console.log(bonusSkills);
     var selectedSkills = this.skillsList;
     console.log(selectedSkills);
-    this.$http.get("assets/blank-skills.json")
-              .then(res => {
-                this.finalSkillsList = res.data;
-              })
-              .catch(err => {
-                return err;
-              });
+    this.finalSkillsList = this.generalSkillsList;
 
     for(i = 0; i < this.finalSkillsList.length; i++){
         for(j = 0; j < bonusSkills.length; j++){
