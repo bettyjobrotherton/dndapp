@@ -1,0 +1,31 @@
+<div class='profView'>
+  <div class='profDesc'>
+    <div>
+      <h3>{{ genCtrl.classInfo.name }} Skills</h3>
+      <p class='summary'>Pick {{ genCtrl.classInfo.traits.noOfSkills }} skills from the list below to be proficient in. Proficiency in a skill gives you an extra bonus when using that skill.</p>
+
+      <form ng-submit="">
+        <div ng-repeat="skill in genCtrl.modifiedSkills">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" ng-disabled="(genCtrl.countSkill > genCtrl.maxSkills) && (!check)" ng-checked="check" ng-model="check" ng-click="genCtrl.checkedSkill(skill, check)">
+              {{ skill }} 
+            </label>
+          </div>
+        </div>
+      </form>
+      <p>You will also be proficient in the following skills from your {{ genCtrl.currentBackground.name }} background.</p>
+
+      <ul id="bonus-skills-list">
+        <li ng-repeat="bonusSkill in genCtrl.currentBackground.addSkillProf">
+          {{ bonusSkill }}
+        </li>
+      </ul>
+    </div>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveSkills()"  type="">
+      Submit &amp; Continue
+    </button>
+
+  </div>
+</div>

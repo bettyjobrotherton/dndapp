@@ -96,6 +96,23 @@ export class GeneratorController {
                 .catch(err => {
                   console.log(err);
                 });
+    } else if(this.$state.current.name == 'proficiencies'){
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
+      this.currentBackground = JSON.parse(this.localStorage['selected-background']);
+      console.log(this.currentBackground);
+
+      this.$http.get("assets/blank-skills.json")
+                .then(res => {
+                  vm.generalSkillsList = res.data;
+                })
+                .catch(err => {
+                  return err;
+                });
+
+      this.countSkill = 1;
+      this.maxSkills = this.classInfo.traits.noOfSkills;
+      this.skillsList = [];
+      this.filterSkills();
     }
   }
 
@@ -251,7 +268,7 @@ export class GeneratorController {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.general.alignment = alignInfo
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorThree');
+      this.$state.go('proficiencies');
     }
   }
 // -- End code for pick alignment
@@ -589,7 +606,7 @@ saveBackground(){
   var currentTraits = this.traitsList[0].desc + "; " + this.traitsList[1].desc;
   if(currentBackground.name == 'Entertainer'){
     currentSpecialTraits = this.specialTraits[0].desc;
-    for(i = 1; i < this.specialTraitsList.length; i++){
+    for(var i = 1; i < this.specialTraitsList.length; i++){
       currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraits[i].desc;
       console.log(currentSpecialTraits);
       backgroundInfo = {
@@ -623,7 +640,6 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
-  // console.log(backgroundInfo)
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -633,12 +649,75 @@ saveBackground(){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorThree');
+    this.$state.go('proficiencies');
   }
-  // console.log(this.localStorage['character-in-progress']);
 }
 // -- End code for pick background
 
+// Start code for selecting proficiencies --
+  filterSkills(){
+    var characterSkills = this.classInfo.traits.skillsList;
+    var backgroundSkills = this.currentBackground.addSkillProf;
+
+    for(var i = 0; i < characterSkills.length; i++){
+      for(var j = 0; j < backgroundSkills.length; j++){
+        if(characterSkills[i] == backgroundSkills[j]){
+          characterSkills.splice(i, 1);
+        }
+      }
+    }
+    this.modifiedSkills = characterSkills;
+  }
+
+  checkedSkill(item, check){
+    var count = this.countSkill;
+    if(check){
+      this.countSkill = count + 1;
+      this.skillsList.push(item);
+    } else {
+      this.countSkill = count -1;
+      for(var i = 0; i < this.skillsList.length; i++){
+        if(this.skillsList[i] === item){
+          this.skillsList.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  saveSkills(){
+    var newCharacter;
+    var bonusSkills = this.currentBackground.addSkillProf;
+    console.log(bonusSkills);
+    var selectedSkills = this.skillsList;
+    console.log(selectedSkills);
+    this.finalSkillsList = this.generalSkillsList;
+
+    for(var i = 0; i < this.finalSkillsList.length; i++){
+        for(var j = 0; j < bonusSkills.length; j++){
+          if(this.finalSkillsList[i].name == bonusSkills[j]){
+            this.finalSkillsList[i].prof = true;
+            this.finalSkillsList[i].score = 1;
+          }
+        }
+    }
+    for(i = 0; i < this.finalSkillsList.length; i++){
+      for(j = 0; j < selectedSkills.length; j++){
+        if(this.finalSkillsList[i].name == selectedSkills[j]){
+          this.finalSkillsList[i].prof = true;
+          this.finalSkillsList[i].score = 1;
+        }
+      }
+    }
+    var characterSkills = {
+      prof: this.finalSkillsList
+    };
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    console.log(newCharacter);
+    newCharacter.skills = characterSkills;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
+  }
+// -- End code for selecting proficiencies
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
@@ -670,6 +749,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('backgrounddetails', {
     template: require('./backgrounddetails.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('proficiencies', {
+    template: require('./proficiencies.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
