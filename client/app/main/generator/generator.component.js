@@ -640,7 +640,6 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
-  // console.log(backgroundInfo)
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -652,7 +651,6 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('proficiencies');
   }
-  // console.log(this.localStorage['character-in-progress']);
 }
 // -- End code for pick background
 
@@ -687,14 +685,15 @@ saveBackground(){
   }
 
   saveSkills(){
+    var newCharacter;
     var bonusSkills = this.currentBackground.addSkillProf;
     console.log(bonusSkills);
     var selectedSkills = this.skillsList;
     console.log(selectedSkills);
     this.finalSkillsList = this.generalSkillsList;
 
-    for(i = 0; i < this.finalSkillsList.length; i++){
-        for(j = 0; j < bonusSkills.length; j++){
+    for(var i = 0; i < this.finalSkillsList.length; i++){
+        for(var j = 0; j < bonusSkills.length; j++){
           if(this.finalSkillsList[i].name == bonusSkills[j]){
             this.finalSkillsList[i].prof = true;
             this.finalSkillsList[i].score = 1;
@@ -709,12 +708,14 @@ saveBackground(){
         }
       }
     }
-    console.log(finalSkillsList);
+    var characterSkills = {
+      prof: this.finalSkillsList
+    };
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.skills.prof = finalSkillsList;
+    console.log(newCharacter);
+    newCharacter.skills = characterSkills;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorthree');
-    console.log(this.localStorage['character-in-progress']);
+    this.$state.go('generatorThree');
   }
 // -- End code for selecting proficiencies
 }
