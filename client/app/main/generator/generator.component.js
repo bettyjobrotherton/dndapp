@@ -284,7 +284,7 @@ export class GeneratorController {
     var newCharacter;
     var currentAlign = this.currentAlign;
     var alignInfo = currentAlign.name;
-    if(this.first() =='align'){
+    if(this.first() =='alignment'){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
