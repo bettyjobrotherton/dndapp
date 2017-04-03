@@ -16,6 +16,7 @@ export class GeneratorController {
 
   $onInit() {
     var vm = this;
+
     if(this.$state.current.name == 'generatorClass'){
       this.classMain = true;
 
@@ -125,6 +126,16 @@ export class GeneratorController {
     }
   }
 
+  selectLevelAndSubmit(input){
+    var newCharacter = {
+      general: {
+        level: this.characterLevel
+      }
+    };
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.createChar(input);
+  }
+
 // Start code for pick race --
   selectRace(race) {
     this.currentRace = race;
@@ -191,13 +202,16 @@ export class GeneratorController {
       };
     }
     if(this.first() == 'race'){
-      newCharacter = raceInfo;
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.bio = raceInfo.bio;
+      newCharacter.general.movement = raceInfo.general.movement;
+      newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorClass');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.bio = raceInfo.bio;
-      newCharacter.general = raceInfo.general;
+      newCharacter.general.movement = raceInfo.general.movement;
       newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
@@ -253,7 +267,7 @@ export class GeneratorController {
         this.$state.go('generatorTwo');
       }
       this.localStorage.setItem('class-info', JSON.stringify(currentClass));
-      console.log(this.localStorage['class-info'])
+      // console.log(this.localStorage['class-info'])
     }
 
     returnToClass(){
@@ -277,7 +291,7 @@ export class GeneratorController {
       this.$state.go('generatorBackground');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.general.alignment = alignInfo
+      newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('proficiencies');
     }
