@@ -202,6 +202,10 @@ export class GeneratorController {
       this.$state.go('generatorTwo');
     }
   }
+
+  returnToRace(){
+    this.$state.go('generatorRace');
+  }
 // -- End code for pick race
 
 // Start code for pick class --
@@ -249,6 +253,10 @@ export class GeneratorController {
       }
       this.localStorage.setItem('class-info', JSON.stringify(currentClass));
       console.log(this.localStorage['class-info'])
+    }
+
+    returnToClass(){
+      this.$state.go('generatorClass');
     }
 // -- End code for pick class
 
@@ -573,7 +581,7 @@ export class GeneratorController {
       if(!item.number){
         item.number = 0;
       }
-      this.currentFlaw = " ";
+      this.currentFlaw = "";
     }
   }
 
@@ -600,13 +608,31 @@ export class GeneratorController {
     }
   }
 
+  autoPickDetails(){
+    this.randomizeSpecialTrait();
+    this.randomizeTrait();
+    this.randomizeTrait();
+    this.randomizeIdeal();
+    this.randomizeBond();
+    this.randomizeFlaw();
+    this.backgroundDetailsText = "All background traits have been randomly selected.";
+  }
+
 saveBackground(){
+  if(!this.traitsList[0] || !this.traitsList[1] || !this.currentIdeal || !this.currentBond || !this.currentFlaw){
+    this.backgroundDetailsText = "Please make a selection from each category.";
+    return;
+  }
   var newCharacter;
   var currentBackground = this.currentBackground;
   var backgroundInfo;
   var currentSpecialTraits;
   var currentTraits = this.traitsList[0].desc + "; " + this.traitsList[1].desc;
   if(currentBackground.name == 'Entertainer'){
+    if(!this.specialTraitsList){
+      this.backgroundDetailsText = "Please make a selection from each category.";
+      return;
+    }
     currentSpecialTraits = this.specialTraitsList[0].desc;
     for(var i = 1; i < this.specialTraitsList.length; i++){
       currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraitsList[i].desc;
@@ -622,6 +648,10 @@ saveBackground(){
       };
     }
   } else if(currentBackground.specialTrait.isThere && currentBackground.name !== 'Entertainer'){
+    if(!this.specialTraitsList){
+      this.backgroundDetailsText = "Please make a selection from each category.";
+      return;
+    }
     currentSpecialTraits = this.specialTraitsList[0].desc;
     backgroundInfo = {
           main: this.currentBackground.name,
@@ -652,6 +682,10 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('proficiencies');
   }
+}
+
+returnToBackground(){
+  this.$state.go('generatorBackground');
 }
 // -- End code for pick background
 
