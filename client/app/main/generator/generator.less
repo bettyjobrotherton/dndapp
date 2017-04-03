@@ -1,36 +1,31 @@
 
 @background-color: #F2CD82;
 @color-secondary: #575A61;
-
+@active-item: #d7f7ff;
 
 .iconList {
   margin-top: 10px;
-  margin-left: 10px;
-  width: 55px;
+  // margin-left: 10px;
+  // width: 55px;
 }
 
 .list-group {
   margin-bottom: 0px;
+  &.active img {
+    background-color: @active-item;
+  }
 }
 
 .list-group-item {
   max-width:55px;
+  max-height: 55px;
 }
 
-.raceView{
+.classView, .raceView, .backgroundView, .alignmentView, .profView {
   display: flex;
 }
 
-.classView{
-  display: flex;
-}
-
-.raceDesc {
-    width: 100%;
-    text-align: center;
-}
-
-.classDesc {
+.classDesc, .raceDesc, .backgroundDesc, .alignmentDesc, .profDesc {
     width: 100%;
     text-align: center;
 }
@@ -94,6 +89,26 @@
   font-weight: bold;
 }
 
+.bg-list-button {
+  width: 100%;
+  align-self: center;
+}
+
+.bg-randomize-btn {
+  align-self: center;
+}
+
 .btn-underneath {
   margin-top: 9px;
+}
+
+.background-detail-box {
+  text-align: left;
+  padding: 5px;
+  border: 1px solid #575A61;
+  margin: 5px
+}
+
+#bonus-skills-list {
+  list-style-type: none;
 }

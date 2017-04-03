@@ -492,7 +492,7 @@ gulp.task('build:images', () => {
             plugins.imagemin.svgo({plugins: [{removeViewBox: false}]})
         ]))
         .pipe(plugins.rev())
-        .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets/images`))
+        .pipe(gulp.dest(`${paths.dist}/${clientPath}/assets/images/compress`))
         .pipe(plugins.rev.manifest(`${paths.dist}/${paths.client.revManifest}`, {
             base: `${paths.dist}/${clientPath}/assets`,
             merge: true

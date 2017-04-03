@@ -9,6 +9,7 @@
     <div>
       <h3> {{genCtrl.currentAlign.name}} </h3>
       <p class='summary'>{{genCtrl.currentAlign.desc}}</p>
+      <p><span class="emphasis">Types of characters who are commonly {{ genCtrl.currentAlign.name }}:</span> {{ genCtrl.currentAlign.common }}</p>
     </div>
 
     <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveAlign()"  type="">

@@ -15,45 +15,105 @@ export class GeneratorController {
 
   $onInit() {
     var vm = this;
+    if(this.$state.current.name == 'generatorClass'){
+      this.classMain = true;
 
-    this.raceMain = true;
-    this.classMain = true;
+      this.$http.get("assets/classes.json")
+                .then(res => {
+                  vm.classList = res.data;
+                  vm.currentClass = res.data[0];
+                })
+                .catch(err => {
+                  return err;
+                });
+    } else if(this.$state.current.name == 'generatorRace'){
+      this.raceMain = true;
 
-    this.$http.get("assets/races.json")
-              .then(res => {
-                vm.raceList = res.data;
-                vm.currentRace = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.$http.get("assets/races.json")
+          .then(res => {
+              vm.raceList = res.data;
+              vm.currentRace = res.data[0];
+          })
+          .catch(err => {
+              return err;
+          });
+    } else if(this.$state.current.name == 'generatorBackground'){
+      this.showBackgroundVariant = false;
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
 
-    this.$http.get("assets/classes.json")
-              .then(res => {
-                vm.classList = res.data;
-                vm.currentClass = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.$http.get('assets/backgrounds.json')
+                .then(res => {
+                  vm.backgroundList = res.data;
+                  if(!vm.localStorage['selected-background']){
+                    vm.currentBackground = res.data[0];
+                  } else {
+                    vm.currentBackground = JSON.parse(this.localStorage['selected-background']);
+                  }
+                })
+                .catch(err => {
+                  return err;
+                });
+    } else if(this.$state.current.name == 'backgrounddetails'){
+      this.currentBackground = JSON.parse(this.localStorage['selected-background']);
+      this.display1 = false;
+      this.display2 = false;
+      this.display3 = false;
+      this.display4 = false;
+      this.display5 = false;
+      this.writeSpecialTrait = false;
+      this.writeTrait = false;
+      this.writeIdeal = false;
+      this.writeBond = false;
+      this.writeFlaw = false;
 
-    this.$http.get('assets/alignment.json')
-              .then(res => {
-                vm.alignList = res.data;
-                vm.currentAlign = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.countSpecialTrait = 0;
+      if(this.currentBackground.name === "Entertainer"){
+        this.maxSpecialTraits = 2;
+      } else {
+        this.maxSpecialTraits = 0;
+      }
+      this.specialTraitsList = [];
 
-    this.$http.get('assets/background.json')
-              .then(res => {
-                vm.backgroundList = res.data;
-                vm.currentBackground = res.data[0];
-              })
-              .catch(err => {
-                return err;
-              });
+      this.countTrait = 0;
+      this.maxTraits = 1;
+      this.traitsList = [];
+
+      this.countIdeal = 0;
+      this.maxIdeals = 0;
+
+      this.countBond = 0;
+      this.maxBonds = 0;
+
+      this.countFlaw = 0;
+      this.maxFlaws = 0;
+    } else if(this.$state.current.name == 'generatorAlignment'){
+      this.$http.get('assets/alignment.json')
+                .then(res => {
+                  vm.alignList = res.data;
+                  vm.currentAlign = res.data[0];
+                  console.log(vm.currentAlign);
+                })
+                .catch(err => {
+                  console.log(err);
+                });
+    } else if(this.$state.current.name == 'proficiencies'){
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
+      this.currentBackground = JSON.parse(this.localStorage['selected-background']);
+      console.log(this.currentBackground);
+
+      this.$http.get("assets/blank-skills.json")
+                .then(res => {
+                  vm.generalSkillsList = res.data;
+                })
+                .catch(err => {
+                  return err;
+                });
+
+      this.countSkill = 1;
+      this.maxSkills = this.classInfo.traits.noOfSkills;
+      this.skillsList = [];
+      this.filterSkills();
+    }
   }
 
   continueChar(generate) {
@@ -62,20 +122,9 @@ export class GeneratorController {
     }
   }
 
+// Start code for pick race --
   selectRace(race) {
     this.currentRace = race;
-  }
-
-  selectClass(build) {
-    this.currentClass = build;
-  }
-
-  selectAlign(align) {
-    this.currentAlign = align;
-  }
-
-  selectBackground(background) {
-    this.currentBackground = background;
   }
 
   selectMainRace(){
@@ -86,33 +135,21 @@ export class GeneratorController {
     else {
       this.raceMain = false;
       this.currentSubrace = this.selectedRace.subraces[0];
+      this.$state.current.friendlyName = "Pick your Sub-Race";
     }
   }
 
-selectMainClass(){
-  this.selectedClass = this.currentClass;
-  this.classMain = false;
-  this.currentArchetype = this.selectedClass.archetype.types[0];
-}
+  selectSubrace(subrace){
+    this.currentSubrace = subrace;
+  }
 
-selectSubrace(subrace){
-  this.currentSubrace = subrace;
-}
-
-selectArchetype(archetype){
-  this.currentArchetype = archetype;
-}
 
   goBackToRace(){
     this.raceMain = true;
-  }
-
-  goBackToClass(){
-    this.classMain = true;
+    this.$state.current.friendlyName = "Pick your Race";
   }
 
   saveRace(){
-    // console.log(this.currentRace);
     var newCharacter;
     var race = this.currentRace;
     var raceInfo;
@@ -133,7 +170,6 @@ selectArchetype(archetype){
       };
     }
     else {
-      // console.log(this.currentSubrace);
       var subrace = this.currentSubrace;
       raceInfo = {
         bio: {
@@ -163,88 +199,525 @@ selectArchetype(archetype){
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
-    // console.log(this.localStorage['character-in-progress']);
+  }
+// -- End code for pick race
+
+// Start code for pick class --
+  selectClass(build) {
+    this.currentClass = build;
+  }
+
+  selectMainClass(){
+    this.selectedClass = this.currentClass;
+    this.classMain = false;
+    this.currentArchetype = this.selectedClass.archetype.types[0];
+  }
+
+  selectArchetype(archetype){
+    this.currentArchetype = archetype;
+  }
+
+  goBackToClass(){
+    this.classMain = true;
   }
 
   saveClass(){
-    // console.log(this.currentClass);
-    var newCharacter;
-    var currentClass = this.currentClass;
-    var archetype = this.currentArchetype;
-    var classInfo = {
-      class: {
-        main: currentClass.name,
-        archetype: archetype.name
-      },
-      combat: {
-        hitDie: currentClass.combat.hitDie,
+      var newCharacter;
+      var currentClass = this.currentClass;
+      var archetype = this.currentArchetype;
+      var classInfo = {
+        class: {
+          main: currentClass.name,
+          archetype: archetype.name
+        },
+        combat: {
+          hitDie: currentClass.combat.hitDie,
+        }
+      };
+      if(this.first() == 'class'){
+        newCharacter = classInfo;
+        this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+        this.$state.go('generatorRace');
+      } else {
+        newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+        newCharacter.class = classInfo.class;
+        newCharacter.combat = classInfo.combat;
+        this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+        this.$state.go('generatorTwo');
       }
-    };
-    if(this.first() == 'class'){
-      newCharacter = classInfo;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorRace');
-    } else {
-      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.class = classInfo.class;
-      newCharacter.combat = classInfo.combat;
-      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorTwo');
+      this.localStorage.setItem('class-info', JSON.stringify(currentClass));
+      console.log(this.localStorage['class-info'])
     }
-    // console.log(this.localStorage['character-in-progress']);
+// -- End code for pick class
+
+// Start code for pick alignment --
+  selectAlign(align) {
+    this.currentAlign = align;
   }
 
-saveAlign(){
-  var newCharacter;
-  var currentAlign = this.currentAlign;
-  var alignInfo = {
-      alignment:{
-        main: currentAlign.name
-      }
-  };
-  if(this.first() =='align'){
-    newcharacter = alignInfo;
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorBackground');
-  } else {
-    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.alignment = alignInfo.alignment;
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorThree');
+  saveAlign(){
+    var newCharacter;
+    var currentAlign = this.currentAlign;
+    var alignInfo = currentAlign.name;
+    if(this.first() =='align'){
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.general.alignment = alignInfo;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('generatorBackground');
+    } else {
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.general.alignment = alignInfo
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.$state.go('proficiencies');
+    }
   }
-}
+// -- End code for pick alignment
+
+// Start code for pick background --
+  pickBackground(){
+    var background = this.currentBackground;
+    this.localStorage.setItem('selected-background', JSON.stringify(background));
+    this.$state.go('backgrounddetails');
+  }
+
+  selectBackground(background) {
+    this.currentBackground = background;
+  }
+
+  backgroundVariant(){
+    if(this.showBackgroundVariant){
+      this.showBackgroundVariant = false;
+    } else {
+      this.showBackgroundVariant = true;
+    }
+  }
+
+  specialTraitButton(){
+    if(this.display1){
+      this.display1 = false;
+    } else {
+      this.display1 = true;
+    }
+  }
+
+  createOwnSpecialTrait(){
+    if(this.writeSpecialTrait){
+      this.writeSpecialTrait = false;
+    } else {
+      this.writeSpecialTrait = true;
+    }
+  }
+
+  traitsButton(){
+    if(this.display2){
+      this.display2 = false;
+    } else {
+      this.display2 = true;
+    }
+  }
+
+  createOwnTrait(){
+    if(this.writeTrait){
+      this.writeTrait = false;
+    } else {
+      this.writeTrait = true;
+    }
+  }
+
+  idealsButton(){
+    if(this.display3){
+      this.display3 = false;
+    } else {
+      this.display3 = true;
+    }
+  }
+
+  createOwnIdeal(){
+    if(this.writeIdeal){
+      this.writeIdeal = false;
+    } else {
+      this.writeIdeal = true;
+    }
+  }
+
+  bondsButton(){
+    if(this.display4){
+      this.display4 = false;
+    } else {
+      this.display4 = true;
+    }
+  }
+
+  createOwnBond(){
+    if(this.writeBond){
+      this.writeBond = false;
+    } else {
+      this.writeBond = true;
+    }
+  }
+
+  flawsButton(){
+    if(this.display5){
+      this.display5 = false;
+    } else {
+      this.display5 = true;
+    }
+  }
+
+  createOwnFlaw(){
+    if(this.writeFlaw){
+      this.writeFlaw = false;
+    } else {
+      this.writeFlaw = true;
+    }
+  }
+
+  checkedSpecialTrait(item){
+    var count = this.countSpecialTrait;
+    if(item.check){
+      this.countSpecialTrait = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.specialTraitsList.push(item);
+      } else {
+        this.specialTraitsList.push(item);
+      }
+    } else {
+      this.countSpecialTrait = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      for(var i = 0; i < this.specialTraitsList.length; i++){
+        if(this.specialTraitsList[i].number === item.number){
+          this.specialTraitsList.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  saveOwnSpecialTrait(text){
+    for(var i = 0; i < this.specialTraitsList.length; i++){
+      if(this.specialTraitsList[i].number === 0){
+        this.specialTraitsList[i].desc = text;
+      }
+    }
+  }
+
+  randomizeSpecialTrait(){
+    var number = Math.round(Math.random()*8);
+    var specialTraits = this.currentBackground.specialTrait.list;
+    if(this.countSpecialTrait > this.maxSpecialTraits){
+      return;
+    } else {
+      for(var i = 0; i < specialTraits.length; i++){
+        if(specialTraits[i].number === number){
+          if(specialTraits[i].check){
+            this.randomizeSpecialTrait();
+          } else {
+            specialTraits[i].check = true;
+            this.checkedSpecialTrait(specialTraits[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedTrait(item){
+    var count = this.countTrait;
+    if(item.check){
+      this.countTrait = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.traitsList.push(item);
+      } else {
+        this.traitsList.push(item);
+      }
+    } else {
+      this.countTrait = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      for(var i = 0; i < this.traitsList.length; i++){
+        if(this.traitsList[i].number === item.number){
+          this.traitsList.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  saveOwnTrait(text){
+    for(var i = 0; i < this.traitsList.length; i++){
+      if(this.traitsList[i].number === 0){
+        this.traitsList[i].desc = text;
+      }
+    }
+  }
+
+  randomizeTrait(){
+    var number = Math.round(Math.random()*8);
+    var traits = this.currentBackground.personalityTraits;
+    if(this.countTrait > this.maxTraits){
+      return;
+    } else {
+      for(var i = 0; i < traits.length; i++){
+        if(traits[i].number === number){
+          if(traits[i].check){
+            this.randomizeTrait();
+          } else {
+            traits[i].check = true;
+            this.checkedTrait(traits[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedIdeal(item){
+    var count = this.countIdeal;
+    if(item.check){
+      this.countIdeal = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentIdeal = item;
+      } else {
+        this.currentIdeal = item;
+      }
+    } else {
+      this.countIdeal = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentIdeal = " ";
+    }
+  }
+
+  saveOwnIdeal(text){
+    this.currentIdeal.desc = text;
+  }
+
+  randomizeIdeal(){
+    var number = Math.round(Math.random()*6);
+    var ideals = this.currentBackground.ideals;
+    if(this.countIdeal > this.maxIdeals){
+      return;
+    } else {
+      for(var i = 0; i < ideals.length; i++){
+        if(ideals[i].number === number){
+          if(ideals[i].check){
+            this.randomizeIdeal();
+          } else {
+            ideals[i].check = true;
+            this.checkedIdeal(ideals[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedBond(item){
+    var count = this.countBond;
+    if(item.check){
+      this.countBond = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentBond = item;
+      } else {
+        this.currentBond = item;
+      }
+    } else {
+      this.countBond = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentBond = " ";
+    }
+  }
+
+  saveOwnBond(text){
+    this.currentBond.desc = text;
+  }
+
+  randomizeBond(){
+    var number = Math.round(Math.random()*6);
+    var bonds = this.currentBackground.bonds;
+    if(this.countBond > this.maxBonds){
+      return;
+    } else {
+      for(var i = 0; i < bonds.length; i++){
+        if(bonds[i].number === number){
+          if(bonds[i].check){
+            this.randomizeBond();
+          } else {
+            bonds[i].check = true;
+            this.checkedBond(bonds[i]);
+          }
+        }
+      }
+    }
+  }
+
+  checkedFlaw(item){
+    var count = this.countFlaw;
+    if(item.check){
+      this.countFlaw = count + 1;
+      if(!item.number){
+        item.number = 0;
+        this.currentFlaw = item;
+      } else {
+        this.currentFlaw = item;
+      }
+    } else {
+      this.countFlaw = count -1;
+      if(!item.number){
+        item.number = 0;
+      }
+      this.currentFlaw = " ";
+    }
+  }
+
+  saveOwnFlaw(text){
+    this.currentFlaw.desc = text;
+  }
+
+  randomizeFlaw(){
+    var number = Math.round(Math.random()*8);
+    var flaws = this.currentBackground.flaws;
+    if(this.countFlaw > this.maxFlaws){
+      return;
+    } else {
+      for(var i = 0; i < flaws.length; i++){
+        if(flaws[i].number === number){
+          if(flaws[i].check){
+            this.randomizeFlaw();
+          } else {
+            flaws[i].check = true;
+            this.checkedFlaw(flaws[i]);
+          }
+        }
+      }
+    }
+  }
 
 saveBackground(){
   var newCharacter;
   var currentBackground = this.currentBackground;
-  var backgroundInfo = {
-      background:{
-        main: currentBackground.name
-      }
-  };
+  var backgroundInfo;
+  var currentSpecialTraits;
+  var currentTraits = this.traitsList[0].desc + "; " + this.traitsList[1].desc;
+  if(currentBackground.name == 'Entertainer'){
+    currentSpecialTraits = this.specialTraits[0].desc;
+    for(var i = 1; i < this.specialTraitsList.length; i++){
+      currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraits[i].desc;
+      console.log(currentSpecialTraits);
+      backgroundInfo = {
+            main: this.currentBackground.name,
+            specialType: this.currentBackground.specialTrait.name,
+            special: currentSpecialTraits,
+            trait: currentTraits,
+            ideal: this.currentIdeal.desc,
+            bond: this.currentBond.desc,
+            flaw: this.currentFlaw.desc
+      };
+    }
+  } else if(currentBackground.specialTrait.isThere && currentBackground.name !== 'Entertainer'){
+    currentSpecialTraits = this.specialTraits[0].desc;
+    console.log(currentSpecialTraits);
+    backgroundInfo = {
+          main: this.currentBackground.name,
+          specialType: this.currentBackground.specialTrait.name,
+          special: currentSpecialTraits,
+          trait: currentTraits,
+          ideal: this.currentIdeal.desc,
+          bond: this.currentBond.desc,
+          flaw: this.currentFlaw.desc
+    };
+  } else {
+    backgroundInfo = {
+          main: this.currentBackground.name,
+          trait: currentTraits,
+          ideal: this.currentIdeal.desc,
+          bond: this.currentBond.desc,
+          flaw: this.currentFlaw.desc
+    };
+  }
   if(this.first() =='background'){
-    newcharacter = alignInfo;
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.background = backgroundInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorAlignment');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.background = backgroundInfo.background;
+    newCharacter.background = backgroundInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('proficiencies');
+  }
+}
+// -- End code for pick background
+
+// Start code for selecting proficiencies --
+  filterSkills(){
+    var characterSkills = this.classInfo.traits.skillsList;
+    var backgroundSkills = this.currentBackground.addSkillProf;
+
+    for(var i = 0; i < characterSkills.length; i++){
+      for(var j = 0; j < backgroundSkills.length; j++){
+        if(characterSkills[i] == backgroundSkills[j]){
+          characterSkills.splice(i, 1);
+        }
+      }
+    }
+    this.modifiedSkills = characterSkills;
+  }
+
+  checkedSkill(item, check){
+    var count = this.countSkill;
+    if(check){
+      this.countSkill = count + 1;
+      this.skillsList.push(item);
+    } else {
+      this.countSkill = count -1;
+      for(var i = 0; i < this.skillsList.length; i++){
+        if(this.skillsList[i] === item){
+          this.skillsList.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  saveSkills(){
+    var newCharacter;
+    var bonusSkills = this.currentBackground.addSkillProf;
+    console.log(bonusSkills);
+    var selectedSkills = this.skillsList;
+    console.log(selectedSkills);
+    this.finalSkillsList = this.generalSkillsList;
+
+    for(var i = 0; i < this.finalSkillsList.length; i++){
+        for(var j = 0; j < bonusSkills.length; j++){
+          if(this.finalSkillsList[i].name == bonusSkills[j]){
+            this.finalSkillsList[i].prof = true;
+            this.finalSkillsList[i].score = 1;
+          }
+        }
+    }
+    for(i = 0; i < this.finalSkillsList.length; i++){
+      for(j = 0; j < selectedSkills.length; j++){
+        if(this.finalSkillsList[i].name == selectedSkills[j]){
+          this.finalSkillsList[i].prof = true;
+          this.finalSkillsList[i].score = 1;
+        }
+      }
+    }
+    var characterSkills = {
+      prof: this.finalSkillsList
+    };
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    console.log(newCharacter);
+    newCharacter.skills = characterSkills;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
-}
-
-    // if(this.first() == 'class'){
-    //   newCharacter = classInfo;
-    //   this.localStorage['character-in-progress'] = newCharacter;
-    // } else {
-    //   newCharacter = this.localStorage['character-in-progress'];
-    //   newCharacter.push(classInfo);
-    //   this.localStorage['character-in-progress'] = newCharacter;
-    // }
-
-
-
+// -- End code for selecting proficiencies
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
@@ -271,6 +744,16 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickbackground', {
     template: require('./pickbackground.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('backgrounddetails', {
+    template: require('./backgrounddetails.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('proficiencies', {
+    template: require('./proficiencies.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

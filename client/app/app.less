@@ -15,11 +15,6 @@
 @color-title: #FFF;
 @background-color1: #B3DCE6;
 @background-hover: #8FA2A3;
-// @navbar-button: {
-//   width: 100%;
-//   color: #fff;
-//   background-color: #f9cd74;
-// };
 
 .navbar-toggle{
   border:none;
@@ -31,13 +26,20 @@
   background-color: @background-color1;
 }
 
-#currentUser{
+.navbar-default .navbar-text {
+  color:@color-title;
+}
+
+#currentUser {
   float: left;
 }
 
+.navbar-loggedin, .step-name {
+  display: inline-block;
+}
 
 .navbar-default .navbar-toggle .icon-bar{
-      background-color: #AF2316;
+      background-color: @color-primary;
 }
 
 .navbar-default .navbar-nav .active a  {
@@ -52,7 +54,7 @@
   }
 
 .navbar-default .navbar-toggle:hover {
-  background-color: @background-hover;
+  background-color: #cae8f0;
 }
 
 .navbar-collapse{
@@ -69,6 +71,10 @@
 
 .navbar-default .navbar-nav li a{
   color: @color-title;
+}
+
+.step-name {
+ color: #237386;
 }
 
 
