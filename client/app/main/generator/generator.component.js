@@ -11,6 +11,7 @@ export class GeneratorController {
     this.createChar = Character.createChar;
     this.first = Character.firstOption;
     this.localStorage = $window.localStorage;
+    this.character = Character;
   }
 
   $onInit() {
@@ -636,7 +637,7 @@ saveBackground(){
     currentSpecialTraits = this.specialTraitsList[0].desc;
     for(var i = 1; i < this.specialTraitsList.length; i++){
       currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraitsList[i].desc;
-      console.log(currentSpecialTraits);
+      // console.log(currentSpecialTraits);
       backgroundInfo = {
             main: this.currentBackground.name,
             specialType: this.currentBackground.specialTrait.name,
@@ -892,6 +893,23 @@ returnToBackground(){
       this.inputWis = e;
       this.inputCha = d;
     }
+    scoresToAssign.splice(0, 1);
+    scoresToAssign.push(a, b, c, d, e, f);
+  }
+
+  saveAbilityScores(){
+    var abilityScoresInfo = {
+      str: this.inputStr,
+      dex: this.inputDex,
+      con: this.inputCon,
+      int: this.inputInt,
+      wis: this.inputWis,
+      cha: this.inputCha
+    };
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.abilityScores = abilityScoresInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
   }
 // -- End code for ability score selection
 }
