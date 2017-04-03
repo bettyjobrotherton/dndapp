@@ -1,0 +1,79 @@
+<div class='abilityScoresView'>
+  <div class='abilityScoresDesc'>
+    <div class="make-some-space"></div>
+    <div>
+      <div>
+        <p>How would you like to generate your ability scores?</p>
+
+        <p>
+          <button class="btn btn-lg btn-primary" ng-click="genCtrl.rollForAbilityScores()" style="margin-bottom:10px;">Roll the Die!</button>
+
+          <button class="btn btn-lg btn-primary"   ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
+        </p>
+      </div>
+      <div ng-show="genCtrl.selectionMade">
+        <p>
+          Your scores are: {{ genCtrl.score[0] }}, {{ genCtrl.score[1] }}, {{ genCtrl.score[2] }}, {{ genCtrl.score[3] }}, {{ genCtrl.score[4] }}, and {{ genCtrl.score[5] }}
+        </p>
+
+        <p>Using each number only <span class="emphasis">once</span>, complete the table below. The highest ability recommended for your class is <span class="emphasis">{{ genCtrl.classInfo.quickBuild.highestAbility }}</span>, and the second-highest is <span class="emphasis">{{ genCtrl.classInfo.quickBuild.nextAbility }}</span>.</p>
+
+        <p><button class="btn btn-lg btn-primary" ng-click="genCtrl.assignAbilityScores()">Complete Form for Me</button></p>
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-bordered char-table">
+        <tr class="table-head">
+          <th></th>
+          <th>Score</th>
+        </tr>
+        <tr class="table-head">
+          <th>STR</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputStr">
+          </td>
+        </tr>
+        <tr class="table-head">
+          <th>DEX</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputDex">
+          </td>
+        </tr>
+        <tr class="table-head">
+          <th>CON</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputCon">
+          </td>
+        </tr>
+        <tr class="table-head">
+          <th>INT</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputInt">
+          </td>
+        </tr>
+        <tr class="table-head">
+          <th>WIS</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputWis">
+          </td>
+        </tr>
+        <tr class="table-head">
+          <th>CHA</th>
+          <td>
+            <input class='statInput' type="number" ng-model="genCtrl.inputCha">
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+
+
+    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveAbilityScores()"  type="">
+      Submit &amp; Continue
+    </button>
+
+
+  </div>
+</div>

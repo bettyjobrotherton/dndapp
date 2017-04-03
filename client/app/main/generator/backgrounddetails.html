@@ -1,8 +1,10 @@
 <div class="backgroundView">
 
 <div class="backgroundDesc">
+  <p></p>
+  <p>{{ genCtrl.backgroundDetailsText }}</p>
   <div ng-if="genCtrl.currentBackground.specialTrait.isThere">
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.specialTraitButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.specialTraitButton()">
       {{ genCtrl.currentBackground.specialTrait.name }}
     </button>
     <div ng-show="genCtrl.display1">
@@ -27,7 +29,9 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textSpecialTrait" ng-keydown="$event.which === 13 && genCtrl.saveOwnSpecialTrait(genCtrl.textSpecialTrait)"></textarea>
           </div>
         </form>
+        <div class='centerBtn'>
         <button class="btn btn-lg btn-primary btn-list-button bg-randomize-btn" ng-click="genCtrl.randomizeSpecialTrait()">Pick for me</button>
+        </div>
       </div>
     </div>
   </div>
@@ -58,7 +62,9 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textTrait" ng-keydown="$event.which === 13 && genCtrl.saveOwnTrait(genCtrl.textTrait)"></textarea>
           </div>
         </form>
+        <div class='centerBtn'>
         <button class="btn btn-lg btn-primary btn-list-button bg-randomize-btn" ng-click="genCtrl.randomizeTrait()">Pick for me</button>
+        </div>
       </div>
     </div>
   </div>
@@ -89,7 +95,9 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textIdeal" ng-keydown="$event.which === 13 && genCtrl.saveOwnIdeal(genCtrl.textIdeal)"></textarea>
           </div>
         </form>
+        <div class='centerBtn'>
         <button class="btn btn-lg btn-primary btn-list-button bg-randomize-btn" ng-click="genCtrl.randomizeIdeal()">Pick for me</button>
+        </div>
       </div>
     </div>
   </div>
@@ -120,7 +128,9 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textBond" ng-keydown="$event.which === 13 && genCtrl.saveOwnBond(genCtrl.textBond)"></textarea>
           </div>
         </form>
+        <div class='centerBtn'>
         <button class="btn btn-lg btn-primary btn-list-button bg-randomize-btn" ng-click="genCtrl.randomizeBond()">Pick for me</button>
+        </div>
       </div>
     </div>
   </div>
@@ -151,14 +161,20 @@
             <textarea class="form-control" rows="3" ng-model="genCtrl.textFlaw" ng-keydown="$event.which === 13 && genCtrl.saveOwnFlaw(genCtrl.textFlaw)"></textarea>
           </div>
         </form>
+        <div class='centerBtn'>
         <button class="btn btn-lg btn-primary btn-list-button bg-randomize-btn" ng-click="genCtrl.randomizeFlaw()">Pick for me</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveBackground()"  type="">
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.autoPickDetails()">Pick All For Me</button></div>
+
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveBackground()"  type="">
     Submit &amp; Continue
-  </button>
+  </button></div>
+
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.returnToBackground()">Return to Background</button></div>
 
 </div>
 
