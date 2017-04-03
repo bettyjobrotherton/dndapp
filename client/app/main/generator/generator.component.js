@@ -202,6 +202,10 @@ export class GeneratorController {
       this.$state.go('generatorTwo');
     }
   }
+
+  returnToRace(){
+    this.$state.go('generatorRace');
+  }
 // -- End code for pick race
 
 // Start code for pick class --
@@ -249,6 +253,10 @@ export class GeneratorController {
       }
       this.localStorage.setItem('class-info', JSON.stringify(currentClass));
       console.log(this.localStorage['class-info'])
+    }
+
+    returnToClass(){
+      this.$state.go('generatorClass');
     }
 // -- End code for pick class
 
@@ -600,6 +608,16 @@ export class GeneratorController {
     }
   }
 
+  autoPickDetails(){
+    this.randomizeSpecialTrait();
+    this.randomizeTrait();
+    this.randomizeTrait();
+    this.randomizeIdeal();
+    this.randomizeBond();
+    this.randomizeFlaw();
+    this.backgroundDetailsConfirmation = "All background traits have been randomly selected."
+  }
+
 saveBackground(){
   var newCharacter;
   var currentBackground = this.currentBackground;
@@ -652,6 +670,10 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('proficiencies');
   }
+}
+
+returnToBackground(){
+  this.$state.go('generatorBackground');
 }
 // -- End code for pick background
 

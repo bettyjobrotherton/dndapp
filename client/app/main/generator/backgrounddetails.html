@@ -1,6 +1,8 @@
 <div class="backgroundView">
 
 <div class="backgroundDesc">
+  <p></p>
+  <p>{{ genCtrl.backgroundDetailsText }}</p>
   <div ng-if="genCtrl.currentBackground.specialTrait.isThere">
     <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.specialTraitButton()">
       {{ genCtrl.currentBackground.specialTrait.name }}
@@ -156,9 +158,13 @@
     </div>
   </div>
 
-  <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveBackground()"  type="">
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.autoPickDetails()">Pick All For Me</button></div>
+
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveBackground()"  type="">
     Submit &amp; Continue
-  </button>
+  </button></div>
+
+  <div><button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.returnToBackground()">Return to Background</button></div>
 
 </div>
 
