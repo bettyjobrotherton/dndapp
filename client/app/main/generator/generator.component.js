@@ -11,10 +11,12 @@ export class GeneratorController {
     this.createChar = Character.createChar;
     this.first = Character.firstOption;
     this.localStorage = $window.localStorage;
+    this.character = Character;
   }
 
   $onInit() {
     var vm = this;
+
     if(this.$state.current.name == 'generatorClass'){
       this.classMain = true;
 
@@ -91,15 +93,13 @@ export class GeneratorController {
                 .then(res => {
                   vm.alignList = res.data;
                   vm.currentAlign = res.data[0];
-                  console.log(vm.currentAlign);
                 })
                 .catch(err => {
-                  console.log(err);
+                  return err;
                 });
     } else if(this.$state.current.name == 'proficiencies'){
       this.classInfo = JSON.parse(this.localStorage['class-info']);
       this.currentBackground = JSON.parse(this.localStorage['selected-background']);
-      console.log(this.currentBackground);
 
       this.$http.get("assets/blank-skills.json")
                 .then(res => {
@@ -113,6 +113,10 @@ export class GeneratorController {
       this.maxSkills = this.classInfo.traits.noOfSkills;
       this.skillsList = [];
       this.filterSkills();
+    } else if(this.$state.current.name == 'pickAbilityScores'){
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
+      this.selectionMade = false;
+      this.makeMySelections = true;
     }
   }
 
@@ -120,6 +124,16 @@ export class GeneratorController {
     if(generate == 'race' && 'class'){
       this.$state.go('generator');
     }
+  }
+
+  selectLevelAndSubmit(input){
+    var newCharacter = {
+      general: {
+        level: this.characterLevel
+      }
+    };
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.createChar(input);
   }
 
 // Start code for pick race --
@@ -188,17 +202,24 @@ export class GeneratorController {
       };
     }
     if(this.first() == 'race'){
-      newCharacter = raceInfo;
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.bio = raceInfo.bio;
+      newCharacter.general.movement = raceInfo.general.movement;
+      newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorClass');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.bio = raceInfo.bio;
-      newCharacter.general = raceInfo.general;
+      newCharacter.general.movement = raceInfo.general.movement;
       newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
     }
+  }
+
+  returnToRace(){
+    this.$state.go('generatorRace');
   }
 // -- End code for pick race
 
@@ -246,7 +267,11 @@ export class GeneratorController {
         this.$state.go('generatorTwo');
       }
       this.localStorage.setItem('class-info', JSON.stringify(currentClass));
-      console.log(this.localStorage['class-info'])
+      // console.log(this.localStorage['class-info'])
+    }
+
+    returnToClass(){
+      this.$state.go('generatorClass');
     }
 // -- End code for pick class
 
@@ -259,14 +284,14 @@ export class GeneratorController {
     var newCharacter;
     var currentAlign = this.currentAlign;
     var alignInfo = currentAlign.name;
-    if(this.first() =='align'){
+    if(this.first() =='alignment'){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorBackground');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.general.alignment = alignInfo
+      newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('proficiencies');
     }
@@ -571,7 +596,7 @@ export class GeneratorController {
       if(!item.number){
         item.number = 0;
       }
-      this.currentFlaw = " ";
+      this.currentFlaw = "";
     }
   }
 
@@ -598,17 +623,35 @@ export class GeneratorController {
     }
   }
 
+  autoPickDetails(){
+    this.randomizeSpecialTrait();
+    this.randomizeTrait();
+    this.randomizeTrait();
+    this.randomizeIdeal();
+    this.randomizeBond();
+    this.randomizeFlaw();
+    this.backgroundDetailsText = "All background traits have been randomly selected.";
+  }
+
 saveBackground(){
+  if(!this.traitsList[0] || !this.traitsList[1] || !this.currentIdeal || !this.currentBond || !this.currentFlaw){
+    this.backgroundDetailsText = "Please make a selection from each category.";
+    return;
+  }
   var newCharacter;
   var currentBackground = this.currentBackground;
   var backgroundInfo;
   var currentSpecialTraits;
   var currentTraits = this.traitsList[0].desc + "; " + this.traitsList[1].desc;
   if(currentBackground.name == 'Entertainer'){
-    currentSpecialTraits = this.specialTraits[0].desc;
+    if(!this.specialTraitsList){
+      this.backgroundDetailsText = "Please make a selection from each category.";
+      return;
+    }
+    currentSpecialTraits = this.specialTraitsList[0].desc;
     for(var i = 1; i < this.specialTraitsList.length; i++){
-      currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraits[i].desc;
-      console.log(currentSpecialTraits);
+      currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraitsList[i].desc;
+      // console.log(currentSpecialTraits);
       backgroundInfo = {
             main: this.currentBackground.name,
             specialType: this.currentBackground.specialTrait.name,
@@ -620,8 +663,11 @@ saveBackground(){
       };
     }
   } else if(currentBackground.specialTrait.isThere && currentBackground.name !== 'Entertainer'){
-    currentSpecialTraits = this.specialTraits[0].desc;
-    console.log(currentSpecialTraits);
+    if(!this.specialTraitsList){
+      this.backgroundDetailsText = "Please make a selection from each category.";
+      return;
+    }
+    currentSpecialTraits = this.specialTraitsList[0].desc;
     backgroundInfo = {
           main: this.currentBackground.name,
           specialType: this.currentBackground.specialTrait.name,
@@ -651,6 +697,10 @@ saveBackground(){
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('proficiencies');
   }
+}
+
+returnToBackground(){
+  this.$state.go('generatorBackground');
 }
 // -- End code for pick background
 
@@ -687,9 +737,7 @@ saveBackground(){
   saveSkills(){
     var newCharacter;
     var bonusSkills = this.currentBackground.addSkillProf;
-    console.log(bonusSkills);
     var selectedSkills = this.skillsList;
-    console.log(selectedSkills);
     this.finalSkillsList = this.generalSkillsList;
 
     for(var i = 0; i < this.finalSkillsList.length; i++){
@@ -712,12 +760,172 @@ saveBackground(){
       prof: this.finalSkillsList
     };
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    console.log(newCharacter);
     newCharacter.skills = characterSkills;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('pickAbilityScores');
+  }
+// -- End code for selecting proficiencies
+
+// Beginning code for ability score selection --
+  rollForAbilityScores(){
+    this.score = [];
+    for(var i = 0; i < 6; i++){
+      var a = Math.round(Math.random()*6);
+      var b = Math.round(Math.random()*6);
+      var c = Math.round(Math.random()*6);
+      var d = Math.round(Math.random()*6);
+      var e = Math.min(a, b, c, d);
+      var f = a + b + c + d - e;
+      this.score.push(f);
+    }
+    this.selectionMade = true;
+  }
+
+  altForAbilityScores(){
+    this.score = [
+      15, 14, 13, 12, 10, 8
+    ];
+    this.selectionMade = true;
+  }
+
+  deleteHighest(number, scoreList){
+    for(var i = 0; i <= scoreList.length; i++){
+      if(scoreList[i] == number){
+         scoreList.splice(i, 1);
+	       return;
+      }
+   }
+}
+
+  assignAbilityScores(){
+    this.makeMySelections = false;
+    var scoresToAssign = this.score;
+    var a = Math.max(scoresToAssign[0], scoresToAssign[1], scoresToAssign[2], scoresToAssign[3], scoresToAssign[4], scoresToAssign[5]);
+
+    this.deleteHighest(a, scoresToAssign);
+
+    var b = Math.max(scoresToAssign[0], scoresToAssign[1], scoresToAssign[2], scoresToAssign[3], scoresToAssign[4]);
+
+    this.deleteHighest(b, scoresToAssign);
+
+    var c = Math.max(scoresToAssign[0], scoresToAssign[1], scoresToAssign[2], scoresToAssign[3]);
+
+    this.deleteHighest(c, scoresToAssign);
+
+    var d = Math.max(scoresToAssign[0], scoresToAssign[1], scoresToAssign[2]);
+
+    this.deleteHighest(d, scoresToAssign);
+
+    var e = Math.max(scoresToAssign[0], scoresToAssign[1]);
+
+    this.deleteHighest(e, scoresToAssign);
+
+    var f = scoresToAssign[0];
+
+    if(this.classInfo.name == "Barbarian"){
+      this.inputStr = a;
+      this.inputDex = d;
+      this.inputCon = b;
+      this.inputInt = f;
+      this.inputWis = e;
+      this.inputCha = c;
+    } else if(this.classInfo.name == "Bard"){
+      this.inputStr = f;
+      this.inputDex = b;
+      this.inputCon = e;
+      this.inputInt = c;
+      this.inputWis = d;
+      this.inputCha = a;
+    }  else if(this.classInfo.name == "Cleric"){
+      this.inputStr = c;
+      this.inputDex = f;
+      this.inputCon = b;
+      this.inputInt = e;
+      this.inputWis = a;
+      this.inputCha = d;
+    } else if(this.classInfo.name == "Druid"){
+      this.inputStr = e;
+      this.inputDex = d;
+      this.inputCon = b;
+      this.inputInt = c;
+      this.inputWis = a;
+      this.inputCha = f;
+    } else if(this.classInfo.name == "Fighter"){
+      this.inputStr = a;
+      this.inputDex = c;
+      this.inputCon = b;
+      this.inputInt = e;
+      this.inputWis = f;
+      this.inputCha = d;
+    } else if(this.classInfo.name == "Monk"){
+      this.inputStr = d;
+      this.inputDex = a;
+      this.inputCon = c;
+      this.inputInt = e;
+      this.inputWis = b;
+      this.inputCha = f;
+    } else if(this.classInfo.name == "Paladin"){
+      this.inputStr = a;
+      this.inputDex = e;
+      this.inputCon = c;
+      this.inputInt = f;
+      this.inputWis = d;
+      this.inputCha = b;
+    } else if(this.classInfo.name == "Ranger"){
+      this.inputStr = d;
+      this.inputDex = a;
+      this.inputCon = c;
+      this.inputInt = e;
+      this.inputWis = b;
+      this.inputCha = f;
+    } else if(this.classInfo.name == "Rogue"){
+      this.inputStr = f;
+      this.inputDex = a;
+      this.inputCon = d;
+      this.inputInt = c;
+      this.inputWis = e;
+      this.inputCha = b;
+    } else if(this.classInfo.name == "Sorcerer"){
+      this.inputStr = d;
+      this.inputDex = e;
+      this.inputCon = b;
+      this.inputInt = f;
+      this.inputWis = c;
+      this.inputCha = a;
+    } else if(this.classInfo.name == "Warlock"){
+      this.inputStr = c;
+      this.inputDex = d;
+      this.inputCon = b;
+      this.inputInt = e;
+      this.inputWis = f;
+      this.inputCha = a;
+    } else if(this.classInfo.name == "Wizard"){
+      this.inputStr = f;
+      this.inputDex = c;
+      this.inputCon = b;
+      this.inputInt = a;
+      this.inputWis = e;
+      this.inputCha = d;
+    }
+    scoresToAssign.splice(0, 1);
+    scoresToAssign.push(a, b, c, d, e, f);
+  }
+
+  saveAbilityScores(){
+    var abilityScoresInfo = {
+      str: this.inputStr,
+      dex: this.inputDex,
+      con: this.inputCon,
+      int: this.inputInt,
+      wis: this.inputWis,
+      cha: this.inputCha
+    };
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.abilityScores = abilityScoresInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
   }
-// -- End code for selecting proficiencies
+// -- End code for ability score selection
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
@@ -752,13 +960,18 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
+  .component('pickalignment', {
+    template: require('./pickalignment.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
   .component('proficiencies', {
     template: require('./proficiencies.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
-  .component('pickalignment', {
-    template: require('./pickalignment.html'),
+  .component('pickabilityscores', {
+    template: require('./pickabilityscores.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

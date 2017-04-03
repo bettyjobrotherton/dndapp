@@ -1,16 +1,16 @@
 <div class='abilityScoresView'>
   <div class='abilityScoresDesc'>
     <div class="make-some-space"></div>
-    <div ng-show="genCtrl.makeMySelections">
-      <div ng-hide="genCtrl.selectionMade">
+    <div>
+      <div>
         <p>How would you like to generate your ability scores?</p>
 
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="genCtrl.rollForAbilityScores()" style="margin-bottom:10px;">Roll the Die!</button>
-
-          <button class="btn btn-lg btn-primary"   ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
+          <button class="btn btn-lg btn-success" ng-click="genCtrl.rollForAbilityScores()" style="margin-bottom:10px; width:90%;">Roll the Die!</button>
+          <button class="btn btn-lg btn-warning" style='width:90%;' ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
         </p>
       </div>
+
       <div ng-show="genCtrl.selectionMade">
         <p>
           Your scores are: {{ genCtrl.score[0] }}, {{ genCtrl.score[1] }}, {{ genCtrl.score[2] }}, {{ genCtrl.score[3] }}, {{ genCtrl.score[4] }}, and {{ genCtrl.score[5] }}
@@ -21,6 +21,7 @@
         <p><button class="btn btn-lg btn-primary" ng-click="genCtrl.assignAbilityScores()">Complete Form for Me</button></p>
       </div>
     </div>
+
     <div>
       <table class="table table-bordered char-table">
         <tr class="table-head">
