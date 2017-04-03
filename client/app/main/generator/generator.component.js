@@ -11,10 +11,12 @@ export class GeneratorController {
     this.createChar = Character.createChar;
     this.first = Character.firstOption;
     this.localStorage = $window.localStorage;
+    this.character = Character;
   }
 
   $onInit() {
     var vm = this;
+
     if(this.$state.current.name == 'generatorClass'){
       this.classMain = true;
 
@@ -124,6 +126,16 @@ export class GeneratorController {
     }
   }
 
+  selectLevelAndSubmit(input){
+    var newCharacter = {
+      general: {
+        level: this.characterLevel
+      }
+    };
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.createChar(input);
+  }
+
 // Start code for pick race --
   selectRace(race) {
     this.currentRace = race;
@@ -190,13 +202,16 @@ export class GeneratorController {
       };
     }
     if(this.first() == 'race'){
-      newCharacter = raceInfo;
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.bio = raceInfo.bio;
+      newCharacter.general.movement = raceInfo.general.movement;
+      newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorClass');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.bio = raceInfo.bio;
-      newCharacter.general = raceInfo.general;
+      newCharacter.general.movement = raceInfo.general.movement;
       newCharacter.race = raceInfo.race;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorTwo');
@@ -252,7 +267,7 @@ export class GeneratorController {
         this.$state.go('generatorTwo');
       }
       this.localStorage.setItem('class-info', JSON.stringify(currentClass));
-      console.log(this.localStorage['class-info'])
+      // console.log(this.localStorage['class-info'])
     }
 
     returnToClass(){
@@ -269,14 +284,14 @@ export class GeneratorController {
     var newCharacter;
     var currentAlign = this.currentAlign;
     var alignInfo = currentAlign.name;
-    if(this.first() =='align'){
+    if(this.first() =='alignment'){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('generatorBackground');
     } else {
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.general.alignment = alignInfo
+      newCharacter.general.alignment = alignInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.$state.go('proficiencies');
     }
@@ -636,7 +651,7 @@ saveBackground(){
     currentSpecialTraits = this.specialTraitsList[0].desc;
     for(var i = 1; i < this.specialTraitsList.length; i++){
       currentSpecialTraits = currentSpecialTraits + "; " + this.specialTraitsList[i].desc;
-      console.log(currentSpecialTraits);
+      // console.log(currentSpecialTraits);
       backgroundInfo = {
             main: this.currentBackground.name,
             specialType: this.currentBackground.specialTrait.name,
@@ -892,6 +907,23 @@ returnToBackground(){
       this.inputWis = e;
       this.inputCha = d;
     }
+    scoresToAssign.splice(0, 1);
+    scoresToAssign.push(a, b, c, d, e, f);
+  }
+
+  saveAbilityScores(){
+    var abilityScoresInfo = {
+      str: this.inputStr,
+      dex: this.inputDex,
+      con: this.inputCon,
+      int: this.inputInt,
+      wis: this.inputWis,
+      cha: this.inputCha
+    };
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.abilityScores = abilityScoresInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorThree');
   }
 // -- End code for ability score selection
 }
