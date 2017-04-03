@@ -6,7 +6,7 @@
         <p>How would you like to generate your ability scores?</p>
 
         <p>
-          <button class="btn btn-lg btn-primary" ng-click="genCtrl.rollForAbilityScores()">Roll the Die!</button>
+          <button class="btn btn-lg btn-primary" ng-click="genCtrl.rollForAbilityScores()" style="margin-bottom:10px;">Roll the Die!</button>
 
           <button class="btn btn-lg btn-primary"   ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
         </p>
@@ -30,37 +30,37 @@
         <tr class="table-head">
           <th>STR</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputStr">
+            <input class='statInput' type="number" ng-model="genCtrl.inputStr">
           </td>
         </tr>
         <tr class="table-head">
           <th>DEX</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputDex">
+            <input class='statInput' type="number" ng-model="genCtrl.inputDex">
           </td>
         </tr>
         <tr class="table-head">
           <th>CON</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputCon">
+            <input class='statInput' type="number" ng-model="genCtrl.inputCon">
           </td>
         </tr>
         <tr class="table-head">
           <th>INT</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputInt">
+            <input class='statInput' type="number" ng-model="genCtrl.inputInt">
           </td>
         </tr>
         <tr class="table-head">
           <th>WIS</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputWis">
+            <input class='statInput' type="number" ng-model="genCtrl.inputWis">
           </td>
         </tr>
         <tr class="table-head">
           <th>CHA</th>
           <td>
-            <input type="number" ng-model="genCtrl.inputCha">
+            <input class='statInput' type="number" ng-model="genCtrl.inputCha">
           </td>
         </tr>
       </table>
