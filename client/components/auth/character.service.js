@@ -114,6 +114,37 @@ export function CharacterService($location, $http, $window) {
 
     },
 
+    calculatePassiveRoll(character, skill){
+      var level = character.general.level;
+      var profBonus = this.proficiencyBonus(level);
+      var abilityScoreMod;
+      var skillProf;
+      var skillProfMod;
+      var passiveRoll;
+
+      if(skill == "Athletics"){
+        abilityScoreMod = this.calculateModifier(character.abilityScores.str);
+      } else if(skill == "Acrobatics" || skill == "Sleight of Hand" || skill == "Stealth"){
+        abilityScoreMod = this.calculateModifier(character.abilityScores.dex);
+      } else if(skill == "Arcana" || skill == "History" || skill == "Investigation" || skill == "Nature" || skill == "Religion"){
+        abilityScoreMod = this.calculateModifier(character.abilityScores.int);
+      } else if(skill == "Animal Handling" || skill == "Insight" || skill == "Medicine" || skill == "Perception" || skill == "Survival"){
+        abilityScoreMod = this.calculateModifier(character.abilityScores.wis);
+      } else if(skill == "Deception" || skill == "Intimidation" || skill == "Performance" || skill == "Persuasion"){
+        abilityScoreMod = this.calculateModifier(character.abilityScores.cha);
+      }
+
+      for(var i = 0; i < character.skills.prof.length; i++){
+        if(character.skills.prof[i].name == skill){
+          skillProf = character.skills.prof[i].score;
+        }
+      }
+
+      skillProfMod = profBonus * skillProf;
+      passiveRoll = skillProfMod + abilityScoreMod + 10;
+      return passiveRoll;
+    },
+
     savingThrows(data){
       var savingThrow = {
         str: this.calculateModifier(data.abilityScores.str),

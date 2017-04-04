@@ -152,6 +152,9 @@ export class GeneratorController {
       this.levelRequired = "Please enter character level";
     } else {
       var newCharacter = {
+        skills: {
+          profBonus: this.character.proficiencyBonus(this.characterLevel)
+        },
         general: {
           level: this.characterLevel
         }
@@ -947,8 +950,14 @@ returnToBackground(){
     };
     var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.abilityScores = abilityScoresInfo;
+    var passiveSkillsInfo = {
+      insight: this.character.calculatePassiveRoll(newCharacter, "Insight"),
+      perception: this.character.calculatePassiveRoll(newCharacter, "Perception")
+    }
+    newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
+    console.log(this.localStorage['character-in-progress']);
   }
 // -- End code for ability score selection
 }
