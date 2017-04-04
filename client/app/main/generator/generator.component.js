@@ -953,7 +953,7 @@ returnToBackground(){
     var passiveSkillsInfo = {
       insight: this.character.calculatePassiveRoll(newCharacter, "Insight"),
       perception: this.character.calculatePassiveRoll(newCharacter, "Perception")
-    }
+    };
     newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');

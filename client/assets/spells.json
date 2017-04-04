@@ -11,8 +11,9 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.\n\nThis spell's damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
+        "description": "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage.",
         "duration": "Instantaneous",
+        "higher_levels": "This spell\u2019s damage increases by 1d6 when you reach 5th level (2d6), 11th level (3d6), and 17th level (4d6).",
         "level": "cantrip",
         "name": "Acid Splash",
         "range": "60 feet",
@@ -21,13 +22,14 @@
         "tags": [
             "sorcerer",
             "wizard",
-            "cantrip"
+            "cantrip",
+            "conjuration"
         ],
         "target": "1-2 creatures",
         "type": "Conjuration cantrip"
     },
     {
-        "casting_time": "1 action",
+        "casting_time": "1 minute",
         "classes": [
             "ranger",
             "wizard"
@@ -35,13 +37,14 @@
         "components": {
             "material": true,
             "materials_needed": [
-                "a tiny bell and a piece of fine silver wire"
+                "a tiny bell",
+                "a piece of fine silver wire"
             ],
             "raw": "V, S, M (a tiny bell and a piece of fine silver wire)",
             "somatic": true,
             "verbal": true
         },
-        "description": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
+        "description": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won\u2019t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
         "duration": "8 hours",
         "level": "1",
         "name": "Alarm",
@@ -51,7 +54,8 @@
         "tags": [
             "ranger",
             "wizard",
-            "level1"
+            "level1",
+            "abjuration"
         ],
         "target":"area up to 20ft cube",
         "type": "1st-level abjuration (ritual)"
@@ -72,7 +76,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast's Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell's duration. If you or one of your companions harms the target, the spell ends.",
+        "description": "This spell lets you convince a beast that you mean it no harm. Choose a beast that you can see within range. It must see and hear you. If the beast\u2019s Intelligence is 4 or higher, the spell fails. Otherwise, the beast must succeed on a Wisdom saving throw or be charmed by you for the spell\u2019s duration. If you or one of your companions harms the target, the spell ends.",
         "duration": "24 hours",
         "higher_levels": "When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional beast for each slot level above 1st.",
         "level": "1",
@@ -84,9 +88,10 @@
             "bard",
             "druid",
             "ranger",
-            "level1"
+            "level1",
+            "enchantment"
         ],
-        "target": "1 beast",
+        "target": "beast(s)",
         "type": "1st-level enchantment"
     },
     {
@@ -117,6 +122,7 @@
             "cleric",
             "level1"
         ],
+        "target": "up to 3 creatures",
         "type": "1st-level enchantment"
     },
     {
@@ -147,6 +153,7 @@
             "wizard",
             "cantrip"
         ],
+        "target": "caster",
         "type": "Abjuration cantrip"
     },
     {
@@ -176,6 +183,7 @@
             "paladin",
             "level1"
         ],
+        "target": "up to 3 creatures",
         "type": "1st-level enchantment"
     },
     {
@@ -203,6 +211,7 @@
             "wizard",
             "level1"
         ],
+        "target": "15ft cone",
         "type": "1st-level evocation"
     },
     {
@@ -238,6 +247,7 @@
             "wizard",
             "level1"
         ],
+        "target": "creature(s)",
         "type": "1st-level enchantment"
     },
     {
@@ -266,6 +276,7 @@
             "wizard",
             "cantrip"
         ],
+        "target": "a creature",
         "type": "Necromancy cantrip"
     },
     {
@@ -296,6 +307,7 @@
             "wizard",
             "level1"
         ],
+        "target": "a creature",
         "type": "1st-level evocation"
     },
     {
@@ -326,6 +338,7 @@
             "wizard",
             "level1"
         ],
+        "target": "15ft cone",
         "type": "1st-level illusion"
     },
     {
@@ -353,6 +366,7 @@
             "paladin",
             "level1"
         ],
+        "target": "creature(s)",
         "type": "1st-level enchantment"
     },
     {
@@ -377,6 +391,7 @@
             "paladin",
             "level1"
         ],
+        "target": "a creature",
         "type": "1st-level enchantment"
     },
     {
@@ -410,6 +425,7 @@
             "wizard",
             "level1"
         ],
+        "target": " ",
         "type": "1st-level divination (Ritual)"
     },
     {
@@ -440,6 +456,7 @@
             "druid",
             "level1"
         ],
+        "target": " ",
         "type": "1st-level transmutation"
     },
     {
@@ -473,6 +490,7 @@
             "ranger",
             "level1"
         ],
+        "target": "a creature",
         "type": "1st-level evocation"
     },
     {
@@ -2473,7 +2491,8 @@
         "tags": [
             "cleric",
             "paladin",
-            "level2"
+            "level2",
+            "abjuration"
         ],
         "target": "up to 3 creatures",
         "type": "2nd-level abjuration"
@@ -2494,7 +2513,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "By means of this spell, you use an animal to deliver a message. Choose a Tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \u201ca man or woman dressed in the uniform of the town guard\u201d or \u201ca red-haired dwarf wearing a pointed hat.\u201d You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals.\n\nWhen the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn\u2019t reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
+        "description": "By means of this spell, you use an animal to deliver a message. Choose a tiny beast you can see within range, such as a squirrel, a blue jay, or a bat. You specify a location, which you must have visited, and a recipient who matches a general description, such as \u201ca man or woman dressed in the uniform of the town guard\u201d or \u201ca red-haired dwarf wearing a pointed hat.\u201d You also speak a message of up to twenty-five words. The target beast travels for the duration of the spell toward the specified location, covering about 50 miles per 24 hours for a flying messenger, or 25 miles for other animals.\n\nWhen the messenger arrives, it delivers your message to the creature that you described, replicating the sound of your voice. The messenger speaks only to a creature matching the description you gave. If the messenger doesn\u2019t reach its destination before the spell ends, the message is lost, and the beast makes its way back to where you cast this spell.",
         "duration": "24 hours",
         "higher_levels": "If you cast this spell using a spell slot of 3rd level or higher, the duration of the spell increases by 48 hours for each slot level above 2nd.",
         "level": "2",
@@ -2506,8 +2525,10 @@
             "bard",
             "druid",
             "ranger",
-            "level2"
+            "level2",
+            "enchantment"
         ],
+        "target": "tiny beast",
         "type": "2nd-level enchantment (ritual)"
     },
     {
@@ -2777,13 +2798,15 @@
         "components": {
             "material": true,
             "materials_needed": [
-                "a drop of blood, a piece of flesh, and a pinch of bone dust"
+                "a drop of blood",
+                "a piece of flesh",
+                "a pinch of bone dust"
             ],
             "raw": "V, S, M (a drop of blood, a piece of flesh, and a pinch of bone dust)",
             "somatic": true,
             "verbal": true
         },
-        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the DM has the creature\u2019s game statistics).\n\nOn each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\nThe creature is under your control for 24 hours, after which it stops obeying any command you\u2019ve given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
+        "description": "This spell creates an undead servant. Choose a pile of bones or a corpse of a medium or small sized humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The target becomes a skeleton if you chose bones or a zombie if you chose a corpse (the Game Master has the creature\u2019s game statistics).\n\nOn each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\nThe creature is under your control for 24 hours, after which it stops obeying any command you\u2019ve given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.",
         "duration": "Instantaneous",
         "higher_levels": "When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.",
         "level": "3",
@@ -2794,7 +2817,8 @@
         "tags": [
             "cleric",
             "wizard",
-            "level3"
+            "level3",
+            "necromancy"
         ],
         "type": "3rd-level necromancy"
     },
@@ -2812,7 +2836,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You create an invisible, magical eye within range that hovers in the for the duration.\n\nYou mentally recieve visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.\n\nAs an action, you can move the eye up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can't enter another plane of existence. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter.",
+        "description": "You create an invisible, magical eye within range that hovers in the air for the duration.\n\nYou mentally recieve visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.\n\nAs an action, you can move the eye up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can\u2019t enter another plane of existence. A solid barrier blocks the eye\u2019s movement, but the eye can pass through an opening as small as 1 inch in diameter.",
         "duration": "Concentration, up to 1 hour",
         "level": "4",
         "name": "Arcane Eye",
@@ -2821,8 +2845,10 @@
         "school": "divination",
         "tags": [
             "wizard",
-            "level4"
+            "level4",
+            "divination"
         ],
+        "target": " ",
         "type": "4th-level divination"
     },
     {
@@ -3756,7 +3782,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.",
+        "description": "You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.\n\nAquatic Adaptation. You adapt your body to an aquatic enviroment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.\n\nChange Appearance. You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can\u2019t appear as a creature of a different size than you, and your basic shape stays the same; if you\u2019re bipedal, you can\u2019t use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again.\n\nNatural Weapons. You grow claws, fangs, spines, horns, or a different natural weapon of your choice. You unarmed strikes deal 1d6 bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.",
         "duration": "Concentration, up to 1 hour",
         "level": "2",
         "name": "Alter Self",
@@ -3766,7 +3792,8 @@
         "tags": [
             "sorcerer",
             "wizard",
-            "level2"
+            "level2",
+            "transmutation"
         ],
         "target": "caster",
         "type": "2nd-Level Transmutation"
@@ -3785,7 +3812,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting knock on the object suppresses arcane lock for 10 minutes.\n\nWhile affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
+        "description": "You touch a closed door, window, gate, chest, or other entryway, and it becomes locked for the duration. You and the creatures you designate when you cast this spell can open the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute. Otherwise, it is impassable until it is broken or the spell is dispelled or suppressed. Casting _knock_ on the object suppresses _arcane lock_ for 10 minutes.\n\nWhile affected by this spell, the object is more difficult to break or force open; the DC to break it or pick any locks on it increases by 10.",
         "duration": "Until dispelled",
         "level": "2",
         "name": "Arcane Lock",
@@ -3796,6 +3823,7 @@
             "wizard",
             "level2"
         ],
+        "target": "any entryway or lock",
         "type": "2nd-Level abjuration"
     },
     {
@@ -3827,6 +3855,36 @@
         ],
         "type": "2nd-level transmuation"
     },
+    {
+      "casting_time": "1 action",
+      "classes": [
+        "warlock"
+      ],
+      "components": {
+        "material": true,
+        "materials_needed": [
+          "a cup of water"
+        ],
+        "raw": "V, S, M (a cup of water)",
+        "somatic": true,
+        "verbal": true
+      },
+      "description": "A protective magical force surrounds you, manifesting as a spectral frost that covers you and your gear. You gain 5 temporary hit points for the duration. If a creature hits you with a melee attack while you have these hit points, the creature takes 5 cold damage.",
+      "duration": "1 hour",
+      "higher_levels": "When you cast this spell using a spell slot of 2nd level or higher, both the temporary hit points and the cold damage increase by 5 for each slot above the 1st.",
+      "level": "1",
+      "name": "Armor of Agathys",
+      "range": "Self",
+      "ritual": false,
+      "school": "abjuration",
+      "tags": [
+        "warlock",
+        "level1",
+        "abjuration"
+      ],
+      "target": "caster",
+      "type": "1st-level abjuration"
+    }
     {
         "casting_time": "1 action",
         "classes": [
@@ -4627,7 +4685,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a Large or smaller beast with a challenge rationg of 4 or lower.  On subsequent turns, you can use your action to transform affected creatures into new forms.\n\nThe transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies.  You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen beast, thought the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn't reduce the creature's normal form to 0 hit points, it isn't knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can't speak or cast spells.\n\nThe target's gear melds into the new form. The target can't activate, wield, or otherwise benefit from any of its equipment.",
+        "description": "Your magic turns others into beasts. Choose any number of willing creatures that you can see within range. You transform each target into the form of a large size or smaller beast with a challenge rating of 4 or lower.  On subsequent turns, you can use your action to transform affected creatures into new forms.\n\nThe transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies.  You can choose a different form for each target. A target\u2019s game statistics are replaced by the statistics of the chosen beast, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage doesn\u2019t reduce the creature\u2019s normal form to 0 hit points, it isn\u2019t knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it can\u2019t speak or cast spells.\n\nThe target\u2019s gear melds into the new form. The target can\u209t activate, wield, or otherwise benefit from any of its equipment.",
         "duration": "Concentration, up to 24 hours",
         "level": "8",
         "name": "Animal Shapes",
@@ -4636,8 +4694,10 @@
         "school": "transmutation",
         "tags": [
             "druid",
-            "level8"
+            "level8",
+            "transmutation"
         ],
+        "target": "creature(s)",
         "type": "8th-level transmutation"
     },
     {
@@ -4655,17 +4715,18 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can't be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.\n\nSpells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and can't protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it doesn't function, but the time is spends suppressed counts against its duration.\n\nA magic weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or a piece of magic ammunition fully leaves the sphere (for example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.",
+        "description": "A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells can\u2019t be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.\n\nSpells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and can\u2019t protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it doesn\u2019t function, but the time it spends suppressed counts against its duration.\n\nTargeted Effects. Spells and other magical effects, such as _magic missile_ and _charm person_, that target a creature or an object in the sphere have no effect on that target.\n\nAreas of Magic. The area of another spell or magical effect, such as _fireball_, can\u2019t extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a _wall of fire_ are suppressed within the sphere, creating a gap in the wall if the overlap is large enough.\n\nSpells. Any active spell or other magical effect on a creature or an object in the sphere is suppressed while the creature or object is in it.\n\nMagic Items. The properties and powers of magic items are suppressed in the sphere. For example, a _+1 longsword_ in the sphere functions as a nonmagical longsword.\n\nA magic weapon\u2019s properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or a piece of magic ammunition fully leaves the sphere (for example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.\n\nMagical Travel. Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or departure point for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extradimensional space, such as that created by the _rope trick_ spell, temporarily closes while in the sphere.\n\nCreatures and Objects. A creature or object summoned or created by magic temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.\n\nDispel Magic. Spells and magical effects such as _dispel magic_ have no effect on the sphere. Likewise, the spheres created by different _antimagic field_ spells don\u2019t nullify each other.",
         "duration": "Concentration, up to 1 hour",
         "level": "8",
         "name": "Antimagic Field",
-        "range": "Self (10-foot-radius sphere)",
+        "range": "10-foot-radius sphere around caster",
         "ritual": false,
         "school": "abjuration",
         "tags": [
             "cleric",
             "wizard",
-            "level8"
+            "level8",
+            "abjuration"
         ],
         "type": "8th-level abjuration"
     },
@@ -4678,13 +4739,14 @@
         "components": {
             "material": true,
             "materials_needed": [
-                "either a hump of alum soaked in vinegar for the _antipathy_ effect or a drop of honey for the _sympathy_ effect"
+                "For antipathy effect: a hump of alum soaked in vinegar",
+                "For sympathy effect: a drop of honey"
             ],
             "raw": "V, S, M (either a hump of alum soaked in vinegar for the _antipathy_ effect or a drop of honey for the _sympathy_ effect)",
             "somatic": true,
             "verbal": true
         },
-        "description": "This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an erea that is no larger than a 200-foot cube. Then specify a kind of intelligent creature such as red dragons, goblins or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.\n\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.\n\nA creature that successfully saves against this affect is immune to it for 1 minute, after which time it can be affected again.",
+        "description": "This spell attracts or repels creatures of your choice. You target something within range, either a huge size or smaller object or creature, or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature such as red dragons, goblins or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura\u2019s effect.\n\nAntipathy: The enchantment causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can\u2019t see the target. If the creature moves more than 60 feet from the target and can\u2019t see it, the creature is no longer frightened, but the creature becomes frightened again if if regains sight of the target or moves within 60 feet of it.\n\nSympathy: The enchantment causes the specified creatures to feel an intence urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes with 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each turns to enter the area or move within reach of the target. When the creature has done so, it can\u2019t willing move away from the target.\n\nIf the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect as described below.\n\nEnding the Effect: If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as magical. In addition, a creature affected by the spell is allowed another Wisdom saving throw every 24 hours while the spell persists.\n\nA creature that successfully saves against this effect is immune to it for 1 minute, after which tume it can be affected again.",
         "duration": "10 days",
         "level": "8",
         "name": "Antipathy/Sympathy",
@@ -4694,8 +4756,10 @@
         "tags": [
             "druid",
             "wizard",
-            "level8"
+            "level8",
+            "enchantment"
         ],
+        "target": "object, creature, or area up to 200-foot cube",
         "type": "8th-level enchantment"
     },
     {
@@ -6180,10 +6244,10 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, Large targets count as four objects, Huge targets count as eight objects. You can't animate any object larger than Huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.\n\nAs a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\n| Size   | HP | AC | Attack                   | Str | Dex |\n\n| Tiny   | 20 | 18 | +8 to hit, 1d4+4 damage  |   4 |  18 |\n\n| Small  | 25 | 16 | +6 to hit, 1d8+2 damage  |   6 |  14 |\n\n| Medium | 40 | 13 | +5 to hit, 2d6+1 damage  |  10 |  12 |\n\n| Large  | 50 | 10 | +6 to hit, 2d10+2 damage |  14 |  10 |\n\n| Huge   | 80 | 10 | +8 to hit, 2d12+2 damage |  18 |   6 |\n\nAn animated object is a construct with AC, hit points, attacks, Strength, and Dexterity determined by its size. Its Constitution is 10 and its Intelligence and Wisdom are 3, and its Charisma is 1. Its speed is 30 feet; if the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0. It has blindsight with a radius of 30 feet and is blind beyond that distance. When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form.\n\nIf you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determined by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form.",
+        "description": "Objects come to life at your command. Choose up to ten nonmagical objects within range that are not being worn or carried. Medium targets count as two objects, large targets count as four objects, huge targets count as eight objects. You can\u2019t animate any object larger than huge. Each target animates and becomes a creature under your control until the spell ends or until reduced to 0 hit points.\n\nAs a bonus action, you can mentally command any creature you made with this spell if the creature is within 500 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.\n\nAnimated Object Statistics:\n\n| Size   | HP | AC | Attack                   | Str | Dex |\n\n| Tiny   | 20 | 18 | +8 to hit, 1d4+4 damage  |   4 |  18 |\n\n| Small  | 25 | 16 | +6 to hit, 1d8+2 damage  |   6 |  14 |\n\n| Medium | 40 | 13 | +5 to hit, 2d6+1 damage  |  10 |  12 |\n\n| Large  | 50 | 10 | +6 to hit, 2d10+2 damage |  14 |  10 |\n\n| Huge   | 80 | 10 | +8 to hit, 2d12+2 damage |  18 |   6 |\n\nAn animated object is a construct with AC, hit points, attacks, Strength, and Dexterity determined by its size. Its Constitution is 10 and its Intelligence and Wisdom are 3, and its Charisma is 1. Its speed is 30 feet; if the object lacks legs or other appendages it can use for locomotion, it instead has a flying speed of 30 feet and can hover. If the object is securely attached to a surface or a larger object, such as a chain bolted to a wall, its speed is 0. It has blindsight with a radius of 30 feet and is blind beyond that distance. When the animated object drops to 0 hit points, it reverts to its original object form, and any remaining damage carries over to its original object form.\n\nIf you command an object to attack, it can make a single melee attack against a creature within 5 feet of it. It makes a slam attack with an attack bonus and bludgeoning damage determined by its size. The DM might rule that a specific object inflicts slashing or piercing damage based on its form.",
         "duration": "Concentration, up to 1 minute",
         "higher_levels": "If you cast this spell using a spell slot of 6th level or higher, you can animate two additional objects for each slot level above 5th.",
-        "level": "animated",
+        "level": "5",
         "name": "Animate Objects",
         "range": "120 feet",
         "ritual": false,
@@ -6192,9 +6256,11 @@
             "bard",
             "sorcerer",
             "wizard",
-            "level5"
+            "level5",
+            "transmutation"
         ],
-        "type": "ANIMATED OBJECTS STATISTICS"
+        "target": "up to 10 objects",
+        "type": "5th-level transmutation"
     },
     {
         "casting_time": "1 action",
@@ -6211,13 +6277,15 @@
         "duration": "Concentration, up to 1 hour",
         "level": "5",
         "name": "Antilife Shell",
-        "range": "Self (10-foot radius)",
+        "range": "10-foot radius around caster",
         "ritual": false,
         "school": "abjuration",
         "tags": [
             "druid",
-            "level6"
+            "level6",
+            "abjuration"
         ],
+        "target": "caster",
         "type": "5th-level abjuration"
     },
     {
@@ -6244,8 +6312,10 @@
             "sorcerer",
             "warlock",
             "wizard",
-            "level6"
+            "level6",
+            "conjuration"
         ],
+        "target": " ",
         "type": "6th-level conjuration"
     },
     {
