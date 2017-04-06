@@ -328,8 +328,7 @@ export class GeneratorController {
 
 // Start code for pick background --
   pickBackground(){
-    var background = this.currentBackground;
-    this.localStorage.setItem('selected-background', JSON.stringify(background));
+    this.localStorage.setItem('selected-background', JSON.stringify(this.currentBackground));
     this.$state.go('backgrounddetails');
   }
 
@@ -1005,7 +1004,7 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controllerAs: 'genCtrl'
   })
   .component('pickabilityscores', {
-    template: require('./pickabilityscores.html'),
+    template: require('./pickAbilityScores.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
