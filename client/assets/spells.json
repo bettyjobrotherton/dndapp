@@ -799,7 +799,7 @@
             "somatic": false,
             "verbal": true
         },
-        "description": "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.\n\nWhile restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch a creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.",
+        "description": "The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be restrained by the magical vines until the spell ends. A large-size or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.\n\nWhile restrained by this spell, the target takes 1d6 piercing damage at the start of each of its turns. A creature restrained by the vines or one that can touch a creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.",
         "duration": "Concentration, up to 1 minute",
         "higher_levels": "If you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
         "level": "1",
@@ -809,8 +809,10 @@
         "school": "conjuration",
         "tags": [
             "ranger",
-            "level1"
+            "level1",
+            "conjuration"
         ],
+        "target": "creature",
         "type": "1st-level conjuration"
     },
     {
@@ -833,8 +835,10 @@
         "school": "conjuration",
         "tags": [
             "druid",
-            "level1"
+            "level1",
+            "conjuration"
         ],
+        "target": " ",
         "type": "1st-level conjuration"
     },
     {
@@ -887,8 +891,10 @@
             "sorcerer",
             "warlock",
             "wizard",
-            "level1"
+            "level1",
+            "transmutation"
         ],
+        "target": "caster",
         "type": "1st-level transmutation"
     },
     {
@@ -3539,6 +3545,7 @@
             "somatic": true,
             "verbal": true
         },
+        "description": "A nonmagical weapon that you touch becomes a magic weapon. Choose one of the following damage types: acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits.",
         "duration": "Concentration, up to 1 hour",
         "higher_levels": "When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4.",
         "level": "3",
@@ -3548,8 +3555,10 @@
         "school": "transmutation",
         "tags": [
             "paladin",
-            "level3"
+            "level3",
+            "transmutation"
         ],
+        "target": "weapon",
         "type": "3rd-level transmutation"
     },
     {
@@ -5962,7 +5971,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You step into the border regions of the Ethereal Plane, in the area where it overlaps with your current plane. You remain in the Border Ethereal for the duration or until you use your action to dismiss the spell. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can see and hear the plane you originated from, but everything there looks gray, and you can't see anything more than 60 feet away.\n\nWhile on the Ethereal Plane, you can only affect and be affected by other creatures on that plane. Creatures that aren't on the Ethereal Plane can't perceive you and can't interact with you, unless a special ability or magic has given them the ability to do so.\n\nYou ignore all objects and effects that aren't on the Ethereal Plane, allowing you to move through objects you perceive on the plane you originated from.\n\nWhen the spell ends, you immediately return to the plan you originated from in the spot you currently occupy.  If you occupy the same spot as a solid object or creature when this happens, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are moved.\n\nThis spell has no effect if you cast it while you are on the Ethereal Plane or a plane that doesn't border it, such as one of the Outer Planes.",
+        "description": "You step into the border regions of the Ethereal Plane, in the area where it overlaps with your current plane. You remain in the Border Ethereal for the duration or until you use your action to dismiss the spell. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can see and hear the plane you originated from, but everything there looks gray, and you can\u2019t see anything more than 60 feet away.\n\nWhile on the Ethereal Plane, you can only affect and be affected by other creatures on that plane. Creatures that aren\u2019t on the Ethereal Plane can\u2019t perceive you and can\u2019t interact with you, unless a special ability or magic has given them the ability to do so.\n\nYou ignore all objects and effects that aren\u2019t on the Ethereal Plane, allowing you to move through objects you perceive on the plane you originated from.\n\nWhen the spell ends, you immediately return to the plan you originated from in the spot you currently occupy.  If you occupy the same spot as a solid object or creature when this happens, you are immediately shunted to the nearest unoccupied space that you can occupy and take force damage equal to twice the number of feet you are moved.\n\nThis spell has no effect if you cast it while you are on the Ethereal Plane or a plane that doesn\u2019t border it, such as one of the Outer Planes.",
         "duration": "Up to 8 hours",
         "higher_levels": "When you cast this spell using a spell slot of 8th level or higher, you can target up to three willing creatures (including you) for each slot level above 7th. The creatures must be within 10 feet of you when you cast the spell.",
         "level": "7",
@@ -5977,8 +5986,40 @@
             "warlock",
             "wizard",
             "level7"
+            "transmutation"
         ],
+        "target": "caster",
         "type": "7th-level transmutation"
+    },
+    {
+      "casting_time": "1 action",
+      "classes": [
+        "wizard"
+      ],
+      "components": {
+        "material": true,
+        "materials_consumed": false,
+        "materials_needed": [
+          "a piece of tentacle from a giant octopus or a giant squid"
+        ],
+        "raw": "V, S, M (a piece of tentacle from a  giant octopus or a giant squid)",
+        "somatic": true,
+        "verbal": true
+      },
+      "description": "Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration these tentacles turn the ground in the area into difficult terrain.\n\n When a creature enters the affected area for the first time on a turn or it starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be restrained by the tentacles until the spell ends. A creature that starts its turn in the area and is already restrained by the tentacles takes 3d6 bludgeoning damage.\n\nA creature restrained by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On success, it frees itself.",
+      "duration": "Concentration, up to 1 minute",
+      "level": "4",
+      "name": "Evard\u2019s Black Tentacles",
+      "range": "90 feet",
+      "ritual": false,
+      "school": "conjuration",
+      "tags": [
+        "wizard",
+        "level4",
+        "conjuration"
+      ],
+      "target": "area",
+      "type": "4th-level conjuration"
     },
     {
         "casting_time": "1 action",
@@ -7408,6 +7449,7 @@
         ],
         "components": {
             "material": true,
+            "materials_consumed": false,
             "materials_needed": [
                 "fur or a feather from a beast"
             ],
@@ -7415,6 +7457,7 @@
             "somatic": true,
             "verbal": true
         },
+        "description": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects; the target gains that effect until the spell ends.\n\n_Bear\u2019s Endurance._ The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends.\n\n_Bull\u2019s Strength._ The target has advantage on Strength checks, and his or her carrying capacity doubles.\n\n_Cat\u2019s Grace._ The target has advantage on Dexterity checks. It also doesn\u2019t take damage from falling 20 feet or less if it isn\u2019t incapacitated.\n\n_Eagle\u2019s Splendor._ The target has advantage on Charisma checks.\n\n_Fox\u2019s Cunning._ The target has advantage on Intelligence checks.\n\n_Owl\u2019s Wisdom._ The target has advantage on Wisdom checks.",
         "duration": "Concentration, up to 1 hour",
         "higher_levels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
         "level": "2",
@@ -7427,8 +7470,10 @@
             "cleric",
             "druid",
             "sorcerer",
-            "level2"
+            "level2",
+            "transmutation"
         ],
+        "target": "creature",
         "type": "2nd-level transmutation"
     },
     {
@@ -7439,6 +7484,7 @@
         ],
         "components": {
             "material": true,
+            "materials_consumed": false,
             "materials_needed": [
                 "a pinch of powdered iron"
             ],
@@ -7446,7 +7492,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You cause a creature or an object you can see within range to grow larger or smaller for the duration. Choose either a creature or an object that is neither worn nor carried. If the target is unwilling, it can make a Constitution saving throw. On a success, the spell has no effect. If the target is a creature, everything it is wearing and carrying changes size with it. Any item dropped by an affected creature returns to normal size at once.",
+        "description": "You cause a creature or an object you can see within range to grow larger or smaller for the duration. Choose either a creature or an object that is neither worn nor carried. If the target is unwilling, it can make a Constitution saving throw. On a success, the spell has no effect.\n\nIf the target is a creature, everything it is wearing and carrying changes size with it. Any item dropped by an affected creature returns to normal size at once.\n\n_Enlarge._ The target\u2019s size doubles in all dimensions, and its weight is multiple by eight. The growth increase its size by one category- from medium to large, for example. If there isn\u2019t enought room for the target to double its size, the creature or object attains the maximum possible size in the space available. Until the spell ends, the target also has advantage on Strength checks and Strength saving throws. The target\u2019 weapons also grow to match its new size. While there weapons are enlarged, the target\u2019s attacks with them deal 1d4 extra damage.\n\n_Reduce._ The target\u2019s size is halved in all dimensions, and its weight is reduced to one-eighth of normal. This reduction decreases its size by one category- from medium to small, for example. Until the spell ends, the target also has disadvantage on Strength checks and Strength saving throws. The target\u2019s weapons also shrink to match its new size. While these weapons are reduced, the target\u2019s attacks with them deal 1d4 less damage (this can\u2019t reduce the damage below 1).",
         "duration": "Concentration, up to 1 minute",
         "level": "2",
         "name": "Enlarge/Reduce",
@@ -7456,8 +7502,10 @@
         "tags": [
             "sorcerer",
             "wizard",
-            "level2"
+            "level2",
+            "transmutation"
         ],
+        "target": "creature or object",
         "type": "2nd-level transmutation"
     },
     {
@@ -7472,7 +7520,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can't be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are incapacitated or can no longer speak.",
+        "description": "You weave a distracting string of words, causing creatures of your choice that you can see within range and that can hear you to make a Wisdom saving throw. Any creature that can\u2019t be charmed succeeds on this saving throw automatically, and if you or your companions are fighting a creature, it has advantage on the save. On a failed save, the target has disadvantage on Wisdom (Perception) checks made to perceive any creature other than you until the spell ends or until the target can no longer hear you. The spell ends if you are incapacitated or can no longer speak.",
         "duration": "1 minute",
         "level": "2",
         "name": "Enthrall",
@@ -7482,8 +7530,10 @@
         "tags": [
             "bard",
             "warlock",
-            "level2"
+            "level2",
+            "enchantment"
         ],
+        "target": "creature(s)",
         "type": "2nd-level enchantment"
     },
     {
@@ -7524,7 +7574,7 @@
             "somatic": true,
             "verbal": true
         },
-        "description": "For the spell's duration, your eyes become an inky void imbued with dread power. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration. On each of your turns until the spell ends, you can use your action to target another creature but can't target a creature again if it has succeeded on a saving throw against this casting of *eyebite*.",
+        "description": "For the spell\u2019s duration, your eyes become an inky void imbued with dread power. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration. On each of your turns until the spell ends, you can use your action to target another creature but can\u2019t target a creature again if it has succeeded on a saving throw against this casting of _eyebite_.\n\n_Asleep._ The target falls unconscious. It wakes up if it takes any damage or if another creature uses its action to shake the sleeper awake.\n\n_Panicked._ The target is frightened of you. On each of its turns, the frightened creature must take the Dash action and move away from you by the safest and shortest available route, unless there is nowhere to move. If the target moves to a place at least 60 feet away from you where it can no longer see you, this effect ends.\n\n_Sickened._ The target has disadvantage on attack rolls and ability checks. At the end of each of its turns, it can make another Wisdom saving throw. If it succeeds, the effect ends.",
         "duration": "Concentration, up to 1 minute",
         "level": "6",
         "name": "Eyebite",
@@ -7537,7 +7587,9 @@
             "warlock",
             "wizard",
             "level6"
+            "necromancy"
         ],
+        "target": "caster",
         "type": "6th-level necromancy"
     },
     {
