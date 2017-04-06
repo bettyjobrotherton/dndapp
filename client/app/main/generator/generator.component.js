@@ -118,7 +118,59 @@ export class GeneratorController {
       this.selectionMade = false;
       this.makeMySelections = true;
     }
+
+//weapon code start here
+else if(this.$state.current.name == 'generatorWeapons'){
+  this.classInfo = JSON.parse(this.localStorage['class-info']);
+  this.$http.get('assets/weapons.json')
+            .then(res => {
+              vm.weaponsList = res.data;
+              if(!vm.localStorage['selected-weapons']){
+                vm.currentWeapons = res.data[0];
+              } else {
+                vm.currentWeapons = JSON.parse(this.localStorage['selected-weapons']);
+              }
+            })
+            .catch(err => {
+              return err;
+            });
+}else if(this.$state.current.name == 'pickweapons'){
+      this.currentWeapons = JSON.parse(this.localStorage['selected-weapon']);
+      this.display1 = false;
+      this.display2 = false;
+      this.display3 = false;
+      this.display4 = false;
+      this.display5 = false;
+
+      this.countSimpleMelee = 0;
+      this.maxSimpleMelee = 0;
+      this.simpleMeleeList = [];
+
+      this.countSimpleRanged = 0;
+      this.maxSimpleRanged = 0;
+      this.simpleRangedList = [];
+
+      this.countMartialMelee = 0;
+      this.maxMartialMelee = 0;
+      this.martialMeleeList = [];
+
+      this.countMartialRanged = 0;
+      this.maxMartialRanged = 0;
+      this.martialRangedList = [];
   }
+}
+
+pickWeapon(){
+  var Weapon = this.currentWeapon;
+  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
+  this.$state.go('generatorthree');
+}
+
+selectWeapon(Weapon) {
+  this.currentWeapon = Weapon;
+}
+
+//end of weapons
 
   continueChar(generate) {
     if(generate == 'race' && 'class'){
@@ -704,6 +756,99 @@ returnToBackground(){
 }
 // -- End code for pick background
 
+// -- start of pick weapon
+
+saveWeapons(){
+  var newCharacter;
+  var currentWeapons = this.currentWeapons;
+  var weaponInfo;
+      weaponInfo = {
+            simpleMelee: this.currentSimpleMelee.desc,
+            simpleRange: this.currentSimpleRanged.desc,
+            martialMelee: this.currentMartialMelee.desc,
+            martialRange: this.currentMartialRanged.desc
+      };
+  if(this.first() =='weapons'){
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.weapons = weaponInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorthree');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.weapons = weaponInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('equipment');
+  }
+}
+
+simpleMeleeButton(){
+  if(this.display1){
+    this.display1 = false;
+  } else {
+    this.display1 = true;
+  }
+}
+
+simpleRangedButton(){
+  if(this.display2){
+    this.display2 = false;
+  } else {
+    this.display2 = true;
+  }
+}
+
+martialMeleeButton(){
+  if(this.display3){
+    this.display3 = false;
+  } else {
+    this.display3 = true;
+  }
+}
+
+martialRangedButton(){
+  if(this.display4){
+    this.display4 = false;
+  } else {
+    this.display4 = true;
+  }
+}
+
+checkedSimpleMelee(item){
+  var count = this.countSimpleMelee;
+  if(item.check){
+    this.countSimpleMelee = count + 1;
+    if(!item.number){
+      item.number = 0;
+      this.simpleMeleeList.push(item);
+    } else {
+      this.simpleMeleeList.push(item);
+    }
+  } else {
+    this.countSimpleMelee = count -1;
+    if(!item.number){
+      item.number = 0;
+    }
+    for(var i = 0; i < this.simpleMeleeList.length; i++){
+      if(this.simpleMeleeList[i].number === item.number){
+        this.simpleMeleeList.splice(i, 1);
+      }
+    }
+  }
+}
+
+saveOwnSimpleMelee(text){
+  for(var i = 0; i < this.simpleMeleeList.length; i++){
+    if(this.simpleMeleeList[i].number === 0){
+      this.simpleMeleeList[i].desc = text;
+    }
+  }
+}
+
+//end of weapons
+
+
+
+
 // Start code for selecting proficiencies --
   filterSkills(){
     var characterSkills = this.classInfo.traits.skillsList;
@@ -926,7 +1071,17 @@ returnToBackground(){
     this.$state.go('generatorThree');
   }
 // -- End code for ability score selection
+
+//start of weapon selection
+
+
+
+
 }
+
+
+
+
 
 export default angular.module('dndappApp.generator', [uiRouter])
   .config(routing)
