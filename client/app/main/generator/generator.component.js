@@ -140,23 +140,18 @@ else if(this.$state.current.name == 'generatorWeapons'){
       this.display2 = false;
       this.display3 = false;
       this.display4 = false;
-      this.display5 = false;
 
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 0;
-      this.simpleMeleeList = [];
 
       this.countSimpleRanged = 0;
       this.maxSimpleRanged = 0;
-      this.simpleRangedList = [];
 
       this.countMartialMelee = 0;
       this.maxMartialMelee = 0;
-      this.martialMeleeList = [];
 
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
-      this.martialRangedList = [];
   }
 }
 
@@ -763,21 +758,21 @@ saveWeapons(){
   var currentWeapons = this.currentWeapons;
   var weaponInfo;
       weaponInfo = {
-            simpleMelee: this.currentSimpleMelee.desc,
-            simpleRange: this.currentSimpleRanged.desc,
-            martialMelee: this.currentMartialMelee.desc,
-            martialRange: this.currentMartialRanged.desc
+            simpleMelee: this.currentSimpleMelee.name,
+            simpleRange: this.currentSimpleRanged.name,
+            martialMelee: this.currentMartialMelee.name,
+            martialRange: this.currentMartialRanged.name
       };
   if(this.first() =='weapons'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorthree');
+    this.$state.go('equipment');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('equipment');
+    this.$state.go('generatorthree');
   }
 }
 
@@ -819,28 +814,16 @@ checkedSimpleMelee(item){
     this.countSimpleMelee = count + 1;
     if(!item.number){
       item.number = 0;
-      this.simpleMeleeList.push(item);
+      this.currentSimpleMelee = item;
     } else {
-      this.simpleMeleeList.push(item);
+      this.currentSimpleMelee = item;
     }
   } else {
     this.countSimpleMelee = count -1;
     if(!item.number){
       item.number = 0;
     }
-    for(var i = 0; i < this.simpleMeleeList.length; i++){
-      if(this.simpleMeleeList[i].number === item.number){
-        this.simpleMeleeList.splice(i, 1);
-      }
-    }
-  }
-}
-
-saveOwnSimpleMelee(text){
-  for(var i = 0; i < this.simpleMeleeList.length; i++){
-    if(this.simpleMeleeList[i].number === 0){
-      this.simpleMeleeList[i].desc = text;
-    }
+    this.currentSimpleMelee = "";
   }
 }
 
