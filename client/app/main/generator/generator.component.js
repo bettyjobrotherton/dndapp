@@ -971,7 +971,7 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controllerAs: 'genCtrl'
   })
   .component('pickabilityscores', {
-    template: require('./pickabilityscores.html'),
+    template: require('./pickAbilityScores.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
