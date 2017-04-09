@@ -88,6 +88,7 @@ export class GeneratorController {
 
       this.countFlaw = 0;
       this.maxFlaws = 0;
+
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -141,8 +142,10 @@ else if(this.$state.current.name == 'generatorWeapons'){
       this.display3 = false;
       this.display4 = false;
 
+
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 0;
+      this.weaponsList = [];
 
       this.countSimpleRanged = 0;
       this.maxSimpleRanged = 0;
@@ -163,6 +166,37 @@ pickWeapon(){
 
 selectWeapon(Weapon) {
   this.currentWeapon = Weapon;
+}
+
+checkedSimpleMelee(item){
+  var count = this.countSimpleMelee;
+  if(item.check){
+    this.countSimpleMelee = count + 1;
+    if(!item.number){
+      item.number = 0;
+      this.weaponsList.push(item);
+    } else {
+      this.weaponsList.push(item);
+    }
+  } else {
+    this.countSimpleMelee = count -1;
+    if(!item.number){
+      item.number = 0;
+    }
+    for(var i = 0; i < this.weaponsList.length; i++){
+      if(this.weaponsList[i].number === item.number){
+        this.weaponsList.splice(i, 1);
+      }
+    }
+  }
+}
+
+saveSimpleMelee(text){
+  for(var i = 0; i < this.weaponsList.length; i++){
+    if(this.weaponsList[i].number === 0){
+      this.weaponsList[i].desc = text;
+    }
+  }
 }
 
 //end of weapons
