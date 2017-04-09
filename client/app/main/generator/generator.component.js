@@ -118,7 +118,28 @@ export class GeneratorController {
       this.classInfo = JSON.parse(this.localStorage['class-info']);
       this.selectionMade = false;
       this.makeMySelections = true;
+    } else if(this.$state.current.name == 'generatorThree'){
+      this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      console.log(this.savedCharacter);
+      if(vm.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
+        this.selectSpells = true;
+      } else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
+        if(this.savedCharacter.general.level < 2){
+          this.selectSpells = false;
+        } else {
+          this.selectSpells = true;
+        }
+      } else if(this.savedCharacter.class.main == 'Fighter' && this.savedCharacter.general.level >= 3){
+        if(this.savedCharacter.class.archetype == 'Eldritch Knight'){
+          this.selectSpells = true;
+        } else {
+          this.selectSpells = false;
+        }
+      } else {
+        this.selectSpells = false;
+      }
     }
+
 
 //weapon code start here
 else if(this.$state.current.name == 'generatorWeapons'){
@@ -208,13 +229,20 @@ saveSimpleMelee(text){
   }
 
   selectLevelAndSubmit(input){
-    var newCharacter = {
-      general: {
-        level: this.characterLevel
-      }
-    };
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.createChar(input);
+    if(!this.characterLevel){
+      this.levelRequired = "Please enter character level";
+    } else {
+      var newCharacter = {
+        skills: {
+          profBonus: this.character.proficiencyBonus(this.characterLevel)
+        },
+        general: {
+          level: this.characterLevel
+        }
+      };
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.createChar(input);
+    }
   }
 
 // Start code for pick race --
@@ -381,8 +409,7 @@ saveSimpleMelee(text){
 
 // Start code for pick background --
   pickBackground(){
-    var background = this.currentBackground;
-    this.localStorage.setItem('selected-background', JSON.stringify(background));
+    this.localStorage.setItem('selected-background', JSON.stringify(this.currentBackground));
     this.$state.go('backgrounddetails');
   }
 
@@ -1084,8 +1111,14 @@ checkedSimpleMelee(item){
     };
     var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.abilityScores = abilityScoresInfo;
+    var passiveSkillsInfo = {
+      insight: this.character.calculatePassiveRoll(newCharacter, "Insight"),
+      perception: this.character.calculatePassiveRoll(newCharacter, "Perception")
+    };
+    newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
+    console.log(this.localStorage['character-in-progress']);
   }
 // -- End code for ability score selection
 
@@ -1143,7 +1176,7 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controllerAs: 'genCtrl'
   })
   .component('pickabilityscores', {
-    template: require('./pickabilityscores.html'),
+    template: require('./pickAbilityScores.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
