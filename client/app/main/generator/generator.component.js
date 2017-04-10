@@ -88,6 +88,7 @@ export class GeneratorController {
 
       this.countFlaw = 0;
       this.maxFlaws = 0;
+
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -141,9 +142,129 @@ export class GeneratorController {
       this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
       this.enhancedInfo = this.character.allowedNumberOfSpells(this.characterInfo);
 
-    }
+      this.$http.get("assets/spells.json")
+                .then(res => {
+                  this.spellsList = res.data;
+                  this.spellsForClass = _.filter(this.spellsList, function(i){
+                  return true
+                  //  _.find(i.classes, function(o){ return o == this.characterInfo.class.main.toLowerCase();});
+                });
+                  // console.log(this.spellsForClass);
+                })
+                .catch(err => {
+                  return err;
+                });
 
+      this.selectedSpells = [];
+      this.pickSpell = function(spell){
+        this.selectedSpells.push(spell);
+      };
+      this.saveSpells = function(){
+        this.characterInfo.spells = this.selectedSpells;
+        this.localStorage.setItem('character-in-progress', JSON.stringify(this.characterInfo));
+        this.$state.go('generatorThree');
+      };
+
+      this.tempSpells = [{
+        name: "Acid Splash",
+        level: "cantrip",
+        description: "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
+      },
+      {
+        name:"Alarm",
+        level:"1",
+        description: "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won\u2019t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
+      }
+      ];
+    } else if(this.$state.current.name == 'generatorWeapons'){
+  this.classInfo = JSON.parse(this.localStorage['class-info']);
+  this.$http.get('assets/weapons.json')
+            .then(res => {
+              vm.weaponsList = res.data;
+              if(!vm.localStorage['selected-weapons']){
+                vm.currentWeapons = res.data[0];
+              } else {
+                vm.currentWeapons = JSON.parse(this.localStorage['selected-weapons']);
+              }
+            })
+            .catch(err => {
+              return err;
+            });
+}else if(this.$state.current.name == 'pickweapons'){
+      this.currentWeapons = JSON.parse(this.localStorage['selected-weapon']);
+      this.display1 = false;
+      this.display2 = false;
+      this.display3 = false;
+      this.display4 = false;
+
+
+      this.countSimpleMelee = 0;
+      this.maxSimpleMelee = 0;
+      this.weaponsList = [];
+
+      this.countSimpleRanged = 0;
+      this.maxSimpleRanged = 0;
+
+      this.countMartialMelee = 0;
+      this.maxMartialMelee = 0;
+
+      this.countMartialRanged = 0;
+      this.maxMartialRanged = 0;
   }
+}
+
+pickWeapon(){
+  var Weapon = this.currentWeapon;
+  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
+  this.$state.go('generatorthree');
+}
+
+selectWeapon(Weapon) {
+  this.currentWeapon = Weapon;
+}
+
+checkedSimpleMelee(item){
+  var count = this.countSimpleMelee;
+  if(item.check){
+    this.countSimpleMelee = count + 1;
+    if(!item.number){
+      item.number = 0;
+      this.weaponsList.push(item);
+    } else {
+      this.weaponsList.push(item);
+    }
+  } else {
+    this.countSimpleMelee = count -1;
+    if(!item.number){
+      item.number = 0;
+    }
+    for(var i = 0; i < this.weaponsList.length; i++){
+      if(this.weaponsList[i].number === item.number){
+        this.weaponsList.splice(i, 1);
+      }
+    }
+  }
+}
+
+saveSimpleMelee(text){
+  for(var i = 0; i < this.weaponsList.length; i++){
+    if(this.weaponsList[i].number === 0){
+      this.weaponsList[i].desc = text;
+    }
+  }
+}
+
+//end of weapons
+
+//start of spells
+
+
+
+
+
+
+
+//end of spells
 
   continueChar(generate) {
     if(generate == 'race' && 'class'){
@@ -735,6 +856,87 @@ returnToBackground(){
 }
 // -- End code for pick background
 
+// -- start of pick weapon
+
+saveWeapons(){
+  var newCharacter;
+  var currentWeapons = this.currentWeapons;
+  var weaponInfo;
+      weaponInfo = {
+            simpleMelee: this.currentSimpleMelee.name,
+            simpleRange: this.currentSimpleRanged.name,
+            martialMelee: this.currentMartialMelee.name,
+            martialRange: this.currentMartialRanged.name
+      };
+  if(this.first() =='weapons'){
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.weapons = weaponInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('equipment');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.weapons = weaponInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorthree');
+  }
+}
+
+simpleMeleeButton(){
+  if(this.display1){
+    this.display1 = false;
+  } else {
+    this.display1 = true;
+  }
+}
+
+simpleRangedButton(){
+  if(this.display2){
+    this.display2 = false;
+  } else {
+    this.display2 = true;
+  }
+}
+
+martialMeleeButton(){
+  if(this.display3){
+    this.display3 = false;
+  } else {
+    this.display3 = true;
+  }
+}
+
+martialRangedButton(){
+  if(this.display4){
+    this.display4 = false;
+  } else {
+    this.display4 = true;
+  }
+}
+
+checkedSimpleMelee(item){
+  var count = this.countSimpleMelee;
+  if(item.check){
+    this.countSimpleMelee = count + 1;
+    if(!item.number){
+      item.number = 0;
+      this.currentSimpleMelee = item;
+    } else {
+      this.currentSimpleMelee = item;
+    }
+  } else {
+    this.countSimpleMelee = count -1;
+    if(!item.number){
+      item.number = 0;
+    }
+    this.currentSimpleMelee = "";
+  }
+}
+
+//end of weapons
+
+
+
+
 // Start code for selecting proficiencies --
   filterSkills(){
     var characterSkills = this.classInfo.traits.skillsList;
@@ -967,7 +1169,12 @@ returnToBackground(){
 // Beginning code for spells selection --
 
 // -- End code for spells selection
+
 }
+
+
+
+
 
 export default angular.module('dndappApp.generator', [uiRouter])
   .config(routing)
