@@ -3,21 +3,21 @@
     <div>
       <h3>{{ genCtrl.characterInfo.class.main }} Spells</h3>
       <p class='summary'>Pick {{}} spells from the list below:</p>
-      <p class='summary'>{{genCtrl.savedCharacter.general.level}}</p>
+      <p class='summary'>{{genCtrl.characterInfo.general.level}}</p>
 
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.()">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayCantrip = !genCtrl.displayCantrip">
       Cantrip
     </button>
-    <div ng-show="genCtrl.display1">
+    <div ng-show="genCtrl.displayCantrip">
       <div class="background-detail-box">
-        <form ng-submit='genCtrl.()'>
-          <div ng-repeat="item in genCtrl.currentWeapons.simpleMelee">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="" ng-click="genCtrl.checked(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
               </label>
             </div>
           </div>
@@ -25,7 +25,169 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('spells')"  type="new character">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelOne = !genCtrl.displayLevelOne">
+    Level 1
+    </button>
+    <div ng-show="genCtrl.displayLevelOne">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelTwo = !genCtrl.displayLevelTwo">
+      Level 2
+    </button>
+    <div ng-show="genCtrl.displayLevelTwo">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelThree = !genCtrl.displayLevelThree">
+      Level 3
+    </button>
+    <div ng-show="genCtrl.displayLevelThree">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelFour = !genCtrl.displayLevelFour">
+      Level 4
+    </button>
+    <div ng-show="genCtrl.displayLevelFour">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelFive = !genCtrl.displayLevelFive">
+      Level 5
+    </button>
+    <div ng-show="genCtrl.displayLevelFive">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelSix = !genCtrl.displayLevelSix">
+      Level 6
+    </button>
+    <div ng-show="genCtrl.displayLevelSix">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelSeven = !genCtrl.displayLevelSeven">
+      Level 7
+    </button>
+    <div ng-show="genCtrl.displayLevelSeven">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelEight = !genCtrl.displayLevelEight">
+      Level 8
+    </button>
+    <div ng-show="genCtrl.displayLevelEight">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelNine = !genCtrl.displayLevelNine">
+      Level 9
+    </button>
+    <div ng-show="genCtrl.displayLevelNine">
+      <div class="background-detail-box">
+        <form>
+          <div ng-repeat="spell in genCtrl.spellsForClass">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-click="genCtrl.pickSpell(spell)" ng-checked="spell.check" ng-model="spell.check">
+                {{ spell.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveSpells()"  type="button">
       Submit &amp; Continue
     </button>
   </div>
