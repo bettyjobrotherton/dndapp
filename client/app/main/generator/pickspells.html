@@ -1,14 +1,8 @@
 <div class='spellsView'>
-  <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.spellsList" >
-      <img ng-src='{{ spells.icon }}' class='list-group-item' ng-click="genCtrl.selectspells(spells)">
-    </div>
-  </div>
-
   <div class='spellsDesc'>
     <div>
-      <h3> {{genCtrl.currentSpells.name}} </h3>
-      <p class='summary'>{{genCtrl.currentSpells.desc}}</p>
+      <h3>{{ genCtrl.characterInfo.class.main }} Spells</h3>
+      <p class='summary'>Pick {{}} spells from the list below:</p>
     </div>
 
     <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('stats')"  type="new character">

@@ -119,7 +119,7 @@ export class GeneratorController {
       this.makeMySelections = true;
     } else if(this.$state.current.name == 'generatorThree'){
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      console.log(this.savedCharacter);
+      // console.log(this.savedCharacter);
       if(vm.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
         this.selectSpells = true;
       } else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
@@ -137,6 +137,9 @@ export class GeneratorController {
       } else {
         this.selectSpells = false;
       }
+    } else if(this.$state.current.name == 'generatorSpells'){
+      this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
+     
     }
 
   }
@@ -959,6 +962,10 @@ returnToBackground(){
     console.log(this.localStorage['character-in-progress']);
   }
 // -- End code for ability score selection
+
+// Beginning code for spells selection --
+
+// -- End code for spells selection
 }
 
 export default angular.module('dndappApp.generator', [uiRouter])
