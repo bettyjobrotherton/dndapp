@@ -139,7 +139,8 @@ export class GeneratorController {
       }
     } else if(this.$state.current.name == 'generatorSpells'){
       this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
-     
+      this.enhancedInfo = this.character.allowedNumberOfSpells(this.characterInfo);
+
     }
 
   }
