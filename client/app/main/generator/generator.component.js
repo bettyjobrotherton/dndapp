@@ -1237,6 +1237,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })
+  .component('pickarmor', {
+    template: require('./pickarmor.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
   .component('pickequip', {
     template: require('./pickequip.html'),
     controller: GeneratorController,
