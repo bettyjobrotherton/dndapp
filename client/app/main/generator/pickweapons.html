@@ -1,10 +1,3 @@
-<!-- <div class='weaponsView'>
-  <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.weaponsList" >
-      <img ng-src='{{ weapons.icon }}' class='list-group-item' ng-click="genCtrl.selectweapons(weapons)">
-    </div>
-  </div>
-</div> -->
 
   <div>
     <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.simpleMeleeButton()">
@@ -18,7 +11,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countSimpleMelee > genCtrl.maxSimpleMelee) && (!item.check)" ng-click="genCtrl.checkedSimpleMelee(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}
+                {{ item.name }}, {{item.damage}}
               </label>
             </div>
           </div>
@@ -37,7 +30,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countRangedWeapon > genCtrl.maxRangedWeapon) && (!item.check)" ng-click="genCtrl.checkedSimpleRanged(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}
+                {{ item.name }}, {{item.damage}}
               </label>
             </div>
           </div>
@@ -56,7 +49,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countMartialMelee > genCtrl.maxMartialMelee) && (!item.check)" ng-click="genCtrl.checkedMartialMeleeButton(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}
+                {{ item.name }}, {{item.damage}}
               </label>
             </div>
           </div>
@@ -75,7 +68,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countMartialRanged > genCtrl.maxMartialRanged) && (!item.check)" ng-click="genCtrl.martialWeaponButton(item)" ng-checked='item.check' ng-model="item.check">
-                {{ item.name }}
+                {{ item.name }}, {{item.damage}}
               </label>
             </div>
           </div>

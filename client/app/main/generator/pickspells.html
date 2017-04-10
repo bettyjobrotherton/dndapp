@@ -1,19 +1,31 @@
 <div class='spellsView'>
-  <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.spellsList" >
-      <img ng-src='{{ spells.icon }}' class='list-group-item' ng-click="genCtrl.selectspells(spells)">
-    </div>
-  </div>
 
   <div class='spellsDesc'>
     <div>
-      <h3> {{genCtrl.currentSpells.name}} </h3>
-      <p class='summary'>{{genCtrl.currentSpells.desc}}</p>
+      <h3> {{genCtrl.currentClass.name}} </h3>
+      <p class='summary'>{{genCtrl.savedCharacter.general.level}}</p>
     </div>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('stats')"  type="new character">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.()">
+      Cantrip
+    </button>
+    <div ng-show="genCtrl.display1">
+      <div class="background-detail-box">
+        <form ng-submit='genCtrl.()'>
+          <div ng-repeat="item in genCtrl.currentWeapons.simpleMelee">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="" ng-click="genCtrl.checked(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('spells')"  type="new character">
       Submit &amp; Continue
     </button>
-
   </div>
 </div>

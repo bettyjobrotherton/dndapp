@@ -222,6 +222,36 @@ saveSimpleMelee(text){
 
 //end of weapons
 
+//start of spells
+
+var tempSpells = [{
+  name: "Acid Splash",
+  level: "cantrip",
+  description: "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
+},
+{
+  name:"Alarm",
+  level:"1",
+  description: "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won\u2019t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
+}
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//end of spells
+
   continueChar(generate) {
     if(generate == 'race' && 'class'){
       this.$state.go('generator');
