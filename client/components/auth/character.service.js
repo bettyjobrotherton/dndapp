@@ -270,7 +270,7 @@ export function CharacterService($location, $http, $window) {
     },
 
     allowedNumberOfSpells(character){
-      if(character.class.main == 'Bard'){
+      if(character.class.main == 'Bard' || character.class.main == 'Druid'){
         if(character.general.level == 1){
           character.allowed = {
             cantrip: 2,
@@ -493,343 +493,971 @@ export function CharacterService($location, $http, $window) {
             level9: 1
           };
         }
-      } else if(character.class.main == 'Cleric'){
+      } else if(character.class.main == 'Cleric' || character.class.main == 'Wizard'){
         if(character.general.level == 1){
-
+          character.allowed = {
+            cantrip: 3,
+            level1: 2,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 2){
-
+          character.allowed = {
+            cantrip: 3,
+            level1: 3,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 3){
-
+          character.allowed = {
+            cantrip: 3,
+            level1: 4,
+            level2: 2,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 4){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 5){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 2,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 6){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 7){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 1,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 8){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 2,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 9){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 1,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 11 || character.general.level == 12){
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 13 || character.general.level == 14){
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 15 || character.general.level == 16){
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 0
+            };
         } else if(character.general.level == 17){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 18){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 19){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 2,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 20){
-
-        }
-      } else if(character.class.main == 'Druid'){
-        if(character.general.level == 1){
-
-        } else if(character.general.level == 2){
-
-        } else if(character.general.level == 3){
-
-        } else if(character.general.level == 4){
-
-        } else if(character.general.level == 5){
-
-        } else if(character.general.level == 6){
-
-        } else if(character.general.level == 7){
-
-        } else if(character.general.level == 8){
-
-        } else if(character.general.level == 9){
-
-        } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
-        } else if(character.general.level == 17){
-
-        } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 2,
+            level7: 2,
+            level8: 1,
+            level9: 1
+            };
         }
       } else if(character.class.main == 'Sorcerer'){
         if(character.general.level == 1){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 2,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 2){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 3,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 3){
-
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 2,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 4){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 5){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 2,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 6){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 7){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 1,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 8){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 2,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 9){
-
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 1,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 11 || character.general.level == 12){
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 13 || character.general.level == 14){
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 15 || character.general.level == 16){
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 0
+            };
         } else if(character.general.level == 17){
-
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 18){
-
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 1,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 19){
-
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 2,
+            level7: 1,
+            level8: 1,
+            level9: 1
+            };
         } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 3,
+            level6: 2,
+            level7: 2,
+            level8: 1,
+            level9: 1
+            };
         }
       } else if(character.class.main == 'Warlock'){
         if(character.general.level == 1){
-
+          character.allowed = {
+            cantrip: 2,
+            spellsKnown: 2,
+            slotLevel: 1,
+            invocations: 0
+            };
         } else if(character.general.level == 2){
-
+          character.allowed = {
+            cantrip: 2,
+            spellsKnown: 3,
+            slotLevel: 1,
+            invocations: 2
+            };
         } else if(character.general.level == 3){
-
+          character.allowed = {
+            cantrip: 2,
+            spellsKnown: 4,
+            slotLevel: 2,
+            invocations: 2
+            };
         } else if(character.general.level == 4){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 5,
+            slotLevel: 2,
+            invocations: 2
+            };
         } else if(character.general.level == 5){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 6,
+            slotLevel: 3,
+            invocations: 3
+            };
         } else if(character.general.level == 6){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 7,
+            slotLevel: 3,
+            invocations: 3
+            };
         } else if(character.general.level == 7){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 8,
+            slotLevel: 4,
+            invocations: 4
+            };
         } else if(character.general.level == 8){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 9,
+            slotLevel: 4,
+            invocations: 4
+            };
         } else if(character.general.level == 9){
-
+          character.allowed = {
+            cantrip: 3,
+            spellsKnown: 10,
+            slotLevel: 5,
+            invocations: 5
+            };
         } else if(character.general.level == 10){
-
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 10,
+            slotLevel: 5,
+            invocations: 5
+            };
         } else if(character.general.level == 11){
-
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 11,
+            slotLevel: 5,
+            invocations: 5
+            };
         } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 11,
+            slotLevel: 5,
+            invocations: 6
+            };
+        } else if(character.general.level == 13 | character.general.level == 14){
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 12,
+            slotLevel: 5,
+            invocations: 6
+            };
+        } else if(character.general.level == 15 || character.general.level == 16){
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 13,
+            slotLevel: 5,
+            invocations: 7
+            };
         } else if(character.general.level == 17){
-
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 14,
+            slotLevel: 5,
+            invocations: 7
+            };
         } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
-        }
-      } else if(character.class.main == 'Wizard'){
-        if(character.general.level == 1){
-
-        } else if(character.general.level == 2){
-
-        } else if(character.general.level == 3){
-
-        } else if(character.general.level == 4){
-
-        } else if(character.general.level == 5){
-
-        } else if(character.general.level == 6){
-
-        } else if(character.general.level == 7){
-
-        } else if(character.general.level == 8){
-
-        } else if(character.general.level == 9){
-
-        } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
-        } else if(character.general.level == 17){
-
-        } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 14,
+            slotLevel: 5,
+            invocations: 8
+            };
+        } else if(character.general.level == 19 || character.general.level == 20){
+          character.allowed = {
+            cantrip: 4,
+            spellsKnown: 15,
+            slotLevel: 5,
+            invocations: 8
+            };
         }
       } else if(character.class.main == 'Paladin'){
         if(character.general.level == 1){
-
+          character.allowed = {
+            cantrip: 0,
+            level1: 0,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 2){
-
-        } else if(character.general.level == 3){
-
-        } else if(character.general.level == 4){
-
-        } else if(character.general.level == 5){
-
-        } else if(character.general.level == 6){
-
-        } else if(character.general.level == 7){
-
-        } else if(character.general.level == 8){
-
-        } else if(character.general.level == 9){
-
-        } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
-        } else if(character.general.level == 17){
-
-        } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 0,
+            level1: 2,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 3 || character.general.level == 4){
+          character.allowed = {
+            cantrip: 0,
+            level1: 3,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 5 || character.general.level == 6){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 2,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 7 || character.general.level == 8){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 9 || character.general.level == 10){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 2,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 11 || character.general.level == 12){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 13 || character.general.level == 14){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 1,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 15 || character.general.level == 16){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 2,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 17 || character.general.level == 18){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 1,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 19 || character.general.level == 20){
+          character.allowed = {
+            cantrip: 0,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         }
       } else if(character.class.main == 'Ranger'){
         if(character.general.level == 1){
-
+          character.allowed = {
+            cantrip: 0,
+            level1: 0,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 2){
-
-        } else if(character.general.level == 3){
-
-        } else if(character.general.level == 4){
-
-        } else if(character.general.level == 5){
-
-        } else if(character.general.level == 6){
-
-        } else if(character.general.level == 7){
-
-        } else if(character.general.level == 8){
-
-        } else if(character.general.level == 9){
-
-        } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
-        } else if(character.general.level == 17){
-
-        } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 2,
+            level1: 2,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 3 || character.general.level == 4){
+          character.allowed = {
+            cantrip: 3,
+            level1: 3,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 5 || character.general.level == 6){
+          character.allowed = {
+            cantrip: 4,
+            level1: 4,
+            level2: 2,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 7 || character.general.level == 8){
+          character.allowed = {
+            cantrip: 5,
+            level1: 4,
+            level2: 3,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 9 || character.general.level == 10){
+          character.allowed = {
+            cantrip: 6,
+            level1: 4,
+            level2: 3,
+            level3: 2,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 11 || character.general.level == 12){
+          character.allowed = {
+            cantrip: 7,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 13 || character.general.level == 14){
+          character.allowed = {
+            cantrip: 8,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 1,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 15 || character.general.level == 16){
+          character.allowed = {
+            cantrip: 9,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 2,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 17 || character.general.level == 18){
+          character.allowed = {
+            cantrip: 10,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 1,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 19 || character.general.level == 20){
+          character.allowed = {
+            cantrip: 11,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 3,
+            level5: 2,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         }
       } else if(character.class.main == 'Fighter'){
-        if(character.general.level == 1){
-
-        } else if(character.general.level == 2){
-
+        if(character.general.level <= 2){
+          character.allowed = {
+            cantrip: 0,
+            level1: 0,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         } else if(character.general.level == 3){
-
-        } else if(character.general.level == 4){
-
-        } else if(character.general.level == 5){
-
-        } else if(character.general.level == 6){
-
-        } else if(character.general.level == 7){
-
-        } else if(character.general.level == 8){
-
-        } else if(character.general.level == 9){
-
-        } else if(character.general.level == 10){
-
-        } else if(character.general.level == 11){
-
-        } else if(character.general.level == 12){
-
-        } else if(character.general.level == 13){
-
-        } else if(character.general.level == 14){
-
-        } else if(character.general.level == 15){
-
-        } else if(character.general.level == 16){
-
-        } else if(character.general.level == 17){
-
-        } else if(character.general.level == 18){
-
-        } else if(character.general.level == 19){
-
-        } else if(character.general.level == 20){
-
+          character.allowed = {
+            cantrip: 2,
+            level1: 2,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level >= 4 && character.general.level <= 6){
+          character.allowed = {
+            cantrip: 2,
+            level1: 3,
+            level2: 0,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level >= 7 && character.general.level <= 9){
+          character.allowed = {
+            cantrip: 2,
+            level1: 4,
+            level2: 2,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level >= 10 && character.general.level <= 12){
+          character.allowed = {
+            cantrip: 3,
+            level1: 4,
+            level2: 3,
+            level3: 0,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level >= 13 && character.general.level <= 15){
+          character.allowed = {
+            cantrip: 3,
+            level1: 4,
+            level2: 3,
+            level3: 2,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level >= 16 && character.general.level <= 18){
+          character.allowed = {
+            cantrip: 3,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 0,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
+        } else if(character.general.level == 19 || character.general.level == 20){
+          character.allowed = {
+            cantrip: 3,
+            level1: 4,
+            level2: 3,
+            level3: 3,
+            level4: 1,
+            level5: 0,
+            level6: 0,
+            level7: 0,
+            level8: 0,
+            level9: 0
+            };
         }
       }
+      return character;
     }
 
   };
