@@ -1,0 +1,313 @@
+[
+  {
+    "name": "Agonizing Blast",
+    "prereq": {
+      "isThere": true,
+      "desc": "Eldritch Blast cantrip",
+      "tags": [
+        "eldritchBlast"
+      ]
+      },
+    "desc": "When you cast _eldritch blast_, add your Charisma modifier to the damage it deals on a hit."
+  },
+  {
+    "name": "Armor of Shadows",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _mage armor_ on yourself at will, without expending a spell slot or material components."
+  },
+  {
+    "name": "Ascendant Step",
+    "prereq": {
+      "isThere": true,
+      "desc": "9th level",
+      "tags": [
+        "level9"
+      ]
+      },
+    "desc": "You can cast _levitate_ on yourself at will, without expending a spell slot or material components."
+  },
+  {
+    "name": "Beast Speech",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _speak with animals_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Beguiling Influence",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You gain proficiency in the Deception and Persuasion skills."
+  },
+  {
+    "name": "Bewitching Whispers",
+    "prereq": {
+      "isThere": true,
+      "desc": "7th level",
+      "tags": [
+        "level7"
+      ]
+      },
+    "desc": "You can cast _compulsion_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Book of Ancient Secrets",
+    "prereq": {
+      "isThere": true,
+      "desc": "Pact of the Tome feature",
+      "tags": [
+        "pactOfTome"
+      ]
+      },
+    "desc": "You can now inscribe magical rituals in your Book of Shadows. Choose two 1st-level spells that have the ritual tag from any class\u2019s spell list. The spells appear in the book and don\u2019t count against the number of spells you know. With your Book of Shadows in hand, you can cast the chosen spells as rituals. You can\u2019t cast the spells except as rituals. unless you\u2019ve learned them by some other means. You can also cast a warlock spell you know as a ritual if it has the ritual tag.\n\nOn your adventures, you can add other ritual spells to your Book of Shadows. When you find such a spell, you can add it to the book if the spell\u2019s level is equal to or less than half your warlock level (rounded up) and if you can spare the time to transcribe the spell. For each level of the spelL the transcription process takes 2 hours and costs 50 gp for the rare inks needed to inscribe it."
+  },
+  {
+    "name": "Chains of Carceri",
+    "prereq": {
+      "isThere": true,
+      "desc": "15th level and Pact of the Chain feature",
+      "tags": [
+        "level15",
+        "pactOfChain"
+      ]
+      },
+    "desc": "You can cast _hold monster_ at will- targeting a celestial, fiend, or elemental- without expending a spell slot or material components. You must finish a long rest before you can use this invocation on the same creature again."
+  },
+  {
+    "name": "Devil\u2019s Sight",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can see normally in darkness, both magical and nonmagical, to a distance of 120 feet."
+  },
+  {
+    "name": "Dreadful Word",
+    "prereq": {
+      "isThere": true,
+      "desc": "7th level",
+      "tags": [
+        "level7"
+      ]
+      },
+    "desc": "You can cast _confusion_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Eldritch Sight",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _detect magic_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Eldritch Spear",
+    "prereq": {
+      "isThere": true,
+      "desc": "Eldritch Blast cantrip",
+      "tags": [
+        "eldritchBlast"
+      ]
+      },
+    "desc": "When you cast _eldritch blast_, its range is 300 feet."
+  },
+  {
+    "name": "Eyes of the Rune Keeper",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can read all writing."
+  },
+  {
+    "name": "Fiendish Vigor",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _false life_ on yourself at will as a 1st-level spell, without expending a spell slot or material components."
+  },
+  {
+    "name": "Gaze of Two Minds",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can use your action to touch a willing humanoid and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can use your action on subsequent turns to maintain this connection, extending the duration until the end of your next turn. While perceiving through the other creature\u2019s senses, you benefit from any special senses possessed by that creature, and you are blinded and deafened to your own surroundings."
+  },
+  {
+    "name": "Lifedrinker",
+    "prereq": {
+      "isThere": true,
+      "desc": "12th level and Pact of the Blade feature",
+      "tags": [
+        "level12",
+        "pactOfBlade"
+      ]
+      },
+    "desc": "When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1)."
+  },
+  {
+    "name": "Mask of Many Faces",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _disguise self_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Master of Myriad Forms",
+    "prereq": {
+      "isThere": true,
+      "desc": "15th level",
+      "tags": [
+        "level15"
+      ]
+      },
+    "desc": "You can cast _alter self_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Minions of Chaos",
+    "prereq": {
+      "isThere": true,
+      "desc": "9th level",
+      "tags": [
+        "level9"
+      ]
+      },
+    "desc": "You can cast _conjure elemental_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Mire the Mind",
+    "prereq": {
+      "isThere": true,
+      "desc": "5th level",
+      "tags": [
+        "level5"
+      ]
+      },
+    "desc": "You can cast _slow_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Misty Visions",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _silent image_ at will, without expending a spell slot or material components."
+  },
+  {
+    "name": "One With Shadows",
+    "prereq": {
+      "isThere": true,
+      "desc": "5th level",
+      "tags": [
+        "level5"
+      ]
+      },
+    "desc": "When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction."
+  },
+  {
+    "name": "Otherwordly Leap",
+    "prereq": {
+      "isThere": true,
+      "desc": "9th level",
+      "tags": [
+        "level9"
+      ]
+      },
+    "desc": "You can cast _jump_ on yourself at will, without expending a spell slot or material components."
+  },
+  {
+    "name": "Repelling Blast",
+    "prereq": {
+      "isThere": true,
+      "desc": "Eldritch Blast cantrip",
+      "tags": [
+        "eldritchBlast"
+      ]
+      },
+    "desc": "When you hit a creature with _eldritch blast_, you can push the creature up to 10 feet away from you in a straight line."
+  },
+  {
+    "name": "Sculptor of Flesh",
+    "prereq": {
+      "isThere": true,
+      "desc": "7th level",
+      "tags": [
+        "level7"
+      ]
+      },
+    "desc": "You can cast _polymorph_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Sign of Ill Omen",
+    "prereq": {
+      "isThere": true,
+      "desc": "5th level",
+      "tags": [
+        "level5"
+      ]
+      },
+    "desc": "You can cast _bestow curse_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Thief of Five Fates",
+    "prereq": {
+      "isThere": false
+      },
+    "desc": "You can cast _bane_ once using a warlock spell slot. You can\u2019t do so again until you finish a long rest."
+  },
+  {
+    "name": "Thirsting Blade",
+    "prereq": {
+      "isThere": true,
+      "desc": "5th level and Pact of the Blade feature",
+      "tags": [
+        "level5",
+        "pactOfBlade"
+      ]
+      },
+    "desc": "You can attack with your pact weapon twice, instead of once, whenever you take the Attack action on your turn."
+  },
+  {
+    "name": "Visions of Distant Realms",
+    "prereq": {
+      "isThere": true,
+      "desc": "15th level",
+      "tags": [
+        "level15"
+      ]
+      },
+    "desc": "You can cast _arcane eye_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Voice of the Chainmaster",
+    "prereq": {
+      "isThere": true,
+      "desc": "Pact of the Chain feature",
+      "tags": [
+        "pactOfChain"
+      ]
+      },
+    "desc": "You can communicate telepathically with your fam iliar and perceive through your familiar\u2019s senses as long as you are on the same plane of existence. Additionally, while perceiving through your familiar\u2019s senses, you can also speak through your familiar in your own voice, even if your familiar is normally incapable of speech."
+  },
+  {
+    "name": "Whisper of the Grave",
+    "prereq": {
+      "isThere": true,
+      "desc": "9th level",
+      "tags": [
+        "level9"
+      ]
+      },
+    "desc": "You can cast _speak with dead_ at will, without expending a spell slot."
+  },
+  {
+    "name": "Witch Sight",
+    "prereq": {
+      "isThere": true,
+      "desc": "15th level",
+      "tags": [
+        "level15"
+      ]
+      },
+    "desc": "You can see the true form of any shapechanger or creature concealed by illusion or transmutation magic while the creature is within 30 feet of you and within line of sight."
+  }
+]
