@@ -140,42 +140,41 @@ export class GeneratorController {
       }
     } else if(this.$state.current.name == 'generatorSpells'){
       this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
+      this.characterInfo.spells = {
+        lvl0:[], lvl1:[], lvl2:[], lvl3:[], lvl4:[], lvl5:[], lvl6:[], lvl7:[], lvl8:[], lvl9:[]
+      };
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
       this.enhancedInfo = this.character.allowedNumberOfSpells(this.characterInfo);
+      var charClass = vm.characterInfo.class.main.toLowerCase();
+      this.classSpellsList = [];
+      this.countSpell = {
+        zero: 1,
+        one: 1,
+        two: 1,
+        three: 1,
+        four: 1,
+        five: 1,
+        six: 1,
+        seven: 1,
+        eight: 1,
+        nine: 1
+      };
 
       this.$http.get("assets/spells.json")
                 .then(res => {
-                  this.spellsList = res.data;
-                  this.spellsForClass = _.filter(this.spellsList, function(i){
-                  return true
-                  //  _.find(i.classes, function(o){ return o == this.characterInfo.class.main.toLowerCase();});
-                });
-                  // console.log(this.spellsForClass);
+                  for(var i = 0; i < res.data.length; i++){
+                    for(var j = 0; j < res.data[i].classes.length; j++){
+                      if(res.data[i].classes[j] == charClass){
+                        vm.classSpellsList.push(res.data[i]);
+                      }
+                    }
+                  }
+                  this.classSpellsByLevel = this.character.findSpellsAtLevel(this.classSpellsList);
+                  this.spellDisplayProperties(this.enhancedInfo);
                 })
                 .catch(err => {
                   return err;
                 });
-
-      this.selectedSpells = [];
-      this.pickSpell = function(spell){
-        this.selectedSpells.push(spell);
-      };
-      this.saveSpells = function(){
-        this.characterInfo.spells = this.selectedSpells;
-        this.localStorage.setItem('character-in-progress', JSON.stringify(this.characterInfo));
-        this.$state.go('generatorThree');
-      };
-
-      this.tempSpells = [{
-        name: "Acid Splash",
-        level: "cantrip",
-        description: "You hurl a bubble of acid. Choose one creature within range, or choose two creatures within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
-      },
-      {
-        name:"Alarm",
-        level:"1",
-        description: "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won\u2019t set off the alarm. You also choose whether the alarm is mental or audible.\n\nA mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.\n\nAn audible alarm produces the sound of a hand bell for 10 seconds within 60 feet."
-      }
-      ];
     } else if(this.$state.current.name == 'generatorWeapons'){
   this.classInfo = JSON.parse(this.localStorage['class-info']);
   this.$http.get('assets/weapons.json')
@@ -661,9 +660,6 @@ saveSimpleMelee(text){
       }
     } else {
       this.countIdeal = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentIdeal = " ";
     }
   }
@@ -703,9 +699,6 @@ saveSimpleMelee(text){
       }
     } else {
       this.countBond = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentBond = " ";
     }
   }
@@ -745,9 +738,6 @@ saveSimpleMelee(text){
       }
     } else {
       this.countFlaw = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentFlaw = "";
     }
   }
@@ -776,10 +766,12 @@ saveSimpleMelee(text){
   }
 
   autoPickDetails(){
-    this.randomizeSpecialTrait();
-    this.randomizeTrait();
+    if(this.currentBackground.specialTrait.isThere){
+      this.randomizeSpecialTrait();
+    }
     this.randomizeTrait();
     this.randomizeIdeal();
+    this.randomizeTrait();
     this.randomizeBond();
     this.randomizeFlaw();
     this.backgroundDetailsText = "All background traits have been randomly selected.";
@@ -1162,12 +1154,287 @@ checkedSimpleMelee(item){
     newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
-    console.log(this.localStorage['character-in-progress']);
   }
 // -- End code for ability score selection
 
 // Beginning code for spells selection --
+  spellDisplayProperties(data){
+    if(data.allowed.cantrip > 0){
+      this.display0 = true;
+    } else {
+      this.display0 = false;
+    }
+    if(data.allowed.level1 > 0){
+      this.display1 = true;
+    } else {
+      this.display1 = false;
+    }
+    if(data.allowed.level2 > 0){
+      this.display2 = true;
+    } else {
+      this.display2 = false;
+    }
+    if(data.allowed.level3 > 0){
+      this.display3 = true;
+    } else {
+      this.display3 = false;
+    }
+    if(data.allowed.level4 > 0){
+      this.display4 = true;
+    } else {
+      this.display4 = false;
+    }
+    if(data.allowed.level5 > 0){
+      this.display5 = true;
+    } else {
+      this.display5 = false;
+    }
+    if(data.allowed.level6 > 0){
+      this.display6 = true;
+    } else {
+      this.display6 = false;
+    }
+    if(data.allowed.level7 > 0){
+      this.display7 = true;
+    } else {
+      this.display7 = false;
+    }
+    if(data.allowed.level8 > 0){
+      this.display8 = true;
+    } else {
+      this.display8 = false;
+    }if(data.allowed.level9 > 0){
+      this.display9 = true;
+    } else {
+      this.display9 = false;
+    }
+    if(this.classInfo.quickBuild.spells.cantrips){
+      this.display10 = true;
+      this.checkQBspells();
+    } else {
+      this.display10 = false;
+    }
+  }
 
+  checkedSpell0(item){
+    var count = this.countSpell.zero;
+    if(item.check){
+      this.countSpell.zero = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl0.push(object);
+    } else {
+      this.countSpell.zero = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl0.length; i++){
+        if(this.characterInfo.spells.lvl0[i].name === item.name){
+          this.characterInfo.spells.lvl0.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell1(item){
+    var count = this.countSpell.one;
+    if(item.check){
+      this.countSpell.one = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl1.push(object);
+    } else {
+      this.countSpell.one = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl1.length; i++){
+        if(this.characterInfo.spells.lvl1[i].name === item.name){
+          this.characterInfo.spells.lvl1.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell2(item){
+    var count = this.countSpell.two;
+    if(item.check){
+      this.countSpell.two = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl2.push(object);
+    } else {
+      this.countSpell.two = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl2.length; i++){
+        if(this.characterInfo.spells.lvl2[i].name === item.name){
+          this.characterInfo.spells.lvl2.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell3(item){
+    var count = this.countSpell.three;
+    if(item.check){
+      this.countSpell.three = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl3.push(object);
+    } else {
+      this.countSpell.three = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl3.length; i++){
+        if(this.characterInfo.spells.lvl3[i].name === item.name){
+          this.characterInfo.spells.lvl3.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell4(item){
+    var count = this.countSpell.four;
+    if(item.check){
+      this.countSpell.four = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl4.push(object);
+    } else {
+      this.countSpell.four = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl4.length; i++){
+        if(this.characterInfo.spells.lvl4[i].name === item.name){
+          this.characterInfo.spells.lvl4.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell5(item){
+    var count = this.countSpell.five;
+    if(item.check){
+      this.countSpell.five = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl5.push(object);
+    } else {
+      this.countSpell.five = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl5.length; i++){
+        if(this.characterInfo.spells.lvl5[i].name === item.name){
+          this.characterInfo.spells.lvl5.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell6(item){
+    var count = this.countSpell.six;
+    if(item.check){
+      this.countSpell.six = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl6.push(object);
+    } else {
+      this.countSpell.six = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl6.length; i++){
+        if(this.characterInfo.spells.lvl6[i].name === item.name){
+          this.characterInfo.spells.lvl6.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell7(item){
+    var count = this.countSpell.seven;
+    if(item.check){
+      this.countSpell.seven = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl7.push(object);
+    } else {
+      this.countSpell.seven = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl7.length; i++){
+        if(this.characterInfo.spells.lvl7[i].name === item.name){
+          this.characterInfo.spells.lvl7.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell8(item){
+    var count = this.countSpell.eight;
+    if(item.check){
+      this.countSpell.eight = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl8.push(object);
+    } else {
+      this.countSpell.eight = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl8.length; i++){
+        if(this.characterInfo.spells.lvl8[i].name === item.name){
+          this.characterInfo.spells.lvl8.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell9(item){
+    var count = this.countSpell.nine;
+    if(item.check){
+      this.countSpell.nine = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl9.push(object);
+    } else {
+      this.countSpell.nine = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl9.length; i++){
+        if(this.characterInfo.spells.lvl9[i].name === item.name){
+          this.characterInfo.spells.lvl9.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkQBspells(){
+    var spells = this.classSpellsByLevel;
+    var qbSpells0 = this.classInfo.quickBuild.spells.cantrips;
+    var qbSpells1 = this.classInfo.quickBuild.spells.lvl1;
+
+    for(var i = 0; i < qbSpells0.length; i++){
+      for(var j = 0; j < spells.zero.length; j++){
+        if(spells.zero[j].name === qbSpells0[i]){
+          spells.zero[j].check = true;
+          this.checkedSpell0(spells.zero[j]);
+        }
+      }
+    }
+
+    for(var k = 0; k < qbSpells1.length; k++){
+      for(var l = 0; l < spells.one.length; l++){
+        if(spells.one[l].name == qbSpells1[k]){
+          spells.one[l].check = true;
+          this.checkedSpell1(spells.one[l]);
+        }
+      }
+    }
+  }
+
+  saveSpells(){
+    var charSpells = this.characterInfo.spells;
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.spells = charSpells;
+    // console.log(newCharacter);
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    console.log(this.first());
+    if(this.first() == 'spells'){
+      this.$state.go('generatorWeapons');
+    } else if(this.first() == 'weapons'){
+      this.$state.go('generatorStats');
+    } else if(this.first() == 'equip'){
+      this.$state.go('generatorWeapons');
+    }
+  }
 // -- End code for spells selection
 
 }
