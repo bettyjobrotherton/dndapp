@@ -196,7 +196,6 @@ export class GeneratorController {
       this.display3 = false;
       this.display4 = false;
 
-
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 0;
       this.weaponsList = [];
@@ -209,59 +208,21 @@ export class GeneratorController {
 
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
-  }
-}
-
-pickWeapon(){
-  var Weapon = this.currentWeapon;
-  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
-  this.$state.go('generatorthree');
-}
-
-selectWeapon(Weapon) {
-  this.currentWeapon = Weapon;
-}
-
-checkedSimpleMelee(item){
-  var count = this.countSimpleMelee;
-  if(item.check){
-    this.countSimpleMelee = count + 1;
-    if(!item.number){
-      item.number = 0;
-      this.weaponsList.push(item);
-    } else {
-      this.weaponsList.push(item);
-    }
-  } else {
-    this.countSimpleMelee = count -1;
-    if(!item.number){
-      item.number = 0;
-    }
-    for(var i = 0; i < this.weaponsList.length; i++){
-      if(this.weaponsList[i].number === item.number){
-        this.weaponsList.splice(i, 1);
-      }
-    }
-  }
-}
-
-saveSimpleMelee(text){
-  for(var i = 0; i < this.weaponsList.length; i++){
-    if(this.weaponsList[i].number === 0){
-      this.weaponsList[i].desc = text;
-    }
-  }
+  }else if(this.$state.current.name == 'generatorArmor'){
+    this.$http.get('assets/.json')
+              .then(res => {
+                vm.armorList = res.data;
+                vm.currentArmor = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
+            }
 }
 
 //end of weapons
 
 //start of spells
-
-
-
-
-
-
 
 //end of spells
 
@@ -308,7 +269,6 @@ saveSimpleMelee(text){
   selectSubrace(subrace){
     this.currentSubrace = subrace;
   }
-
 
   goBackToRace(){
     this.raceMain = true;
@@ -373,9 +333,11 @@ saveSimpleMelee(text){
   returnToRace(){
     this.$state.go('generatorRace');
   }
+
 // -- End code for pick race
 
-// Start code for pick class --
+// Start code for pick class
+
   selectClass(build) {
     this.currentClass = build;
   }
@@ -837,6 +799,7 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
+
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -856,12 +819,30 @@ returnToBackground(){
 // -- End code for pick background
 
 // -- start of pick weapon
+pickWeapon(){
+  var Weapon = this.currentWeapon;
+  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
+  this.$state.go('generatorthree');
+}
+
+selectWeapon(weapon) {
+  this.currentWeapon = weapon;
+}
+
+saveSimpleMelee(text){
+  for(var i = 0; i < this.weaponsList.length; i++){
+    if(this.weaponsList[i].number === 0){
+      this.weaponsList[i].desc = text;
+    }
+  }
+}
 
 saveWeapons(){
   var newCharacter;
-  var currentWeapons = this.currentWeapons;
+  var currentWeapon = this.currentWeapon;
   var weaponInfo;
       weaponInfo = {
+
             simpleMelee: this.currentSimpleMelee.name,
             simpleRange: this.currentSimpleRanged.name,
             martialMelee: this.currentMartialMelee.name,
@@ -871,7 +852,7 @@ saveWeapons(){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('equipment');
+    this.$state.go('armor');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
@@ -918,23 +899,25 @@ checkedSimpleMelee(item){
     this.countSimpleMelee = count + 1;
     if(!item.number){
       item.number = 0;
-      this.currentSimpleMelee = item;
+      this.weaponsList.push(item);
     } else {
-      this.currentSimpleMelee = item;
+      this.weaponsList.push(item);
     }
   } else {
     this.countSimpleMelee = count -1;
     if(!item.number){
       item.number = 0;
     }
-    this.currentSimpleMelee = "";
+    for(var i = 0; i < this.weaponsList.length; i++){
+      if(this.weaponsList[i].number === item.number){
+        this.weaponsList.splice(i, 1);
+      }
+    }
   }
 }
 
+
 //end of weapons
-
-
-
 
 // Start code for selecting proficiencies --
   filterSkills(){
