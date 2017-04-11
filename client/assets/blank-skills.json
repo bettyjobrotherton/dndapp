@@ -1,0 +1,110 @@
+[
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Acrobatics",
+                "desc" : "A dexterity check that covers any attempt to stay on your feet in a tricky situation, such as when you're trying to balance on a tightrope or stay upright on a rocking ship\u2019s deck. The Game Master might also call for this skillo check when you try to perform acrobatic stunts, such as dives or flips."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Animal Handling",
+                "desc" : "A wisdom check when there is any question whether you can calm down a domesticated animal, keep a mount from getting spooked, or intuit an animal\u2019s intentions. You also make this skill check to control your mount when attempting a risky maneuver."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Arcana",
+                "desc" : "An intelligence check that measures your ability to recall lore about spells, magic items, eldritch symbols, magical traditions, the planes of existence, and the inhabitants of those planes."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Athletics",
+                "desc" : "A strength check that covers difficult situations you encounter while climbing, jumping, or swimming."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Deception",
+                "desc" : "A charisma check that determines whether you can convincingly hide the truth, either verbally or through your actions."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "History",
+                "desc" : "An intelligence check that measures your ability to recall lore about historical events, legendary people, ancient kingdoms, past disputes, recent wars, and lost civilizations."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Insight",
+                "desc" : "A wisdon check that decides whether you can determine the true intentions of a creature, such as as when searching out a lie or predicting someone\u2019s next move."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Intimidation",
+                "desc" : "A charisma check when you attempt to influence someone through overt threats, hostile actions, or physical violence."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Investigation",
+                "desc" : "An intelligence check when you look around for clues and make deductions based on those clues. You might deduce the location of a hidden object, discern from the appearance of a wound what kind of weapon dealt it, or determine the weakest point of a tunnel that could cause it to collapse."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Medicine",
+                "desc" : "A wisdom check that lets you try to stabilize a dying companion or diagnose an illness."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Nature",
+                "desc" : "An intelligence check that measures your ability to recall lore about terrain, plants, and animals, the weather, and natural cycles."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Perception",
+                "desc" : "A wisdom check that lets you spot, hear, or otherwise detect the presence of something. It measures your general awareness of your surroundings and the keenness of your senses."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Performance",
+                "desc" : "A charisma check that determines how well you can delight an audience with music, dancing, acting, storytelling, or some other form of entertainment."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Persuasion",
+                "desc" : "A charisma check for when you attempt to influence someone or a group of people with tact, social graces, or good nature."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Religion",
+                "desc" : "An intelligence check that meaasures your ability to recall lore about deities, rites and prayers, religious hierarchies, holy symbols, and the practices of secret cults."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Sleight of Hand",
+                "desc" : "A dexterity check for whenever you attempt an act of legerdemain or manual trickery, such as planting something on someone else or concealing an object on your person."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Stealth",
+                "desc" : "A dexterity check for when you attempt to conceal yourself from enemies, slink past guards, slip away without being noticed, or sneak up on someone without being seen or heard."
+            },
+            {
+                "prof" : false,
+                "score" : 0,
+                "name" : "Survival",
+                "desc" : "A wisdom check when you try to follow tracks, hunt wild game, guide your group through hostile terrains, identify signs of nearby predators, predict the weather, or avoid natural hazards."
+            }
+        ]

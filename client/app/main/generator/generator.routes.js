@@ -31,6 +31,16 @@ export default function routes($stateProvider) {
     template: '<backgrounddetails></backgrounddetails>',
     friendlyName: 'Choose your Background Details'
   })
+  .state('proficiencies', {
+    url: '/proficiencies',
+    template: '<proficiencies></proficiencies>',
+    friendlyName: 'Choose your Skill Proficiencies'
+  })
+  .state('pickAbilityScores', {
+    url: '/pickabilityscores',
+    template: '<pickabilityscores></pickabilityscores>',
+    friendlyName: 'Choose your Ability Scores'
+  })
   .state('generatorAlignment', {
     url:'/pickalignment',
     template: '<pickalignment></pickalignment>',
