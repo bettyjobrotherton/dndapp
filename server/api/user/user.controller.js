@@ -40,14 +40,15 @@ export function index(req, res) {
 function sendNewEmail(user) {
   try {
         // send email to new user
-        //to_email = new helper.Email(newUser.email) || "bmcleod@352inc.com";
-        //from_email = new helper.Email("bmcleod@352inc.com") || "bmcleod+sender@352inc.com";
-        //subject = "A hero has risen.";
-        //content = new helper.Content("text/plain", "Welcome to the DnD Character Creator!");
-        mail = helper.Mail(new helper.Email("bmcleod@352inc.com"), "A hero has risen.", new helper.Email(user.email), new helper.Content("text/plain", "Welcome to the DnD Character Creator!"));
+        //process.env.SENDGRID_API_KEY
+        var to_email = new helper.Email(user.email) || "bmcleod@352inc.com";
+        var from_email = new helper.Email("bmcleod@352inc.com") || "bmcleod+sender@352inc.com";
+        var subject = "A hero has risen.";
+        var content = new helper.Content("text/plain", "Welcome to the DnD Character Creator!");
+        var mail = helper.Mail(new helper.Email("bmcleod@352inc.com"), "A hero has risen.", new helper.Email(user.email), new helper.Content("text/plain", "Welcome to the DnD Character Creator!"));
         console.log(mail);
 
-        var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+        var sg = require('sendgrid')(config.sendgrid.api);
         var request = sg.emptyRequest({
           method: 'POST',
           path: '/v3/mail/send',
