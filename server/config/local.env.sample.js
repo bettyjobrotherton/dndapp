@@ -8,6 +8,7 @@
 module.exports = {
   DOMAIN: 'http://localhost:9000',
   SESSION_SECRET: 'dndapp-secret',
+  SENDGRID_API_KEY: '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',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
