@@ -37,30 +37,32 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-function sendNewEmail() {
+function sendNewEmail(user) {
+  try {
+        // send email to new user
+        //to_email = new helper.Email(newUser.email) || "bmcleod@352inc.com";
+        //from_email = new helper.Email("bmcleod@352inc.com") || "bmcleod+sender@352inc.com";
+        //subject = "A hero has risen.";
+        //content = new helper.Content("text/plain", "Welcome to the DnD Character Creator!");
+        mail = helper.Mail(new helper.Email("bmcleod@352inc.com"), "A hero has risen.", new helper.Email(user.email), new helper.Content("text/plain", "Welcome to the DnD Character Creator!"));
+        console.log(mail);
 
-// using SendGrid's v3 Node.js Library
-// https://github.com/sendgrid/sendgrid-nodejs
-var helper = require('sendgrid').mail;
+        var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
+        var request = sg.emptyRequest({
+          method: 'POST',
+          path: '/v3/mail/send',
+          body: mail.toJSON()
+        });
 
-from_email = new helper.Email("test@example.com");
-to_email = new helper.Email("test@example.com");
-subject = "Sending with SendGrid is Fun";
-content = new helper.Content("text/plain", "and easy to do anywhere, even with Node.js");
-mail = new helper.Mail(from_email, subject, to_email, content);
+        sg.API(request, function(error, response) {
+          console.log(response.statusCode);
+          console.log(response.body);
+          console.log(response.headers);
+        })
 
-var sg = require('sendgrid')(config.sendGridAPI || process.env.SENDGRID_API_KEY);
-var request = sg.emptyRequest({
-  method: 'POST',
-  path: '/v3/mail/send',
-  body: mail.toJSON()
-});
-
-sg.API(request, function(error, response) {
-  console.log(response.statusCode);
-  console.log(response.body);
-  console.log(response.headers);
-})
+      } catch (e) {
+        console.log(e);
+      }
 }
 
 /**
