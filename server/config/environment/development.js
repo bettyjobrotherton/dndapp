@@ -12,6 +12,8 @@ module.exports = {
   },
 
   // Seed database on startup
-  seedDB: false
+  seedDB: false,
+
+  sendGridAPI: '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'
 
 };
