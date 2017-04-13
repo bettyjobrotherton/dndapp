@@ -3,11 +3,11 @@
     <form ng-submit="genCtrl.saveStats()">
       <div class="form-group">
         <label>Character name:</label>
-        <input type="text" class="form-control" ng.model="genCtrl.characterInfo.bio.name">
+        <input type="text" class="form-control" ng-model="genCtrl.characterInfo.bio.name">
       </div>
       <div class="form-group">
         <label>Character age:</label>
-        <input type="number" class="form-control" ng.model="genCtrl.characterInfo.bio.age">
+        <input type="number" class="form-control" ng-model="genCtrl.characterInfo.bio.age">
       </div>
       <div class="form-group">Pick gender:
         <label>
@@ -19,33 +19,33 @@
       </div>
       <div class="form-group">
         <label>Height:</label>
-        <input type="number" ng.model="genCtrl.characterInfo.bio.appearance.height.feet"> ft.
-        <input type="number" ng.model="genCtrl.characterInfo.bio.appearance.height.inches"> in.
+        <input type="number" ng-model="genCtrl.characterInfo.bio.appearance.height.feet"> ft.
+        <input type="number" ng-model="genCtrl.characterInfo.bio.appearance.height.inches"> in.
       </div>
       <div class="form-group">
         <label>Weight:</label>
-        <input type="number" mg.model="genCtrl.characterInfo.bio.appearance.weight"> lbs.
+        <input type="number" ng-model="genCtrl.characterInfo.bio.appearance.weight"> lbs.
       </div>
       <p>What does your character look like?</p>
       <div class="form-group">
         <label>Skin color:</label>
-        <input type="text" class="form-control" ng.model="genCtrl.characterInfo.bio.appearance.skin">
+        <input type="text" class="form-control" ng-model="genCtrl.characterInfo.bio.appearance.skin">
       </div>
       <div class="form-group">
         <label>Hair color:</label>
-        <input type="text" class="form-control" ng.model="genCtrl.characterInfo.bio.appearance.hair">
+        <input type="text" class="form-control" ng-model="genCtrl.characterInfo.bio.appearance.hair">
       </div>
       <div class="form-group">
         <label>Eye color:</label>
-        <input type="text" class="form-control" ng.model="genCtrl.characterInfo.bio.appearance.eyes">
+        <input type="text" class="form-control" ng-model="genCtrl.characterInfo.bio.appearance.eyes">
       </div>
       <div class="form-group">
         <label>General description:</label>
-        <textarea class="form-control" rows="3" ng.model="genCtrl.characterInfo.bio.appearance.descr"></textarea>
+        <textarea class="form-control" rows="3" ng-model="genCtrl.characterInfo.bio.appearance.descr"></textarea>
       </div>
       <div class="form-group">
         <label>What is your character's history?</label> <p>(What was it like for them growing up? Why are they adventuring?)</p>
-        <textarea class="form-control" rows="5" ng.model="genCtrl.characterInfo.bio.backStory"></textarea>
+        <textarea class="form-control" rows="5" ng-model="genCtrl.characterInfo.bio.backStory"></textarea>
       </div>
 
     </form>
