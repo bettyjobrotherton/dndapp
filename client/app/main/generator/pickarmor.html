@@ -1,10 +1,10 @@
 <div class="armorView">
 <div class="armorDesc">
   <div>
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.lightArmorButton()">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLightArmor = !genCtrl.displayLightArmor">
       Light Armor
     </button>
-    <div ng-show="genCtrl.display1">
+    <div ng-show="genCtrl.displayLightArmor">
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
         <form ng-submit='genCtrl.saveLightArmor()'>
@@ -12,7 +12,7 @@
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countLightArmor > genCtrl.maxLightArmor) && (!item.check)" ng-click="genCtrl.checkedLightArmor(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}, {{item.armorClass}}
+                {{ item.name }}, Armor Class: {{item.armorClass}}
               </label>
             </div>
           </div>
@@ -20,18 +20,18 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.mediumArmorButton()">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayMediumArmor = !genCtrl.displayMediumArmor">
       Medium Armor
     </button>
-    <div ng-show="genCtrl.display1">
+    <div ng-show="genCtrl.displayMediumArmor">
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
         <form ng-submit='genCtrl.saveMediumArmor()'>
-          <div ng-repeat="item in genCtrl.currentArmor.mediumArmor">
+          <div ng-repeat="item in genCtrl.armorList.mediumArmor">
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countMediumArmor > genCtrl.maxMediumArmor) && (!item.check)" ng-click="genCtrl.checkedMediumArmor(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}, {{item.armorClass}}
+                {{ item.name }}, Armor Class: {{item.armorClass}}
               </label>
             </div>
           </div>
@@ -39,18 +39,18 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.HeavyArmorButton()">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayHeavyArmor = !genCtrl.displayHeavyArmor">
       Heavy Armor
     </button>
-    <div ng-show="genCtrl.display1">
+    <div ng-show="genCtrl.displayHeavyArmor">
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
         <form ng-submit='genCtrl.saveHeavyArmor()'>
-          <div ng-repeat="item in genCtrl.currentArmor.HeavyArmor">
+          <div ng-repeat="item in genCtrl.armorList.heavyArmor">
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countHeavyArmor > genCtrl.maxHeavyArmor) && (!item.check)" ng-click="genCtrl.checkedHeavyArmor(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}, {{item.armorClass}}
+                {{ item.name }}, Armor Class: {{item.armorClass}}
               </label>
             </div>
           </div>
