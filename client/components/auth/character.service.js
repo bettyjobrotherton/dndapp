@@ -56,6 +56,10 @@ export function CharacterService($location, $http, $window) {
         firstSelection = 'weapons';
         $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
         this.$state.go('generatorWeapons');
+      } else if(firstOpt == 'armor'){
+        firstSelection = 'armor';
+        $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));
+        this.$state.go('generatorArmor');
       } else if(firstOpt == 'equip'){
         firstSelection = 'equip';
         $window.localStorage.setItem('first-selection', JSON.stringify(firstSelection));

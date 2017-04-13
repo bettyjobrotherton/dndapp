@@ -209,10 +209,11 @@ export class GeneratorController {
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
   }else if(this.$state.current.name == 'generatorArmor'){
-    this.$http.get('assets/.json')
+    this.$http.get('assets/armor.json')
               .then(res => {
-                vm.armorList = res.data;
-                vm.currentArmor = res.data[0];
+                vm.armorList = res.data[0];
+                // vm.currentArmor = res.data[0];
+                console.log(vm.armorList.lightArmor);
               })
               .catch(err => {
                 return err;
@@ -542,7 +543,7 @@ export class GeneratorController {
   }
 
   randomizeSpecialTrait(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var specialTraits = this.currentBackground.specialTrait.list;
     if(this.countSpecialTrait > this.maxSpecialTraits){
       return;
@@ -592,7 +593,7 @@ export class GeneratorController {
   }
 
   randomizeTrait(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var traits = this.currentBackground.personalityTraits;
     if(this.countTrait > this.maxTraits){
       return;
@@ -631,7 +632,7 @@ export class GeneratorController {
   }
 
   randomizeIdeal(){
-    var number = Math.round(Math.random()*6);
+    var number = Math.floor((Math.random()*6) + 1);
     var ideals = this.currentBackground.ideals;
     if(this.countIdeal > this.maxIdeals){
       return;
@@ -670,7 +671,7 @@ export class GeneratorController {
   }
 
   randomizeBond(){
-    var number = Math.round(Math.random()*6);
+    var number = Math.floor((Math.random()*6) + 1);
     var bonds = this.currentBackground.bonds;
     if(this.countBond > this.maxBonds){
       return;
@@ -709,7 +710,7 @@ export class GeneratorController {
   }
 
   randomizeFlaw(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var flaws = this.currentBackground.flaws;
     if(this.countFlaw > this.maxFlaws){
       return;
@@ -978,10 +979,10 @@ checkedSimpleMelee(item){
   rollForAbilityScores(){
     this.score = [];
     for(var i = 0; i < 6; i++){
-      var a = Math.round(Math.random()*6);
-      var b = Math.round(Math.random()*6);
-      var c = Math.round(Math.random()*6);
-      var d = Math.round(Math.random()*6);
+      var a = Math.floor(Math.random()*6 +1);
+      var b = Math.floor(Math.random()*6 +1);
+      var c = Math.floor(Math.random()*6 +1);
+      var d = Math.floor(Math.random()*6 +1);
       var e = Math.min(a, b, c, d);
       var f = a + b + c + d - e;
       this.score.push(f);

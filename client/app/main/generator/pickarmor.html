@@ -8,7 +8,7 @@
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
         <form ng-submit='genCtrl.saveLightArmor()'>
-          <div ng-repeat="item in genCtrl.currentArmor.lightArmor">
+          <div ng-repeat="item in genCtrl.armorList.lightArmor">
             <div class="checkbox">
               <label>
                 <input type="checkbox" ng-disabled="(genCtrl.countLightArmor > genCtrl.maxLightArmor) && (!item.check)" ng-click="genCtrl.checkedLightArmor(item)" ng-checked="item.check" ng-model="item.check">
