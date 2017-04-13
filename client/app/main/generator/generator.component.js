@@ -209,10 +209,18 @@ export class GeneratorController {
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
   }else if(this.$state.current.name == 'generatorArmor'){
+<<<<<<< HEAD
+=======
+    this.armorCount = 0;
+    this.armorMax = 1;
+    this.shieldCount = 0;
+    this.shieldMax = 1;
+    this.characterArmor = [];
+
+>>>>>>> 977e2a05e867006c27200d0dd50e275c79ccd633
     this.$http.get('assets/armor.json')
               .then(res => {
-                vm.armorList = res.data;
-                vm.currentArmor = res.data[0];
+                vm.armorList = res.data[0];
               })
               .catch(err => {
                 return err;
@@ -582,7 +590,7 @@ this.$http.get('assets/equipment.json')
   }
 
   randomizeSpecialTrait(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var specialTraits = this.currentBackground.specialTrait.list;
     if(this.countSpecialTrait > this.maxSpecialTraits){
       return;
@@ -632,7 +640,7 @@ this.$http.get('assets/equipment.json')
   }
 
   randomizeTrait(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var traits = this.currentBackground.personalityTraits;
     if(this.countTrait > this.maxTraits){
       return;
@@ -671,7 +679,7 @@ this.$http.get('assets/equipment.json')
   }
 
   randomizeIdeal(){
-    var number = Math.round(Math.random()*6);
+    var number = Math.floor((Math.random()*6) + 1);
     var ideals = this.currentBackground.ideals;
     if(this.countIdeal > this.maxIdeals){
       return;
@@ -710,7 +718,7 @@ this.$http.get('assets/equipment.json')
   }
 
   randomizeBond(){
-    var number = Math.round(Math.random()*6);
+    var number = Math.floor((Math.random()*6) + 1);
     var bonds = this.currentBackground.bonds;
     if(this.countBond > this.maxBonds){
       return;
@@ -749,7 +757,7 @@ this.$http.get('assets/equipment.json')
   }
 
   randomizeFlaw(){
-    var number = Math.round(Math.random()*8);
+    var number = Math.floor((Math.random()*8) + 1);
     var flaws = this.currentBackground.flaws;
     if(this.countFlaw > this.maxFlaws){
       return;
@@ -881,16 +889,17 @@ saveWeapons(){
             martialMelee: this.currentMartialMelee.name,
             martialRange: this.currentMartialRanged.name
       };
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.weapons = weaponInfo;
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
   if(this.first() =='weapons'){
-    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.weapons = weaponInfo;
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('armor');
-  } else {
-    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.weapons = weaponInfo;
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorthree');
+    this.$state.go('generatorArmor');
+  } else if(this.first() == 'armor') {
+    this.$state.go('generatorthree'); //<--need to change to next generator
+  } else if(this.first() == 'equip'){
+    this.$state.go('generatorArmor');
+  } else if(this.first() == 'spells'){
+    this.$state.go('generatorArmor');
   }
 }
 
@@ -950,7 +959,27 @@ checkedSimpleMelee(item){
 }
 //end of weapons
 
+// Start code for selecting armor --
+  checkedLightArmor(item){
+    var count = this.armorCount;
+    if(item.check){
+      this.armorCount = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterArmor.push(object);
+      console.log(this.characterArmor);
+    } else {
+      this.armorCount = count - 1;
+      for(var i = 0; i < this.characterArmor.length; i++){
+        if(this.characterArmor[i].name === item.name){
+          this.characterArmor.splice(i, 1);
+        }
+      }
+    }
+  }
 
+<<<<<<< HEAD
 saveEquipment(){
   var newCharacter;
   var currentEquipment = this.currentEquipment;
@@ -999,6 +1028,80 @@ checkedEquipment(item){
   }
 }
 
+=======
+  checkedMediumArmor(item){
+    var count = this.armorCount;
+    if(item.check){
+      this.armorCount = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterArmor.push(object);
+    } else {
+      this.armorCount = count - 1;
+      for(var i = 0; i < this.characterArmor.length; i++){
+        if(this.characterArmor[i].name === item.name){
+          this.characterArmor.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedHeavyArmor(item){
+    var count = this.armorCount;
+    if(item.check){
+      this.armorCount = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterArmor.push(object);
+    } else {
+      this.armorCount = count - 1;
+      for(var i = 0; i < this.characterArmor.length; i++){
+        if(this.characterArmor[i].name === item.name){
+          this.characterArmor.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedShield(item){
+    var count = this.sheildCount;
+    if(item.check){
+      this.shieldCount = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterArmor.push(object);
+    } else {
+      this.shieldCount = count - 1;
+      for(var i = 0; i < this.characterArmor.length; i++){
+        if(this.characterArmor[i].name === item.name){
+          this.characterArmor.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  saveArmor(){
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.combat.armor = this.characterArmor;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    console.log(this.localStorage['character-in-progress']);
+    if(this.first() == 'armor'){
+      this.$state.go('generatorEquip');
+    } else if(this.first() == 'equip'){
+      this.$state.go('generatorthree');
+    } else if(this.first() == 'spells'){
+      this.$state.go('generatorEquip');
+    } else if(this.first() == 'weapons'){
+      this.$state.go('generatorEquip');
+    }
+  }
+
+
+// -- End code for selecting armor
+>>>>>>> 977e2a05e867006c27200d0dd50e275c79ccd633
 
 // Start code for selecting proficiencies --
   filterSkills(){
@@ -1066,10 +1169,10 @@ checkedEquipment(item){
   rollForAbilityScores(){
     this.score = [];
     for(var i = 0; i < 6; i++){
-      var a = Math.round(Math.random()*6);
-      var b = Math.round(Math.random()*6);
-      var c = Math.round(Math.random()*6);
-      var d = Math.round(Math.random()*6);
+      var a = Math.floor(Math.random()*6 +1);
+      var b = Math.floor(Math.random()*6 +1);
+      var c = Math.floor(Math.random()*6 +1);
+      var d = Math.floor(Math.random()*6 +1);
       var e = Math.min(a, b, c, d);
       var f = a + b + c + d - e;
       this.score.push(f);
@@ -1501,7 +1604,9 @@ checkedEquipment(item){
     if(this.first() == 'spells'){
       this.$state.go('generatorWeapons');
     } else if(this.first() == 'weapons'){
-      this.$state.go('generatorStats');
+      this.$state.go('generatorthree');
+    } else if(this.first() == 'armor'){
+      this.$state.go('generatorWeapons');
     } else if(this.first() == 'equip'){
       this.$state.go('generatorWeapons');
     }
