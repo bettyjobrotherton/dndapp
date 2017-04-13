@@ -979,10 +979,10 @@ checkedSimpleMelee(item){
   rollForAbilityScores(){
     this.score = [];
     for(var i = 0; i < 6; i++){
-      var a = Math.round(Math.random()*6);
-      var b = Math.round(Math.random()*6);
-      var c = Math.round(Math.random()*6);
-      var d = Math.round(Math.random()*6);
+      var a = Math.round(Math.random()*6 +1);
+      var b = Math.round(Math.random()*6 +1);
+      var c = Math.round(Math.random()*6 +1);
+      var d = Math.round(Math.random()*6 +1);
       var e = Math.min(a, b, c, d);
       var f = a + b + c + d - e;
       this.score.push(f);
