@@ -1458,6 +1458,45 @@ export function CharacterService($location, $http, $window) {
         }
       }
       return character;
+    },
+
+    findSpellsAtLevel(spells){
+      var levels = {
+          zero: [],
+          one: [],
+          two: [],
+          three: [],
+          four: [],
+          five: [],
+          six: [],
+          seven: [],
+          eight: [],
+          nine: []
+      };
+      for(var i = 0; i < spells.length; i++){
+        if(spells[i].level == 'cantrip'){
+          levels.zero.push(spells[i]);
+        } else if(spells[i].level == '1'){
+          levels.one.push(spells[i]);
+        } else if(spells[i].level == '2'){
+          levels.two.push(spells[i]);
+        } else if(spells[i].level == '3'){
+          levels.three.push(spells[i]);
+        } else if(spells[i].level == '4'){
+          levels.four.push(spells[i]);
+        } else if(spells[i].level == '5'){
+          levels.five.push(spells[i]);
+        } else if(spells[i].level == '6'){
+          levels.six.push(spells[i]);
+        } else if(spells[i].level == '7'){
+          levels.seven.push(spells[i]);
+        } else if(spells[i].level == '8'){
+          levels.eight.push(spells[i]);
+        } else if(spells[i].level == '9'){
+          levels.nine.push(spells[i]);
+        }
+      }
+      return levels;
     }
 
   };
