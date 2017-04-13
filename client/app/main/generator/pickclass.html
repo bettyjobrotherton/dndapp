@@ -1,7 +1,9 @@
 <div class='classView' ng-show="genCtrl.classMain">
   <div class="iconList">
-    <div class='list-group' ng-class="{ 'active': build == genCtrl.currentClass }" ng-repeat="build in genCtrl.classList" >
-      <img ng-src='{{ build.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': build == genCtrl.currentClass }" ng-repeat="build in genCtrl.classList" >
+        <img ng-src='{{ build.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
+      </div>
     </div>
   </div>
 
@@ -92,8 +94,10 @@
 
 <div class="classView" ng-hide="genCtrl.classMain">
   <div class="iconList">
-    <div class='list-group' ng-repeat="archetype in genCtrl.selectedClass.archetype.types">
-      <img ng-src='{{ archetype.placeholder }}' class='list-group-item' ng-click="genCtrl.selectArchetype(archetype)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': archetype == genCtrl.currentArchetype }" ng-repeat="archetype in genCtrl.selectedClass.archetype.types">
+        <img ng-src='{{ archetype.placeholder }}' class='list-group-item' ng-click="genCtrl.selectArchetype(archetype)">
+      </div>
     </div>
   </div>
 

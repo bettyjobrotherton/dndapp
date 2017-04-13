@@ -8,3 +8,4 @@ client/index.html
 npm-debug.log
 coverage
 dist
+sendgrid.env
