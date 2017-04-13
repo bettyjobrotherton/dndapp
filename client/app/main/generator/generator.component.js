@@ -223,20 +223,6 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
-  }else if(this.$state.current.name == 'generatorWeapons'){
-this.classInfo = JSON.parse(this.localStorage['class-info']);
-this.$http.get('assets/weapons.json')
-        .then(res => {
-          vm.weaponsList = res.data;
-          if(!vm.localStorage['selected-weapons']){
-            vm.currentWeapons = res.data[0];
-          } else {
-            vm.currentWeapons = JSON.parse(this.localStorage['selected-weapons']);
-          }
-        })
-        .catch(err => {
-          return err;
-        });
   }else if(this.$state.current.name == 'pickEquip'){
   this.currentEquipment = JSON.parse(this.localStorage['selected-equipment']);
   this.countEquipment = 0;
@@ -264,14 +250,11 @@ this.$http.get('assets/equipment.json')
           .catch(err => {
             return err;
           });
-        }
+        } else if(this.$state.current.name == 'generatorStats'){
+    this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
+  }
 }
 
-//end of weapons
-
-//start of Equipment
-
-//end of equipment
 
   continueChar(generate) {
     if(generate == 'race' && 'class'){
@@ -893,7 +876,7 @@ saveWeapons(){
   if(this.first() =='weapons'){
     this.$state.go('generatorArmor');
   } else if(this.first() == 'armor') {
-    this.$state.go('generatorthree'); //<--need to change to next generator
+    this.$state.go('generatorStats');
   } else if(this.first() == 'equip'){
     this.$state.go('generatorArmor');
   } else if(this.first() == 'spells'){
@@ -1086,7 +1069,7 @@ checkedEquipment(item){
     if(this.first() == 'armor'){
       this.$state.go('generatorEquip');
     } else if(this.first() == 'equip'){
-      this.$state.go('generatorthree');
+      this.$state.go('generatorStats');
     } else if(this.first() == 'spells'){
       this.$state.go('generatorEquip');
     } else if(this.first() == 'weapons'){
@@ -1116,22 +1099,40 @@ checkedEquipment(item){
     var count = this.countSkill;
     if(check){
       this.countSkill = count + 1;
-      this.skillsList.push(item);
+      var object = {
+        prof: item.prof,
+        score: item.score,
+        name: item.name
+      };
+      this.skillsList.push(object);
     } else {
       this.countSkill = count -1;
       for(var i = 0; i < this.skillsList.length; i++){
-        if(this.skillsList[i] === item){
+        if(this.skillsList[i].name === item.name){
           this.skillsList.splice(i, 1);
         }
       }
     }
   }
 
+  trimSkillsList(){
+    var newList = [];
+      for(var i = 0; i < this.generalSkillsList.length; i++){
+        var object = {
+          prof: this.generalSkillsList[i].prof,
+          score: this.generalSkillsList[i].score,
+          name: this.generalSkillsList[i].name
+        }
+        newList.push(object);
+      }
+      return newList;
+    }
+
   saveSkills(){
     var newCharacter;
     var bonusSkills = this.currentBackground.addSkillProf;
     var selectedSkills = this.skillsList;
-    this.finalSkillsList = this.generalSkillsList;
+    this.finalSkillsList = this.trimSkillsList();
 
     for(var i = 0; i < this.finalSkillsList.length; i++){
         for(var j = 0; j < bonusSkills.length; j++){
@@ -1598,7 +1599,7 @@ checkedEquipment(item){
     if(this.first() == 'spells'){
       this.$state.go('generatorWeapons');
     } else if(this.first() == 'weapons'){
-      this.$state.go('generatorthree');
+      this.$state.go('generatorStats');
     } else if(this.first() == 'armor'){
       this.$state.go('generatorWeapons');
     } else if(this.first() == 'equip'){
@@ -1606,6 +1607,13 @@ checkedEquipment(item){
     }
   }
 // -- End code for spells selection
+
+// Beginning code to save stats --
+  saveStats(){
+    this.localStorage.setItem('character-in-progress', JSON.stringify(this.characterInfo));
+    console.log(this.localStorage['character-in-progress']);
+  }
+// -- End code to save stats
 
 }
 
