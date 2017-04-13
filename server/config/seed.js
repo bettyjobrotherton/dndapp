@@ -72,7 +72,7 @@ User.find({}).remove()
           flaw: 'Once I pick a goal, I become obsessed with it to the detriment of everything else in my life.'
         },
         combat: {
-          armor: 'scale mail',
+          armor: [{name: 'scale mail'}],
           weapons: [{name:'light crossbow'}, {name:'dagger'}],
           ammunition: {
             arrows: 0,
