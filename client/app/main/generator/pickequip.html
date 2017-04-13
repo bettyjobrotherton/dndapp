@@ -1,21 +1,110 @@
 <div class='equipView'>
-  <div class="iconList">
-    <div class="sticky-wrapper">
-      <div class='list-group' ng-class="{ 'active': build == genCtrl.currentEquip }" ng-repeat="build in genCtrl.equipList" >
-        <img ng-src='{{ equip.icon }}' class='list-group-item' ng-click="genCtrl.selectequip(equip)">
+<div class="col-lg-12">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayEquipment = !genCtrl.displayEquipment">
+      Equipment
+    </button>
+    <div ng-show="genCtrl.displayEquipment">
+      <div class="background-detail-box">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
+        <form ng-submit='genCtrl.saveEquipment()'>
+          <div ng-repeat="item in genCtrl.equipmentList.gear">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countEquipment > genCtrl.maxEquipment) && (!item.check)" ng-click="genCtrl.checkedEquipment(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
 
-  <div class='equipDesc'>
-    <div>
-      <h3> {{genCtrl.currentEquip.name}} </h3>
-      <p class='summary'>{{genCtrl.currentEquip.desc}}</p>
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayAmmunition = !genCtrl.displayAmmunition">
+      Ammunition
+    </button>
+    <div ng-show="genCtrl.displayAmmunition">
+      <div class="background-detail-box">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
+        <form ng-submit='genCtrl.saveAmmunition()'>
+          <div ng-repeat= "gear in genCtrl.equipmentList.gear">
+          <div ng-repeat="item in gear.ammunition">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countAmmunition > genCtrl.maxAmmunition) && (!item.check)" ng-click="genCtrl.checkedEquipment(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.createChar('stats')"  type="new character">
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayArcanceFocus = !genCtrl.displayArcanceFocus">
+      Arcane Focus
+    </button>
+    <div ng-show="genCtrl.displayArcanceFocus">
+      <div class="background-detail-box">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
+        <form ng-submit='genCtrl.saveArcaneFocus()'>
+          <div ng-repeat= "gear in genCtrl.equipmentList.gear">
+          <div ng-repeat="item in gear.arcaneFocus">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countArcaneFocus > genCtrl.maxArcaneFocus) && (!item.check)" ng-click="genCtrl.checkedArcaneFocus(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayDruidicFocus = !genCtrl.displayDruidicFocus">
+      Druidic Focus
+    </button>
+    <div ng-show="genCtrl.displayDruidicFocus">
+      <div class="background-detail-box">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
+        <form ng-submit='genCtrl.saveDruidicFocus()'>
+          <div ng-repeat="gear in genCtrl.equipmentList.gear">
+            <div ng-repeat="item in gear.druidicFocus">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countDruidicFocus > genCtrl.maxDruidicFocus) && (!item.check)" ng-click="genCtrl.checkedDruidicFocus(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayHolySymbol = !genCtrl.displayHolySymbol">
+      Holy Symbol
+    </button>
+    <div ng-show="genCtrl.displayHolySymbol">
+      <div class="background-detail-box">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
+        <form ng-submit='genCtrl.saveHolySymbol()'>
+          <div ng-repeat="gear in genCtrl.equipmentList.gear">
+            <div ng-repeat="item in gear.holySymbol">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-disabled="(genCtrl.countholySymbol > genCtrl.maxholySymbol) && (!item.check)" ng-click="genCtrl.checkedHolySymbol(item)" ng-checked="item.check" ng-model="item.check">
+                {{ item.name }}
+              </label>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-success btn-underneath" ng-click="genCtrl.saveEquipment()"  type="button">
       Submit &amp; Continue
     </button>
-
-  </div>
 </div>
+  </div>

@@ -209,6 +209,7 @@ export class GeneratorController {
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
   }else if(this.$state.current.name == 'generatorArmor'){
+
     this.armorCount = 0;
     this.armorMax = 1;
     this.shieldCount = 0;
@@ -222,7 +223,34 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
-  } else if(this.$state.current.name == 'generatorStats'){
+  }else if(this.$state.current.name == 'pickEquip'){
+  this.currentEquipment = JSON.parse(this.localStorage['selected-equipment']);
+  this.countEquipment = 0;
+  this.maxEquipment = 0;
+  this.equipmentList = [];
+
+  this.countAmmunition = 0;
+  this.maxAmmunition = 0;
+
+  this.countArcaneFocus = 0;
+  this.maxArcaneFocus = 0;
+
+  this.countDruidicFocus = 0;
+  this.maxDruidicFocus = 0;
+
+  this.countHolySymbol = 0;
+  this.maxHolySymbol = 0;
+
+}else if(this.$state.current.name == 'generatorEquip'){
+this.$http.get('assets/equipment.json')
+          .then(res => {
+            vm.equipmentList = res.data[0];
+            vm.currentEquipment = res.data[0];
+          })
+          .catch(err => {
+            return err;
+          });
+        } else if(this.$state.current.name == 'generatorStats'){
     this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
   }
 }
@@ -331,7 +359,6 @@ export class GeneratorController {
       this.$state.go('generatorTwo');
     }
   }
-
   returnToRace(){
     this.$state.go('generatorRace');
   }
@@ -932,6 +959,53 @@ checkedSimpleMelee(item){
       }
     }
   }
+saveEquipment(){
+  var newCharacter;
+  var currentEquipment = this.currentEquipment;
+  var equipmentInfo;
+      equipmentInfo = {
+
+          Equipment : this.currentEquipment.name,
+          Ammunition : this.currentAmmunition.name,
+          ArcaneFocus : this.currentArcaneFocus.name,
+          DruidicFocus : this.currentDruidicFocus.name,
+          HolySymbol : this.currentHolySymbol.name
+      };
+  if(this.first() =='equip'){
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.equipment = equipmentInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorthree');
+  } else {
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.equipment = equipmentInfo;
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.$state.go('generatorthree');
+  }
+}
+
+checkedEquipment(item){
+  var count = this.countEquipment;
+  if(item.check){
+    this.countEquipment = count + 1;
+    if(!item.number){
+      item.number = 0;
+      thisequipmentList.push(item);
+    } else {
+      this.equipmentList.push(item);
+    }
+  } else {
+    this.countEquipment = count -1;
+    if(!item.number){
+      item.number = 0;
+    }
+    for(var i = 0; i < this.equipmentList.length; i++){
+      if(this.equipmentList[i].number === item.number){
+        this.equipmentList.splice(i, 1);
+      }
+    }
+  }
+}
 
   checkedMediumArmor(item){
     var count = this.armorCount;
