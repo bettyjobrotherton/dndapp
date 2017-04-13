@@ -209,15 +209,13 @@ export class GeneratorController {
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
   }else if(this.$state.current.name == 'generatorArmor'){
-<<<<<<< HEAD
-=======
+
     this.armorCount = 0;
     this.armorMax = 1;
     this.shieldCount = 0;
     this.shieldMax = 1;
     this.characterArmor = [];
 
->>>>>>> 977e2a05e867006c27200d0dd50e275c79ccd633
     this.$http.get('assets/armor.json')
               .then(res => {
                 vm.armorList = res.data[0];
@@ -978,8 +976,6 @@ checkedSimpleMelee(item){
       }
     }
   }
-
-<<<<<<< HEAD
 saveEquipment(){
   var newCharacter;
   var currentEquipment = this.currentEquipment;
@@ -1028,7 +1024,6 @@ checkedEquipment(item){
   }
 }
 
-=======
   checkedMediumArmor(item){
     var count = this.armorCount;
     if(item.check){
@@ -1101,7 +1096,6 @@ checkedEquipment(item){
 
 
 // -- End code for selecting armor
->>>>>>> 977e2a05e867006c27200d0dd50e275c79ccd633
 
 // Start code for selecting proficiencies --
   filterSkills(){
