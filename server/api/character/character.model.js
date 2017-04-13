@@ -49,7 +49,7 @@ var CharacterSchema = new mongoose.Schema({
     flaw: String
   },
   combat: {
-    armor: String,
+    armor: [{}],
     weapons: [{}],
     ammunition: {
       arrows: Number,
