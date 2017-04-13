@@ -88,6 +88,7 @@ export class GeneratorController {
 
       this.countFlaw = 0;
       this.maxFlaws = 0;
+
     } else if(this.$state.current.name == 'generatorAlignment'){
       this.$http.get('assets/alignment.json')
                 .then(res => {
@@ -119,7 +120,7 @@ export class GeneratorController {
       this.makeMySelections = true;
     } else if(this.$state.current.name == 'generatorThree'){
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      console.log(this.savedCharacter);
+      // console.log(this.savedCharacter);
       if(vm.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
         this.selectSpells = true;
       } else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
@@ -137,11 +138,44 @@ export class GeneratorController {
       } else {
         this.selectSpells = false;
       }
-    }
+    } else if(this.$state.current.name == 'generatorSpells'){
+      this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
+      this.characterInfo.spells = {
+        lvl0:[], lvl1:[], lvl2:[], lvl3:[], lvl4:[], lvl5:[], lvl6:[], lvl7:[], lvl8:[], lvl9:[]
+      };
+      this.classInfo = JSON.parse(this.localStorage['class-info']);
+      this.enhancedInfo = this.character.allowedNumberOfSpells(this.characterInfo);
+      var charClass = vm.characterInfo.class.main.toLowerCase();
+      this.classSpellsList = [];
+      this.countSpell = {
+        zero: 1,
+        one: 1,
+        two: 1,
+        three: 1,
+        four: 1,
+        five: 1,
+        six: 1,
+        seven: 1,
+        eight: 1,
+        nine: 1
+      };
 
-
-//weapon code start here
-else if(this.$state.current.name == 'generatorWeapons'){
+      this.$http.get("assets/spells.json")
+                .then(res => {
+                  for(var i = 0; i < res.data.length; i++){
+                    for(var j = 0; j < res.data[i].classes.length; j++){
+                      if(res.data[i].classes[j] == charClass){
+                        vm.classSpellsList.push(res.data[i]);
+                      }
+                    }
+                  }
+                  this.classSpellsByLevel = this.character.findSpellsAtLevel(this.classSpellsList);
+                  this.spellDisplayProperties(this.enhancedInfo);
+                })
+                .catch(err => {
+                  return err;
+                });
+    } else if(this.$state.current.name == 'generatorWeapons'){
   this.classInfo = JSON.parse(this.localStorage['class-info']);
   this.$http.get('assets/weapons.json')
             .then(res => {
@@ -161,37 +195,36 @@ else if(this.$state.current.name == 'generatorWeapons'){
       this.display2 = false;
       this.display3 = false;
       this.display4 = false;
-      this.display5 = false;
 
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 0;
-      this.simpleMeleeList = [];
+      this.weaponsList = [];
 
       this.countSimpleRanged = 0;
       this.maxSimpleRanged = 0;
-      this.simpleRangedList = [];
 
       this.countMartialMelee = 0;
       this.maxMartialMelee = 0;
-      this.martialMeleeList = [];
 
       this.countMartialRanged = 0;
       this.maxMartialRanged = 0;
-      this.martialRangedList = [];
-  }
-}
-
-pickWeapon(){
-  var Weapon = this.currentWeapon;
-  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
-  this.$state.go('generatorthree');
-}
-
-selectWeapon(Weapon) {
-  this.currentWeapon = Weapon;
+  }else if(this.$state.current.name == 'generatorArmor'){
+    this.$http.get('assets/.json')
+              .then(res => {
+                vm.armorList = res.data;
+                vm.currentArmor = res.data[0];
+              })
+              .catch(err => {
+                return err;
+              });
+            }
 }
 
 //end of weapons
+
+//start of spells
+
+//end of spells
 
   continueChar(generate) {
     if(generate == 'race' && 'class'){
@@ -236,7 +269,6 @@ selectWeapon(Weapon) {
   selectSubrace(subrace){
     this.currentSubrace = subrace;
   }
-
 
   goBackToRace(){
     this.raceMain = true;
@@ -301,9 +333,11 @@ selectWeapon(Weapon) {
   returnToRace(){
     this.$state.go('generatorRace');
   }
+
 // -- End code for pick race
 
-// Start code for pick class --
+// Start code for pick class
+
   selectClass(build) {
     this.currentClass = build;
   }
@@ -588,9 +622,6 @@ selectWeapon(Weapon) {
       }
     } else {
       this.countIdeal = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentIdeal = " ";
     }
   }
@@ -630,9 +661,6 @@ selectWeapon(Weapon) {
       }
     } else {
       this.countBond = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentBond = " ";
     }
   }
@@ -672,9 +700,6 @@ selectWeapon(Weapon) {
       }
     } else {
       this.countFlaw = count -1;
-      if(!item.number){
-        item.number = 0;
-      }
       this.currentFlaw = "";
     }
   }
@@ -703,10 +728,12 @@ selectWeapon(Weapon) {
   }
 
   autoPickDetails(){
-    this.randomizeSpecialTrait();
-    this.randomizeTrait();
+    if(this.currentBackground.specialTrait.isThere){
+      this.randomizeSpecialTrait();
+    }
     this.randomizeTrait();
     this.randomizeIdeal();
+    this.randomizeTrait();
     this.randomizeBond();
     this.randomizeFlaw();
     this.backgroundDetailsText = "All background traits have been randomly selected.";
@@ -765,6 +792,7 @@ saveBackground(){
           flaw: this.currentFlaw.desc
     };
   }
+
   if(this.first() =='background'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.background = backgroundInfo;
@@ -784,27 +812,45 @@ returnToBackground(){
 // -- End code for pick background
 
 // -- start of pick weapon
+pickWeapon(){
+  var Weapon = this.currentWeapon;
+  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
+  this.$state.go('generatorthree');
+}
+
+selectWeapon(weapon) {
+  this.currentWeapon = weapon;
+}
+
+saveSimpleMelee(text){
+  for(var i = 0; i < this.weaponsList.length; i++){
+    if(this.weaponsList[i].number === 0){
+      this.weaponsList[i].desc = text;
+    }
+  }
+}
 
 saveWeapons(){
   var newCharacter;
-  var currentWeapons = this.currentWeapons;
+  var currentWeapon = this.currentWeapon;
   var weaponInfo;
       weaponInfo = {
-            simpleMelee: this.currentSimpleMelee.desc,
-            simpleRange: this.currentSimpleRanged.desc,
-            martialMelee: this.currentMartialMelee.desc,
-            martialRange: this.currentMartialRanged.desc
+
+            simpleMelee: this.currentSimpleMelee.name,
+            simpleRange: this.currentSimpleRanged.name,
+            martialMelee: this.currentMartialMelee.name,
+            martialRange: this.currentMartialRanged.name
       };
   if(this.first() =='weapons'){
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorthree');
+    this.$state.go('armor');
   } else {
     newCharacter = JSON.parse(this.localStorage['character-in-progress']);
     newCharacter.weapons = weaponInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('equipment');
+    this.$state.go('generatorthree');
   }
 }
 
@@ -846,35 +892,25 @@ checkedSimpleMelee(item){
     this.countSimpleMelee = count + 1;
     if(!item.number){
       item.number = 0;
-      this.simpleMeleeList.push(item);
+      this.weaponsList.push(item);
     } else {
-      this.simpleMeleeList.push(item);
+      this.weaponsList.push(item);
     }
   } else {
     this.countSimpleMelee = count -1;
     if(!item.number){
       item.number = 0;
     }
-    for(var i = 0; i < this.simpleMeleeList.length; i++){
-      if(this.simpleMeleeList[i].number === item.number){
-        this.simpleMeleeList.splice(i, 1);
+    for(var i = 0; i < this.weaponsList.length; i++){
+      if(this.weaponsList[i].number === item.number){
+        this.weaponsList.splice(i, 1);
       }
     }
   }
 }
 
-saveOwnSimpleMelee(text){
-  for(var i = 0; i < this.simpleMeleeList.length; i++){
-    if(this.simpleMeleeList[i].number === 0){
-      this.simpleMeleeList[i].desc = text;
-    }
-  }
-}
 
 //end of weapons
-
-
-
 
 // Start code for selecting proficiencies --
   filterSkills(){
@@ -1101,14 +1137,288 @@ saveOwnSimpleMelee(text){
     newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     this.$state.go('generatorThree');
-    console.log(this.localStorage['character-in-progress']);
   }
 // -- End code for ability score selection
 
-//start of weapon selection
+// Beginning code for spells selection --
+  spellDisplayProperties(data){
+    if(data.allowed.cantrip > 0){
+      this.display0 = true;
+    } else {
+      this.display0 = false;
+    }
+    if(data.allowed.level1 > 0){
+      this.display1 = true;
+    } else {
+      this.display1 = false;
+    }
+    if(data.allowed.level2 > 0){
+      this.display2 = true;
+    } else {
+      this.display2 = false;
+    }
+    if(data.allowed.level3 > 0){
+      this.display3 = true;
+    } else {
+      this.display3 = false;
+    }
+    if(data.allowed.level4 > 0){
+      this.display4 = true;
+    } else {
+      this.display4 = false;
+    }
+    if(data.allowed.level5 > 0){
+      this.display5 = true;
+    } else {
+      this.display5 = false;
+    }
+    if(data.allowed.level6 > 0){
+      this.display6 = true;
+    } else {
+      this.display6 = false;
+    }
+    if(data.allowed.level7 > 0){
+      this.display7 = true;
+    } else {
+      this.display7 = false;
+    }
+    if(data.allowed.level8 > 0){
+      this.display8 = true;
+    } else {
+      this.display8 = false;
+    }if(data.allowed.level9 > 0){
+      this.display9 = true;
+    } else {
+      this.display9 = false;
+    }
+    if(this.classInfo.quickBuild.spells.cantrips){
+      this.display10 = true;
+      this.checkQBspells();
+    } else {
+      this.display10 = false;
+    }
+  }
 
+  checkedSpell0(item){
+    var count = this.countSpell.zero;
+    if(item.check){
+      this.countSpell.zero = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl0.push(object);
+    } else {
+      this.countSpell.zero = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl0.length; i++){
+        if(this.characterInfo.spells.lvl0[i].name === item.name){
+          this.characterInfo.spells.lvl0.splice(i, 1);
+        }
+      }
+    }
+  }
 
+  checkedSpell1(item){
+    var count = this.countSpell.one;
+    if(item.check){
+      this.countSpell.one = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl1.push(object);
+    } else {
+      this.countSpell.one = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl1.length; i++){
+        if(this.characterInfo.spells.lvl1[i].name === item.name){
+          this.characterInfo.spells.lvl1.splice(i, 1);
+        }
+      }
+    }
+  }
 
+  checkedSpell2(item){
+    var count = this.countSpell.two;
+    if(item.check){
+      this.countSpell.two = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl2.push(object);
+    } else {
+      this.countSpell.two = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl2.length; i++){
+        if(this.characterInfo.spells.lvl2[i].name === item.name){
+          this.characterInfo.spells.lvl2.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell3(item){
+    var count = this.countSpell.three;
+    if(item.check){
+      this.countSpell.three = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl3.push(object);
+    } else {
+      this.countSpell.three = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl3.length; i++){
+        if(this.characterInfo.spells.lvl3[i].name === item.name){
+          this.characterInfo.spells.lvl3.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell4(item){
+    var count = this.countSpell.four;
+    if(item.check){
+      this.countSpell.four = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl4.push(object);
+    } else {
+      this.countSpell.four = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl4.length; i++){
+        if(this.characterInfo.spells.lvl4[i].name === item.name){
+          this.characterInfo.spells.lvl4.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell5(item){
+    var count = this.countSpell.five;
+    if(item.check){
+      this.countSpell.five = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl5.push(object);
+    } else {
+      this.countSpell.five = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl5.length; i++){
+        if(this.characterInfo.spells.lvl5[i].name === item.name){
+          this.characterInfo.spells.lvl5.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell6(item){
+    var count = this.countSpell.six;
+    if(item.check){
+      this.countSpell.six = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl6.push(object);
+    } else {
+      this.countSpell.six = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl6.length; i++){
+        if(this.characterInfo.spells.lvl6[i].name === item.name){
+          this.characterInfo.spells.lvl6.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell7(item){
+    var count = this.countSpell.seven;
+    if(item.check){
+      this.countSpell.seven = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl7.push(object);
+    } else {
+      this.countSpell.seven = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl7.length; i++){
+        if(this.characterInfo.spells.lvl7[i].name === item.name){
+          this.characterInfo.spells.lvl7.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell8(item){
+    var count = this.countSpell.eight;
+    if(item.check){
+      this.countSpell.eight = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl8.push(object);
+    } else {
+      this.countSpell.eight = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl8.length; i++){
+        if(this.characterInfo.spells.lvl8[i].name === item.name){
+          this.characterInfo.spells.lvl8.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkedSpell9(item){
+    var count = this.countSpell.nine;
+    if(item.check){
+      this.countSpell.nine = count + 1;
+      var object = {
+        name: item.name
+      };
+      this.characterInfo.spells.lvl9.push(object);
+    } else {
+      this.countSpell.nine = count -1;
+      for(var i = 0; i < this.characterInfo.spells.lvl9.length; i++){
+        if(this.characterInfo.spells.lvl9[i].name === item.name){
+          this.characterInfo.spells.lvl9.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  checkQBspells(){
+    var spells = this.classSpellsByLevel;
+    var qbSpells0 = this.classInfo.quickBuild.spells.cantrips;
+    var qbSpells1 = this.classInfo.quickBuild.spells.lvl1;
+
+    for(var i = 0; i < qbSpells0.length; i++){
+      for(var j = 0; j < spells.zero.length; j++){
+        if(spells.zero[j].name === qbSpells0[i]){
+          spells.zero[j].check = true;
+          this.checkedSpell0(spells.zero[j]);
+        }
+      }
+    }
+
+    for(var k = 0; k < qbSpells1.length; k++){
+      for(var l = 0; l < spells.one.length; l++){
+        if(spells.one[l].name == qbSpells1[k]){
+          spells.one[l].check = true;
+          this.checkedSpell1(spells.one[l]);
+        }
+      }
+    }
+  }
+
+  saveSpells(){
+    var charSpells = this.characterInfo.spells;
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    newCharacter.spells = charSpells;
+    // console.log(newCharacter);
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    console.log(this.first());
+    if(this.first() == 'spells'){
+      this.$state.go('generatorWeapons');
+    } else if(this.first() == 'weapons'){
+      this.$state.go('generatorStats');
+    } else if(this.first() == 'equip'){
+      this.$state.go('generatorWeapons');
+    }
+  }
+// -- End code for spells selection
 
 }
 
@@ -1175,6 +1485,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickweapons', {
     template: require('./pickweapons.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('pickarmor', {
+    template: require('./pickarmor.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

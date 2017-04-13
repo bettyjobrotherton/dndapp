@@ -16,10 +16,10 @@
     </div>
     <div uib-collapse="$ctrl.isCollapsedHorizontal" class="horizontal-collapse" id="navbar-main" horizontal>
       <ul class="nav navbar-nav">
-        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="usermain" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal">Home</a></li>
-        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="charlist" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal">Characters</a></li>
+        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="usermain" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="charlist" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal"><span class="glyphicon glyphicon-user"></span>Characters</a></li>
         <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="settings" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal"><span class="glyphicon glyphicon-cog"></span>Settings</a></li>
-        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal">Logout</a></li>
+        <li ng-show="$ctrl.isLoggedIn()"><a ui-sref="logout" ng-click="$ctrl.isCollapsedHorizontal = !$ctrl.isCollapsedHorizontal"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
       </ul>
     </div>
   </div>
