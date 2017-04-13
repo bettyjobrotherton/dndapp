@@ -3,6 +3,13 @@
 import User from './user.model';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
+import { mail as helper } from 'sendgrid';
+
+// using SendGrid's v3 Node.js Library
+// https://github.com/sendgrid/sendgrid-nodejs
+//import mail from 'sendgrid';
+//var sendgrid = require('sendgrid').mail;
+
 
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
@@ -30,6 +37,35 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
+function sendNewEmail(user) {
+  try {
+        // send email to new user
+        //process.env.SENDGRID_API_KEY
+        var to_email = new helper.Email(user.email) || "bmcleod@352inc.com";
+        var from_email = new helper.Email("bmcleod@352inc.com") || "bmcleod+sender@352inc.com";
+        var subject = "A hero has risen.";
+        var content = new helper.Content("text/plain", "Welcome to the DnD Character Creator!");
+        var mail = helper.Mail(new helper.Email("bmcleod@352inc.com"), "A hero has risen.", new helper.Email(user.email), new helper.Content("text/plain", "Welcome to the DnD Character Creator!"));
+        console.log(mail);
+
+        var sg = require('sendgrid')(config.sendgrid.api);
+        var request = sg.emptyRequest({
+          method: 'POST',
+          path: '/v3/mail/send',
+          body: mail.toJSON()
+        });
+
+        sg.API(request, function(error, response) {
+          console.log(response.statusCode);
+          console.log(response.body);
+          console.log(response.headers);
+        })
+
+      } catch (e) {
+        console.log(e);
+      }
+}
+
 /**
  * Creates a new user
  */
@@ -39,10 +75,12 @@ export function create(req, res) {
   newUser.role = 'user';
   newUser.save()
     .then(function(user) {
+      sendNewEmail(user);
       var token = jwt.sign({ _id: user._id }, config.secrets.session, {
         expiresIn: 60 * 60 * 5
       });
       res.json({ token });
+
     })
     .catch(validationError(res));
 }
