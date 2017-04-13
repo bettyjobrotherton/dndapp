@@ -37,14 +37,14 @@ export function index(req, res) {
     .catch(handleError(res));
 }
 
-function sendNewEmail(user) {
+export function sendNewEmail(user) {
   try {
         // send email to new user
         //process.env.SENDGRID_API_KEY
         var to_email = new helper.Email(user.email) || "bmcleod@352inc.com";
         var from_email = new helper.Email("bmcleod@352inc.com") || "bmcleod+sender@352inc.com";
-        var subject = "A hero has risen.";
-        var content = new helper.Content("text/plain", "Welcome to the DnD Character Creator!");
+        var subject = "Welcome to DnD Character Creator!";
+        var content = new helper.Content("text/plain", "Welcome to the DnD Character Creator! Please click the following link to verify your account: localhost:3000/verify/" + user.verify);
         var mail = helper.Mail(new helper.Email("bmcleod@352inc.com"), "A hero has risen.", new helper.Email(user.email), new helper.Content("text/plain", "Welcome to the DnD Character Creator!"));
         console.log(mail);
 

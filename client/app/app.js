@@ -30,8 +30,7 @@ import CharListComponent from './charlist/charlist.component';
 import './app.less';
 
 angular.module('dndappApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  generator, account, admin, navbar, footer, main, constants, UsermainComponent, util, CharListComponent
-])
+  generator, account, admin, navbar, footer, main, constants, UsermainComponent, util, CharListComponent])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
     'ngInject';
