@@ -1,7 +1,9 @@
 <div class='raceView' ng-show="genCtrl.raceMain">
   <div class="iconList">
-    <div class='list-group' ng-class="{ 'active': race == genCtrl.currentRace }" ng-repeat="race in genCtrl.raceList" >
-      <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': race == genCtrl.currentRace }" ng-repeat="race in genCtrl.raceList" >
+        <img ng-src='{{ race.icon }}' class='list-group-item' ng-click="genCtrl.selectRace(race)">
+      </div>
     </div>
   </div>
 
@@ -58,8 +60,10 @@
 
 <div class="raceView" ng-hide="genCtrl.raceMain">
   <div class="iconList">
-    <div class='list-group' ng-repeat="subrace in genCtrl.selectedRace.subraces">
-      <img ng-src='{{ subrace.placeholder }}' class='list-group-item' ng-click="genCtrl.selectSubrace(subrace)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': subrace == genCtrl.currentSubrace }" ng-repeat="subrace in genCtrl.selectedRace.subraces">
+        <img ng-src='{{ subrace.placeholder }}' class='list-group-item' ng-click="genCtrl.selectSubrace(subrace)">
+      </div>
     </div>
   </div>
 

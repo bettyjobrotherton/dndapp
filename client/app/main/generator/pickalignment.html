@@ -1,7 +1,9 @@
 <div class='alignmentView'>
   <div class="iconList">
-    <div class='list-group' ng-repeat="align in genCtrl.alignList" >
-      <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectAlign(align)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': align == genCtrl.currentAlign }" ng-repeat="align in genCtrl.alignList" >
+        <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectAlign(align)">
+      </div>
     </div>
   </div>
 

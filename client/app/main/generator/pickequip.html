@@ -1,7 +1,9 @@
 <div class='equipView'>
   <div class="iconList">
-    <div class='list-group' ng-repeat="build in genCtrl.equipList" >
-      <img ng-src='{{ equip.icon }}' class='list-group-item' ng-click="genCtrl.selectequip(equip)">
+    <div class="sticky-wrapper">
+      <div class='list-group' ng-class="{ 'active': build == genCtrl.currentEquip }" ng-repeat="build in genCtrl.equipList" >
+        <img ng-src='{{ equip.icon }}' class='list-group-item' ng-click="genCtrl.selectequip(equip)">
+      </div>
     </div>
   </div>
 
