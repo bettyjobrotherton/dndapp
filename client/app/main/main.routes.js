@@ -6,5 +6,9 @@ export default function routes($stateProvider) {
   $stateProvider.state('main', {
     url: '/',
     template: '<main></main>'
+  })
+  .state('verifying', {
+    url: '/verifying',
+    template: '<verifying></verifying>'
   });
 }

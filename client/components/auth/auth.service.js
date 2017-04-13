@@ -255,6 +255,18 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
      */
     getToken() {
       return $cookies.get('token');
+    },
+
+
+    getProfile(data, cb){
+      return User.getProfile({
+        id: data
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      })
+        .$promise;
     }
   };
 

@@ -29,6 +29,12 @@ export function UserResource($resource) {
       params: {
         id: 'me'
       }
+    },
+    getProfile: {
+      method: 'GET',
+      params: {
+        controller: 'verify'
+      }
     }
   });
 }

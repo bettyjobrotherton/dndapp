@@ -12,7 +12,10 @@ router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
 router.put('/:id/username', auth.isAuthenticated(), controller.changeUsername);
 router.put('/:id/email', auth.isAuthenticated(), controller.changeEmail);
+//**** Use to verify?
 router.get('/:id', auth.isAuthenticated(), controller.show);
+router.get('/:id/verify', controller.show);
+// ****
 router.post('/', controller.create);
 
 module.exports = router;
