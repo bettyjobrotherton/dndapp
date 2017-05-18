@@ -221,7 +221,7 @@
    },
    {
       "name":"Dragonborn",
-      "shortDesc":"The clan is more important that life itself. They owe their devotion and respect to their clan above all else, even the gods. Continuous drive for self-improvement reflects the self-sufficiency of the race as a whole. They recognize that help is sometimes needed in difficult situations.\n\n The blood of a particular type of dragon runs very strong through dragonborn clans. They often boast scales that more closely match those of their dragon ancestry: bright red, green, blue, or white, lustrous black, or gleaming metallic gold, silver, brass, copper, or bronze.",
+      "shortDesc":"The clan is more important that life itself. They owe their devotion and respect to their clan above all else, even the gods. Continuous drive for self-improvement reflects the self-sufficiency of the race as a whole. They recognize that help is sometimes needed in difficult situations.\n\n The blood of a particular type of dragon runs very strong through dragonborn clans. They often boast scales that more closely match those of their dragon ancestry.",
       "icon":"./assets/images/Dragonborn.png",
       "traits":{
         "common": false,
