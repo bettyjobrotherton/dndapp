@@ -60,6 +60,10 @@ export default function routes($stateProvider) {
     template: '<pickweapons></pickweapons>',
     friendlyName:'What will you fight with?'
   })
+  .state('generatorFour',{
+    url: '/generatorfour',
+    template: '<generatorfour></generatorfour>'
+  })
   .state('generatorArmor', {
     url:'/pickarmor',
     template: '<pickarmor></pickarmor>',

@@ -1,6 +1,6 @@
 <div class='classView' ng-show="genCtrl.classMain">
   <div class="iconList">
-    <div class="sticky-wrapper">
+    <div class="sticky-wrapper2">
       <div class='list-group' ng-class="{ 'active': build == genCtrl.currentClass }" ng-repeat="build in genCtrl.classList" >
         <img ng-src='{{ build.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
       </div>
@@ -9,7 +9,7 @@
 
   <div class='classDesc'>
     <div>
-      <h3> {{genCtrl.currentClass.name}} </h3>
+      <h2> {{genCtrl.currentClass.name}} </h2>
       <p class='summary'>{{genCtrl.currentClass.shortDesc}}</p>
     </div>
 

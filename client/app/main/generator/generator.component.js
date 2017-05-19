@@ -844,7 +844,7 @@ returnToBackground(){
 pickWeapon(){
   var Weapon = this.currentWeapon;
   this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
-  this.$state.go('generatorthree');
+  this.$state.go('generatorfour');
 }
 
 selectWeapon(weapon) {
@@ -874,13 +874,7 @@ saveWeapons(){
       newCharacter.weapons = weaponInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
   if(this.first() =='weapons'){
-    this.$state.go('generatorArmor');
-  } else if(this.first() == 'armor') {
-    this.$state.go('generatorStats');
-  } else if(this.first() == 'equip'){
-    this.$state.go('generatorArmor');
-  } else if(this.first() == 'spells'){
-    this.$state.go('generatorArmor');
+    this.$state.go('generatorfour');
   }
 }
 
@@ -1680,6 +1674,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('pickweapons', {
     template: require('./pickweapons.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('generatorfour', {
+    template: require('./generatorfour.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

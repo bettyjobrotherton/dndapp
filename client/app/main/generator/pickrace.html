@@ -9,7 +9,7 @@
 
   <div class='raceDesc'>
     <div class='borderDesc'>
-      <h3> {{genCtrl.currentRace.name}} </h3>
+      <h2> {{genCtrl.currentRace.name}} </h2>
       <p class='summary'>{{genCtrl.currentRace.shortDesc}}</p>
       <p class="summary" style="text-align:center;"><span class='emphasis'>Ability Scores:</span> {{genCtrl.currentRace.traits.abilScore}}</p>
     </div>
@@ -90,7 +90,7 @@
       Submit &amp; Continue
     </button>
     <br>
-    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.goBackToRace()" type="new character">
+    <button class="btn btn-lg btn-danger btn-underneath" ng-click="genCtrl.goBackToRace()" type="new character">
       Return to Race
     </button>
 

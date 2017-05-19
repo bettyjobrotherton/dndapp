@@ -1,12 +1,12 @@
 
 @background-color: #F2CD82;
 @color-secondary: #575A61;
-@active-item: #d7f7ff;
+@active-item :#f9cd74;
 
 .iconList {
-  margin-top: 10px;
-  // margin-left: 10px;
-  // width: 55px;
+  margin-top: 0px;
+  border-style: none;
+  // margin-right: 15px;
 }
 
 .list-group {
@@ -14,6 +14,9 @@
   transform: translate(0, 0);
   &.active img {
     background-color: @active-item;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-top-style: none;
   }
 }
 
@@ -24,6 +27,8 @@
   border-bottom-left-radius: 0px !important;
   max-width:60px;
   max-height: 60px;
+  border: none;
+  margin-right: 10px;
 }
 
 .classView, .raceView, .backgroundView, .armorView, .equipView, .alignmentView, .profView, .spellsView, .abilityScoresView {
@@ -40,7 +45,7 @@
   text-align: left;
   width:90%;
   margin-left: 5%;
-
+  padding: 9px;
 }
 
 // .borderDesc {
@@ -101,7 +106,7 @@
 
 .createBtn{
   width: 100%;
-  margin: 0px;
+  margin-bottom: 28px;
 }
 
 .emphasis {
@@ -125,7 +130,7 @@
   text-align: left;
   padding: 5px;
   border: 1px solid #575A61;
-  margin: 5px
+  margin: 5px;
 }
 
 #bonus-skills-list {
@@ -134,11 +139,6 @@
 
 .make-some-space {
   margin-top: 5px;
-}
-
-.or-spacer {
-  margin-top: 5px;
-  margin-bottom: 11px;
 }
 
 .force-inline {
@@ -155,7 +155,17 @@
 
 .sticky-wrapper {
   position: sticky;
-  top: 60px;
+  top: 20%;
+}
+
+.sticky-wrapper2 {
+    position: sticky;
+    top: 12%;
+}
+
+.sticky-wrapper3 {
+    position: sticky;
+    top: 10%;
 }
 
 .stat-icon {
