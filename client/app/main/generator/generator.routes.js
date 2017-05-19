@@ -71,8 +71,8 @@ export default function routes($stateProvider) {
   })
   .state('generatorEquip', {
     url:'/pickequip',
-    template: '<pickequip></pickequip>',
-    friendlyName:'Get ready for your next Adventure'
+    template: '<pickequip></pickequip>'
+    // friendlyName:'Get ready for your next Adventure'
   })
   .state('generatorStats', {
     url:'/pickstats',

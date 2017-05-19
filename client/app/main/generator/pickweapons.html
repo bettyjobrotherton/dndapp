@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-12">
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.simpleMeleeButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleMeleeButton()">
       Simple Melee
     </button>
     <div ng-show="genCtrl.display1">
@@ -23,7 +23,7 @@
 
 
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.simpleRangedButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleRangedButton()">
       Simple Ranged
     </button>
     <div ng-show="genCtrl.display2">
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.martialMeleeButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialMeleeButton()">
       Martial Melee
     </button>
     <div ng-show="genCtrl.display3">
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.martialRangedButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialRangedButton()">
       Martial Ranged
     </button>
     <div ng-show="genCtrl.display4">
@@ -81,11 +81,7 @@
     </div>
 
     <div class='weaponsDesc'>
-      <div>
-        <h3> {{genCtrl.currentWeapons.name}} </h3>
-        <p class='summary'>{{genCtrl.currentWeapons.desc}}</p>
-      </div>
-      <button class="btn btn-lg btn-success bg-list-button" ng-click="genCtrl.saveWeapons()"  type="button">
+      <button class="btn btn-lg btn-success bg-list-button btn-underneath" ng-click="genCtrl.saveWeapons()"  type="">
         Submit &amp; Continue
       </button>
     </div>

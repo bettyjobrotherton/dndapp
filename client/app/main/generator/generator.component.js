@@ -838,13 +838,22 @@ saveBackground(){
 returnToBackground(){
   this.$state.go('generatorBackground');
 }
+
+returnToBackgroundDetails(){
+  this.$state.go('backgrounddetails');
+}
+
+returnToProficiencies(){
+  this.$state.go('proficiencies');
+}
+
 // -- End code for pick background
 
 // -- start of pick weapon
 pickWeapon(){
   var Weapon = this.currentWeapon;
-  this.localStorage.setItem('selected-weapon', JSON.stringify(weapon));
-  this.$state.go('generatorfour');
+  this.localStorage.setItem('selected-weapon', JSON.stringify(Weapon));
+  this.$state.go('generatorFour');
 }
 
 selectWeapon(weapon) {
@@ -864,18 +873,15 @@ saveWeapons(){
   var currentWeapon = this.currentWeapon;
   var weaponInfo;
       weaponInfo = {
-
-            simpleMelee: this.currentSimpleMelee.name,
-            simpleRange: this.currentSimpleRanged.name,
-            martialMelee: this.currentMartialMelee.name,
-            martialRange: this.currentMartialRanged.name
+            simpleMelee: this.currentSimpleMelee,
+            simpleRange: this.currentSimpleRanged,
+            martialMelee: this.currentMartialMelee,
+            martialRange: this.currentMartialRanged
       };
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.weapons = weaponInfo;
+      newCharacter.combat.weapons = weaponInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-  if(this.first() =='weapons'){
-    this.$state.go('generatorfour');
-  }
+      this.$state.go('generatorFour');
 }
 
 simpleMeleeButton(){

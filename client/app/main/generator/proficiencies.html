@@ -1,7 +1,7 @@
 <div class='profView'>
   <div class='profDesc'>
     <div>
-      <h3>{{ genCtrl.classInfo.name }} Skills</h3>
+      <h2>{{ genCtrl.classInfo.name }} Skills</h2>
       <p class='summary'>Pick {{ genCtrl.classInfo.traits.noOfSkills }} skills from the list below to be proficient in. Proficiency in a skill gives you an extra bonus when using that skill.</p>
 
       <form ng-submit="" class='skillSelect'>
@@ -26,6 +26,10 @@
 
     <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveSkills()"  type="">
       Submit &amp; Continue
+    </button>
+
+    <button class="btn btn-lg btn-danger btn-underneath" ng-click="genCtrl.returnToBackgroundDetails()"  type="">
+      Go back to Background
     </button>
 
   </div>
