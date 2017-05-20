@@ -52,9 +52,14 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainRace()" type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.selectMainRace()" type="">
       Submit &amp; Continue
     </button>
+
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToRace()" type="">
+      Go Back
+    </button>
+
   </div>
 </div>
 
@@ -86,11 +91,11 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveRace()" type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.saveRace()" type="">
       Submit &amp; Continue
     </button>
     <br>
-    <button class="btn btn-lg btn-danger btn-underneath" ng-click="genCtrl.goBackToRace()" type="new character">
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToRace()" type="new character">
       Return to Race
     </button>
 

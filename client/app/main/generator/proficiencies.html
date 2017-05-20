@@ -1,36 +1,43 @@
-<div class='profView'>
-  <div class='profDesc'>
-    <div>
-      <h2>{{ genCtrl.classInfo.name }} Skills</h2>
-      <p class='summary'>Pick {{ genCtrl.classInfo.traits.noOfSkills }} skills from the list below to be proficient in. Proficiency in a skill gives you an extra bonus when using that skill.</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
 
-      <form ng-submit="" class='skillSelect'>
-        <div ng-repeat="skill in genCtrl.modifiedSkills">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" ng-disabled="(genCtrl.countSkill > genCtrl.maxSkills) && (!check)" ng-checked="check" ng-model="check" ng-click="genCtrl.checkedSkill(skill, check)">
-              {{ skill }}
-            </label>
+      <div class='profView'>
+        <div class='profDesc'>
+          <div>
+            <h2>{{ genCtrl.classInfo.name }} Skills</h2>
+            <p class='summary'>Pick {{ genCtrl.classInfo.traits.noOfSkills }} skills from the list below to be proficient in. Proficiency in a skill gives you an extra bonus when using that skill.</p>
+
+            <form ng-submit="" class='skillSelect'>
+              <div ng-repeat="skill in genCtrl.modifiedSkills">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" ng-disabled="(genCtrl.countSkill > genCtrl.maxSkills) && (!check)" ng-checked="check" ng-model="check" ng-click="genCtrl.checkedSkill(skill, check)">
+                    {{ skill }}
+                  </label>
+                </div>
+              </div>
+            </form>
+
+            <p style='padding:0 10%;'>You will also be proficient in the following skills from your {{ genCtrl.currentBackground.name }} background.</p>
+            <ul id="bonus-skills-list" style="padding-left:0px;">
+              <li ng-repeat="bonusSkill in genCtrl.currentBackground.addSkillProf">
+                <em>{{ bonusSkill }}</em>
+              </li>
+            </ul>
+
           </div>
+
+          <button class="btn btn-lg btn-primary createBtn btn-underneath" ng-click="genCtrl.saveSkills()"  type="">
+            Submit &amp; Continue
+          </button>
+
+          <button class="btn btn-lg btn-danger createBtn " ng-click="genCtrl.returnToBackgroundDetails()"  type="">
+            Go back to Background
+          </button>
+
         </div>
-      </form>
-
-      <p style='padding:0 10%;'>You will also be proficient in the following skills from your {{ genCtrl.currentBackground.name }} background.</p>
-      <ul id="bonus-skills-list" style="padding-left:0px;">
-        <li ng-repeat="bonusSkill in genCtrl.currentBackground.addSkillProf">
-          <em>{{ bonusSkill }}</em>
-        </li>
-      </ul>
-
+      </div>
     </div>
-
-    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.saveSkills()"  type="">
-      Submit &amp; Continue
-    </button>
-
-    <button class="btn btn-lg btn-danger btn-underneath" ng-click="genCtrl.returnToBackgroundDetails()"  type="">
-      Go back to Background
-    </button>
-
   </div>
 </div>

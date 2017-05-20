@@ -85,8 +85,12 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainClass()"  type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.selectMainClass()"  type="">
       Submit &amp; Continue
+    </button>
+
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToClass()" type="">
+      Go Back
     </button>
 
   </div>
@@ -114,10 +118,10 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveClass()" type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.saveClass()" type="">
       Submit &amp; Continue
     </button>
-    <br>
-    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.goBackToClass()" type="new character">
+
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToClass()" type="">
       Return to Class
     </button>

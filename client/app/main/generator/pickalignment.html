@@ -1,22 +1,28 @@
-<div class='alignmentView'>
-  <div class="iconList">
-    <div class="sticky-wrapper">
-      <div class='list-group' ng-class="{ 'active': align == genCtrl.currentAlign }" ng-repeat="align in genCtrl.alignList" >
-        <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectAlign(align)">
+
+      <div class='alignmentView'>
+        <div class="iconList">
+          <div class="sticky-wrapper">
+            <div class='list-group' ng-class="{ 'active': align == genCtrl.currentAlign }" ng-repeat="align in genCtrl.alignList" >
+              <img ng-src='{{ align.icon }}' class='list-group-item' ng-click="genCtrl.selectAlign(align)">
+            </div>
+          </div>
+        </div>
+
+        <div class='alignmentDesc'>
+          <div>
+            <h3> {{genCtrl.currentAlign.name}} </h3>
+            <p class='summary'>{{genCtrl.currentAlign.desc}}</p>
+            <p style='padding: 10px;'><span class="emphasis">Types of characters who are commonly {{ genCtrl.currentAlign.name }}:</span> {{ genCtrl.currentAlign.common }}</p>
+          </div>
+
+          <button class="btn btn-lg btn-primary createBtn2 btn-underneath" ng-click="genCtrl.saveAlign()"  type="">
+            Submit &amp; Continue
+          </button>
+
+          <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.pickBackground()">
+            Go Back
+          </button>
+
+
+        </div>
       </div>
-    </div>
-  </div>
-
-  <div class='alignmentDesc'>
-    <div>
-      <h3> {{genCtrl.currentAlign.name}} </h3>
-      <p class='summary'>{{genCtrl.currentAlign.desc}}</p>
-      <p style='padding: 10px;'><span class="emphasis">Types of characters who are commonly {{ genCtrl.currentAlign.name }}:</span> {{ genCtrl.currentAlign.common }}</p>
-    </div>
-
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveAlign()"  type="">
-      Submit &amp; Continue
-    </button>
-
-  </div>
-</div>
