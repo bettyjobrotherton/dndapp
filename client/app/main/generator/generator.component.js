@@ -175,6 +175,8 @@ export class GeneratorController {
                 .catch(err => {
                   return err;
                 });
+
+
     } else if(this.$state.current.name == 'generatorWeapons'){
   this.classInfo = JSON.parse(this.localStorage['class-info']);
   this.$http.get('assets/weapons.json')
@@ -189,6 +191,7 @@ export class GeneratorController {
             .catch(err => {
               return err;
             });
+
 }else if(this.$state.current.name == 'pickweapons'){
       this.currentWeapons = JSON.parse(this.localStorage['selected-weapon']);
       this.display1 = false;
@@ -197,17 +200,20 @@ export class GeneratorController {
       this.display4 = false;
 
       this.countSimpleMelee = 0;
-      this.maxSimpleMelee = 0;
-      this.weaponsList = [];
+      this.maxSimpleMelee = 1;
+
 
       this.countSimpleRanged = 0;
-      this.maxSimpleRanged = 0;
+      this.maxSimpleRanged = 1;
 
       this.countMartialMelee = 0;
-      this.maxMartialMelee = 0;
+      this.maxMartialMelee = 1;
 
       this.countMartialRanged = 0;
-      this.maxMartialRanged = 0;
+      this.maxMartialRanged = 1;
+
+      this.weaponsList = [];
+
   }else if(this.$state.current.name == 'generatorArmor'){
 
     this.armorCount = 0;
@@ -223,6 +229,7 @@ export class GeneratorController {
               .catch(err => {
                 return err;
               });
+
   }else if(this.$state.current.name == 'pickEquip'){
   this.currentEquipment = JSON.parse(this.localStorage['selected-equipment']);
   this.countEquipment = 0;
@@ -847,26 +854,18 @@ returnToProficiencies(){
   this.$state.go('proficiencies');
 }
 
+returnToAbilityScore(){
+  this.$state.go('pickAbilityScores');
+}
+
+returnToWeapons(){
+  this.$state.go('generatorWeapons');
+}
+
 // -- End code for pick background
 
 // -- start of pick weapon
-pickWeapon(){
-  var Weapon = this.currentWeapon;
-  this.localStorage.setItem('selected-weapon', JSON.stringify(Weapon));
-  this.$state.go('generatorFour');
-}
 
-selectWeapon(weapon) {
-  this.currentWeapon = weapon;
-}
-
-saveSimpleMelee(text){
-  for(var i = 0; i < this.weaponsList.length; i++){
-    if(this.weaponsList[i].number === 0){
-      this.weaponsList[i].desc = text;
-    }
-  }
-}
 
 saveWeapons(){
   var newCharacter;
@@ -879,9 +878,26 @@ saveWeapons(){
             martialRange: this.currentMartialRanged
       };
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.combat.weapons = weaponInfo;
+      newCharacter.combat.weapons = this.weaponInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-      this.$state.go('generatorFour');
+
+      this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      // console.log(this.savedCharacter);
+      if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
+        this.$state.go('generatorSpells');
+      }else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
+        if(this.savedCharacter.general.level < 2){
+          this.$state.go('generatorSpells');
+        } else {
+          this.$state.go('generatorArmor');
+        }
+      } else if(this.savedCharacter.class.main == 'Fighter' && this.savedCharacter.general.level >= 3){
+        if(this.savedCharacter.class.archetype == 'Eldritch Knight'){
+          this.$state.go('generatorSpells');
+        }
+      } else {
+       this.$state.go('generatorArmor');
+     }
 }
 
 simpleMeleeButton(){
@@ -920,17 +936,30 @@ checkedSimpleMelee(item){
   var count = this.countSimpleMelee;
   if(item.check){
     this.countSimpleMelee = count + 1;
-    if(!item.number){
-      item.number = 0;
-      this.weaponsList.push(item);
+    var object = {
+      name: item.name
+    };
+    this.weaponsList.push(object);
     } else {
-      this.weaponsList.push(item);
+    this.countSimpleMelee = count - 1;
+    for(var i = 0; i < this.weaponsList.length; i++){
+      if(this.weaponsList[i].name === item.n){
+        this.weaponsList.splice(i, 1);
+      }
     }
+  }
+}
+
+checkedSimpleRange(item){
+  var count = this.countSimpleMelee;
+  if(item.check){
+    this.countSimpleRange = count + 1;
+    var object = {
+      name: item.name
+    };
+    this.weaponsList.push(object);
   } else {
-    this.countSimpleMelee = count -1;
-    if(!item.number){
-      item.number = 0;
-    }
+    this.countSimpleRange = count - 1;
     for(var i = 0; i < this.weaponsList.length; i++){
       if(this.weaponsList[i].number === item.number){
         this.weaponsList.splice(i, 1);
@@ -941,24 +970,7 @@ checkedSimpleMelee(item){
 //end of weapons
 
 // Start code for selecting armor --
-  checkedLightArmor(item){
-    var count = this.armorCount;
-    if(item.check){
-      this.armorCount = count + 1;
-      var object = {
-        name: item.name
-      };
-      this.characterArmor.push(object);
-      console.log(this.characterArmor);
-    } else {
-      this.armorCount = count - 1;
-      for(var i = 0; i < this.characterArmor.length; i++){
-        if(this.characterArmor[i].name === item.name){
-          this.characterArmor.splice(i, 1);
-        }
-      }
-    }
-  }
+
 saveEquipment(){
   var newCharacter;
   var currentEquipment = this.currentEquipment;
@@ -1002,6 +1014,25 @@ checkedEquipment(item){
     for(var i = 0; i < this.equipmentList.length; i++){
       if(this.equipmentList[i].number === item.number){
         this.equipmentList.splice(i, 1);
+      }
+    }
+  }
+}
+
+checkedLightArmor(item){
+  var count = this.armorCount;
+  if(item.check){
+    this.armorCount = count + 1;
+    var object = {
+      name: item.name
+    };
+    this.characterArmor.push(object);
+    console.log(this.characterArmor);
+  } else {
+    this.armorCount = count - 1;
+    for(var i = 0; i < this.characterArmor.length; i++){
+      if(this.characterArmor[i].name === item.name){
+        this.characterArmor.splice(i, 1);
       }
     }
   }
@@ -1322,9 +1353,43 @@ checkedEquipment(item){
     };
     newCharacter.skills.passive = passiveSkillsInfo;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    this.$state.go('generatorThree');
+    this.$state.go('generatorWeapons');
   }
 // -- End code for ability score selection
+
+displaySimpleMelee(){
+  if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Bard'  || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Monk'
+  || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard' ){
+      this.displaySimpleMelee = false;
+    } else {
+      this.displaySimpleMelee = true;
+    }
+  }
+
+displaySimpleRange(){
+    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Bard'  || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Monk'
+    || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue'  || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard' ){
+      this.displaySimpleRange = false;
+    } else {
+      this.displaySimpleRange = true;
+    }
+  }
+
+displayMartialMelee(){
+    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' ){
+      this.displayMartialMelee = false;
+    } else {
+      this.displayMartialMelee = true;
+    }
+  }
+
+  displayMartialRange(){
+    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' ){
+      this.displayMartialRange = false;
+    } else {
+      this.displayMartialRange = true;
+    }
+  }
 
 // Beginning code for spells selection --
   spellDisplayProperties(data){
@@ -1595,16 +1660,7 @@ checkedEquipment(item){
     newCharacter.spells = charSpells;
     // console.log(newCharacter);
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    console.log(this.first());
-    if(this.first() == 'spells'){
-      this.$state.go('generatorWeapons');
-    } else if(this.first() == 'weapons'){
-      this.$state.go('generatorStats');
-    } else if(this.first() == 'armor'){
-      this.$state.go('generatorWeapons');
-    } else if(this.first() == 'equip'){
-      this.$state.go('generatorWeapons');
-    }
+    this.$state.go('generatorArmor');
   }
 // -- End code for spells selection
 

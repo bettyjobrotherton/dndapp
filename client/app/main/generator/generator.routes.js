@@ -57,8 +57,8 @@ export default function routes($stateProvider) {
   })
   .state('generatorWeapons', {
     url:'/pickweapons',
-    template: '<pickweapons></pickweapons>',
-    friendlyName:'What will you fight with?'
+    template: '<pickweapons></pickweapons>'
+    // friendlyName:'What will you fight with?'
   })
   .state('generatorFour',{
     url: '/generatorfour',

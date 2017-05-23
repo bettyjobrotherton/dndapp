@@ -9,8 +9,8 @@
               <p style='margin-top:18px;'>How would you like to generate your ability scores?</p>
 
               <p>
-                <button class="btn btn-lg btn-success createBtn btn-underneath" ng-click="genCtrl.rollForAbilityScores()" style="margin-bottom:10px; width:90%;">Roll the Die!</button>
-                <button class="btn btn-lg btn-warning createBtn" style='width:90%;' ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
+                <button class="btn btn-lg btn-primary createBtn btn-underneath" ng-click="genCtrl.rollForAbilityScores()">Roll the Die!</button>
+                <button class="btn btn-lg btn-warning createBtn" ng-click="genCtrl.altForAbilityScores()">Standard Scores</button>
               </p>
             </div>
 
@@ -21,7 +21,7 @@
 
               <p>Using each number only <span class="emphasis">once</span>, complete the table below. The highest ability recommended for your class is <span class="emphasis">{{ genCtrl.classInfo.quickBuild.highestAbility }}</span>, and the second-highest is <span class="emphasis">{{ genCtrl.classInfo.quickBuild.nextAbility }}</span>.</p>
 
-              <p><button class="btn btn-lg btn-primary createBtn" style='width:90%;' ng-click="genCtrl.assignAbilityScores()">Complete Form for Me</button></p>
+              <p><button class="btn btn-lg btn-primary createBtn" ng-click="genCtrl.assignAbilityScores()">Complete Form for Me</button></p>
             </div>
           </div>
 
@@ -73,12 +73,12 @@
 
 
 
-          <button class="btn btn-lg btn-primary createBtn btn-underneath" ng-click="genCtrl.saveAbilityScores()"  type="">
+          <button class="btn btn-lg btn-success createBtn btn-underneath" ng-click="genCtrl.saveAbilityScores()"  type="">
             Submit &amp; Continue
           </button>
 
           <button class="btn btn-lg btn-danger createBtn" ng-click="genCtrl.returnToProficiencies()"  type="">
-            Go back to proficiencies
+            Go back to Proficiencies
           </button>
         </div>
       </div>

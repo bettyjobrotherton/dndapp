@@ -2,12 +2,12 @@
   <div class='spellsDesc'>
       <div class="col-lg-12">
     <div>
-      <h3>{{ genCtrl.characterInfo.class.main }} Spells</h3>
+      <h2>{{ genCtrl.characterInfo.class.main }} Spells</h2>
       <p class='summary'>Pick your spells from the list below <span ng-show="genCtrl.display10">(recommended spells for quickbuild are already selected)</span>:</p>
     </div>
 
     <div ng-show="genCtrl.display0">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayCantrip = !genCtrl.displayCantrip">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayCantrip = !genCtrl.displayCantrip">
         Cantrip
       </button>
       <div ng-show="genCtrl.displayCantrip">
@@ -28,7 +28,7 @@
     </div>
 
     <div ng-show="genCtrl.display1">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelOne = !genCtrl.displayLevelOne">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelOne = !genCtrl.displayLevelOne">
       Level 1
       </button>
       <div ng-show="genCtrl.displayLevelOne">
@@ -49,7 +49,7 @@
     </div>
 
     <div ng-show="genCtrl.display2">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelTwo = !genCtrl.displayLevelTwo">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelTwo = !genCtrl.displayLevelTwo">
       Level 2
     </button>
     <div ng-show="genCtrl.displayLevelTwo">
@@ -70,7 +70,7 @@
 
 
     <div ng-show="genCtrl.display3">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelThree = !genCtrl.displayLevelThree">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelThree = !genCtrl.displayLevelThree">
         Level 3
       </button>
       <div ng-show="genCtrl.displayLevelThree">
@@ -91,7 +91,7 @@
     </div>
 
     <div ng-show="genCtrl.display4">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelFour = !genCtrl.displayLevelFour">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelFour = !genCtrl.displayLevelFour">
         Level 4
       </button>
       <div ng-show="genCtrl.displayLevelFour">
@@ -112,7 +112,7 @@
     </div>
 
     <div ng-show="genCtrl.display5">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelFive = !genCtrl.displayLevelFive">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelFive = !genCtrl.displayLevelFive">
         Level 5
       </button>
       <div ng-show="genCtrl.displayLevelFive">
@@ -134,7 +134,7 @@
     </div>
 
     <div ng-show="genCtrl.display6">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelSix = !genCtrl.displayLevelSix">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelSix = !genCtrl.displayLevelSix">
         Level 6
       </button>
       <div ng-show="genCtrl.displayLevelSix">
@@ -156,7 +156,7 @@
     </div>
 
     <div ng-show="genCtrl.display7">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelSeven = !genCtrl.displayLevelSeven">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelSeven = !genCtrl.displayLevelSeven">
         Level 7
       </button>
       <div ng-show="genCtrl.displayLevelSeven">
@@ -178,7 +178,7 @@
     </div>
 
     <div ng-show="genCtrl.display8">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelEight = !genCtrl.displayLevelEight">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelEight = !genCtrl.displayLevelEight">
         Level 8
       </button>
       <div ng-show="genCtrl.displayLevelEight">
@@ -200,7 +200,7 @@
     </div>
 
     <div ng-show="genCtrl.display9">
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLevelNine = !genCtrl.displayLevelNine">
+      <button class="btn btn-lg btn-primary createBtn bg-list-button" ng-click="genCtrl.displayLevelNine = !genCtrl.displayLevelNine">
         Level 9
       </button>
       <div ng-show="genCtrl.displayLevelNine">
@@ -221,9 +221,14 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-success btn-underneath" ng-click="genCtrl.saveSpells()"  type="button">
+    <button class="btn btn-lg btn-success createBtn" ng-click="genCtrl.saveSpells()"  type="button">
       Submit &amp; Continue
     </button>
+
+    <button class="btn btn-lg btn-danger createBtn" ng-click="genCtrl.returnToWeapons()"  type="button">
+      Go Back to Weapons
+    </button>
+
     </div>
   </div>
 </div>

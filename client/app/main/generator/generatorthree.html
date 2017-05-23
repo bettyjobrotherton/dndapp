@@ -1,12 +1,14 @@
 
-<h1> Better have something to fight with! </h1>
+
 
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
 
+      <h3 style='text-align:center;'> Prepare yourself for battle! </h3>
+
       <div ng-show="genCtrl.selectSpells">
-        <button class="btn btn-lg btn-primary createBtn" ng-click="genCtrl.createChar('spells')" type="button">
+        <button class="btn btn-lg btn-primary createBtn btn-underneath" ng-click="genCtrl.createChar('spells')" type="button">
           Spells
         </button>
       </div>
@@ -15,6 +17,9 @@
         Weapons
       </button>
 
+      <button class="btn btn-lg btn-danger createBtn" ng-click="genCtrl.createChar('abilityscore')" type="button">
+        Go back to Ability Scores
+      </button>
 
     </div>
   </div>

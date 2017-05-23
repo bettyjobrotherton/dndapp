@@ -2,17 +2,23 @@
   <div class="row">
     <div class="col-lg-12">
 
+      <div>
+        <h2 style='text-align:center;'>{{ genCtrl.characterInfo.class.main }} Weapons</h2>
+        <p class='summary'>Pick your weapons from the list below <span>(recommended weapons for quickbuild are already selected)</span></p>
+      </div>
+
+<div ng-show="genCtrl.displaySimpleMelee">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleMeleeButton()">
       Simple Melee
     </button>
     <div ng-show="genCtrl.display1">
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
-        <form ng-submit='genCtrl.saveSimpleMelee()'>
+        <form ng-submit='genCtrl.saveWeapons()'>
           <div ng-repeat="item in genCtrl.currentWeapons.simpleMelee">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countSimpleMelee > genCtrl.maxSimpleMelee) && (!item.check)" ng-click="genCtrl.checkedSimpleMelee(item)" ng-checked="item.check" ng-model="item.check">
+                <input type="checkbox" ng-disabled="(genCtrl.countSimpleMelee > genCtrl.maxSimpleMelee) && (!weapon.check)" ng-click="genCtrl.checkedSimpleMelee(weapon)" ng-checked="weapon.check" ng-model="weapon.check">
                 {{ item.name }}, {{item.damage}}
               </label>
             </div>
@@ -20,16 +26,16 @@
         </form>
       </div>
     </div>
+  </div>
 
-
-
+  <div ng-show="genCtrl.displaySimpleRange">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleRangedButton()">
       Simple Ranged
     </button>
     <div ng-show="genCtrl.display2">
       <div class="background-detail-box">
-        <p>{{ genCtrl.currentWeapons.simpleRanged.desc }}</p>
-        <form ng-submit="genCtrl.saveSimpleRanged()">
+        <!-- <p>{{ genCtrl.currentWeapons.simpleRanged.desc }}</p> -->
+        <form ng-submit="genCtrl.saveWeapons()">
           <div ng-repeat="item in genCtrl.currentWeapons.simpleRanged">
             <div class="checkbox">
               <label>
@@ -41,14 +47,17 @@
         </form>
       </div>
     </div>
+  </div>
 
+
+  <div ng-show="genCtrl.displayMartialMelee">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialMeleeButton()">
       Martial Melee
     </button>
     <div ng-show="genCtrl.display3">
       <div class="background-detail-box">
-        <!-- <p>{{ genCtrl.currentWeapons.martialMelee.desc }}</p> -->
-        <form ng-submit="genCtrl.saveMartialMelee()">
+        <p>{{ genCtrl.currentWeapons.martialMelee.desc }}</p>
+        <form ng-submit="genCtrl.saveWeapons()">
           <div ng-repeat="item in genCtrl.currentWeapons.martialMelee">
             <div class="checkbox">
               <label>
@@ -60,14 +69,17 @@
         </form>
       </div>
     </div>
+  </div>
 
+
+  <div ng-show="genCtrl.displayMartialRange">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialRangedButton()">
       Martial Ranged
     </button>
     <div ng-show="genCtrl.display4">
       <div class="background-detail-box">
         <!-- <p>{{ genCtrl.currentWeapons.martialWeapon.desc }}</p> -->
-        <form ng-submit="genCtrl.saveMartialRanged()">
+        <form ng-submit="genCtrl.saveWeapons()">
           <div ng-repeat="item in genCtrl.currentWeapons.martialRanged">
             <div class="checkbox">
               <label>
@@ -79,10 +91,15 @@
         </form>
       </div>
     </div>
+  </div>
 
     <div class='weaponsDesc'>
       <button class="btn btn-lg btn-success bg-list-button btn-underneath" ng-click="genCtrl.saveWeapons()"  type="">
         Submit &amp; Continue
+      </button>
+
+      <button class="btn btn-lg btn-danger bg-list-button btn-underneath" ng-click="genCtrl.returnToAbilityScore()"  type="button">
+        Go Back to Ability Scores
       </button>
     </div>
 </div>
