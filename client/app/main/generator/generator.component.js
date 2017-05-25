@@ -194,14 +194,9 @@ export class GeneratorController {
 
 }else if(this.$state.current.name == 'pickweapons'){
       this.currentWeapons = JSON.parse(this.localStorage['selected-weapon']);
-      this.display1 = false;
-      this.display2 = false;
-      this.display3 = false;
-      this.display4 = false;
 
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 1;
-
 
       this.countSimpleRanged = 0;
       this.maxSimpleRanged = 1;
@@ -212,7 +207,7 @@ export class GeneratorController {
       this.countMartialRanged = 0;
       this.maxMartialRanged = 1;
 
-      this.weaponsList = [];
+      this.characterWeapon = [];
 
   }else if(this.$state.current.name == 'generatorArmor'){
 
@@ -231,25 +226,25 @@ export class GeneratorController {
               });
 
   }else if(this.$state.current.name == 'pickEquip'){
-  this.currentEquipment = JSON.parse(this.localStorage['selected-equipment']);
-  this.countEquipment = 0;
-  this.maxEquipment = 0;
-  this.equipmentList = [];
+    this.currentEquipment = JSON.parse(this.localStorage['selected-equipment']);
+    this.countEquipment = 0;
+    this.maxEquipment = 0;
+    this.equipmentList = [];
 
-  this.countAmmunition = 0;
-  this.maxAmmunition = 0;
+    this.countAmmunition = 0;
+    this.maxAmmunition = 0;
 
-  this.countArcaneFocus = 0;
-  this.maxArcaneFocus = 0;
+    this.countArcaneFocus = 0;
+    this.maxArcaneFocus = 0;
 
-  this.countDruidicFocus = 0;
-  this.maxDruidicFocus = 0;
+    this.countDruidicFocus = 0;
+    this.maxDruidicFocus = 0;
 
-  this.countHolySymbol = 0;
-  this.maxHolySymbol = 0;
+    this.countHolySymbol = 0;
+    this.maxHolySymbol = 0;
 
 }else if(this.$state.current.name == 'generatorEquip'){
-this.$http.get('assets/equipment.json')
+    this.$http.get('assets/equipment.json')
           .then(res => {
             vm.equipmentList = res.data[0];
             vm.currentEquipment = res.data[0];
@@ -939,12 +934,12 @@ checkedSimpleMelee(item){
     var object = {
       name: item.name
     };
-    this.weaponsList.push(object);
+    this.characterWeapon.push(object);
     } else {
     this.countSimpleMelee = count - 1;
-    for(var i = 0; i < this.weaponsList.length; i++){
-      if(this.weaponsList[i].name === item.n){
-        this.weaponsList.splice(i, 1);
+    for(var i = 0; i < this.characterWeapon.length; i++){
+      if(this.characterWeapon[i].name === item.name){
+        this.characterWeapon.splice(i, 1);
       }
     }
   }
@@ -957,12 +952,12 @@ checkedSimpleRange(item){
     var object = {
       name: item.name
     };
-    this.weaponsList.push(object);
+    this.characterWeapon.push(object);
   } else {
     this.countSimpleRange = count - 1;
-    for(var i = 0; i < this.weaponsList.length; i++){
-      if(this.weaponsList[i].number === item.number){
-        this.weaponsList.splice(i, 1);
+    for(var i = 0; i < this.characterWeapon.length; i++){
+      if(this.characterWeapon[i].number === item.number){
+        this.characterWeapon.splice(i, 1);
       }
     }
   }
@@ -1097,15 +1092,7 @@ checkedLightArmor(item){
     newCharacter.combat.armor = this.characterArmor;
     this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
     console.log(this.localStorage['character-in-progress']);
-    if(this.first() == 'armor'){
-      this.$state.go('generatorEquip');
-    } else if(this.first() == 'equip'){
-      this.$state.go('generatorStats');
-    } else if(this.first() == 'spells'){
-      this.$state.go('generatorEquip');
-    } else if(this.first() == 'weapons'){
-      this.$state.go('generatorEquip');
-    }
+      this.$state.go('finalPage');
   }
 
 
@@ -1356,40 +1343,6 @@ checkedLightArmor(item){
     this.$state.go('generatorWeapons');
   }
 // -- End code for ability score selection
-
-displaySimpleMelee(){
-  if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Bard'  || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Monk'
-  || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard' ){
-      this.displaySimpleMelee = false;
-    } else {
-      this.displaySimpleMelee = true;
-    }
-  }
-
-displaySimpleRange(){
-    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Bard'  || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Monk'
-    || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue'  || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard' ){
-      this.displaySimpleRange = false;
-    } else {
-      this.displaySimpleRange = true;
-    }
-  }
-
-displayMartialMelee(){
-    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' ){
-      this.displayMartialMelee = false;
-    } else {
-      this.displayMartialMelee = true;
-    }
-  }
-
-  displayMartialRange(){
-    if(this.savedCharacter.class.main == 'Barbarian' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Fighter' || this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger' || this.savedCharacter.class.main == 'Rogue' ){
-      this.displayMartialRange = false;
-    } else {
-      this.displayMartialRange = true;
-    }
-  }
 
 // Beginning code for spells selection --
   spellDisplayProperties(data){
@@ -1741,6 +1694,11 @@ export default angular.module('dndappApp.generator', [uiRouter])
   })
   .component('generatorfour', {
     template: require('./generatorfour.html'),
+    controller: GeneratorController,
+    controllerAs: 'genCtrl'
+  })
+  .component('finalpage', {
+    template: require('./finalpage.html'),
     controller: GeneratorController,
     controllerAs: 'genCtrl'
   })

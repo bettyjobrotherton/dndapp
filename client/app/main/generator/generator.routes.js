@@ -64,6 +64,10 @@ export default function routes($stateProvider) {
     url: '/generatorfour',
     template: '<generatorfour></generatorfour>'
   })
+  .state('finalPage',{
+    url: '/finalpage',
+    template: '<finalpage><finalpage>'
+  })
   .state('generatorArmor', {
     url:'/pickarmor',
     template: '<pickarmor></pickarmor>',

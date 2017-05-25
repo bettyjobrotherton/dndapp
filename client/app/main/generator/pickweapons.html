@@ -7,7 +7,7 @@
         <p class='summary'>Pick your weapons from the list below <span>(recommended weapons for quickbuild are already selected)</span></p>
       </div>
 
-<div ng-show="genCtrl.displaySimpleMelee">
+<div ng-hide="genCtrl.displaySimpleMelee">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleMeleeButton()">
       Simple Melee
     </button>
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div ng-show="genCtrl.displaySimpleRange">
+  <div ng-hide="genCtrl.displaySimpleRange">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleRangedButton()">
       Simple Ranged
     </button>
@@ -50,7 +50,7 @@
   </div>
 
 
-  <div ng-show="genCtrl.displayMartialMelee">
+  <div ng-hide="genCtrl.displayMartialMelee">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialMeleeButton()">
       Martial Melee
     </button>
@@ -72,7 +72,7 @@
   </div>
 
 
-  <div ng-show="genCtrl.displayMartialRange">
+  <div ng-hide="genCtrl.displayMartialRange">
     <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialRangedButton()">
       Martial Ranged
     </button>
