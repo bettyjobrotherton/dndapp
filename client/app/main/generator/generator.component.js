@@ -5,13 +5,14 @@ import routing from './generator.routes';
 export class GeneratorController {
 
   /*@ngInject*/
-  constructor($http, $state, Character, $window) {
+  constructor($http, $state, Character, $window, CharacterEvents) {
     this.$http = $http;
     this.$state = $state;
     this.createChar = Character.createChar;
     this.first = Character.firstOption;
     this.localStorage = $window.localStorage;
     this.character = Character;
+    this.saveChar = CharacterEvents.events.save;
   }
 
   $onInit() {
@@ -1646,6 +1647,39 @@ checkedLightArmor(item){
     console.log(this.localStorage['character-in-progress']);
   }
 // -- End code to save stats
+
+  saveCharacter(){
+    this.saveChar(this.localStorage['character-in-progress']);
+  }
+
+//     export function create(req, res) {
+//       const newCharacter = Object.assign({}, req.body, {creator: req.user._id}); //add current user to new character
+//       return Character.create(newCharacter)
+//         .then(respondWithResult(res, 201))
+//         .catch(handleError(res));
+//     }
+//
+// router.post('/', auth.isAuthenticated(), controller.create);
+//
+// describe('POST /api/characters', function() {
+//   beforeEach(function(done) {
+//     request(app)
+//       .post('/api/characters')
+//       .send({
+//         name: 'New Character',
+//         info: 'This is the brand new character!!!'
+//       })
+//       .expect(201)
+//       .expect('Content-Type', /json/)
+//       .end((err, res) => {
+//         if(err) {
+//           return done(err);
+//         }
+//         newCharacter = res.body;
+//         done();
+//       });
+//   });
+//   }
 
 }
 
