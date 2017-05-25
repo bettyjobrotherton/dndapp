@@ -1,6 +1,6 @@
 <div class='classView' ng-show="genCtrl.classMain">
   <div class="iconList">
-    <div class="sticky-wrapper">
+    <div class="sticky-wrapper2">
       <div class='list-group' ng-class="{ 'active': build == genCtrl.currentClass }" ng-repeat="build in genCtrl.classList" >
         <img ng-src='{{ build.icon }}' class='list-group-item' ng-click="genCtrl.selectClass(build)">
       </div>
@@ -9,7 +9,7 @@
 
   <div class='classDesc'>
     <div>
-      <h3> {{genCtrl.currentClass.name}} </h3>
+      <h2> {{genCtrl.currentClass.name}} </h2>
       <p class='summary'>{{genCtrl.currentClass.shortDesc}}</p>
     </div>
 
@@ -85,8 +85,12 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.selectMainClass()"  type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.selectMainClass()"  type="">
       Submit &amp; Continue
+    </button>
+
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToClass()" type="">
+      Go Back
     </button>
 
   </div>
@@ -105,7 +109,7 @@
     <h3> {{genCtrl.currentArchetype.name}} </h3>
     <p class='summary'>{{genCtrl.currentArchetype.desc}}</p>
 
-    <table class="table" ng-show="genCtrl.currentArchetype.features">
+    <table class="table table-striped" ng-show="genCtrl.currentArchetype.features">
       <tr class="table-head">
         <th>Features:</th>
         <td>
@@ -114,10 +118,10 @@
       </tr>
     </table>
 
-    <button class="btn btn-lg btn-primary" ng-click="genCtrl.saveClass()" type="">
+    <button class="btn btn-lg btn-primary createBtn2" ng-click="genCtrl.saveClass()" type="">
       Submit &amp; Continue
     </button>
-    <br>
-    <button class="btn btn-lg btn-primary btn-underneath" ng-click="genCtrl.goBackToClass()" type="new character">
+
+    <button class="btn btn-lg btn-danger createBtn2 btn-underneath" ng-click="genCtrl.goBackToClass()" type="">
       Return to Class
     </button>

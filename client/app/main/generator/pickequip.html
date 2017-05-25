@@ -1,6 +1,6 @@
 <div class='equipView'>
 <div class="col-lg-12">
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayEquipment = !genCtrl.displayEquipment">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayEquipment = !genCtrl.displayEquipment">
       Equipment
     </button>
     <div ng-show="genCtrl.displayEquipment">
@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayAmmunition = !genCtrl.displayAmmunition">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayAmmunition = !genCtrl.displayAmmunition">
       Ammunition
     </button>
     <div ng-show="genCtrl.displayAmmunition">
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayArcanceFocus = !genCtrl.displayArcanceFocus">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayArcanceFocus = !genCtrl.displayArcanceFocus">
       Arcane Focus
     </button>
     <div ng-show="genCtrl.displayArcanceFocus">
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayDruidicFocus = !genCtrl.displayDruidicFocus">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayDruidicFocus = !genCtrl.displayDruidicFocus">
       Druidic Focus
     </button>
     <div ng-show="genCtrl.displayDruidicFocus">
@@ -82,7 +82,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayHolySymbol = !genCtrl.displayHolySymbol">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayHolySymbol = !genCtrl.displayHolySymbol">
       Holy Symbol
     </button>
     <div ng-show="genCtrl.displayHolySymbol">
@@ -103,8 +103,12 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-success btn-underneath" ng-click="genCtrl.saveEquipment()"  type="button">
+    <button class="btn btn-lg btn-list-button createBtn btn-success btn-underneath" ng-click="genCtrl.saveEquipment()"  type="">
       Submit &amp; Continue
+    </button>
+
+    <button class="btn btn-lg btn-list-button createBtn btn-danger" ng-click="genCtrl.saveEquipment()"  type="">
+      Go Back
     </button>
 </div>
   </div>

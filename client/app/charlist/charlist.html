@@ -1,11 +1,5 @@
 <div class="container">
-  <div class="row">
 
-    <div class="col-xs-12 top-of-page">
-      <button class="btn btn-lg btn-primary createBtn" ui-sref="generator" type="new character">Create a new character</button>
-    </div>
-
-  </div>
   <hr>
   <div ng-repeat="character in charCtrl.getCurrentUser().characters">
     <div class="row">
@@ -20,4 +14,13 @@
     </div>
     <hr>
   </div>
+
+  <div class="row">
+
+    <div class="col-xs-12 top-of-page">
+      <button class="btn btn-lg btn-primary createBtn" ui-sref="generator" type="new character">Create a new character</button>
+    </div>
+
+  </div>
+
 </div>

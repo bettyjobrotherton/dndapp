@@ -1,7 +1,12 @@
 <div class="armorView">
 <div class="armorDesc">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+
   <div>
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayLightArmor = !genCtrl.displayLightArmor">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayLightArmor = !genCtrl.displayLightArmor">
       Light Armor
     </button>
     <div ng-show="genCtrl.displayLightArmor">
@@ -19,7 +24,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayMediumArmor = !genCtrl.displayMediumArmor">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayMediumArmor = !genCtrl.displayMediumArmor">
       Medium Armor
     </button>
     <div ng-show="genCtrl.displayMediumArmor">
@@ -37,7 +42,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayHeavyArmor = !genCtrl.displayHeavyArmor">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayHeavyArmor = !genCtrl.displayHeavyArmor">
       Heavy Armor
     </button>
     <div ng-show="genCtrl.displayHeavyArmor">
@@ -56,7 +61,7 @@
       </div>
     </div>
 
-    <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.displayShields = !genCtrl.displayShields">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayShields = !genCtrl.displayShields">
       Shields
     </button>
     <div ng-show="genCtrl.displayShields">
@@ -74,11 +79,23 @@
       </div>
     </div>
 
-      <button class="btn btn-lg btn-primary bg-list-button" ng-click="genCtrl.saveArmor()"  type="new character">
+      <button class="btn btn-lg btn-success bg-list-button btn-underneath" ng-click="genCtrl.saveArmor()"  type="new character">
         Submit &amp; Continue
       </button>
+
+      <button class="btn btn-lg btn-danger bg-list-button btn-underneath" ng-click="genCtrl.returnToWeapons()"  type="new character">
+        Go Back
+      </button>
+
     </div>
 
   </div>
+
+</div>
+
+
+</div>
+
+</div>
 
 </div>

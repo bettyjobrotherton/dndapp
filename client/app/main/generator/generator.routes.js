@@ -57,8 +57,16 @@ export default function routes($stateProvider) {
   })
   .state('generatorWeapons', {
     url:'/pickweapons',
-    template: '<pickweapons></pickweapons>',
-    friendlyName:'What will you fight with?'
+    template: '<pickweapons></pickweapons>'
+    // friendlyName:'What will you fight with?'
+  })
+  .state('generatorFour',{
+    url: '/generatorfour',
+    template: '<generatorfour></generatorfour>'
+  })
+  .state('finalPage',{
+    url: '/finalpage',
+    template: '<finalpage><finalpage>'
   })
   .state('generatorArmor', {
     url:'/pickarmor',
@@ -67,8 +75,8 @@ export default function routes($stateProvider) {
   })
   .state('generatorEquip', {
     url:'/pickequip',
-    template: '<pickequip></pickequip>',
-    friendlyName:'Get ready for your next Adventure'
+    template: '<pickequip></pickequip>'
+    // friendlyName:'Get ready for your next Adventure'
   })
   .state('generatorStats', {
     url:'/pickstats',
