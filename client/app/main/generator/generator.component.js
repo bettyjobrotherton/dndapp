@@ -857,6 +857,30 @@ returnToWeapons(){
   this.$state.go('generatorWeapons');
 }
 
+returnToWeapons2(){
+  var newCharacter;
+  newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+  this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+  this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+
+  // this.$state.go('generatorWeapons');
+  if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
+    this.$state.go('generatorSpells');
+  }else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
+    if(this.savedCharacter.general.level < 2){
+      this.$state.go('generatorSpells');
+    } else {
+       this.$state.go('generatorWeapons');
+    }
+  } else if(this.savedCharacter.class.main == 'Fighter' && this.savedCharacter.general.level >= 3){
+    if(this.savedCharacter.class.archetype == 'Eldritch Knight'){
+      this.$state.go('generatorSpells');
+    }
+  } else {
+    this.$state.go('generatorWeapons');
+ }
+}
+
 // -- End code for pick background
 
 // -- start of pick weapon
@@ -875,7 +899,6 @@ saveWeapons(){
       newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.combat.weapons = this.weaponInfo;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
       // console.log(this.savedCharacter);
       if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
