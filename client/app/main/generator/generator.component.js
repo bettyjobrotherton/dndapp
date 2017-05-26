@@ -181,7 +181,6 @@ export class GeneratorController {
                   return err;
                 });
 
-
     } else if(this.$state.current.name == 'generatorWeapons'){
 
     this.$http.get('assets/weapons.json')
@@ -463,6 +462,7 @@ export class GeneratorController {
       this.$state.go('proficiencies');
     }
   }
+
 
   returnToGenTwo(){
     if(this.first() == 'alignment'){
@@ -935,6 +935,14 @@ returnToWeapons2(){
 // -- End code for pick background
 
 // -- start of pick weapon
+
+// WeaponDisplay(data){
+//   if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
+//     this.displaySimpleMelee = true;
+//   } else {
+//     this.displaySimpleMelee = false;
+//   }
+// }
 
 saveWeapons(){
       var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
@@ -1417,6 +1425,7 @@ checkedLightArmor(item){
     this.$state.go('generatorWeapons');
   }
 // -- End code for ability score selection
+
 
 // Beginning code for spells selection --
   spellDisplayProperties(data){
