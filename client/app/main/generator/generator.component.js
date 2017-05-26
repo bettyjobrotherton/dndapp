@@ -28,6 +28,7 @@ export class GeneratorController {
                 .catch(err => {
                   return err;
                 });
+
     } else if(this.$state.current.name == 'generatorRace'){
       this.raceMain = true;
 
@@ -39,6 +40,7 @@ export class GeneratorController {
           .catch(err => {
               return err;
           });
+
     } else if(this.$state.current.name == 'generatorBackground'){
       this.showBackgroundVariant = false;
       this.classInfo = JSON.parse(this.localStorage['class-info']);
@@ -114,10 +116,12 @@ export class GeneratorController {
       this.maxSkills = this.classInfo.traits.noOfSkills;
       this.skillsList = [];
       this.filterSkills();
+
     } else if(this.$state.current.name == 'pickAbilityScores'){
       this.classInfo = JSON.parse(this.localStorage['class-info']);
       this.selectionMade = false;
       this.makeMySelections = true;
+
     } else if(this.$state.current.name == 'generatorThree'){
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
       // console.log(this.savedCharacter);
@@ -138,6 +142,7 @@ export class GeneratorController {
       } else {
         this.selectSpells = false;
       }
+
     } else if(this.$state.current.name == 'generatorSpells'){
       this.characterInfo = JSON.parse(this.localStorage['character-in-progress']);
       this.characterInfo.spells = {
@@ -178,22 +183,14 @@ export class GeneratorController {
 
 
     } else if(this.$state.current.name == 'generatorWeapons'){
-  this.classInfo = JSON.parse(this.localStorage['class-info']);
-  this.$http.get('assets/weapons.json')
+
+    this.$http.get('assets/weapons.json')
             .then(res => {
-              vm.weaponsList = res.data;
-              if(!vm.localStorage['selected-weapons']){
-                vm.currentWeapons = res.data[0];
-              } else {
-                vm.currentWeapons = JSON.parse(this.localStorage['selected-weapons']);
-              }
+              vm.weaponsList = res.data[0];
             })
             .catch(err => {
               return err;
             });
-
-}else if(this.$state.current.name == 'pickweapons'){
-      this.currentWeapons = JSON.parse(this.localStorage['selected-weapon']);
 
       this.countSimpleMelee = 0;
       this.maxSimpleMelee = 1;
@@ -885,22 +882,20 @@ returnToWeapons2(){
 
 // -- start of pick weapon
 
-
 saveWeapons(){
-  var newCharacter;
-  var currentWeapon = this.currentWeapon;
-  var weaponInfo;
-      weaponInfo = {
-            simpleMelee: this.currentSimpleMelee,
-            simpleRange: this.currentSimpleRanged,
-            martialMelee: this.currentMartialMelee,
-            martialRange: this.currentMartialRanged
-      };
-      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      newCharacter.combat.weapons = this.weaponInfo;
+  // var characterWeapon;
+  //     characterWeapon = {
+  //           simpleMelee: this.currentSimpleMelee,
+  //           simpleRange: this.currentSimpleRanged,
+  //           martialMelee: this.currentMartialMelee,
+  //           martialRange: this.currentMartialRanged
+  //     };
+      var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      newCharacter.combat.weapon = this.characterWeapon;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
       // console.log(this.savedCharacter);
+
       if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
         this.$state.go('generatorSpells');
       }else if(this.savedCharacter.class.main == 'Paladin' || this.savedCharacter.class.main == 'Ranger'){
@@ -918,38 +913,6 @@ saveWeapons(){
      }
 }
 
-simpleMeleeButton(){
-  if(this.display1){
-    this.display1 = false;
-  } else {
-    this.display1 = true;
-  }
-}
-
-simpleRangedButton(){
-  if(this.display2){
-    this.display2 = false;
-  } else {
-    this.display2 = true;
-  }
-}
-
-martialMeleeButton(){
-  if(this.display3){
-    this.display3 = false;
-  } else {
-    this.display3 = true;
-  }
-}
-
-martialRangedButton(){
-  if(this.display4){
-    this.display4 = false;
-  } else {
-    this.display4 = true;
-  }
-}
-
 checkedSimpleMelee(item){
   var count = this.countSimpleMelee;
   if(item.check){
@@ -958,6 +921,7 @@ checkedSimpleMelee(item){
       name: item.name
     };
     this.characterWeapon.push(object);
+    console.log(this.characterWeapon);
     } else {
     this.countSimpleMelee = count - 1;
     for(var i = 0; i < this.characterWeapon.length; i++){
@@ -968,26 +932,64 @@ checkedSimpleMelee(item){
   }
 }
 
-checkedSimpleRange(item){
-  var count = this.countSimpleMelee;
+checkedSimpleRanged(item){
+  var count = this.countSimpleRanged;
   if(item.check){
-    this.countSimpleRange = count + 1;
+    this.countSimpleRanged = count + 1;
     var object = {
       name: item.name
     };
     this.characterWeapon.push(object);
   } else {
-    this.countSimpleRange = count - 1;
+    this.countSimpleRanged = count - 1;
     for(var i = 0; i < this.characterWeapon.length; i++){
-      if(this.characterWeapon[i].number === item.number){
+      if(this.characterWeapon[i].name === item.name){
         this.characterWeapon.splice(i, 1);
       }
     }
   }
 }
+
+checkedMartialMelee(item){
+  var count = this.countMartialMelee;
+  if(item.check){
+    this.countMartialMelee = count + 1;
+    var object = {
+      name: item.name
+    };
+    this.characterWeapon.push(object);
+  } else {
+    this.countMartialMelee = count - 1;
+    for(var i = 0; i < this.characterWeapon.length; i++){
+      if(this.characterWeapon[i].name === item.name){
+        this.characterWeapon.splice(i, 1);
+      }
+    }
+  }
+}
+
+checkedMartialRanged(item){
+  var count = this.countMartialRanged ;
+  if(item.check){
+    this.countMartialRanged = count + 1;
+    var object = {
+      name: item.name
+    };
+    this.characterWeapon.push(object);
+  } else {
+    this.countMartialRanged  = count - 1;
+    for(var i = 0; i < this.characterWeapon.length; i++){
+      if(this.characterWeapon[i].name === item.name){
+        this.characterWeapon.splice(i, 1);
+      }
+    }
+  }
+}
+
+
 //end of weapons
 
-// Start code for selecting armor --
+//start of codde for selecting equipment
 
 saveEquipment(){
   var newCharacter;
@@ -1035,6 +1037,18 @@ checkedEquipment(item){
       }
     }
   }
+}
+
+//end of codde for selecting equipment
+
+// Start code for selecting armor --
+
+saveArmor(){
+  var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+  newCharacter.combat.armor = this.characterArmor;
+  this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+  console.log(this.localStorage['character-in-progress']);
+    this.$state.go('finalPage');
 }
 
 checkedLightArmor(item){
@@ -1108,14 +1122,6 @@ checkedLightArmor(item){
         }
       }
     }
-  }
-
-  saveArmor(){
-    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
-    newCharacter.combat.armor = this.characterArmor;
-    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
-    console.log(this.localStorage['character-in-progress']);
-      this.$state.go('finalPage');
   }
 
 
