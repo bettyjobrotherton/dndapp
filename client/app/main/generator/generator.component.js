@@ -5,14 +5,13 @@ import routing from './generator.routes';
 export class GeneratorController {
 
   /*@ngInject*/
-  constructor($http, $state, Character, $window, CharacterEvents) {
+  constructor($http, $state, Character, $window) {
     this.$http = $http;
     this.$state = $state;
     this.createChar = Character.createChar;
     this.first = Character.firstOption;
     this.localStorage = $window.localStorage;
     this.character = Character;
-    this.saveChar = CharacterEvents.events.save;
   }
 
   $onInit() {
@@ -1649,7 +1648,9 @@ checkedLightArmor(item){
 // -- End code to save stats
 
   saveCharacter(){
-    this.saveChar(this.localStorage['character-in-progress']);
+    var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    this.localStorage.getItem('character-in-progress', JSON.stringify(newCharacter));
+    this.character.controller.create(newCharacter);
   }
 
 //     export function create(req, res) {
