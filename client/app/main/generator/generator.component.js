@@ -358,8 +358,21 @@ export class GeneratorController {
       this.$state.go('generatorTwo');
     }
   }
+
   returnToRace(){
     this.$state.go('generatorRace');
+  }
+
+  returnToBeginning(){
+    var newCharacter;
+    newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+    this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+    if(this.first() == 'race'){
+      this.$state.go('generator');
+    } else {
+      this.$state.go('generatorClass');
+    }
   }
 
 // -- End code for pick race
@@ -415,6 +428,18 @@ export class GeneratorController {
     returnToClass(){
       this.$state.go('generatorClass');
     }
+
+    returnToBeginning2(){
+      var newCharacter;
+      newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+      this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+      if(this.first() == 'class'){
+        this.$state.go('generator');
+      } else {
+        this.$state.go('generatorRace');
+      }
+    }
 // -- End code for pick class
 
 // Start code for pick alignment --
@@ -438,6 +463,15 @@ export class GeneratorController {
       this.$state.go('proficiencies');
     }
   }
+
+  returnToGenTwo(){
+    if(this.first() == 'alignment'){
+      this.$state.go('generatorTwo');
+    } else {
+      this.$state.go('generatorBackground');
+    }
+  }
+
 // -- End code for pick alignment
 
 // Start code for pick background --
@@ -842,6 +876,18 @@ returnToBackgroundDetails(){
   this.$state.go('backgrounddetails');
 }
 
+returnToGenTwo2(){
+  var newCharacter;
+  newCharacter = JSON.parse(this.localStorage['character-in-progress']);
+  this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
+  this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
+  if(this.first() == 'background'){
+    this.$state.go('generatorTwo');
+  } else {
+    this.$state.go('generatorAlignment');
+  }
+}
+
 returnToProficiencies(){
   this.$state.go('proficiencies');
 }
@@ -852,6 +898,14 @@ returnToAbilityScore(){
 
 returnToWeapons(){
   this.$state.go('generatorWeapons');
+}
+
+returnToClassOrRace(){
+  if(this.first() == 'race'){
+    this.$state.go('generatorRace');
+  } else if(this.first() =='class'){
+    this.$state.go('generatorClass');
+  }
 }
 
 returnToWeapons2(){
@@ -883,18 +937,10 @@ returnToWeapons2(){
 // -- start of pick weapon
 
 saveWeapons(){
-  // var characterWeapon;
-  //     characterWeapon = {
-  //           simpleMelee: this.currentSimpleMelee,
-  //           simpleRange: this.currentSimpleRanged,
-  //           martialMelee: this.currentMartialMelee,
-  //           martialRange: this.currentMartialRanged
-  //     };
       var newCharacter = JSON.parse(this.localStorage['character-in-progress']);
       newCharacter.combat.weapon = this.characterWeapon;
       this.localStorage.setItem('character-in-progress', JSON.stringify(newCharacter));
       this.savedCharacter = JSON.parse(this.localStorage['character-in-progress']);
-      // console.log(this.savedCharacter);
 
       if(this.savedCharacter.class.main == 'Bard' || this.savedCharacter.class.main == 'Cleric' || this.savedCharacter.class.main == 'Druid' || this.savedCharacter.class.main == 'Sorcerer' || this.savedCharacter.class.main == 'Warlock' || this.savedCharacter.class.main == 'Wizard'){
         this.$state.go('generatorSpells');
@@ -921,7 +967,6 @@ checkedSimpleMelee(item){
       name: item.name
     };
     this.characterWeapon.push(object);
-    console.log(this.characterWeapon);
     } else {
     this.countSimpleMelee = count - 1;
     for(var i = 0; i < this.characterWeapon.length; i++){
