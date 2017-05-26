@@ -7,91 +7,79 @@
         <p class='summary'>Pick your weapons from the list below <span>(recommended weapons for quickbuild are already selected)</span></p>
       </div>
 
-<div ng-hide="genCtrl.displaySimpleMelee">
-    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleMeleeButton()">
+<!-- <div ng-show=genCtrl.displaySimpleMelee> -->
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displaySimpleMelee = !genCtrl.displaySimpleMelee">
       Simple Melee
     </button>
-    <div ng-show="genCtrl.display1">
+    <div ng-show="genCtrl.displaySimpleMelee">
       <div class="background-detail-box">
-        <!-- <p>{{ genCtrl.currentWeapons.simpleMelee.name }}</p> -->
         <form ng-submit='genCtrl.saveWeapons()'>
-          <div ng-repeat="item in genCtrl.currentWeapons.simpleMelee">
+          <div ng-repeat="weapon in genCtrl.weaponsList.simpleMelee">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countSimpleMelee > genCtrl.maxSimpleMelee) && (!weapon.check)" ng-click="genCtrl.checkedSimpleMelee(weapon)" ng-checked="weapon.check" ng-model="weapon.check">
-                {{ item.name }}, {{item.damage}}
+                <input type="checkbox" ng-disabled="(genCtrl.countSimpleMelee >= genCtrl.maxSimpleMelee) && (!weapon.check)" ng-click="genCtrl.checkedSimpleMelee(weapon)" ng-checked="weapon.check" ng-model="weapon.check">
+                {{ weapon.name }}, {{weapon.damage}}
               </label>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
 
-  <div ng-hide="genCtrl.displaySimpleRange">
-    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.simpleRangedButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displaySimpleRanged = !genCtrl.displaySimpleRanged">
       Simple Ranged
     </button>
-    <div ng-show="genCtrl.display2">
+    <div ng-show="genCtrl.displaySimpleRanged">
       <div class="background-detail-box">
-        <!-- <p>{{ genCtrl.currentWeapons.simpleRanged.desc }}</p> -->
         <form ng-submit="genCtrl.saveWeapons()">
-          <div ng-repeat="item in genCtrl.currentWeapons.simpleRanged">
+          <div ng-repeat="weapon in genCtrl.weaponsList.simpleRanged">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countRangedWeapon > genCtrl.maxRangedWeapon) && (!item.check)" ng-click="genCtrl.checkedSimpleRanged(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}, {{item.damage}}
+                <input type="checkbox" ng-disabled="(genCtrl.countSimpleRanged >= genCtrl.maxSimpleRanged) && (!weapon.check)" ng-click="genCtrl.checkedSimpleRanged(weapon)" ng-checked="weapon.check" ng-model="weapon.check">
+                {{ weapon.name }}, {{weapon.damage}}
               </label>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
 
-
-  <div ng-hide="genCtrl.displayMartialMelee">
-    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialMeleeButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayMartialMelee = !genCtrl.displayMartialMelee">
       Martial Melee
     </button>
-    <div ng-show="genCtrl.display3">
+    <div ng-show="genCtrl.displayMartialMelee">
       <div class="background-detail-box">
-        <p>{{ genCtrl.currentWeapons.martialMelee.desc }}</p>
         <form ng-submit="genCtrl.saveWeapons()">
-          <div ng-repeat="item in genCtrl.currentWeapons.martialMelee">
+          <div ng-repeat="weapon in genCtrl.weaponsList.martialMelee">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countMartialMelee > genCtrl.maxMartialMelee) && (!item.check)" ng-click="genCtrl.checkedMartialMeleeButton(item)" ng-checked="item.check" ng-model="item.check">
-                {{ item.name }}, {{item.damage}}
+                <input type="checkbox" ng-disabled="(genCtrl.countMartialMelee >= genCtrl.maxMartialMelee) && (!weapon.check)" ng-click="genCtrl.checkedMartialMelee(weapon)" ng-checked="weapon.check" ng-model="weapon.check">
+                {{ weapon.name }}, {{weapon.damage}}
               </label>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
 
-
-  <div ng-hide="genCtrl.displayMartialRange">
-    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.martialRangedButton()">
+    <button class="btn btn-lg btn-primary bg-list-button btn-underneath" ng-click="genCtrl.displayMartialRanged = !genCtrl.displayMartialRanged">
       Martial Ranged
     </button>
-    <div ng-show="genCtrl.display4">
+    <div ng-show="genCtrl.displayMartialRanged">
       <div class="background-detail-box">
-        <!-- <p>{{ genCtrl.currentWeapons.martialWeapon.desc }}</p> -->
         <form ng-submit="genCtrl.saveWeapons()">
-          <div ng-repeat="item in genCtrl.currentWeapons.martialRanged">
+          <div ng-repeat="weapon in genCtrl.weaponsList.martialRanged">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-disabled="(genCtrl.countMartialRanged > genCtrl.maxMartialRanged) && (!item.check)" ng-click="genCtrl.martialWeaponButton(item)" ng-checked='item.check' ng-model="item.check">
-                {{ item.name }}, {{item.damage}}
+                <input type="checkbox" ng-disabled="(genCtrl.countMartialRanged >= genCtrl.maxMartialRanged) && (!weapon.check)" ng-click="genCtrl.checkedMartialRanged(weapon)" ng-checked='weapon.check' ng-model="weapon.check">
+                {{ weapon.name }}, {{weapon.damage}}
               </label>
             </div>
           </div>
         </form>
       </div>
     </div>
-  </div>
 
     <div class='weaponsDesc'>
       <button class="btn btn-lg btn-success bg-list-button btn-underneath" ng-click="genCtrl.saveWeapons()"  type="">
