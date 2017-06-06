@@ -2,6 +2,8 @@
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.2.
 
+Current site forked from https://github.com/352Internship/dndapp
+
 Original spell list from https://github.com/vorpalhex/srd_spells
 
 ## Getting Started
